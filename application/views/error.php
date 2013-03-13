@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>The Bowdoin Orient &mdash; 404</title>
-	<link rel="shortcut icon" href="<?=base_url()?>/images/o-32-transparent.png">
+	<link rel="shortcut icon" href="<?=base_url()?>/img/o-32-transparent.png">
 	<link rel="stylesheet" media="screen" href="<?=base_url()?>/css/orient.css?v=1">
 	
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
@@ -17,7 +17,7 @@ body {
 	margin: 0;
 	padding: 20px;
 	font-family:myriad-pro,helvetica,arial;
-	background: url(<?=base_url()?>images/graphy.png);
+	background: url(<?=base_url()?>img/graphy.png);
 	background-position: 50% 50%;
 }
 
@@ -78,7 +78,7 @@ p {
 </header>
 
 <div id="content">
-	<!--<img src="<?=base_url()?>images/abandoned-newspaper-boxes-ap-noah-berger.jpeg">-->
+	<!--<img src="<?=base_url()?>img/abandoned-newspaper-boxes-ap-noah-berger.jpeg">-->
 	<iframe width="615" height="346" src="http://www.youtube.com/embed/Hj_zmQlKOgU?rel=0&modestbranding=1&theme=light" frameborder="0" allowfullscreen></iframe>
 	<h2>404</h2>
 	<h3>Page not found.</h3>

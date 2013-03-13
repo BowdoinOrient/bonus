@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>BONUS - Alerts</title>
-	<link rel="shortcut icon" href="<?=base_url()?>images/o-32-invert.png">
+	<link rel="shortcut icon" href="<?=base_url()?>img/o-32-invert.png">
 	<link rel="stylesheet" media="screen" href="<?=base_url()?>/css/bonus.css?v=1">
 	
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>

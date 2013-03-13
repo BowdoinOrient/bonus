@@ -235,7 +235,7 @@ footer .bonusquoteattribution {
 	bottom: 0;
 	height: 45px;
 	width: 100%;
-	background: url(../images/starring.png);
+	background: url(../img/starring.png);
 	color: white;
 	padding: 10px;
 	border-top: 1px solid white;
@@ -351,7 +351,7 @@ figure {
 */
 
 #bonus-meta {
-	background: url(../images/starring.png);
+	background: url(../img/starring.png);
 	color: white;
 	font-family:myriad-pro,helvetica,arial;
 	font-size: 10pt;
@@ -955,7 +955,7 @@ section h2, #sidebar h2 {
 
 .articleblock li.draft, .carouseltile.draft {
 	border: 1px darkgray dotted;
-	background: url(../images/graphy.png);
+	background: url(../img/graphy.png);
 }
 
 .articleblock li a {
@@ -1338,7 +1338,7 @@ article header, .authorheader {
 }
 
 .articletitle.draft {
-	background: url(../images/graphy.png);
+	background: url(../img/graphy.png);
 	background-position: 50% 50%;
 }
 

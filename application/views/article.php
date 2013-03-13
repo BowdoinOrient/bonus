@@ -5,7 +5,7 @@
 	<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
 	<meta charset="utf-8" />
 	<title><?=$article->title?> &mdash; The Bowdoin Orient</title>
-	<link rel="shortcut icon" href="<?=base_url()?>images/o-32-transparent.png">
+	<link rel="shortcut icon" href="<?=base_url()?>img/o-32-transparent.png">
 	
 	<link rel="stylesheet" media="screen" href="<?=base_url()?>css/orient.css?v=4">
 	
@@ -18,7 +18,7 @@
 	<? if($photos): ?>
 		<meta property="og:image" content="<?=base_url()?>images/<?=$article->date?>/<?=$photos[0]->filename_large?>" />
 	<? else: ?>
-		<meta property="og:image" content="<?=base_url()?>images/o-200.png" />
+		<meta property="og:image" content="<?=base_url()?>img/o-200.png" />
 	<? endif; ?>
 	<meta property="og:url" content="http://bowdoinorient.com/article/<?=$article->id?>" />
 	<meta property="og:site_name" content="The Bowdoin Orient" />
@@ -36,7 +36,7 @@
 	<script type="text/javascript" src="<?=base_url()?>js/orient.js"></script>
 	
 	<!-- for mobile -->
-	<link rel="apple-touch-icon" href="<?=base_url()?>images/o-114.png"/>
+	<link rel="apple-touch-icon" href="<?=base_url()?>img/o-114.png"/>
 	<meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no">
 	
 	<!-- TypeKit -->
@@ -565,12 +565,12 @@
 					<div class="opinion-notice"><input type="checkbox" name="opinion" value="opinion" <? if($article->opinion): ?>checked="checked"<? endif; ?> /> Does this piece represent the opinion of the author?</div>
 				<? endif; ?>
 				<? if($series->name == "Editorial"): ?>
-					<object data="<?=base_url()?>images/icon-opinion.svg" type="image/svg+xml" class="opinion-icon" height="20" width="20" title="Plinio Fernandes, from The Noun Project"></object>
+					<object data="<?=base_url()?>img/icon-opinion.svg" type="image/svg+xml" class="opinion-icon" height="20" width="20" title="Plinio Fernandes, from The Noun Project"></object>
 					<div class="opinion-notice">This piece represents the opinion of <span style="font-style:normal;">The Bowdoin Orient</span> editorial board.</div>
 				<? endif; ?>
 				<? if($authors): ?>
 					<? if($article->opinion == '1' && !bonus()): ?>
-						<object data="<?=base_url()?>images/icon-opinion.svg" type="image/svg+xml" class="opinion-icon" height="20" width="20" title="Plinio Fernandes, from The Noun Project"></object>
+						<object data="<?=base_url()?>img/icon-opinion.svg" type="image/svg+xml" class="opinion-icon" height="20" width="20" title="Plinio Fernandes, from The Noun Project"></object>
 						<div class="opinion-notice">This piece represents the opinion of the author<?if(count($authors)>1):?>s<?endif;?>:</div>
 					<? endif; ?>
 					<? foreach($authors as $key => $author): ?>
@@ -625,7 +625,7 @@
 					'<?= $article->date ?>',
 					'<?= current_url(); ?>');">
 					<button title="Your report is submitted to an independent third-party auditor, MediaBugs.">
-						<img src="<?=base_url()?>images/reporterror-12-bw.png"><span class="buttontext"> Report error</span>
+						<img src="<?=base_url()?>img/reporterror-12-bw.png"><span class="buttontext"> Report error</span>
 					</button>
 				</a>
 				<? endif; ?>
@@ -687,7 +687,7 @@
 			<figure class="articlemedia">
 				<div id="dnd-holder">
 					<div id="dnd-instructions">
-						<img src="<?=base_url()?>images/icon-uploadphoto-lightgray.png" type="image/svg+xml" height="50" width="50" title=""></object>
+						<img src="<?=base_url()?>img/icon-uploadphoto-lightgray.png" type="image/svg+xml" height="50" width="50" title=""></object>
 						<br/>Drag and drop a JPG or PNG image file here.
 					</div>
 				</div>

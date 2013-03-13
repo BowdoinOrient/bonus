@@ -54,7 +54,7 @@ $(function() {
 						<input class="filterinput" type="text" placeholder="Search" name="q">
 					</form>
 				</li>
-				<!--<li><a href="http://bowdoinorientexpress.com" style="font-family:helvetica;font-style:italic;" class="oebug"><img src="<?=base_url().'images/oe-compass-35.png'?>"></a></li>-->
+				<!--<li><a href="http://bowdoinorientexpress.com" style="font-family:helvetica;font-style:italic;" class="oebug"><img src="<?=base_url().'img/oe-compass-35.png'?>"></a></li>-->
 				<li style="border-left:1px solid lightgray" class="hidetablet"><a href="http://bowdoinorientexpress.com">Blog</a></li>
 			</ul>
 		</nav>
@@ -73,7 +73,7 @@ $(function() {
 		<? if(!empty($nextissue)):?><a href="<?=site_url()?>browse/<?=$nextissue->issue_date?>" class="issue-nav-arrow">&#x25BA;</a> <?endif;?>&middot;
 	<?endif;?>
 	</span>
-	<a href="<?=base_url()?>random">Random <img src="<?=base_url()?>images/icon-shuffle.svg" type="image/svg+xml" class="" height="15" width="15" style="margin-bottom: -3px;" title="Dmitry Baranovskiy, from The Noun Project"></a>
+	<a href="<?=base_url()?>random">Random <img src="<?=base_url()?>img/icon-shuffle.svg" type="image/svg+xml" class="" height="15" width="15" style="margin-bottom: -3px;" title="Dmitry Baranovskiy, from The Noun Project"></a>
 	<span class="onlymobile">&middot; <?=anchor('search', 'Search'); ?></span>
 	<span id="pages" class="hidemobile">
 		<?=anchor('about', 'About'); ?> &middot; 

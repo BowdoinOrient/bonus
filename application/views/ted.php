@@ -9,7 +9,7 @@
 <style>
 
 body {
-	background-image: url(<?=base_url()?>images/ted.jpeg);
+	background-image: url(<?=base_url()?>img/ted.jpeg);
 	background-size: cover;
 }
 

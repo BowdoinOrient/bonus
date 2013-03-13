@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title><?= $title ?></title>
-	<link rel="shortcut icon" href="<?=base_url()?>images/o-32-transparent.png">
+	<link rel="shortcut icon" href="<?=base_url()?>img/o-32-transparent.png">
 	
 	<link rel="stylesheet" media="screen" href="<?=base_url()?>css/orient.css?v=4">
 	<script type="text/javascript" src="<?=base_url()?>js/orient.js"></script>
@@ -15,7 +15,7 @@
 	<meta property="og:title" content="<?= $title ?>" />
 	<meta property="og:description" content="<?= $description ?>" />
 	<meta property="og:type" content="website" />
-	<meta property="og:image" content="<?=base_url()?>images/o-200.png" />
+	<meta property="og:image" content="<?=base_url()?>img/o-200.png" />
 	<meta property="og:url" content="http://bowdoinorient.com/" />
 	<meta property="og:site_name" content="The Bowdoin Orient" />
 	<meta property="fb:admins" content="1233600119" />
@@ -23,7 +23,7 @@
 	<!--<meta property="fb:page_id" content="113269185373845" />-->
 	
 	<!-- for mobile -->
-	<link rel="apple-touch-icon" href="<?=base_url()?>images/o-114.png"/>
+	<link rel="apple-touch-icon" href="<?=base_url()?>img/o-114.png"/>
 	<meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no">
 	
 	<!-- rss -->

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Survey - The Bowdoin Orient</title>
-	<link rel="shortcut icon" href="<?=base_url()?>images/favicon-o.png">
+	<link rel="shortcut icon" href="<?=base_url()?>img/favicon-o.png">
 	
 	<link rel="stylesheet" media="screen" href="<?=base_url()?>css/orient.css?v=2">
 	
@@ -15,7 +15,7 @@
 	<script type="text/javascript" src="<?=base_url()?>js/jquery.scrollTo-min.js"></script>
 	
 	<!-- for mobile -->
-	<link rel="apple-touch-icon" href="<?=base_url()?>images/webappicon.png"/>
+	<link rel="apple-touch-icon" href="<?=base_url()?>img/webappicon.png"/>
 	<meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no">
 		
 	<script type="text/javascript" src="http://use.typekit.com/rmt0nbm.js"></script>

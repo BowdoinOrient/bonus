@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title><?=$author->name?> &mdash; The Bowdoin Orient</title>
-	<link rel="shortcut icon" href="<?=base_url()?>images/o-32-transparent.png">
+	<link rel="shortcut icon" href="<?=base_url()?>img/o-32-transparent.png">
 	
 	<link rel="stylesheet" media="screen" href="<?=base_url()?>css/orient.css?v=3">
 	
@@ -14,14 +14,14 @@
 	<meta property="og:title" content="<?=htmlspecialchars($author->name)?>" />
 	<meta property="og:description" content="<?=htmlspecialchars($author->bio)?>" />
 	<meta property="og:type" content="profile" />
-	<meta property="og:image" content="<?=base_url()?>images/o-200.png" /> <!-- #TODO -->
+	<meta property="og:image" content="<?=base_url()?>img/o-200.png" /> <!-- #TODO -->
 	<meta property="og:url" content="http://bowdoinorient.com/author/<?=$author->id?>" />
 	<meta property="og:site_name" content="The Bowdoin Orient" />
 	<meta property="fb:admins" content="1233600119" />
 	<meta property="fb:app_id" content="342498109177441" />
 	
 	<!-- for mobile -->
-	<link rel="apple-touch-icon" href="<?=base_url()?>images/o-114.png"/>
+	<link rel="apple-touch-icon" href="<?=base_url()?>img/o-114.png"/>
 	<meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no">
 	
 	<!-- rss -->
