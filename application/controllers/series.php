@@ -45,6 +45,12 @@ class Series extends CI_Controller {
 			$data->articles = $this->article_model->get_articles_by_date(date("Y-m-d"), false, false, false, false, false, $id);
 			$data->contributors = $this->author_model->get_series_contributors($id);
 			
+			// meta
+			$data->page_title = $series->name." — The Bowdoin Orient";
+			$data->page_description = htmlspecialchars(strip_tags($series->description));
+			$data->page_type = 'website';
+			if($series->photo) $data->page_image = base_url().'images/series/'.$series->photo;
+			
 			$this->load->view('series', $data);
 		}
 	}

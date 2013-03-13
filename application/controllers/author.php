@@ -64,7 +64,13 @@ class Author extends CI_Controller {
 			$data->longreads = $this->author_model->get_author_longreads($id);
 			$data->stats = $this->author_model->get_author_stats($id);
 			$data->photos = $this->attachments_model->get_author_photos($id);
-						
+			
+			// meta
+			$data->page_title = $author->name." — The Bowdoin Orient";
+			$data->page_description = htmlspecialchars(strip_tags($author->bio));
+			$data->page_type = 'profile';
+			if($author->photo) $data->page_image = base_url().'images/authors/'.$author->photo;
+			
 			$this->load->view('author', $data);
 		}
 	}
