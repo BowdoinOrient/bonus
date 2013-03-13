@@ -17,7 +17,7 @@ class Pages extends CI_Controller {
 	public function error()
 	{
 		// meta
-		$data->page_title = 'Page not found';
+		$data->page_title = 'Page not found — The Bowdoin Orient';
 		$data->page_description = '';
 		$data->page_type = '';
 		
@@ -30,7 +30,7 @@ class Pages extends CI_Controller {
 		$data->headerdata->date = date("Y-m-d");
 		
 		// meta
-		$data->page_title = 'About';
+		$data->page_title = 'About — The Bowdoin Orient';
 		$data->page_description = '';
 		$data->page_type = '';
 		
@@ -43,7 +43,7 @@ class Pages extends CI_Controller {
 		$data->headerdata->date = date("Y-m-d");
 		
 		// meta
-		$data->page_title = 'Ethics';
+		$data->page_title = 'Ethics — The Bowdoin Orient';
 		$data->page_description = '';
 		$data->page_type = '';
 		
@@ -56,7 +56,7 @@ class Pages extends CI_Controller {
 		$data->headerdata->date = date("Y-m-d");
 		
 		// meta
-		$data->page_title = 'Web Non-Removal Policy';
+		$data->page_title = 'Web Non-Removal Policy — The Bowdoin Orient';
 		$data->page_description = '';
 		$data->page_type = '';
 		
@@ -69,7 +69,7 @@ class Pages extends CI_Controller {
 		$data->headerdata->date = date("Y-m-d");
 		
 		// meta
-		$data->page_title = 'Contact';
+		$data->page_title = 'Contact — The Bowdoin Orient';
 		$data->page_description = '';
 		$data->page_type = '';
 		
@@ -82,7 +82,7 @@ class Pages extends CI_Controller {
 		$data->headerdata->date = date("Y-m-d");
 		
 		// meta
-		$data->page_title = 'Subscribe';
+		$data->page_title = 'Subscribe — The Bowdoin Orient';
 		$data->page_description = '';
 		$data->page_type = '';
 		
@@ -95,7 +95,7 @@ class Pages extends CI_Controller {
 		$data->headerdata->date = date("Y-m-d");
 		
 		// meta
-		$data->page_title = 'Advertise';
+		$data->page_title = 'Advertise — The Bowdoin Orient';
 		$data->page_description = '';
 		$data->page_type = '';
 		
@@ -109,8 +109,8 @@ class Pages extends CI_Controller {
 		$data->headerdata->date = date("Y-m-d");
 		
 		// meta
-		if($data->query) { $data->page_title = 'Search results for "'.$data->query.'"'; }
-		else { $data->page_title = 'Search'; }
+		if($data->query) { $data->page_title = 'Search results for "'.$data->query.'" — The Bowdoin Orient'; }
+		else { $data->page_title = 'Search — The Bowdoin Orient'; }
 		$data->page_description = '';
 		$data->page_type = '';
 		
@@ -130,7 +130,7 @@ class Pages extends CI_Controller {
 		$data->headerdata->date = date("Y-m-d");
 		
 		// meta
-		$data->page_title = 'Advanced search';
+		$data->page_title = 'Advanced search — The Bowdoin Orient';
 		$data->page_description = '';
 		$data->page_type = '';
 		
@@ -155,7 +155,7 @@ class Pages extends CI_Controller {
 		$data->headerdata->date = date("Y-m-d");
 		
 		// meta
-		$data->page_title = 'Survey';
+		$data->page_title = 'Survey — The Bowdoin Orient';
 		$data->page_description = '';
 		$data->page_type = '';
 		
@@ -168,7 +168,7 @@ class Pages extends CI_Controller {
 		$data->headerdata->date = date("Y-m-d");
 		
 		// meta
-		$data->page_title = 'Archives';
+		$data->page_title = 'Archives — The Bowdoin Orient';
 		$data->page_description = '';
 		$data->page_type = '';
 		

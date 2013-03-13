@@ -75,9 +75,10 @@ class Article extends CI_Controller {
 			$data->photos = $photos;
 			
 			// meta
-			$data->page_title = $article->title;
-			$data->page_description = '';
-			$data->page_type = '';
+			$data->page_title = $article->title." — The Bowdoin Orient";
+			$data->page_description = htmlspecialchars(strip_tags($article->excerpt));
+			$data->page_type = 'article';
+			if($photos) $data->page_image = base_url().'images/'.$article->date.'/'.$photos[0]->filename_large;
 			
 			$this->load->view('article', $data);
 		}
