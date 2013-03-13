@@ -84,7 +84,7 @@ p {
 	<h3>Page not found.</h3>
 	<p>We recently launched a new version of the site.</p>
 	<p>Some things have moved, and some have not yet been upgraded but will come back.</p>
-	<p><a href="mailto:ctucker@bowdoin.edu">Contact the webmaster?</a>
+	<p><a href="mailto:tophtucker@gmail.com">Contact the webmaster?</a>
 </div>
 
 </div>

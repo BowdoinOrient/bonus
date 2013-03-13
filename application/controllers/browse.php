@@ -112,7 +112,13 @@ class Browse extends CI_Controller {
 			$data->featured = $featured;
 			$data->popular = $popular;
 			$data->sections = $sections;
-			$data->articles = $articles;	
+			$data->articles = $articles;
+			
+			// meta
+			$data->page_title = '';
+			$data->page_description = '';
+			$data->page_type = '';
+			
 			$this->load->view('browse', $data);
 		}
 	}

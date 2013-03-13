@@ -16,6 +16,11 @@ class Pages extends CI_Controller {
 	
 	public function error()
 	{
+		// meta
+		$data->page_title = 'Page not found';
+		$data->page_description = '';
+		$data->page_type = '';
+		
 		$this->load->view('error');
 	}
 	
@@ -23,6 +28,12 @@ class Pages extends CI_Controller {
 	{
 		$data->footerdata->quote = $this->attachments_model->get_random_quote();
 		$data->headerdata->date = date("Y-m-d");
+		
+		// meta
+		$data->page_title = 'About';
+		$data->page_description = '';
+		$data->page_type = '';
+		
 		$this->load->view('about', $data);
 	}
 	
@@ -30,6 +41,12 @@ class Pages extends CI_Controller {
 	{
 		$data->footerdata->quote = $this->attachments_model->get_random_quote();
 		$data->headerdata->date = date("Y-m-d");
+		
+		// meta
+		$data->page_title = 'Ethics';
+		$data->page_description = '';
+		$data->page_type = '';
+		
 		$this->load->view('ethics', $data);
 	}
 	
@@ -37,6 +54,12 @@ class Pages extends CI_Controller {
 	{
 		$data->footerdata->quote = $this->attachments_model->get_random_quote();
 		$data->headerdata->date = date("Y-m-d");
+		
+		// meta
+		$data->page_title = 'Web Non-Removal Policy';
+		$data->page_description = '';
+		$data->page_type = '';
+		
 		$this->load->view('nonremoval', $data);
 	}
 	
@@ -44,6 +67,12 @@ class Pages extends CI_Controller {
 	{
 		$data->footerdata->quote = $this->attachments_model->get_random_quote();
 		$data->headerdata->date = date("Y-m-d");
+		
+		// meta
+		$data->page_title = 'Contact';
+		$data->page_description = '';
+		$data->page_type = '';
+		
 		$this->load->view('contact', $data);
 	}
 	
@@ -51,6 +80,12 @@ class Pages extends CI_Controller {
 	{
 		$data->footerdata->quote = $this->attachments_model->get_random_quote();
 		$data->headerdata->date = date("Y-m-d");
+		
+		// meta
+		$data->page_title = 'Subscribe';
+		$data->page_description = '';
+		$data->page_type = '';
+		
 		$this->load->view('subscribe', $data);
 	}
 	
@@ -58,6 +93,12 @@ class Pages extends CI_Controller {
 	{
 		$data->footerdata->quote = $this->attachments_model->get_random_quote();
 		$data->headerdata->date = date("Y-m-d");
+		
+		// meta
+		$data->page_title = 'Advertise';
+		$data->page_description = '';
+		$data->page_type = '';
+		
 		$this->load->view('advertise', $data);
 	}
 	
@@ -66,6 +107,13 @@ class Pages extends CI_Controller {
 		$data->query = $this->input->get("q");
 		$data->footerdata->quote = $this->attachments_model->get_random_quote();
 		$data->headerdata->date = date("Y-m-d");
+		
+		// meta
+		if($data->query) { $data->page_title = 'Search results for "'.$data->query.'"'; }
+		else { $data->page_title = 'Search'; }
+		$data->page_description = '';
+		$data->page_type = '';
+		
 		$this->load->view('search', $data);
 	}
 	
@@ -80,6 +128,12 @@ class Pages extends CI_Controller {
 		$this->load->helper('form');
 		$data->footerdata->quote = $this->attachments_model->get_random_quote();
 		$data->headerdata->date = date("Y-m-d");
+		
+		// meta
+		$data->page_title = 'Advanced search';
+		$data->page_description = '';
+		$data->page_type = '';
+		
 		$this->load->view('advsearch', $data);
 	}
 	
@@ -99,6 +153,12 @@ class Pages extends CI_Controller {
 	{
 		$data->footerdata->quote = $this->attachments_model->get_random_quote();
 		$data->headerdata->date = date("Y-m-d");
+		
+		// meta
+		$data->page_title = 'Survey';
+		$data->page_description = '';
+		$data->page_type = '';
+		
 		$this->load->view('survey', $data);
 	}
 	
@@ -106,6 +166,12 @@ class Pages extends CI_Controller {
 	{
 		$data->footerdata->quote = $this->attachments_model->get_random_quote();
 		$data->headerdata->date = date("Y-m-d");
+		
+		// meta
+		$data->page_title = 'Archives';
+		$data->page_description = '';
+		$data->page_type = '';
+		
 		$this->load->view('archives', $data);
 	}
 	

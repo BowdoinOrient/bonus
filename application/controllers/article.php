@@ -74,6 +74,11 @@ class Article extends CI_Controller {
 			$data->authors = $authors;
 			$data->photos = $photos;
 			
+			// meta
+			$data->page_title = $article->title;
+			$data->page_description = '';
+			$data->page_type = '';
+			
 			$this->load->view('article', $data);
 		}
 	}

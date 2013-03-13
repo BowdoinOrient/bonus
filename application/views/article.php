@@ -1,483 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
-	<meta charset="utf-8" />
-	<title><?=$article->title?> &mdash; The Bowdoin Orient</title>
-	<link rel="shortcut icon" href="<?=base_url()?>img/o-32-transparent.png">
-	
-	<link rel="stylesheet" media="screen" href="<?=base_url()?>css/orient.css?v=4">
-	
-	<meta name="description" content="<?=htmlspecialchars(strip_tags($article->excerpt))?>" />
-	
-	<!-- Facebook Open Graph tags -->
-	<meta property="og:title" content="<?=htmlspecialchars($article->title)?>" />
-	<meta property="og:description" content="<?=htmlspecialchars(strip_tags($article->excerpt))?>" />
-	<meta property="og:type" content="article" />
-	<? if($photos): ?>
-		<meta property="og:image" content="<?=base_url()?>images/<?=$article->date?>/<?=$photos[0]->filename_large?>" />
-	<? else: ?>
-		<meta property="og:image" content="<?=base_url()?>img/o-200.png" />
-	<? endif; ?>
-	<meta property="og:url" content="http://bowdoinorient.com/article/<?=$article->id?>" />
-	<meta property="og:site_name" content="The Bowdoin Orient" />
-	<meta property="fb:admins" content="1233600119" />
-	<meta property="fb:app_id" content="342498109177441" />
-	<!-- <meta property="fb:page_id" content="113269185373845" /> -->
-	
-	<!-- jQuery -->
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-	<!-- <script type="text/javascript" src="<?=base_url()?>js/jquery-1.8.0.min.js"></script> -->
-	<script type="text/javascript" src="<?=base_url()?>js/jquery-ui-1.8.17.custom.min.js"></script>
-	<script type="text/javascript" src="<?=base_url()?>js/jquery.scrollTo-min.js"></script>
-	
-	<!-- template js -->
-	<script type="text/javascript" src="<?=base_url()?>js/orient.js"></script>
-	
-	<!-- for mobile -->
-	<link rel="apple-touch-icon" href="<?=base_url()?>img/o-114.png"/>
-	<meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no">
-	
-	<!-- TypeKit -->
-	<script type="text/javascript" src="http://use.typekit.com/rmt0nbm.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-	
-	<!-- for smooth scrolling -->
-    <script type="text/javascript" src="<?=base_url()?>js/jquery.scrollTo-min.js"></script>
-	<script type="text/javascript" src="<?=base_url()?>js/jquery.localscroll-1.2.7-min.js"></script>
-	
-	<!-- for table of contents -->
-	<script type="text/javascript" src="<?=base_url()?>js/jquery.jqTOC.js"></script>
-	
-	<!-- SwipeView (for slideshows) -->
-	<link rel="stylesheet" media="screen" href="<?=base_url()?>css/swipeview.css?v=1">
-	
-	<!-- MediaBugs script (for reporting errors to third party auditor) -->
-	<script type="text/javascript" src="http://mediabugs.org/widget/widget.js"></script>
-	
-	<? if(bonus()): ?>
-	
-	<!-- CK Editor -->
-	<script type="text/javascript" src="<?=base_url()?>js/ckeditor/ckeditor.js"></script>
-	
-	<script>
-	
-	var titleedited=false;
-	var subtitleedited=false;
-	var bodyedited=false;
-	var photoadded=false;
-	var hasphoto=false;
-	var photocreditedited=false;
-	var photocaptionedited=false;
-	
-	// thanks Mark Seecof!
-	// http://www.php.net/manual/en/function.urlencode.php#85903
-	function urlencode(s) {
-		s = encodeURIComponent(s);
-		return s.replace(/~/g,'%7E').replace(/%20/g,'+');
-	}
-	
-	$(document).ready(function()
-    {
-    	// SET TOOLTIPS
-    	$("#series, #articletitle, #articlesubtitle, #addauthor, #addauthorjob, #photocreditbonus, #photocaptionbonus, #articlebody").each(function() {
-			if($("#"+$(this).attr("id")).html().trim() == "" || $("#"+$(this).attr("id")).html().trim() == "<br>" || $("#"+$(this).attr("id")).html().trim() == "<p></p>") {
-				$("#"+$(this).attr("id")).addClass("tooltip");
-			}
-			$("#"+$(this).attr("id")).focus(function() {
-				$(this).removeClass("tooltip");
-			});
-			$("#"+$(this).attr("id")).blur(function() {
-				if($(this).html().trim() == "" || $(this).html().trim() == "<br>" || $(this).html().trim() == "<p></p>") {
-					$(this).addClass("tooltip");
-				}
-			});
-		});
-		
-		// SET PUBLISHED
-		window.published = <?= $article->published ? 'true' : 'false' ?>;
-    	
-    	// DETECT CHANGES AND SUCH
-    
-    	$('#articletitle').keydown(function() {
-    		titleedited=true;
-    		$('#articletitle').css("color", "darkred");
-		});
-		$('#articletitle').keyup(function() {
-			document.title = $('#articletitle').html() + " — The Bowdoin Orient";
-		});
-		$("#articletitle").bind('paste', function() {
-			titleedited=true;
-    		$('#articletitle').css("color", "darkred");
-		});
-		
-		$('#articlesubtitle').keydown(function() {
-    		subtitleedited=true;
-    		$('#articlesubtitle').css("color", "darkred");
-		});
-		$('#articlesubtitle').bind('paste', function() {
-    		subtitleedited=true;
-    		$('#articlesubtitle').css("color", "darkred");
-		});
-		
-		$('#articlebody').keydown(function() {
-    		bodyedited=true;
-    		window.onbeforeunload = "You have unsaved changes.";
-    		window.onbeforeunload = function(e) {
-				return "You have unsaved changes.";
-			};
-    		$('#articlebody').css("color", "darkred");
-		});
-		$('#articlebody').bind('paste', function() {
-    		bodyedited=true;
-    		window.onbeforeunload = "You have unsaved changes.";
-    		window.onbeforeunload = function(e) {
-				return "You have unsaved changes.";
-			};
-    		$('#articlebody').css("color", "darkred");
-		});
-		
-		$('#photocreditbonus').keydown(function() {
-    		photocreditedited=true;
-    		$('#photocreditbonus').css("color", "darkred");
-		});
-		$('#photocreditbonus').bind('paste', function() {
-    		photocreditedited=true;
-    		$('#photocreditbonus').css("color", "darkred");
-		});
-		
-		$('#photocaptionbonus').keydown(function() {
-    		photocaptionedited=true;
-    		$('#photocaptionbonus').css("color", "darkred");
-		});
-		$('#photocaptionbonus').bind('paste', function() {
-    		photocaptionedited=true;
-    		$('#photocaptionbonus').css("color", "darkred");
-		});
-		
-		$("#publisharticle").click(function() {
-			window.publish = true;
-			window.published = true;
-			$("#savearticle").click();
-		});
-		
-		$("#unpublish").click(function() {
-			if(confirm("Are you sure you want to unpublish this article? Unless you, like, JUST published it, that's probs not kosher.")) {
-				window.unpublish = true;
-				window.published = false;
-				$("#savearticle").click();
-			}
-		});
-		
-    	$("#savearticle").click(function() {
-			
-			var statusMessage = '';
-			var refresh = false;
-			var calls = [];
-			
-			// if an image was added, save it.
-			// $('#dnd-holder').length != 0 && $('#dnd-holder').attr('class') == 'backgrounded'
-			if(photoadded) {
-				calls.push($.ajax({
-					type: "POST",
-					url: "<?=site_url()?>article/ajax_add_photo/<?=$article->date?>/<?=$article->id?>",
-					data: 
-						"img=" + $('#dnd-holder').css('background-image') + 
-						"&credit=" + urlencode($("#photocreditbonus").html()) +
-						"&caption=" + urlencode($("#photocaptionbonus").html()),
-					success: function(result){
-						if(result=="Photo added.") {
-							refresh = true;
-						}
-						statusMessage += result;
-						// set hasphoto to true; set photoadded to false? ugh.
-					}
-				}));
-			}
-			
-			<? if(!empty($photos)): ?>
-				var photoEdits = {};
-				<? foreach($photos as $photo): ?>			
-					var thisPhotoEdits = {};
-					thisPhotoEdits["credit"] = $("#photocredit<?=$photo->photo_id?>").html();
-					thisPhotoEdits["caption"] = $("#photocaption<?=$photo->photo_id?>").html(); 
-					photoEdits["<?=$photo->photo_id?>"] = thisPhotoEdits;
-				<? endforeach; ?>
-				var photoEditsJSON = JSON.stringify(photoEdits);
-			<? else: ?>
-				var photoEditsJSON = false;
-			<? endif; ?>
-			
-			var ajaxrequest = 
-					"title=" + urlencode($("#articletitle").html()) + 
-					"&subtitle=" + urlencode($("#articlesubtitle").html()) +
-					"&series=" + urlencode($("#series").html()) +
-					"&author=" + urlencode($("#addauthor").html()) +
-					"&authorjob=" + urlencode($("#addauthorjob").html()) +
-					"&volume=" + urlencode($('input[name=volume]').val()) +
-					"&issue_number=" + urlencode($('input[name=issue_number]').val()) +
-					"&section_id=" + urlencode($('input[name=section_id]').val()) +
-					"&priority=" + urlencode($('input[name=priority]').val()) +
-					"&published=" + window.published +
-					"&featured=" + $('input[name=featured]').prop('checked') +
-					"&opinion=" + $('input[name=opinion]').prop('checked');
-			if(photoEditsJSON)	{ ajaxrequest += "&photoEdits=" + urlencode(photoEditsJSON); }
-			if(bodyedited) 		{ ajaxrequest += "&body=" + urlencode($("#articlebody").html()); }
-			
-			// write title, subtitle, author, authorjob, bonus-meta stuff
-			// (regardless of whether they've been edited. sloppy.)
-			// and body, only if it's been edited
-			calls.push($.ajax({
-				type: "POST",
-				url: "<?=site_url()?>article/edit/<?=$article->id?>",
-				data: ajaxrequest,
-				success: function(result){
-					if(result=="Refreshing...") { refresh = true; }
-					
-					statusMessage += result;
-					
-					$("#savenotify").html(result);
-					$("#savenotify").show();
-					$("#savenotify").fadeOut(4000);
-					
-					if(window.published)
-					{
-						$("#articletitle").removeClass("draft");
-						$("#publisharticle").hide();
-						$("#unpublish").show();
-					}
-					else
-					{
-						$("#articletitle").addClass("draft");
-						$("#publisharticle").show();
-						$("#unpublish").hide();
-					}
-					
-					titleedited=false;
-					subtitleedited=false;
-					bodyedited=false;
-					photocreditedited=false;
-					photocaptionedited=false;
-					window.onbeforeunload = null; // remove message blocking navigation away from page
-					$('#articletitle, #articlesubtitle, #articlebody, #photocreditbonus, #photocaptionbonus').css("color", "inherit");
-				}
-			}));
-			
-			$.when.apply($, calls).then(function() {
-				$("#savenotify").html(statusMessage);
-				$("#savenotify").show();
-				if(window.publish) {
- 					window.location = "<?=site_url()?>"; 
-				}
-				if(refresh) { 
-					window.location.reload(); 
-				}
-				else {
-					$("#savenotify").fadeOut(4000);
-				}
-			});
-									
-		} );
-		
-		$("#removephotos").click(function(event) {
-			event.preventDefault()
-			//note: "data:" is totally unused, but what'd happen if it weren't there??? (well, test!)
-			$.ajax({
-				type: "POST",
-				url: "<?=site_url()?>article/ajax_remove_photos/<?=$article->id?>",
-				data: "remove=true",
-				success: function(result){
-					if(result=="Photos removed.") {
-						//hide photos
-						$('.singlephoto').hide();
-					}
-					//show alert
-					$("#savenotify").html(result);
-					$("#savenotify").show();
-					$("#savenotify").fadeOut(4000);
-				}
-			});
-		} );
-		
-		$("#deletearticle").click(function(event) {
-			event.preventDefault()
-			
-			if(confirm("Are you sure you want to delete this article? (If this article has already been published, it's probs not kosher to delete it.)")) {
-				//note: "data:" is totally unused, but what'd happen if it weren't there??? (well, test!)
-				$.ajax({
-					type: "POST",
-					url: "<?=site_url()?>article/ajax_delete_article/<?=$article->id?>",
-					data: "remove=true",
-					success: function(result){
-						if(result=="1") {
-							//return home
-							window.location = "<?=site_url()?>";
-						}
-						//show alert
-						$("#savenotify").html(result);
-						$("#savenotify").show();
-						$("#savenotify").fadeOut(4000);
-					}
-				});
-			}
-			
-		} );
-		
-		$(".authortile .delete").click(function(event) {
-			
-			event.preventDefault();
-			var articleAuthorId = event.target.id.replace("deleteAuthor","");
-			
-			$.ajax({
-				type: "POST",
-				url: "<?=site_url()?>article/ajax_remove_article_author/"+articleAuthorId,
-				data: "remove=true",
-				success: function(result){
-					if(result=="Author removed.") {
-						$("#author"+articleAuthorId).hide("fast");
-					}
-					//show alert
-					$("#savenotify").html(result);
-					$("#savenotify").show();
-					$("#savenotify").fadeOut(4000);
-				}
-			});
-			
-		});
-		
-		$(".articlemedia .delete").click(function(event) {
-			
-			var photoId = event.target.id.replace("deletePhoto","");
-			
-			$.ajax({
-				type: "POST",
-				url: "<?=site_url()?>article/ajax_delete_photo/"+photoId,
-				data: "remove=true",
-				success: function(result){
-					if(result=="Photo deleted.") {
-						$("#photo"+photoId).hide("fast");
-					}
-					//show alert
-					$("#savenotify").html(result);
-					$("#savenotify").show();
-					$("#savenotify").fadeOut(4000);
-				}
-			});
-			
-		});
-		
-		$(".articlemedia .bigphotoEnable").click(function(event) {
-			
-			$.ajax({
-				type: "POST",
-				url: "<?=site_url()?>article/ajax_bigphoto/"+<?=$article->id?>,
-				data: "bigphoto=true",
-				success: function(result){
-					if(result=="Bigphoto enabled.") {
-						$(".singlephoto").addClass("bigphoto");
-						$(".bigphotoEnable").hide();
-						$(".bigphotoDisable").show();
-					}
-					//show alert
-					$("#savenotify").html(result);
-					$("#savenotify").show();
-					$("#savenotify").fadeOut(4000);
-				}
-			});
-			
-		});
-		
-		$(".articlemedia .bigphotoDisable").click(function(event) {
-			
-			$.ajax({
-				type: "POST",
-				url: "<?=site_url()?>article/ajax_bigphoto/"+<?=$article->id?>,
-				data: "bigphoto=false",
-				success: function(result){
-					if(result=="Bigphoto disabled.") {
-						$(".singlephoto").removeClass("bigphoto");
-						$(".bigphotoDisable").hide();
-						$(".bigphotoEnable").show();
-					}
-					//show alert
-					$("#savenotify").html(result);
-					$("#savenotify").show();
-					$("#savenotify").fadeOut(4000);
-				}
-			});
-			
-		});
-		
-    });
-    
-    // ugh, i forget what this is even for.
-    // i think to help autocomplete work on contenteditable?
-	(function ($) {
-		var original = $.fn.val;
-		$.fn.val = function() {
-			if ($(this).is('*[contenteditable=true]')) {
-				return $.fn.html.apply(this, arguments);
-			};
-			return original.apply(this, arguments);
-		};
-	})(jQuery);
-	
-    $(function() {
-		$( "#addauthor" ).autocomplete({
-			source: "<?=site_url()?>article/ajax_suggest/author/name"
-		});
-	});
-	
-	$(function() {
-		$( "#addauthorjob" ).autocomplete({
-			source: "<?=site_url()?>article/ajax_suggest/job/name"
-		});
-	});
-	
-	
-	$(function() {
-		$( "#photocreditbonus" ).autocomplete({
-			source: "<?=site_url()?>article/ajax_suggest/author/name"
-		});
-	});
-	
-	<? if(!empty($photos)): ?>
-		<? foreach($photos as $photo): ?>
-		$(function() {
-			$( "#photocredit<?=$photo->photo_id?>" ).autocomplete({
-				source: "<?=site_url()?>article/ajax_suggest/author/name"
-			});
-		});	
-		<? endforeach; ?>
-	<? endif; ?>
-		
-	$(function() {
-		$( "#series" ).autocomplete({
-			source: "<?=site_url()?>article/ajax_suggest/series/name"
-		});
-	});
-	
-	</script>
-	<? endif; ?>
-
-	<!-- Google Analytics -->
-	<script type="text/javascript">
-	
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-18441903-3']);
-	  _gaq.push(['_trackPageview']);
-	
-	  (function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-	
-	</script>
-	<!-- End Google Analytics -->
-
-</head>
+<? $this->load->view('template/head'); ?>
 
 <body>
 
@@ -774,149 +295,548 @@
 
 <? if(bonus()): ?>
 
-<!-- CK Editor -->
-<script>
+	<script>
 
-	CKEDITOR.on( 'instanceCreated', function( event ) {
-			var editor = event.editor,
-				element = editor.element;
+	var titleedited=false;
+	var subtitleedited=false;
+	var bodyedited=false;
+	var photoadded=false;
+	var hasphoto=false;
+	var photocreditedited=false;
+	var photocaptionedited=false;
 
-			// Customize editors for headers and tag list.
-			// These editors don't need features like smileys, templates, iframes etc.
-			if ( element.is( 'div' ) || element.getAttribute( 'id' ) == 'taglist' ) {
-				// Customize the editor configurations on "configLoaded" event,
-				// which is fired after the configuration file loading and
-				// execution. This makes it possible to change the
-				// configurations before the editor initialization takes place.
-				editor.on( 'configLoaded', function() {
+	// thanks Mark Seecof!
+	// http://www.php.net/manual/en/function.urlencode.php#85903
+	function urlencode(s) {
+		s = encodeURIComponent(s);
+		return s.replace(/~/g,'%7E').replace(/%20/g,'+');
+	}
 
-					// Remove unnecessary plugins to make the editor simpler.
-					editor.config.removePlugins = 'colorbutton,find,flash,font,' +
-						'forms,iframe,image,newpage,scayt,' +
-						'smiley,specialchar,stylescombo,templates,wsc,contextmenu,liststyle,tabletools';
+	$(document).ready(function()
+	{
+		// SET TOOLTIPS
+		$("#series, #articletitle, #articlesubtitle, #addauthor, #addauthorjob, #photocreditbonus, #photocaptionbonus, #articlebody").each(function() {
+			if($("#"+$(this).attr("id")).html().trim() == "" || $("#"+$(this).attr("id")).html().trim() == "<br>" || $("#"+$(this).attr("id")).html().trim() == "<p></p>") {
+				$("#"+$(this).attr("id")).addClass("tooltip");
+			}
+			$("#"+$(this).attr("id")).focus(function() {
+				$(this).removeClass("tooltip");
+			});
+			$("#"+$(this).attr("id")).blur(function() {
+				if($(this).html().trim() == "" || $(this).html().trim() == "<br>" || $(this).html().trim() == "<p></p>") {
+					$(this).addClass("tooltip");
+				}
+			});
+		});
+	
+		// SET PUBLISHED
+		window.published = <?= $article->published ? 'true' : 'false' ?>;
+	
+		// DETECT CHANGES AND SUCH
 
-					// Rearrange the layout of the toolbar.
-					editor.config.toolbarGroups = [
-						{ name: 'editing',		groups: [ 'basicstyles', 'links' ], items: ['Format', 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv','-','JustifyLeft','JustifyCenter','JustifyRight'] },
-						{ name: 'undo' },
-						{ name: 'clipboard',	groups: [ 'clipboard' ], items: ['RemoveFormat'] },
-						{ name: 'showblocks', items: ['ShowBlocks']}
-					];
-				});
+		$('#articletitle').keydown(function() {
+			titleedited=true;
+			$('#articletitle').css("color", "darkred");
+		});
+		$('#articletitle').keyup(function() {
+			document.title = $('#articletitle').html() + " — The Bowdoin Orient";
+		});
+		$("#articletitle").bind('paste', function() {
+			titleedited=true;
+			$('#articletitle').css("color", "darkred");
+		});
+	
+		$('#articlesubtitle').keydown(function() {
+			subtitleedited=true;
+			$('#articlesubtitle').css("color", "darkred");
+		});
+		$('#articlesubtitle').bind('paste', function() {
+			subtitleedited=true;
+			$('#articlesubtitle').css("color", "darkred");
+		});
+	
+		$('#articlebody').keydown(function() {
+			bodyedited=true;
+			window.onbeforeunload = "You have unsaved changes.";
+			window.onbeforeunload = function(e) {
+				return "You have unsaved changes.";
+			};
+			$('#articlebody').css("color", "darkred");
+		});
+		$('#articlebody').bind('paste', function() {
+			bodyedited=true;
+			window.onbeforeunload = "You have unsaved changes.";
+			window.onbeforeunload = function(e) {
+				return "You have unsaved changes.";
+			};
+			$('#articlebody').css("color", "darkred");
+		});
+	
+		$('#photocreditbonus').keydown(function() {
+			photocreditedited=true;
+			$('#photocreditbonus').css("color", "darkred");
+		});
+		$('#photocreditbonus').bind('paste', function() {
+			photocreditedited=true;
+			$('#photocreditbonus').css("color", "darkred");
+		});
+	
+		$('#photocaptionbonus').keydown(function() {
+			photocaptionedited=true;
+			$('#photocaptionbonus').css("color", "darkred");
+		});
+		$('#photocaptionbonus').bind('paste', function() {
+			photocaptionedited=true;
+			$('#photocaptionbonus').css("color", "darkred");
+		});
+	
+		$("#publisharticle").click(function() {
+			window.publish = true;
+			window.published = true;
+			$("#savearticle").click();
+		});
+	
+		$("#unpublish").click(function() {
+			if(confirm("Are you sure you want to unpublish this article? Unless you, like, JUST published it, that's probs not kosher.")) {
+				window.unpublish = true;
+				window.published = false;
+				$("#savearticle").click();
 			}
 		});
-
 	
-	// We need to turn off the automatic editor creation first.
-	CKEDITOR.disableAutoInline = true;
-	var editor = CKEDITOR.inline( 'articlebody' );
+		$("#savearticle").click(function() {
+		
+			var statusMessage = '';
+			var refresh = false;
+			var calls = [];
+		
+			// if an image was added, save it.
+			// $('#dnd-holder').length != 0 && $('#dnd-holder').attr('class') == 'backgrounded'
+			if(photoadded) {
+				calls.push($.ajax({
+					type: "POST",
+					url: "<?=site_url()?>article/ajax_add_photo/<?=$article->date?>/<?=$article->id?>",
+					data: 
+						"img=" + $('#dnd-holder').css('background-image') + 
+						"&credit=" + urlencode($("#photocreditbonus").html()) +
+						"&caption=" + urlencode($("#photocaptionbonus").html()),
+					success: function(result){
+						if(result=="Photo added.") {
+							refresh = true;
+						}
+						statusMessage += result;
+						// set hasphoto to true; set photoadded to false? ugh.
+					}
+				}));
+			}
+		
+			<? if(!empty($photos)): ?>
+				var photoEdits = {};
+				<? foreach($photos as $photo): ?>			
+					var thisPhotoEdits = {};
+					thisPhotoEdits["credit"] = $("#photocredit<?=$photo->photo_id?>").html();
+					thisPhotoEdits["caption"] = $("#photocaption<?=$photo->photo_id?>").html(); 
+					photoEdits["<?=$photo->photo_id?>"] = thisPhotoEdits;
+				<? endforeach; ?>
+				var photoEditsJSON = JSON.stringify(photoEdits);
+			<? else: ?>
+				var photoEditsJSON = false;
+			<? endif; ?>
+		
+			var ajaxrequest = 
+					"title=" + urlencode($("#articletitle").html()) + 
+					"&subtitle=" + urlencode($("#articlesubtitle").html()) +
+					"&series=" + urlencode($("#series").html()) +
+					"&author=" + urlencode($("#addauthor").html()) +
+					"&authorjob=" + urlencode($("#addauthorjob").html()) +
+					"&volume=" + urlencode($('input[name=volume]').val()) +
+					"&issue_number=" + urlencode($('input[name=issue_number]').val()) +
+					"&section_id=" + urlencode($('input[name=section_id]').val()) +
+					"&priority=" + urlencode($('input[name=priority]').val()) +
+					"&published=" + window.published +
+					"&featured=" + $('input[name=featured]').prop('checked') +
+					"&opinion=" + $('input[name=opinion]').prop('checked');
+			if(photoEditsJSON)	{ ajaxrequest += "&photoEdits=" + urlencode(photoEditsJSON); }
+			if(bodyedited) 		{ ajaxrequest += "&body=" + urlencode($("#articlebody").html()); }
+		
+			// write title, subtitle, author, authorjob, bonus-meta stuff
+			// (regardless of whether they've been edited. sloppy.)
+			// and body, only if it's been edited
+			calls.push($.ajax({
+				type: "POST",
+				url: "<?=site_url()?>article/edit/<?=$article->id?>",
+				data: ajaxrequest,
+				success: function(result){
+					if(result=="Refreshing...") { refresh = true; }
+				
+					statusMessage += result;
+				
+					$("#savenotify").html(result);
+					$("#savenotify").show();
+					$("#savenotify").fadeOut(4000);
+				
+					if(window.published)
+					{
+						$("#articletitle").removeClass("draft");
+						$("#publisharticle").hide();
+						$("#unpublish").show();
+					}
+					else
+					{
+						$("#articletitle").addClass("draft");
+						$("#publisharticle").show();
+						$("#unpublish").hide();
+					}
+				
+					titleedited=false;
+					subtitleedited=false;
+					bodyedited=false;
+					photocreditedited=false;
+					photocaptionedited=false;
+					window.onbeforeunload = null; // remove message blocking navigation away from page
+					$('#articletitle, #articlesubtitle, #articlebody, #photocreditbonus, #photocaptionbonus').css("color", "inherit");
+				}
+			}));
+		
+			$.when.apply($, calls).then(function() {
+				$("#savenotify").html(statusMessage);
+				$("#savenotify").show();
+				if(window.publish) {
+					window.location = "<?=site_url()?>"; 
+				}
+				if(refresh) { 
+					window.location.reload(); 
+				}
+				else {
+					$("#savenotify").fadeOut(4000);
+				}
+			});
+								
+		} );
 	
-	editor.on('paste', function(evt) {
-		// Update the text
-		// evt.editor.setData(evt.editor.getData() + ' your additional comments.');
-		bodyedited=true;
-		window.onbeforeunload = "You have unsaved changes.";
-		window.onbeforeunload = function(e) {
-			return "You have unsaved changes.";
-		};
-		$('#articlebody').css("color", "darkred");
-
-	}, editor.element.$);
+		$("#removephotos").click(function(event) {
+			event.preventDefault()
+			//note: "data:" is totally unused, but what'd happen if it weren't there??? (well, test!)
+			$.ajax({
+				type: "POST",
+				url: "<?=site_url()?>article/ajax_remove_photos/<?=$article->id?>",
+				data: "remove=true",
+				success: function(result){
+					if(result=="Photos removed.") {
+						//hide photos
+						$('.singlephoto').hide();
+					}
+					//show alert
+					$("#savenotify").html(result);
+					$("#savenotify").show();
+					$("#savenotify").fadeOut(4000);
+				}
+			});
+		} );
 	
-</script>
+		$("#deletearticle").click(function(event) {
+			event.preventDefault()
+		
+			if(confirm("Are you sure you want to delete this article? (If this article has already been published, it's probs not kosher to delete it.)")) {
+				//note: "data:" is totally unused, but what'd happen if it weren't there??? (well, test!)
+				$.ajax({
+					type: "POST",
+					url: "<?=site_url()?>article/ajax_delete_article/<?=$article->id?>",
+					data: "remove=true",
+					success: function(result){
+						if(result=="1") {
+							//return home
+							window.location = "<?=site_url()?>";
+						}
+						//show alert
+						$("#savenotify").html(result);
+						$("#savenotify").show();
+						$("#savenotify").fadeOut(4000);
+					}
+				});
+			}
+		
+		} );
+	
+		$(".authortile .delete").click(function(event) {
+		
+			event.preventDefault();
+			var articleAuthorId = event.target.id.replace("deleteAuthor","");
+		
+			$.ajax({
+				type: "POST",
+				url: "<?=site_url()?>article/ajax_remove_article_author/"+articleAuthorId,
+				data: "remove=true",
+				success: function(result){
+					if(result=="Author removed.") {
+						$("#author"+articleAuthorId).hide("fast");
+					}
+					//show alert
+					$("#savenotify").html(result);
+					$("#savenotify").show();
+					$("#savenotify").fadeOut(4000);
+				}
+			});
+		
+		});
+	
+		$(".articlemedia .delete").click(function(event) {
+		
+			var photoId = event.target.id.replace("deletePhoto","");
+		
+			$.ajax({
+				type: "POST",
+				url: "<?=site_url()?>article/ajax_delete_photo/"+photoId,
+				data: "remove=true",
+				success: function(result){
+					if(result=="Photo deleted.") {
+						$("#photo"+photoId).hide("fast");
+					}
+					//show alert
+					$("#savenotify").html(result);
+					$("#savenotify").show();
+					$("#savenotify").fadeOut(4000);
+				}
+			});
+		
+		});
+	
+		$(".articlemedia .bigphotoEnable").click(function(event) {
+		
+			$.ajax({
+				type: "POST",
+				url: "<?=site_url()?>article/ajax_bigphoto/"+<?=$article->id?>,
+				data: "bigphoto=true",
+				success: function(result){
+					if(result=="Bigphoto enabled.") {
+						$(".singlephoto").addClass("bigphoto");
+						$(".bigphotoEnable").hide();
+						$(".bigphotoDisable").show();
+					}
+					//show alert
+					$("#savenotify").html(result);
+					$("#savenotify").show();
+					$("#savenotify").fadeOut(4000);
+				}
+			});
+		
+		});
+	
+		$(".articlemedia .bigphotoDisable").click(function(event) {
+		
+			$.ajax({
+				type: "POST",
+				url: "<?=site_url()?>article/ajax_bigphoto/"+<?=$article->id?>,
+				data: "bigphoto=false",
+				success: function(result){
+					if(result=="Bigphoto disabled.") {
+						$(".singlephoto").removeClass("bigphoto");
+						$(".bigphotoDisable").hide();
+						$(".bigphotoEnable").show();
+					}
+					//show alert
+					$("#savenotify").html(result);
+					$("#savenotify").show();
+					$("#savenotify").fadeOut(4000);
+				}
+			});
+		
+		});
+	
+	});
 
-<!-- drag-and-drop image -->
-<script>
-	// drag-and-drop image
-	var holder = document.getElementById('dnd-holder');
-	if(holder) {
-		holder.ondragover = function () { this.className = 'hover'; return false; };
-		holder.ondragend = function () { this.className = ''; return false; };
-		holder.ondrop = function (e) {
-			this.className = '';
-			e.preventDefault();
-			
-			var file = e.dataTransfer.files[0],
-				reader = new FileReader();
-			reader.onload = function (event) {
-				photoadded=true;
-				window.onbeforeunload = "You have unsaved changes.";
-				window.onbeforeunload = function(e) {
-					return "You have unsaved changes.";
-				};
-				holder.style.background = 'url(' + event.target.result + ')';
-				holder.style.borderColor = 'darkred';
-				holder.className += "backgrounded";
-				$('#dnd-instructions').remove();
-				$('figcaption.bonus').show();
+	// ugh, i forget what this is even for.
+	// i think to help autocomplete work on contenteditable?
+	(function ($) {
+		var original = $.fn.val;
+		$.fn.val = function() {
+			if ($(this).is('*[contenteditable=true]')) {
+				return $.fn.html.apply(this, arguments);
 			};
-			reader.readAsDataURL(file);
-			
-			return false;
+			return original.apply(this, arguments);
 		};
-	};
-</script>
+	})(jQuery);
+
+	$(function() {
+		$( "#addauthor" ).autocomplete({
+			source: "<?=site_url()?>article/ajax_suggest/author/name"
+		});
+	});
+
+	$(function() {
+		$( "#addauthorjob" ).autocomplete({
+			source: "<?=site_url()?>article/ajax_suggest/job/name"
+		});
+	});
+
+
+	$(function() {
+		$( "#photocreditbonus" ).autocomplete({
+			source: "<?=site_url()?>article/ajax_suggest/author/name"
+		});
+	});
+
+	<? if(!empty($photos)): ?>
+		<? foreach($photos as $photo): ?>
+		$(function() {
+			$( "#photocredit<?=$photo->photo_id?>" ).autocomplete({
+				source: "<?=site_url()?>article/ajax_suggest/author/name"
+			});
+		});	
+		<? endforeach; ?>
+	<? endif; ?>
+	
+	$(function() {
+		$( "#series" ).autocomplete({
+			source: "<?=site_url()?>article/ajax_suggest/series/name"
+		});
+	});
+
+	</script>
+
+	<!-- CK Editor -->
+	<script>
+
+		CKEDITOR.on( 'instanceCreated', function( event ) {
+				var editor = event.editor,
+					element = editor.element;
+
+				// Customize editors for headers and tag list.
+				// These editors don't need features like smileys, templates, iframes etc.
+				if ( element.is( 'div' ) || element.getAttribute( 'id' ) == 'taglist' ) {
+					// Customize the editor configurations on "configLoaded" event,
+					// which is fired after the configuration file loading and
+					// execution. This makes it possible to change the
+					// configurations before the editor initialization takes place.
+					editor.on( 'configLoaded', function() {
+
+						// Remove unnecessary plugins to make the editor simpler.
+						editor.config.removePlugins = 'colorbutton,find,flash,font,' +
+							'forms,iframe,image,newpage,scayt,' +
+							'smiley,specialchar,stylescombo,templates,wsc,contextmenu,liststyle,tabletools';
+
+						// Rearrange the layout of the toolbar.
+						editor.config.toolbarGroups = [
+							{ name: 'editing',		groups: [ 'basicstyles', 'links' ], items: ['Format', 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv','-','JustifyLeft','JustifyCenter','JustifyRight'] },
+							{ name: 'undo' },
+							{ name: 'clipboard',	groups: [ 'clipboard' ], items: ['RemoveFormat'] },
+							{ name: 'showblocks', items: ['ShowBlocks']}
+						];
+					});
+				}
+			});
+
+	
+		// We need to turn off the automatic editor creation first.
+		CKEDITOR.disableAutoInline = true;
+		var editor = CKEDITOR.inline( 'articlebody' );
+	
+		editor.on('paste', function(evt) {
+			// Update the text
+			// evt.editor.setData(evt.editor.getData() + ' your additional comments.');
+			bodyedited=true;
+			window.onbeforeunload = "You have unsaved changes.";
+			window.onbeforeunload = function(e) {
+				return "You have unsaved changes.";
+			};
+			$('#articlebody').css("color", "darkred");
+
+		}, editor.element.$);
+	
+	</script>
+
+	<!-- drag-and-drop image -->
+	<script>
+		// drag-and-drop image
+		var holder = document.getElementById('dnd-holder');
+		if(holder) {
+			holder.ondragover = function () { this.className = 'hover'; return false; };
+			holder.ondragend = function () { this.className = ''; return false; };
+			holder.ondrop = function (e) {
+				this.className = '';
+				e.preventDefault();
+			
+				var file = e.dataTransfer.files[0],
+					reader = new FileReader();
+				reader.onload = function (event) {
+					photoadded=true;
+					window.onbeforeunload = "You have unsaved changes.";
+					window.onbeforeunload = function(e) {
+						return "You have unsaved changes.";
+					};
+					holder.style.background = 'url(' + event.target.result + ')';
+					holder.style.borderColor = 'darkred';
+					holder.className += "backgrounded";
+					$('#dnd-instructions').remove();
+					$('figcaption.bonus').show();
+				};
+				reader.readAsDataURL(file);
+			
+				return false;
+			};
+		};
+	</script>
 
 <? endif; ?>
 
-<? if(!bonus()): // just gets in the way during editing ?>
-<!-- Table of Contents -->
-<script>
-$(document).ready(function(){
-   $('#articlebody').jqTOC({
-		tocWidth: 100,
-		tocTitle: 'Content',
-		tocStart: 1,
-		tocEnd  : 4,
-		tocContainer : 'toc_container',
-		tocAutoClose : false,
-		tocShowOnClick : false,
-		tocTopLink   : ''
-   });
-    
-    // Set up localScroll smooth scroller to scroll the whole document
-	$('#toc_container').localScroll({
-	   target:'body',
-	   duration: '1000' //uh, not sure this is working!
-	});
+<? if(!bonus()): // doesn't work with ckeditor, i think bc of the injection of IDs ?>
+	<!-- Table of Contents -->
+	<script>
+	$(document).ready(function(){
+	   $('#articlebody').jqTOC({
+			tocWidth: 100,
+			tocTitle: 'Content',
+			tocStart: 1,
+			tocEnd  : 4,
+			tocContainer : 'toc_container',
+			tocAutoClose : false,
+			tocShowOnClick : false,
+			tocTopLink   : ''
+	   });
 	
-	// not actually sure i want this to happen...
-	// should the url change as ppl navigate the article? i guess so, right?
-	$("#toc_container a").click(function () {
-		location.hash = $(this).attr('href');
-	});
+		// Set up localScroll smooth scroller to scroll the whole document
+		$('#toc_container').localScroll({
+		   target:'body',
+		   duration: '1000' //uh, not sure this is working!
+		});
+	
+		// not actually sure i want this to happen...
+		// should the url change as ppl navigate the article? i guess so, right?
+		$("#toc_container a").click(function () {
+			location.hash = $(this).attr('href');
+		});
 
-	// thanks hartbro! 
-	// http://blog.hartleybrody.com/creating-sticky-sidebar-widgets-that-scrolls-with-you/
-	function isScrolledTo(elem) {
-		var docViewTop = $(window).scrollTop(); //num of pixels hidden above current screen
-		var docViewBottom = docViewTop + $(window).height();
-		var elemTop = $(elem).offset().top - 100; //num of pixels above the elem
-		var elemBottom = elemTop + $(elem).height();
-		return ((elemTop <= docViewTop));
-	}
-	var catcher = $('#toc_container_catcher');
-	var sticky = $('#toc_container');
-	$(window).scroll(function() {
-		if(isScrolledTo(sticky)) {
-			sticky.css('position','fixed');
-			sticky.css('top','100px');
-			var bodyLeftOffset = $("#articlebodycontainer").offset().left - 200;
-			sticky.css('left',bodyLeftOffset+'px');
+		// thanks hartbro! 
+		// http://blog.hartleybrody.com/creating-sticky-sidebar-widgets-that-scrolls-with-you/
+		function isScrolledTo(elem) {
+			var docViewTop = $(window).scrollTop(); //num of pixels hidden above current screen
+			var docViewBottom = docViewTop + $(window).height();
+			var elemTop = $(elem).offset().top - 100; //num of pixels above the elem
+			var elemBottom = elemTop + $(elem).height();
+			return ((elemTop <= docViewTop));
 		}
-		var stopHeight = catcher.offset().top + catcher.height() - 200;
-		if ( stopHeight > sticky.offset().top) {
-			sticky.css('position','absolute');
-			sticky.css('top','0');
-			sticky.css('left','-200px');
-		}
+		var catcher = $('#toc_container_catcher');
+		var sticky = $('#toc_container');
+		$(window).scroll(function() {
+			if(isScrolledTo(sticky)) {
+				sticky.css('position','fixed');
+				sticky.css('top','100px');
+				var bodyLeftOffset = $("#articlebodycontainer").offset().left - 200;
+				sticky.css('left',bodyLeftOffset+'px');
+			}
+			var stopHeight = catcher.offset().top + catcher.height() - 200;
+			if ( stopHeight > sticky.offset().top) {
+				sticky.css('position','absolute');
+				sticky.css('top','0');
+				sticky.css('left','-200px');
+			}
 		
-		// highlight active TOC section
+			// highlight active TOC section
 		
-	});
+		});
    
-});
-</script>
+	});
+	</script>
 <? endif; ?>
 
 <? if(count($photos) > 1 && !bonus()): ?>
