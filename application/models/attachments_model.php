@@ -95,18 +95,27 @@ class Attachments_model extends CI_Model {
     {
 		$this->load->model('author_model', '', TRUE);
 		
-    	$photographer = $this->author_model->get_author_by_name($credit);
-		if(!$photographer)
-		{
-			$this->author_model->add_author($credit);
+		$photographer_id = null;
+		// if it appears a photographer has been entered
+		if(strlen($credit) > 1) {
 			$photographer = $this->author_model->get_author_by_name($credit);
+			if(!$photographer)
+			{
+				$this->author_model->add_author($credit);
+				$photographer = $this->author_model->get_author_by_name($credit);
+			}
+			$photographer_id = $photographer->id;
 		}
+		
+		// 		$author 	= trim(preg_replace('/\&nbsp\;/', ' ',strip_tags(urldecode($this->input->post("author")))));
+		//		if(strlen($author) > 1 && strlen($authorjob) > 1)	THEN ADD_ARTICLE_AUTHOR
+		//		if(!$author) 										THEN ADD AUTHOR 
 		
 		$data = array(
 		   'filename_small' 	=> $filename_small,
 		   'filename_large' 	=> $filename_large,
 		   'filename_original' 	=> $filename_original,
-		   'photographer_id' 	=> $photographer->id,
+		   'photographer_id' 	=> $photographer_id,
 		   'caption' 			=> $caption,
 		   'article_id' 		=> $article_id,
 		   'priority' 			=> $priority
