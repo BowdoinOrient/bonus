@@ -343,6 +343,29 @@ class Article extends CI_Controller {
 		}
 	}
 	
+	public function ajax_add_attachment($article_id)
+	{
+		// type=video,content1
+		
+		$type = trim(urldecode($this->input->post("type")));
+		$content1 = trim(urldecode($this->input->post("content1")));
+		$content2 = trim(urldecode($this->input->post("content2")));
+		
+		if($type == 'video') {
+			$yt_id = youtube_id_from_url($content1);
+			if($yt_id) {
+				exit('<iframe width="560" height="315" src="http://www.youtube.com/embed/'.$yt_id.'" frameborder="0" allowfullscreen></iframe>');
+			}
+			$vimeo_id = vimeo_id_from_url($content1);
+			if($vimeo_id) {
+				exit('<iframe src="http://player.vimeo.com/video/'.$vimeo_id.'?portrait=0" width="660" height="277" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
+			}
+			exit("Error: unsupported video URL");
+		}
+		
+		exit("Error: unsupported attachment type, ".$type);
+	}
+	
 	public function ajax_delete_article($article_id)
 	{
 		if(!bonus()) exit("Permission denied. Try refreshing and logging in again.");

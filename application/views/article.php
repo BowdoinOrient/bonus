@@ -112,98 +112,83 @@
 			
 		</header>                
 		
-		<? if($photos): ?>
-			<? if(count($photos) == 1 || bonus()): ?>
-				<? foreach($photos as $key => $photo): ?>
-					<figure id="photo<?=$photo->photo_id?>" class="articlemedia singlephoto <?= ($article->bigphoto ? 'bigphoto' : '') ?>">
-						<? if(bonus()): ?>
-							<div id="deletePhoto<?=$photo->photo_id?>" class="delete">&times;</div>
-							<div class="bigphotoEnable <?= ($article->bigphoto ? 'hide' : '') ?>">&#8689;</div>
-							<div class="bigphotoDisable <?= ($article->bigphoto ? '' : 'hide') ?>">&#8690;</div>
-						<? endif; ?>
-						<img src="<?=base_url()?>images/<?=$article->date?>/<?=$photo->filename_large?>" class="singlephoto">
-						<figcaption>
-							<? if(!empty($photo->photographer_id)): ?>
-								<?if(bonus()):?>
-									<p id="photocredit<?=$photo->photo_id?>" class="photocredit" contenteditable="true" title="Photographer"><?= $photo->photographer_name; ?></p>
-								<?else:?>
-									<p id="photocredit<?=$photo->photo_id?>" class="photocredit">
-										<?= anchor('author/'.$photo->photographer_id, $photo->photographer_name) ?>
-									</p>
-								<?endif;?>
-							<? elseif(empty($photo->credit) && bonus()): ?>
-								<p id="photocredit<?=$photo->photo_id?>" class="photocredit" contenteditable="true" title="Photographer"></p>
-							<? else: ?>
-								<p id="photocredit<?=$photo->photo_id?>" class="photocredit">
-									<?= $photo->credit ?>
-								</p>
+		<div id="article-sidebar">
+			<? if($photos): ?>
+				<? if(count($photos) == 1 || bonus()): ?>
+					<? foreach($photos as $key => $photo): ?>
+						<figure id="photo<?=$photo->photo_id?>" class="articlemedia singlephoto <?= ($article->bigphoto ? 'bigphoto' : '') ?>">
+							<? if(bonus()): ?>
+								<div id="deletePhoto<?=$photo->photo_id?>" class="delete">&times;</div>
+								<div class="bigphotoEnable <?= ($article->bigphoto ? 'hide' : '') ?>">&#8689;</div>
+								<div class="bigphotoDisable <?= ($article->bigphoto ? '' : 'hide') ?>">&#8690;</div>
 							<? endif; ?>
-							<p id="photocaption<?=$photo->photo_id?>" class="photocaption" <?if(bonus()):?>contenteditable="true" title="Caption"<?endif;?>><?=$photo->caption?></p>
-						</figcaption>
+							<img src="<?=base_url()?>images/<?=$article->date?>/<?=$photo->filename_large?>" class="singlephoto">
+							<figcaption>
+								<? if(!empty($photo->photographer_id)): ?>
+									<?if(bonus()):?>
+										<p id="photocredit<?=$photo->photo_id?>" class="photocredit" contenteditable="true" title="Photographer"><?= $photo->photographer_name; ?></p>
+									<?else:?>
+										<p id="photocredit<?=$photo->photo_id?>" class="photocredit">
+											<?= anchor('author/'.$photo->photographer_id, $photo->photographer_name) ?>
+										</p>
+									<?endif;?>
+								<? elseif(empty($photo->credit) && bonus()): ?>
+									<p id="photocredit<?=$photo->photo_id?>" class="photocredit" contenteditable="true" title="Photographer"></p>
+								<? else: ?>
+									<p id="photocredit<?=$photo->photo_id?>" class="photocredit">
+										<?= $photo->credit ?>
+									</p>
+								<? endif; ?>
+								<p id="photocaption<?=$photo->photo_id?>" class="photocaption" <?if(bonus()):?>contenteditable="true" title="Caption"<?endif;?>><?=$photo->caption?></p>
+							</figcaption>
+						</figure>
+					<? endforeach; ?>
+				<? else: ?>
+					<figure class="articlemedia <?= ($article->bigphoto ? 'bigphoto' : '') ?>">
+						<div id="swipeview_wrapper"></div>
+						<div id="swipeview_relative_nav">
+							<span id="prev" onclick="carousel.prev();hasInteracted=true">&laquo;</span>
+							<span id="next" onclick="carousel.next();hasInteracted=true">&raquo;</span>
+						</div>
+						<ul id="swipeview_nav">
+							<? foreach($photos as $key => $photo): ?>
+							<li <? if($key==0): ?>class="selected"<? endif; ?> onclick="carousel.goToPage(<?=$key; ?>);hasInteracted=true"></li>
+							<? endforeach; ?>
+						</ul>
 					</figure>
-				<? endforeach; ?>
-			<? else: ?>
-				<figure class="articlemedia <?= ($article->bigphoto ? 'bigphoto' : '') ?>">
-					<div id="swipeview_wrapper"></div>
-					<div id="swipeview_relative_nav">
-						<span id="prev" onclick="carousel.prev();hasInteracted=true">&laquo;</span>
-						<span id="next" onclick="carousel.next();hasInteracted=true">&raquo;</span>
-					</div>
-					<ul id="swipeview_nav">
-						<? foreach($photos as $key => $photo): ?>
-						<li <? if($key==0): ?>class="selected"<? endif; ?> onclick="carousel.goToPage(<?=$key; ?>);hasInteracted=true"></li>
-						<? endforeach; ?>
-					</ul>
-				</figure>
+				<? endif; ?>
 			<? endif; ?>
-		<? endif; ?>
-		<? if(bonus()): ?>
+			<? if(bonus()): ?>
 		
-			<!-- image upload -->
-			<figure class="articlemedia mini">
-				<div id="dnd-holder">
-					<input id="imageupload" class="imageupload" type=file accept="image/gif,image/jpeg,image/png">
-					<div id="dnd-instructions" class="bonus-attachment">
-						<img src="<?=base_url()?>img/icon-uploadphoto.png" type="image/svg+xml" height="50" width="50" title=""></object>
-						<br/>Click or drag
-						<br/>JPG, PNG or GIF
+				<!-- image upload -->
+				<figure class="articlemedia mini">
+					<div id="dnd-holder">
+						<input id="imageupload" class="imageupload" type=file accept="image/gif,image/jpeg,image/png">
+						<div id="dnd-instructions" class="bonus-attachment">
+							<img src="<?=base_url()?>img/icon-uploadphoto.png" type="image/svg+xml" height="50" width="50" title=""></object>
+							<br/>Click or drag
+							<br/>JPG, PNG or GIF
+						</div>
 					</div>
-				</div>
-				<figcaption class="bonus">
-					<p id="photocreditbonus" class="photocredit" contenteditable="true" title="Photographer"></p>
-					<p id="photocaptionbonus" class="photocaption" contenteditable="true" title="Caption"></p>
-				</figcaption>
-			</figure>
+					<figcaption class="bonus">
+						<p id="photocreditbonus" class="photocredit" contenteditable="true" title="Photographer"></p>
+						<p id="photocaptionbonus" class="photocaption" contenteditable="true" title="Caption"></p>
+					</figcaption>
+				</figure>
 			
-			<!-- video attachment -->
-			<figure class="articlemedia mini">
-				<div id="video-attach" class="bonus-attachment">
-					<img src="<?=base_url()?>img/icon-video.png" width="45" title="Thomas Le Bas, from The Noun Project"></object>
-					<br/>YouTube or Vimeo URL
-					<br/><input type="text" style="width:160px"></input>
-					<br/><button id="attach-video">Attach</button>
-				</div>
-			</figure>
+				<!-- video attachment -->
+				<figure class="articlemedia mini">
+					<div id="video-attach" class="bonus-attachment">
+						<img src="<?=base_url()?>img/icon-video.png" width="45" title="Thomas Le Bas, from The Noun Project"></object>
+						<br/>YouTube or Vimeo URL
+						<br/><input type="text" style="width:160px" name="video-url"></input>
+						<br/><button id="attach-video">Attach</button>
+					</div>
+				</figure>
 			
-		<? endif; ?>
+			<? endif; ?>
 		
-		<? if($article->id == '7677' && !bonus()): // #TODO: HORRIBLE HACK THAT MUST BE REMOVED! GOTTA GET DB EMBEDDABLES ?>
-			<figure>
-				<a class="twitter-timeline" href="https://twitter.com/bowdoinorient" data-widget-id="265950106606518272">Tweets by @bowdoinorient</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-			</figure>
-			
-			<figure id="contents" style="width:500px;box-sizing:border-box;text-align:left;">
-				<h3>Related links</h3>
-				<ul>
-					<li><a href="http://bowdoinorient.com/article/7668">76 percent of students to vote Obama, poll finds <em>(Nov. 2, 2012)</em></a></li>
-					<li><a href="http://bowdoinorient.com/article/3888">Students rejoice in Obama victory <em>(Nov. 7, 2008)</em></a></li>
-					<li><a href="http://bowdoinorient.com/article/3852">Poll: 84 percent support Obama <em>(Oct. 31, 2008)</em></a></li>
-					<li><a href="http://bowdoinorientexpress.com/post/1466735555/election-night-cutler-takes-early-lead-pingree-wins">OE: 2010 election liveblog <em>(Nov. 2, 2010)</em></a></li>
-				</ul>
-			</figure>
-		<? endif; ?>
-		
+		</div>
 		
 		<div id="articlebodycontainer">
 		
@@ -610,6 +595,19 @@
 			});
 		
 		});
+		
+		$("#attach-video").click(function(event) {
+			event.preventDefault()
+			//note: "data:" is totally unused, but what'd happen if it weren't there??? (well, test!)
+			$.ajax({
+				type: "POST",
+				url: "<?=site_url()?>article/ajax_add_attachment/<?=$article->id?>",
+				data: "type=video&content1="+urlencode($('input[name=video-url]').val()),
+				success: function(result){
+					$("#article-sidebar").prepend(result);
+				}
+			});
+		} );
 	
 	});
 
@@ -767,10 +765,6 @@
 			$('figcaption.bonus').show();
 			$('figure').removeClass('mini');
 		}
-	</script>
-	
-	<script type="text/javascript">
-	//attach video
 	</script>
 	
 <? endif; ?>
