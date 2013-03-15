@@ -184,11 +184,10 @@
 				<div id="dnd-holder">
 					<input id="imageupload" class="imageupload" type=file accept="image/gif,image/jpeg,image/png">
 					<div id="dnd-instructions">
-						<img src="<?=base_url()?>img/icon-uploadphoto-lightgray.png" type="image/svg+xml" height="50" width="50" title=""></object>
+						<img src="<?=base_url()?>img/icon-uploadphoto.png" type="image/svg+xml" height="50" width="50" title=""></object>
 						<br/>Click or drag an image file here
 						<br/>JPG, PNG, or GIF
 					</div>
-					<div id="dnd-unsaved">UNSAVED</div>
 				</div>
 				<figcaption class="bonus">
 					<p id="photocreditbonus" class="photocredit" contenteditable="true" title="Photographer"></p>
@@ -773,7 +772,6 @@
 			holder.style.borderColor = 'darkred';
 			holder.className += "backgrounded";
 			$('#dnd-instructions').remove();
-			$('#dnd-unsaved').show();
 			$('#imageupload').remove();
 			$('figcaption.bonus').show();
 		}
