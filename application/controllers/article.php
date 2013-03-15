@@ -214,7 +214,7 @@ class Article extends CI_Controller {
 	}
 	
 	/**
-	  * Currently only supports jpg & png.
+	  * Supports jpg, png, and gif (including animated - use wisely).
 	  **/
 	public function ajax_add_photo($article_date, $article_id)
 	{
@@ -226,6 +226,7 @@ class Article extends CI_Controller {
 		$css_offset_tail = 1;
 		$png_offset = 22;
 		$jpg_offset = 23;
+		$gif_offset = 22;
 		
 		$offset = $css_offset;
 		$extension = "";
@@ -240,9 +241,14 @@ class Article extends CI_Controller {
 			$offset += $png_offset;
 			$extension = ".png";
 		}
+		elseif(strpos(substr($this->input->post("img"), $css_offset, 15),"image/gif"))
+		{
+			$offset += $gif_offset;
+			$extension = ".gif";
+		}
 		else
 		{
-			exit("Only JPG and PNG images are supported.");
+			exit("Only JPG, PNG, and GIF images are supported.");
 		}
 		
 		$offset_tail = $css_offset_tail;
@@ -266,16 +272,14 @@ class Article extends CI_Controller {
 		// we write it $articleid."_1" for the first photo attached to an article, $articleid."_2", etc.
 		$article_photo_number = $this->attachments_model->count_article_photos($article_id) + 1;
 		
-		// prepare names
+		// write full-size image
 		$filename_root = $article_id.'_'.$article_photo_number;
 		$filename_original = $filename_root.$extension;
-		$filename_small = $filename_root.'_small'.$extension; //width: 400px
-		$filename_large = $filename_root.'_large'.$extension; //width: 1000px
-		
-		// write full-size image
 		$write_result = write_file('images/'.$article_date.'/'.$filename_original, base64_decode($img_fixed));
 		
-		// resize to small
+		// resize to small 
+		// (breaks animation on animated gifs)
+		$filename_small = $filename_root.'_small'.$extension; //width: 400px
 		$img_config['image_library']	= 'gd2';
 		$img_config['source_image']		= 'images/'.$article_date.'/'.$filename_original;
 		$img_config['new_image'] 		= $filename_small;
@@ -285,16 +289,27 @@ class Article extends CI_Controller {
 		$this->load->library('image_lib', $img_config);
 		$this->image_lib->resize();
 		
-		// resize to large
-		$img_config2['image_library']	= 'gd2';
-		$img_config2['source_image']	= 'images/'.$article_date.'/'.$filename_original;
-		$img_config2['new_image'] 		= $filename_large;
-		$img_config2['maintain_ratio']	= TRUE;
-		$img_config2['width'] 			= 1000;
-		$img_config2['height']			= 1000;
-		$this->image_lib->clear(); // gotta clear the library config in-between operations
-		$this->image_lib->initialize($img_config2);
-		$this->image_lib->resize();
+		if($extension != ".gif") {
+			// resize to large
+			$filename_large = $filename_root.'_large'.$extension; //width: 1000px				
+			$img_config2['image_library']	= 'gd2';
+			$img_config2['source_image']	= 'images/'.$article_date.'/'.$filename_original;
+			$img_config2['new_image'] 		= $filename_large;
+			$img_config2['maintain_ratio']	= TRUE;
+			$img_config2['width'] 			= 1000;
+			$img_config2['height']			= 1000;
+			$this->image_lib->clear(); // gotta clear the library config in-between operations
+			$this->image_lib->initialize($img_config2);
+			$this->image_lib->resize();		
+		}
+		else {
+			// resizing breaks animation on animated gifs, which is the only reason to use gifs. 
+			// so we leave the large version untouched. but we DO make a small unanimated version above, for home page and such,
+			// because gifs can get big and leaving them big could really slow down homepage (if we ever got around to using gifs)
+			// that said, it could be really cool having animated gifs on the home page. think about it. #todo
+			// could detect only animated gifs, but probs not worth it: http://it.php.net/manual/en/function.imagecreatefromgif.php#59787
+			$filename_large = $filename_original;
+		}
 		
 		// add photo to database
 		$this->attachments_model->add_photo($filename_small, $filename_large, $filename_original, $credit, $caption, $article_id, $article_photo_number);

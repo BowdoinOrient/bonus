@@ -182,10 +182,11 @@
 		<? if(bonus()): ?>
 			<figure class="articlemedia">
 				<div id="dnd-holder">
-					<input id="imageupload" class="imageupload" type=file>
+					<input id="imageupload" class="imageupload" type=file accept="image/gif,image/jpeg,image/png">
 					<div id="dnd-instructions">
 						<img src="<?=base_url()?>img/icon-uploadphoto-lightgray.png" type="image/svg+xml" height="50" width="50" title=""></object>
-						<br/>Click or drag a JPG or PNG image file here.
+						<br/>Click or drag an image file here
+						<br/>JPG, PNG, or GIF
 					</div>
 				</div>
 				<figcaption class="bonus">
