@@ -104,28 +104,6 @@
 				<div class="fb-like" data-href="<?= current_url() ?>" data-send="false" data-layout="button_count" data-width="115" data-show-faces="false" data-action="recommend"></div>
 				<br/>
 				
-				<? if(!bonus()): // don't show report error if you're logged in, just to save space ?>
-				<? //just concatenating authors, messily
-				$authorsString = '';
-				if($authors) { 
-					foreach($authors as $key => $author) {
-						if($key != 0) $authorsString .= ', ';
-						$authorsString .= $author->authorname;
-					} 
-				}
-				?>
-				<a href="#" onclick="reportMediaBug(
-					'<?= $article->title ?>',
-					'The Bowdoin Orient',
-					'<?= $authorsString ?>',
-					'<?= $article->date ?>',
-					'<?= current_url(); ?>');">
-					<button title="Your report is submitted to an independent third-party auditor, MediaBugs.">
-						<img src="<?=base_url()?>img/reporterror-12-bw.png"><span class="buttontext"> Report error</span>
-					</button>
-				</a>
-				<? endif; ?>
-				
 				<? if(bonus()): // only show views to logged-in staff, mostly bc display is too ugly to be public ?>
 					Views: <?=$article->views?> (<?=$article->views_bowdoin?>)<br/>
 				<? endif; ?>
