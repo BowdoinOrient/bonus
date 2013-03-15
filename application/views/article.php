@@ -180,12 +180,12 @@
 			<? endif; ?>
 		<? endif; ?>
 		<? if(bonus()): ?>
-			<figure class="articlemedia">
+			<figure class="articlemedia mini">
 				<div id="dnd-holder">
 					<input id="imageupload" class="imageupload" type=file accept="image/gif,image/jpeg,image/png">
 					<div id="dnd-instructions">
 						<img src="<?=base_url()?>img/icon-uploadphoto.png" type="image/svg+xml" height="50" width="50" title=""></object>
-						<br/>Click or drag an image file here
+						<br/>Click or drag
 						<br/>JPG, PNG, or GIF
 					</div>
 				</div>
@@ -774,6 +774,7 @@
 			$('#dnd-instructions').remove();
 			$('#imageupload').remove();
 			$('figcaption.bonus').show();
+			$('figure').removeClass('mini');
 		}
 	</script>
 
