@@ -12,31 +12,6 @@
 			<hgroup class="articletitle-group">
 				
 				<!-- NEXT / PREV -->
-				<style>
-				.article_header_nav {
-					position: relative;
-				}
-				
-				.article_header_nav ul {
-					position: absolute;
-				}
-				
-				.article_header_nav ul.leftmargin {
-					left:-240px;					
-				}
-				
-				.article_header_nav ul.rightmargin {
-					right:-240px;					
-				}
-				
-				.article_header_nav ul li {
-					opacity: .5;
-				}
-				
-				.article_header_nav ul li:hover {
-					opacity: 1;
-				}
-				</style>
 				<div class="article_header_nav hidetablet hidemobile">
 					<? if(!empty($series_previous)): ?>
 					<ul class="articleblock leftmargin">
@@ -207,9 +182,10 @@
 		<? if(bonus()): ?>
 			<figure class="articlemedia">
 				<div id="dnd-holder">
+					<input id="imageupload" class="imageupload" type=file>
 					<div id="dnd-instructions">
 						<img src="<?=base_url()?>img/icon-uploadphoto-lightgray.png" type="image/svg+xml" height="50" width="50" title=""></object>
-						<br/>Drag and drop a JPG or PNG image file here.
+						<br/>Click or drag a JPG or PNG image file here.
 					</div>
 				</div>
 				<figcaption class="bonus">
@@ -745,7 +721,46 @@
 	
 	</script>
 
+	<!-- image select by click -->
+	<!-- from @rem's http://html5demos.com/file-api-simple -->
+	<script>
+		var upload = document.getElementById('imageupload'),
+			holder = document.getElementById('dnd-holder');
+			//state = document.getElementById('status');
+
+		/* if (typeof window.FileReader === 'undefined') {
+		  state.className = 'fail';
+		} else {
+		  state.className = 'success';
+		  state.innerHTML = 'File API & FileReader available';
+		} */
+
+		upload.onchange = function (e) {
+		  e.preventDefault();
+
+		  var file = upload.files[0],
+			  reader = new FileReader();
+		  reader.onload = function (event) {
+			photoadded=true;
+			window.onbeforeunload = "You have unsaved changes.";
+			window.onbeforeunload = function(e) {
+				return "You have unsaved changes.";
+			};
+			holder.style.background = 'url(' + event.target.result + ')';
+			holder.style.borderColor = 'darkred';
+			holder.className += "backgrounded";
+			$('#dnd-instructions').remove();
+			$('#imageupload').remove();
+			$('figcaption.bonus').show();
+		  };
+		  reader.readAsDataURL(file);
+
+		  return false;
+		};
+	</script>
+	
 	<!-- drag-and-drop image -->
+	<!-- from @rem's http://html5demos.com/file-api -->
 	<script>
 		// drag-and-drop image
 		var holder = document.getElementById('dnd-holder');

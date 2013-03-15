@@ -443,8 +443,18 @@ figcaption.bonus {
 	border: 1px solid darkred;
 }
 
-/* it's a thought haha. gotta better connote that it's unsaved?
-#dnd-holder.backgrounded { -webkit-filter: blur(2px); } */
+#dnd-holder .imageupload {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	z-index: 90;
+}
+
+/* it's a thought haha. gotta better connote that it's unsaved? */
+#dnd-holder.backgrounded { -webkit-filter: blur(2px); } 
 
 #dnd-instructions {
 	position: absolute;
@@ -1353,6 +1363,14 @@ article header, .authorheader {
 	font-size:22pt;
 	margin-top:10px;
 }
+
+/* NEXT/PREV IN SERIES */
+.article_header_nav { position: relative; } 
+.article_header_nav ul { position: absolute; }
+.article_header_nav ul.leftmargin { left:-240px; }
+.article_header_nav ul.rightmargin { right:-240px; }
+.article_header_nav ul li { opacity: .5; }
+.article_header_nav ul li:hover { opacity: 1; }
 
 #articlebodycontainer {
 	position: relative;
