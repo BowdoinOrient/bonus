@@ -464,7 +464,7 @@ the second is the pseudo-pseudo-class activated by js on dragover */
 /* to connote that it's unsaved. fancy but a little weird, granted. */
 #dnd-holder.backgrounded:not(:hover) { -webkit-filter: blur(2px); } 
 
-#dnd-instructions {
+.bonus-attachment {
 	position: absolute;
 	font-family:myriad-pro,helvetica,arial;
 	text-align: center;
@@ -478,7 +478,7 @@ the second is the pseudo-pseudo-class activated by js on dragover */
 	-webkit-box-sizing: border-box;
 }
 
-#dnd-holder:hover #dnd-instructions, #dnd-holder.hover #dnd-instructions {
+figure:hover .bonus-attachment, #dnd-holder.hover .bonus-attachment {
 	opacity: .6;
 }
 

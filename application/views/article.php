@@ -180,13 +180,15 @@
 			<? endif; ?>
 		<? endif; ?>
 		<? if(bonus()): ?>
+		
+			<!-- image upload -->
 			<figure class="articlemedia mini">
 				<div id="dnd-holder">
 					<input id="imageupload" class="imageupload" type=file accept="image/gif,image/jpeg,image/png">
-					<div id="dnd-instructions">
+					<div id="dnd-instructions" class="bonus-attachment">
 						<img src="<?=base_url()?>img/icon-uploadphoto.png" type="image/svg+xml" height="50" width="50" title=""></object>
 						<br/>Click or drag
-						<br/>JPG, PNG, or GIF
+						<br/>JPG, PNG or GIF
 					</div>
 				</div>
 				<figcaption class="bonus">
@@ -194,6 +196,17 @@
 					<p id="photocaptionbonus" class="photocaption" contenteditable="true" title="Caption"></p>
 				</figcaption>
 			</figure>
+			
+			<!-- video attachment -->
+			<figure class="articlemedia mini">
+				<div id="video-attach" class="bonus-attachment">
+					<img src="<?=base_url()?>img/icon-video.png" width="45" title="Thomas Le Bas, from The Noun Project"></object>
+					<br/>YouTube or Vimeo URL
+					<br/><input type="text" style="width:160px"></input>
+					<br/><button id="attach-video">Attach</button>
+				</div>
+			</figure>
+			
 		<? endif; ?>
 		
 		<? if($article->id == '7677' && !bonus()): // #TODO: HORRIBLE HACK THAT MUST BE REMOVED! GOTTA GET DB EMBEDDABLES ?>
@@ -777,7 +790,11 @@
 			$('figure').removeClass('mini');
 		}
 	</script>
-
+	
+	<script type="text/javascript">
+	//attach video
+	</script>
+	
 <? endif; ?>
 
 <? if(!bonus()): // doesn't work with ckeditor, i think bc of the injection of IDs ?>
