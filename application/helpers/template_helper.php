@@ -121,4 +121,46 @@ function strnposr($haystack, $needle, $occurrence, $pos = 0) {
     return ($occurrence<2)?strpos($haystack, $needle, $pos):strnposr($haystack,$needle,$occurrence-1,strpos($haystack, $needle, $pos) + 1);
 }
 
+// from http://stackoverflow.com/a/6556662/120290
+function youtube_id_from_url($url) {
+    $pattern = 
+        '%^# Match any YouTube URL
+        (?:https?://)?  # Optional scheme. Either http or https
+        (?:www\.)?      # Optional www subdomain
+        (?:             # Group host alternatives
+          youtu\.be/    # Either youtu.be,
+        | youtube\.com  # or youtube.com
+          (?:           # Group path alternatives
+            /embed/     # Either /embed/
+          | /v/         # or /v/
+          | /watch\?v=  # or /watch\?v=
+          )             # End path alternatives.
+        )               # End host alternatives.
+        ([\w-]{10,12})  # Allow 10-12 for 11 char youtube id.
+        $%x'
+        ;
+    $result = preg_match($pattern, $url, $matches);
+    if ($result) {
+        return $matches[1];
+    }
+    return false;
+}
+
+function vimeo_id_from_url($url) {
+    $pattern = 
+        '%^# Match any Vimeo URL
+        (?:https?://)?  # Optional scheme. Either http or https
+        (?:www\.)?      # Optional www subdomain
+        (?:             # Group host alternatives
+          vimeo\.com/   # Either youtu.be,
+        )               # End host alternatives.
+        ([\w-]{7,12})  # Allow 10-12 for 11 char youtube id.
+        $%x'
+        ;
+    $result = preg_match($pattern, $url, $matches);
+    if ($result) {
+        return $matches[1];
+    }
+    return false;}
+
 ?>
