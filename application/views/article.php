@@ -188,6 +188,7 @@
 						<br/>Click or drag an image file here
 						<br/>JPG, PNG, or GIF
 					</div>
+					<div id="dnd-unsaved">UNSAVED</div>
 				</div>
 				<figcaption class="bonus">
 					<p id="photocreditbonus" class="photocredit" contenteditable="true" title="Photographer"></p>
@@ -772,6 +773,7 @@
 			holder.style.borderColor = 'darkred';
 			holder.className += "backgrounded";
 			$('#dnd-instructions').remove();
+			$('#dnd-unsaved').show();
 			$('#imageupload').remove();
 			$('figcaption.bonus').show();
 		}
