@@ -721,19 +721,12 @@
 	
 	</script>
 
-	<!-- image select by click -->
+	<!-- image upload, drag-and-drop or file upload input -->
 	<!-- from @rem's http://html5demos.com/file-api-simple -->
+	<!--  and @rem's http://html5demos.com/file-api -->
 	<script>
 		var upload = document.getElementById('imageupload'),
 			holder = document.getElementById('dnd-holder');
-			//state = document.getElementById('status');
-
-		/* if (typeof window.FileReader === 'undefined') {
-		  state.className = 'fail';
-		} else {
-		  state.className = 'success';
-		  state.innerHTML = 'File API & FileReader available';
-		} */
 
 		upload.onchange = function (e) {
 		  e.preventDefault();
@@ -741,6 +734,34 @@
 		  var file = upload.files[0],
 			  reader = new FileReader();
 		  reader.onload = function (event) {
+		      imageLoad(event);
+		  };
+		  reader.readAsDataURL(file);
+
+		  return false;
+		};
+		
+		// drag-and-drop image
+		if(holder) {
+			holder.ondragover = function () { this.className = 'hover'; return false; };
+			holder.ondragend = function () { this.className = ''; return false; };
+			holder.ondrop = function (e) {
+				this.className = '';
+				e.preventDefault();
+			
+				var file = e.dataTransfer.files[0],
+					reader = new FileReader();
+				reader.onload = function (event) {
+				    imageLoad(event);
+				};
+				reader.readAsDataURL(file);
+			
+				return false;
+			};
+		};
+		
+		// for when a photo is added
+		function imageLoad(event) {
 			photoadded=true;
 			window.onbeforeunload = "You have unsaved changes.";
 			window.onbeforeunload = function(e) {
@@ -752,44 +773,7 @@
 			$('#dnd-instructions').remove();
 			$('#imageupload').remove();
 			$('figcaption.bonus').show();
-		  };
-		  reader.readAsDataURL(file);
-
-		  return false;
-		};
-	</script>
-	
-	<!-- drag-and-drop image -->
-	<!-- from @rem's http://html5demos.com/file-api -->
-	<script>
-		// drag-and-drop image
-		var holder = document.getElementById('dnd-holder');
-		if(holder) {
-			holder.ondragover = function () { this.className = 'hover'; return false; };
-			holder.ondragend = function () { this.className = ''; return false; };
-			holder.ondrop = function (e) {
-				this.className = '';
-				e.preventDefault();
-			
-				var file = e.dataTransfer.files[0],
-					reader = new FileReader();
-				reader.onload = function (event) {
-					photoadded=true;
-					window.onbeforeunload = "You have unsaved changes.";
-					window.onbeforeunload = function(e) {
-						return "You have unsaved changes.";
-					};
-					holder.style.background = 'url(' + event.target.result + ')';
-					holder.style.borderColor = 'darkred';
-					holder.className += "backgrounded";
-					$('#dnd-instructions').remove();
-					$('figcaption.bonus').show();
-				};
-				reader.readAsDataURL(file);
-			
-				return false;
-			};
-		};
+		}
 	</script>
 
 <? endif; ?>
