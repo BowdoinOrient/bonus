@@ -158,6 +158,11 @@
 					</figure>
 				<? endif; ?>
 			<? endif; ?>
+			<? if($attachments): ?>
+				<? foreach($attachments as $key => $attachment): ?>
+					<? $this->load->view('template/attachment-video', $attachment); ?>
+				<? endforeach; ?>
+			<? endif; ?>
 			<? if(bonus()): ?>
 		
 				<!-- image upload -->
@@ -596,7 +601,7 @@
 		});
 		
 		$("#attach-video").click(function(event) {
-			event.preventDefault()
+			event.preventDefault();
 			//note: "data:" is totally unused, but what'd happen if it weren't there??? (well, test!)
 			$.ajax({
 				type: "POST",
