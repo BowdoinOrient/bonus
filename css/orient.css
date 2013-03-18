@@ -428,7 +428,6 @@ figcaption.bonus {
 }
 
 #dnd-holder { 
-	border: 1px dotted #ccc; 
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -465,21 +464,28 @@ the second is the pseudo-pseudo-class activated by js on dragover */
 #dnd-holder.backgrounded:not(:hover) { -webkit-filter: blur(2px); } 
 
 .bonus-attachment {
-	position: absolute;
+	position: relative;
 	font-family:myriad-pro,helvetica,arial;
 	text-align: center;
 	width: 100%;
-	height: 100%;
-	opacity: .3;
+	height: 150px; 
+	opacity: .5;
 	z-index: 1;
 	padding-top: 20px;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
+	border: 1px dotted #ccc; 
+}
+
+.bonus-attachment input {
+	font-family:myriad-pro,helvetica,arial;
+	font-size: 12pt;
+	padding: 2px;
 }
 
 figure:hover .bonus-attachment, #dnd-holder.hover .bonus-attachment {
-	opacity: .6;
+	opacity: 1;
 }
 
 /* 

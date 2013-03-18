@@ -162,9 +162,9 @@
 		
 				<!-- image upload -->
 				<figure class="articlemedia mini">
-					<div id="dnd-holder">
+					<div id="dnd-holder" class="bonus-attachment">
 						<input id="imageupload" class="imageupload" type=file accept="image/gif,image/jpeg,image/png">
-						<div id="dnd-instructions" class="bonus-attachment">
+						<div id="dnd-instructions">
 							<img src="<?=base_url()?>img/icon-uploadphoto.png" type="image/svg+xml" height="50" width="50" title=""></object>
 							<br/>Click or drag
 							<br/>JPG, PNG or GIF
@@ -180,8 +180,7 @@
 				<figure class="articlemedia mini">
 					<div id="video-attach" class="bonus-attachment">
 						<img src="<?=base_url()?>img/icon-video.png" width="45" title="Thomas Le Bas, from The Noun Project"></object>
-						<br/>YouTube or Vimeo URL
-						<br/><input type="text" style="width:160px" name="video-url"></input>
+						<br/><input type="text" style="width:160px" name="video-url" placeholder="YouTube or Vimeo URL"></input>
 						<br/><button id="attach-video">Attach</button>
 					</div>
 				</figure>

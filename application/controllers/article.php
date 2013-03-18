@@ -331,6 +331,8 @@ class Article extends CI_Controller {
 	
 	public function ajax_bigphoto($article_id)
 	{
+		if(!bonus()) exit("Permission denied. Try refreshing and logging in again.");
+		
 		if($this->input->post("bigphoto") == 'true')
 		{
 			$this->article_model->set_bigphoto($article_id, true);
@@ -345,25 +347,41 @@ class Article extends CI_Controller {
 	
 	public function ajax_add_attachment($article_id)
 	{
-		// type=video,content1
-		
+		if(!bonus()) exit("Permission denied. Try refreshing and logging in again.");
+				
 		$type = trim(urldecode($this->input->post("type")));
 		$content1 = trim(urldecode($this->input->post("content1")));
 		$content2 = trim(urldecode($this->input->post("content2")));
 		
 		if($type == 'video') {
 			$yt_id = youtube_id_from_url($content1);
-			if($yt_id) {
-				exit('<iframe width="560" height="315" src="http://www.youtube.com/embed/'.$yt_id.'" frameborder="0" allowfullscreen></iframe>');
-			}
 			$vimeo_id = vimeo_id_from_url($content1);
-			if($vimeo_id) {
-				exit('<iframe src="http://player.vimeo.com/video/'.$vimeo_id.'?portrait=0" width="660" height="277" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
+			if($yt_id) {
+				$type = 'youtube';
+				$content1 = $yt_id;
 			}
-			exit("Error: unsupported video URL");
+			elseif($vimeo_id) {
+				$type = 'vimeo';
+				$content1 = $vimeo_id;
+			}
+			else {
+				exit("Error: unsupported video URL");
+			}
+		}
+		else {
+			exit("Error: unsupported attachment type, ".$type);
 		}
 		
-		exit("Error: unsupported attachment type, ".$type);
+		$db_data = array(
+			'article_id'	=> $article_id,
+			'type'			=> $type,
+			'content1'		=> $content1,
+			'content2'		=> $content2
+			);
+		$attachment_id = $this->attachments_model->add_attachment($db_data);
+		$data['attachment'] = $this->attachments_model->get_attachment($attachment_id);
+		$data['bigphoto'] = $this->article_model->get_bigphoto($article_id);
+		exit($this->load->view('template/attachment-video', $data, true));
 	}
 	
 	public function ajax_delete_article($article_id)
