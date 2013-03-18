@@ -575,49 +575,6 @@
 		
 		});
 		
-		/*
-		$(".articlemedia .bigphotoEnable").click(function(event) {
-		
-			$.ajax({
-				type: "POST",
-				url: "<?=site_url()?>article/ajax_bigphoto/"+<?=$article->id?>,
-				data: "bigphoto=true",
-				success: function(result){
-					if(result=="Bigphoto enabled.") {
-						$(".singlephoto").addClass("bigphoto");
-						$(".bigphotoEnable").hide();
-						$(".bigphotoDisable").show();
-					}
-					//show alert
-					$("#savenotify").html(result);
-					$("#savenotify").show();
-					$("#savenotify").fadeOut(4000);
-				}
-			});
-		
-		});
-	
-		$(".articlemedia .bigphotoDisable").click(function(event) {
-		
-			$.ajax({
-				type: "POST",
-				url: "<?=site_url()?>article/ajax_bigphoto/"+<?=$article->id?>,
-				data: "bigphoto=false",
-				success: function(result){
-					if(result=="Bigphoto disabled.") {
-						$(".singlephoto").removeClass("bigphoto");
-						$(".bigphotoDisable").hide();
-						$(".bigphotoEnable").show();
-					}
-					//show alert
-					$("#savenotify").html(result);
-					$("#savenotify").show();
-					$("#savenotify").fadeOut(4000);
-				}
-			});
-		
-		});
-		*/
 		$(".articlemedia .bigPhotoToggle").click(function(event) {
 			
 			var photoId = $("#"+event.target.id).data("photo-id");
