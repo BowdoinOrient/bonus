@@ -8,6 +8,10 @@ class Attachments_model extends CI_Model {
         $this->load->model('article_model', '', TRUE);
     }
     
+    ////////////
+    // PHOTOS //
+    ////////////
+    
     function get_photos($article_id)
     {
     	$this->db->select("
@@ -193,6 +197,30 @@ class Attachments_model extends CI_Model {
     	$result = $query->row();
     	return $result->count;
     }
-
+    
+    ///////////////////////////
+    // NON-PHOTO ATTACHMENTS //
+    ///////////////////////////
+	
+	function get_attachment($id)
+	{
+		$this->db->where('id', $id);
+		$query = $this->db->get('attachments');
+		if($query->num_rows() > 0)
+    	{
+    		return $query->row();
+    	}
+    	else
+    	{
+    		return false;
+    	}
+	}
+	
+	function add_attachment($data)
+	{
+		$this->db->insert('attachments', $data);
+		return $this->db->insert_id();
+	}
+	
 }
 ?>
