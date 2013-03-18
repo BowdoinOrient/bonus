@@ -399,6 +399,21 @@ class Article_model extends CI_Model {
 		return $this->db->update('article');
 	}
 	
+	function get_bigphoto($article_id)
+	{
+		$this->db->select('bigphoto');
+		$this->db->where('id', $article_id);
+		$query = $this->db->get('article');
+		if($query->num_rows() > 0)
+		{
+			return $query->row()->bigphoto;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
 	// for the love of god, either use a finite date span or a limit!
 	function advsearch($data)
 	{
