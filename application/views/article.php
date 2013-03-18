@@ -116,32 +116,8 @@
 			<? if($photos): ?>
 				<? if(count($photos) == 1 || bonus()): ?>
 					<? foreach($photos as $key => $photo): ?>
-						<figure id="photo<?=$photo->photo_id?>" class="articlemedia singlephoto <?= ($article->bigphoto ? 'bigphoto' : '') ?>">
-							<? if(bonus()): ?>
-								<div id="deletePhoto<?=$photo->photo_id?>" class="delete deletePhoto">&times;</div>
-								<div class="bigphotoEnable <?= ($article->bigphoto ? 'hide' : '') ?>">&#8689;</div>
-								<div class="bigphotoDisable <?= ($article->bigphoto ? '' : 'hide') ?>">&#8690;</div>
-							<? endif; ?>
-							<img src="<?=base_url()?>images/<?=$article->date?>/<?=$photo->filename_large?>" class="singlephoto">
-							<figcaption>
-								<? if(!empty($photo->photographer_id)): ?>
-									<?if(bonus()):?>
-										<p id="photocredit<?=$photo->photo_id?>" class="photocredit" contenteditable="true" title="Photographer"><?= $photo->photographer_name; ?></p>
-									<?else:?>
-										<p id="photocredit<?=$photo->photo_id?>" class="photocredit">
-											<?= anchor('author/'.$photo->photographer_id, $photo->photographer_name) ?>
-										</p>
-									<?endif;?>
-								<? elseif(empty($photo->credit) && bonus()): ?>
-									<p id="photocredit<?=$photo->photo_id?>" class="photocredit" contenteditable="true" title="Photographer"></p>
-								<? else: ?>
-									<p id="photocredit<?=$photo->photo_id?>" class="photocredit">
-										<?= $photo->credit ?>
-									</p>
-								<? endif; ?>
-								<p id="photocaption<?=$photo->photo_id?>" class="photocaption" <?if(bonus()):?>contenteditable="true" title="Caption"<?endif;?>><?=$photo->caption?></p>
-							</figcaption>
-						</figure>
+						<? $photo_view_data = array('article' => $article, 'photo' => $photo); ?>
+						<? $this->load->view('template/attachment-photo', $photo_view_data); ?>
 					<? endforeach; ?>
 				<? else: ?>
 					<figure class="articlemedia <?= ($article->bigphoto ? 'bigphoto' : '') ?>">
@@ -159,9 +135,50 @@
 				<? endif; ?>
 			<? endif; ?>
 			<? if($attachments): ?>
-				<? foreach($attachments as $key => $attachment): ?>
-					<? $this->load->view('template/attachment-video', $attachment); ?>
-				<? endforeach; ?>
+				<? 
+					$hasYoutube = false;
+					$youtubePlaylist = array();
+					
+					$hasVimeo = false;
+					$vimeos = array();
+					
+					$hasHTML = false;
+					$HTMLs = array();
+
+					foreach($attachments as $key => $attachment) {
+						
+						// handle youtubes
+						if($attachment->type == 'youtube') {
+							if(!$hasYoutube) {
+								// hold onto the attachment
+								$youtube = $attachment;
+								$hasYoutube = true;
+							} else {
+								// if it's not first youtube video, push to playlist
+								$youtubePlaylist[] = $attachment->content1;
+							}
+						}
+						
+						// handle vimeos
+						if($attachment->type == 'vimeo') {
+							$hasVimeo = true;
+							$vimeos[] = $attachment;
+						}
+						
+						// handle raw html
+						if($attachment->type == 'html') {
+							$hasHTML = true;
+							$HTMLs[] = $attachment;
+						}
+					}
+					
+					if($hasYoutube) { 
+						$youtube->playlist = join($youtubePlaylist,',');
+						$this->load->view('template/attachment-video', $youtube); 
+					}
+					if($hasVimeo) { foreach($vimeos as $vimeo) { $this->load->view('template/attachment-video', $vimeo); } }
+					if($hasHTML) { foreach($HTMLs as $html) { $this->load->view('template/attachment-html', $html); } }
+				?>
 			<? endif; ?>
 			<? if(bonus()): ?>
 		
@@ -558,27 +575,7 @@
 		
 		});
 		
-		$(".articlemedia .deleteAttachment").click(function(event) {
-		
-			var attachmentId = event.target.id.replace("deleteAttachment","");
-			
-			$.ajax({
-				type: "POST",
-				url: "<?=site_url()?>article/ajax_delete_attachment/"+attachmentId,
-				data: "remove=true",
-				success: function(result){
-					if(result=="Attachment deleted.") {
-						$("#attachment"+attachmentId).hide("fast");
-					}
-					//show alert
-					$("#savenotify").html(result);
-					$("#savenotify").show();
-					$("#savenotify").fadeOut(4000);
-				}
-			});
-		
-		});
-	
+		/*
 		$(".articlemedia .bigphotoEnable").click(function(event) {
 		
 			$.ajax({
@@ -620,6 +617,38 @@
 			});
 		
 		});
+		*/
+		$(".articlemedia .bigPhotoToggle").click(function(event) {
+			
+			var photoId = $("#"+event.target.id).data("photo-id");
+			var toggle = $("#"+event.target.id).data("toggle");
+			
+			$.ajax({
+				type: "POST",
+				url: "<?=site_url()?>article/ajax_bigphoto/"+<?=$article->id?>,
+				data: "bigphoto="+toggle,
+				success: function(result){
+					if(result=="Bigphoto enabled.") {
+						$(".singlephoto").addClass("bigphoto");
+						$("#bigPhotoEnable"+photoId).hide();
+						$("#bigPhotoDisable"+photoId).show();
+					}
+					else if(result=="Bigphoto disabled.") {
+						$(".singlephoto").removeClass("bigphoto");
+						$("#bigPhotoEnable"+photoId).show();
+						$("#bigPhotoDisable"+photoId).hide();
+					}
+					//show alert
+					$("#savenotify").html(result);
+					$("#savenotify").show();
+					$("#savenotify").fadeOut(4000);
+				}
+			});
+		
+		});
+		
+		
+		
 		
 		$("#attach-video").click(function(event) {
 			event.preventDefault();
@@ -632,9 +661,30 @@
 					$("#article-sidebar").prepend(result);
 				}
 			});
-		} );
+		});
 		
-		$(".articlemedia .bigAttachmentToggle").click(function(event) {
+		$(".articlemedia .deleteAttachment").live("click", function(event) {
+		
+			var attachmentId = event.target.id.replace("deleteAttachment","");
+			
+			$.ajax({
+				type: "POST",
+				url: "<?=site_url()?>article/ajax_delete_attachment/"+attachmentId,
+				data: "remove=true",
+				success: function(result){
+					if(result=="Attachment deleted.") {
+						$("#attachment"+attachmentId).hide("fast");
+					}
+					//show alert
+					$("#savenotify").html(result);
+					$("#savenotify").show();
+					$("#savenotify").fadeOut(4000);
+				}
+			});
+		
+		});
+		
+		$(".articlemedia .bigAttachmentToggle").live("click", function(event) {
 			
 			var attachmentId = $("#"+event.target.id).data("attachment-id");
 			var toggle = $("#"+event.target.id).data("toggle");
