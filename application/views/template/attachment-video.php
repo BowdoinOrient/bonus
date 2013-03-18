@@ -1,4 +1,4 @@
-<figure id="attachment<?=$id?>" data-attachment-id="<?=$id?>" class="articlemedia video-wrapper <?= ($big ? 'bigphoto' : '') ?>">
+<figure id="attachment<?=$id?>" data-attachment-id="<?=$id?>" data-attachment-type="<?=$type?>" class="articlemedia video-wrapper <?= ($big ? 'bigphoto' : '') ?>">
 
 	<? if(bonus()): ?>
 		<div id="deleteAttachment<?=$id?>" data-attachment-id="<?=$id?>" class="delete deleteAttachment">&times;</div>

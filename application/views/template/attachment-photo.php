@@ -1,4 +1,4 @@
-<figure id="photo<?=$photo->photo_id?>" class="articlemedia singlephoto <?= ($article->bigphoto ? 'bigphoto' : '') ?>">
+<figure id="photo<?=$photo->photo_id?>" data-photo-id="<?=$photo->photo_id?>" data-attachment-type="photo" class="articlemedia singlephoto <?= ($article->bigphoto ? 'bigphoto' : '') ?>">
 
 	<? if(bonus()): ?>
 		<div id="deletePhoto<?=$photo->photo_id?>"     data-photo-id="<?=$photo->photo_id?>" class="delete deletePhoto">&times;</div>
