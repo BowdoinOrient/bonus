@@ -1,16 +1,23 @@
-<figure id="attachment<?=$id?>" class="articlemedia singlephoto <?= ($big ? 'bigphoto' : '') ?>">
+<figure id="attachment<?=$id?>" data-attachment-id="<?=$id?>" class="articlemedia singlephoto <?= ($big ? 'bigphoto' : '') ?>">
 
 	<? if(bonus()): ?>
-		<div id="deleteAttachment<?=$id?>" class="delete">&times;</div>
-		<div class="bigphotoEnable <?= ($big ? 'hide' : '') ?>">&#8689;</div>
-		<div class="bigphotoDisable <?= ($big ? '' : 'hide') ?>">&#8690;</div>
+		<div id="deleteAttachment<?=$id?>" data-attachment-id="<?=$id?>" class="delete deleteAttachment">&times;</div>
+		<div id="bigEnable<?=$id?>"  data-attachment-id="<?=$id?>" data-toggle="true"  class="bigAttachmentToggle <?= ($big ? 'hide' : '') ?>">&#8689;</div>
+		<div id="bigDisable<?=$id?>" data-attachment-id="<?=$id?>" data-toggle="false" class="bigAttachmentToggle <?= ($big ? '' : 'hide') ?>">&#8690;</div>
 	<? endif; ?>
 	
+	<?
+	$width = ($big ? '890' : '500');
+	$height = floor(0.562*$width);
+	?>
+	
+	<div class="video-container">
 	<? if($type == 'youtube'): ?>
-		<iframe width="500" height="281" src="http://www.youtube.com/embed/<?=$content1?>?modestbranding=1&rel=0&showinfo=0&theme=light" frameborder="0" allowfullscreen></iframe>
+		<iframe width="<?=$width?>" height="<?=$height?>" src="http://www.youtube.com/embed/<?=$content1?>?modestbranding=1&rel=0&showinfo=0&theme=light" frameborder="0" allowfullscreen></iframe>
 	<? elseif($type == 'vimeo'): ?>
-		<iframe src="http://player.vimeo.com/video/<?=$content1?>?portrait=0" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+		<iframe src="http://player.vimeo.com/video/<?=$content1?>?portrait=0" width="<?=$width?>" height="<?=$height?>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 	<? endif; ?>
+	</div>
 	
 	<figcaption>
 		<? if(!empty($author_id)): ?>

@@ -1661,6 +1661,7 @@ figcaption p {
 	top: 0px;
 	color: white;
 	text-shadow: 0 0 10px black;
+	z-index: 99;
 }
 
 .articlemedia .delete:hover {
@@ -1668,17 +1669,18 @@ figcaption p {
 	cursor: pointer;
 }
 
-.articlemedia .bigphotoEnable, .articlemedia .bigphotoDisable {
+.articlemedia .bigPhotoToggle, .articlemedia .bigAttachmentToggle {
 	position: absolute;
 	left: 3px;
 	top: 0;
 	color: white;
 	text-shadow: 0 0 10px black;
+	z-index: 99;
 }
 
-.articlemedia .bigphotoEnable:hover, .articlemedia .bigphotoDisable:hover {
-	color: darkblue;
-	text-shadow: 0 0 10px white;
+.articlemedia .bigPhotoToggle:hover, .articlemedia .bigAttachmentToggle:hover {
+	color: lightgray;
+	text-shadow: 0 0 10px black;
 	cursor: pointer;
 }
 
@@ -1696,6 +1698,26 @@ figure#contents ul, figure#contents li {
 	/*font-variant: small-caps;*/
 	text-transform: uppercase;
 	font-weight: bold;
+}
+
+/* VIDEO */
+
+/* responsive video: http://webdesignerwall.com/tutorials/css-elastic-videos */
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+}
+.video-container iframe,  
+.video-container object,  
+.video-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 /* ASIDES */

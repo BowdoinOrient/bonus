@@ -242,6 +242,21 @@ class Attachments_model extends CI_Model {
     		return FALSE;
     	}
     }
+    
+	function set_big($attachment_id, $big)
+	{
+		$big_value = ($big=='true' ? '1' : '0');
+		$this->db->set('big', $big_value);
+		$this->db->where('id', $attachment_id);
+		return $this->db->update('attachments');
+	}
 	
+    function delete_attachment($attachment_id)
+    {
+    	$this->db->set('active', '0');
+		$this->db->where('id', $attachment_id);
+		return $this->db->update('attachments');
+    }
+    	
 }
 ?>
