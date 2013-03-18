@@ -208,12 +208,34 @@ class Article extends CI_Controller {
 		redirect('/article/'.$article_id, 'refresh');
 	}
 	
+	public function ajax_delete_article($article_id)
+	{
+		if(!bonus()) exit("Permission denied. Try refreshing and logging in again.");
+		exit($this->article_model->delete_article($article_id));
+	}
+	
+	public function ajax_suggest($table, $field)
+	{
+		if(!bonus()) exit("Permission denied. Try refreshing and logging in again.");
+
+		// this general-purpose function is potentially wildly insecure.
+		if(!($table == 'author' || $table == 'job' || $table == 'series')) exit("Disallowed.");
+		
+		$term = $this->input->get('term', true);
+		$suggestions = $this->article_model->get_suggestions($table, $field, $term);
+		exit(json_encode($suggestions));
+	}
+	
 	public function ajax_remove_article_author($article_author_id)
 	{
 		if(!bonus()) exit("Permission denied. Try refreshing and logging in again.");
 		$this->article_model->remove_article_author($article_author_id);
 		exit("Author removed.");
 	}
+	
+	////////////
+	// PHOTOS //
+	////////////
 	
 	/**
 	  * Supports jpg, png, and gif (including animated - use wisely).
@@ -347,6 +369,10 @@ class Article extends CI_Controller {
 		}
 	}
 	
+	/////////////////
+	// ATTACHMENTS //
+	/////////////////
+	
 	public function ajax_add_attachment($article_id)
 	{
 		if(!bonus()) exit("Permission denied. Try refreshing and logging in again.");
@@ -391,22 +417,20 @@ class Article extends CI_Controller {
 		exit($this->load->view('template/attachment-video', $attachment, true));
 	}
 	
-	public function ajax_delete_article($article_id)
+	public function ajax_delete_attachment($attachment_id)
 	{
 		if(!bonus()) exit("Permission denied. Try refreshing and logging in again.");
-		exit($this->article_model->delete_article($article_id));
+		$this->attachments_model->delete_attachment($attachment_id);
+		exit("Attachment deleted.");
 	}
 	
-	public function ajax_suggest($table, $field)
+	public function ajax_attachment_big($attachment_id)
 	{
 		if(!bonus()) exit("Permission denied. Try refreshing and logging in again.");
-
-		// this general-purpose function is potentially wildly insecure.
-		if(!($table == 'author' || $table == 'job' || $table == 'series')) exit("Disallowed.");
 		
-		$term = $this->input->get('term', true);
-		$suggestions = $this->article_model->get_suggestions($table, $field, $term);
-		exit(json_encode($suggestions));
+		$toggle = $this->input->post("big");
+		$this->attachments_model->set_big($attachment_id, $toggle);
+		exit("Big ".($toggle=='true' ? 'enabled' : 'disabled').".");
 	}
 }
 ?>

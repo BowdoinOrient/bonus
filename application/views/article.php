@@ -118,7 +118,7 @@
 					<? foreach($photos as $key => $photo): ?>
 						<figure id="photo<?=$photo->photo_id?>" class="articlemedia singlephoto <?= ($article->bigphoto ? 'bigphoto' : '') ?>">
 							<? if(bonus()): ?>
-								<div id="deletePhoto<?=$photo->photo_id?>" class="delete">&times;</div>
+								<div id="deletePhoto<?=$photo->photo_id?>" class="delete deletePhoto">&times;</div>
 								<div class="bigphotoEnable <?= ($article->bigphoto ? 'hide' : '') ?>">&#8689;</div>
 								<div class="bigphotoDisable <?= ($article->bigphoto ? '' : 'hide') ?>">&#8690;</div>
 							<? endif; ?>
@@ -537,7 +537,7 @@
 		
 		});
 	
-		$(".articlemedia .delete").click(function(event) {
+		$(".articlemedia .deletePhoto").click(function(event) {
 		
 			var photoId = event.target.id.replace("deletePhoto","");
 		
@@ -548,6 +548,27 @@
 				success: function(result){
 					if(result=="Photo deleted.") {
 						$("#photo"+photoId).hide("fast");
+					}
+					//show alert
+					$("#savenotify").html(result);
+					$("#savenotify").show();
+					$("#savenotify").fadeOut(4000);
+				}
+			});
+		
+		});
+		
+		$(".articlemedia .deleteAttachment").click(function(event) {
+		
+			var attachmentId = event.target.id.replace("deleteAttachment","");
+			
+			$.ajax({
+				type: "POST",
+				url: "<?=site_url()?>article/ajax_delete_attachment/"+attachmentId,
+				data: "remove=true",
+				success: function(result){
+					if(result=="Attachment deleted.") {
+						$("#attachment"+attachmentId).hide("fast");
 					}
 					//show alert
 					$("#savenotify").html(result);
@@ -612,6 +633,35 @@
 				}
 			});
 		} );
+		
+		$(".articlemedia .bigAttachmentToggle").click(function(event) {
+			
+			var attachmentId = $("#"+event.target.id).data("attachment-id");
+			var toggle = $("#"+event.target.id).data("toggle");
+			
+			$.ajax({
+				type: "POST",
+				url: "<?=site_url()?>article/ajax_attachment_big/"+attachmentId,
+				data: "big="+toggle,
+				success: function(result){
+					if(result=="Big enabled.") {
+						$("#attachment"+attachmentId).addClass("bigphoto");
+						$("#bigEnable"+attachmentId).hide();
+						$("#bigDisable"+attachmentId).show();
+					}
+					else if(result=="Big disabled.") {
+						$("#attachment"+attachmentId).removeClass("bigphoto");
+						$("#bigEnable"+attachmentId).show();
+						$("#bigDisable"+attachmentId).hide();
+					}
+					//show alert
+					$("#savenotify").html(result);
+					$("#savenotify").show();
+					$("#savenotify").fadeOut(4000);
+				}
+			});
+		
+		});
 	
 	});
 
