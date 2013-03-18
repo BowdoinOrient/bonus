@@ -47,6 +47,7 @@ class Article extends CI_Controller {
 			$series = $this->article_model->get_article_series($article->series);
 			$authors = $this->article_model->get_article_authors($id);
 			$photos = $this->attachments_model->get_photos($id);
+			$attachments = $this->attachments_model->get_attachments($id);
 			
 			// get random quote
 			$data->footerdata->quote = $this->attachments_model->get_random_quote();
@@ -73,6 +74,7 @@ class Article extends CI_Controller {
 			$data->series = $series;
 			$data->authors = $authors;
 			$data->photos = $photos;
+			$data->attachments = $attachments;
 			
 			// meta
 			$data->page_title = $article->title." — The Bowdoin Orient";
@@ -367,6 +369,12 @@ class Article extends CI_Controller {
 			else {
 				exit("Error: unsupported video URL");
 			}
+			// #todo: youtube playlists
+			// #todo: twitter widgets
+			// #todo: soundcloud
+			// #todo: flickr slideshows
+			// #todo: raw html
+			// #todo: rich text sidebars
 		}
 		else {
 			exit("Error: unsupported attachment type, ".$type);
@@ -379,9 +387,8 @@ class Article extends CI_Controller {
 			'content2'		=> $content2
 			);
 		$attachment_id = $this->attachments_model->add_attachment($db_data);
-		$data['attachment'] = $this->attachments_model->get_attachment($attachment_id);
-		$data['bigphoto'] = $this->article_model->get_bigphoto($article_id);
-		exit($this->load->view('template/attachment-video', $data, true));
+		$attachment = $this->attachments_model->get_attachment($attachment_id);
+		exit($this->load->view('template/attachment-video', $attachment, true));
 	}
 	
 	public function ajax_delete_article($article_id)

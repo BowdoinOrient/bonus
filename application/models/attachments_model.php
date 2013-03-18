@@ -222,5 +222,26 @@ class Attachments_model extends CI_Model {
 		return $this->db->insert_id();
 	}
 	
+	function get_attachments($article_id)
+    {
+    	$this->db->select("
+    		attachments.*, 
+    		author.name as author_name");
+    	$this->db->join("author", "author.id = attachments.author_id", 'left');
+    	$this->db->from("attachments");
+    	$this->db->where("attachments.article_id", $article_id);
+    	$this->db->where("attachments.active", "1");
+    	//$this->db->order_by("priority", "asc");
+    	$query = $this->db->get();
+    	if($query->num_rows() > 0)
+    	{
+    		return $query->result();
+    	}
+    	else
+    	{
+    		return FALSE;
+    	}
+    }
+	
 }
 ?>
