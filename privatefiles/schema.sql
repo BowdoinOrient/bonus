@@ -7,7 +7,7 @@
 #
 # Host: medved (MySQL 5.1.67)
 # Database: DB02Orient
-# Generation Time: 2013-03-18 10:18:44 +0000
+# Generation Time: 2013-03-18 11:29:58 +0000
 # ************************************************************
 
 
@@ -123,6 +123,8 @@ CREATE TABLE `attachments` (
   `type` varchar(100) DEFAULT NULL,
   `content1` text,
   `content2` text,
+  `big` tinyint(4) NOT NULL DEFAULT '0',
+  `active` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
