@@ -425,27 +425,31 @@
 			}
 			
 			// save photo credit/caption edits 
-			<? if(!empty($photos)): ?>
-				var photoEdits = {};
-				<? foreach($photos as $photo): ?>			
-					var thisPhotoEdits = {};
-					thisPhotoEdits["credit"] = $("#photocredit<?=$photo->photo_id?>").html();
-					thisPhotoEdits["caption"] = $("#photocaption<?=$photo->photo_id?>").html(); 
-					photoEdits["<?=$photo->photo_id?>"] = thisPhotoEdits;
-				<? endforeach; ?>
-				var photoEditsJSON = JSON.stringify(photoEdits);
-			<? else: ?>
+			var photoEdits = {};
+			$('.articlemedia.photo-wrapper').each( function(index, photo) {
+				var photoId = $("#"+photo.id).data("photo-id");
+				var thisPhotoEdits = {};
+				thisPhotoEdits["credit"] = $("#photocredit"+photoId).html();
+				thisPhotoEdits["caption"] = $("#photocaption"+photoId).html(); 
+				photoEdits[photoId] = thisPhotoEdits;
+			});
+			if(photoEdits.length===0) {
+				// if array is empty, i.e. no attachments were found...
 				var photoEditsJSON = false;
-			<? endif; ?>
+			}
+			else {
+				// else serialize array for ajaxing
+				var photoEditsJSON = JSON.stringify(photoEdits);
+			}
 			
 			// save attachment credit/caption edits
-			var attachmentEdits = [];
+			var attachmentEdits = {};
 			$('.articlemedia.video-wrapper').each( function(index, attachment) {
 				var attachmentId = $("#"+attachment.id).data("attachment-id");
-				var thisAttachmentEdits = [];
+				var thisAttachmentEdits = {};
 				thisAttachmentEdits["credit"]  = $("#attachmentcredit"+attachmentId).html();
 				thisAttachmentEdits["caption"] = $("#attachmentcaption"+attachmentId).html(); 
-				attachmentEdits[attachmentId] = thisPhotoEdits;				
+				attachmentEdits[attachmentId] = thisAttachmentEdits;
 			});
 			if(attachmentEdits.length===0) {
 				// if array is empty, i.e. no attachments were found...
@@ -469,8 +473,9 @@
 					"&published=" + window.published +
 					"&featured=" + $('input[name=featured]').prop('checked') +
 					"&opinion=" + $('input[name=opinion]').prop('checked');
-			if(photoEditsJSON)	{ ajaxrequest += "&photoEdits=" + urlencode(photoEditsJSON); }
-			if(bodyedited) 		{ ajaxrequest += "&body=" + urlencode($("#articlebody").html()); }
+			if(photoEditsJSON)		{ ajaxrequest += "&photoEdits=" + urlencode(photoEditsJSON); }
+			if(attachmentEditsJSON)	{ ajaxrequest += "&attachmentEdits=" + urlencode(attachmentEditsJSON); }
+			if(bodyedited) 			{ ajaxrequest += "&body=" + urlencode($("#articlebody").html()); }
 		
 			// write title, subtitle, author, authorjob, bonus-meta stuff
 			// (regardless of whether they've been edited. sloppy.)
@@ -605,12 +610,12 @@
 				data: "bigphoto="+toggle,
 				success: function(result){
 					if(result=="Bigphoto enabled.") {
-						$(".singlephoto").addClass("bigphoto");
+						$(".photo-wrapper").addClass("bigphoto");
 						$("#bigPhotoEnable"+photoId).hide();
 						$("#bigPhotoDisable"+photoId).show();
 					}
 					else if(result=="Bigphoto disabled.") {
-						$(".singlephoto").removeClass("bigphoto");
+						$(".photo-wrapper").removeClass("bigphoto");
 						$("#bigPhotoEnable"+photoId).show();
 						$("#bigPhotoDisable"+photoId).hide();
 					}
