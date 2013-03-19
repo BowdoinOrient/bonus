@@ -112,6 +112,7 @@
 			
 		</header>                
 		
+		<div id="article-sidebar-catcher"></div>
 		<div id="article-sidebar">
 			<? if($photos): ?>
 				<? if(count($photos) == 1 || bonus()): ?>
@@ -208,7 +209,7 @@
 				</figure>
 			
 			<? endif; ?>
-		
+				
 		</div>
 		
 		<div id="articlebodycontainer">
@@ -713,6 +714,16 @@
 		<? endforeach; ?>
 	<? endif; ?>
 	
+	<? if(!empty($attachments)): ?>
+		<? foreach($attachments as $attachment): ?>
+		$(function() {
+			$( "#attachmentcredit<?=$attachment->id?>" ).autocomplete({
+				source: "<?=site_url()?>article/ajax_suggest/author/name"
+			});
+		});	
+		<? endforeach; ?>
+	<? endif; ?>
+	
 	$(function() {
 		$( "#series" ).autocomplete({
 			source: "<?=site_url()?>article/ajax_suggest/series/name"
@@ -885,6 +896,33 @@
 			// highlight active TOC section
 		
 		});
+		
+		
+		
+		var catcher2 = $('#article-sidebar-catcher');
+		var sticky2 = $('#article-sidebar');
+		$(window).scroll(function() {
+			if(isScrolledTo(sticky2)) {
+				$('#article-sidebar figure').addClass('mini');
+				sticky2.css('position','fixed');
+				sticky2.css('top','100px');
+				var bodyLeftOffset = $("#articlebodycontainer").offset().left + $("#articlebodycontainer").width()-225;
+				sticky2.css('left',bodyLeftOffset+'px');
+			}
+			var stopHeight = catcher2.offset().top;
+			if (catcher2.offset().top > sticky.offset().top-200) {
+				$('#article-sidebar figure').removeClass('mini');
+				sticky2.css('position','inherit');
+				sticky2.css('top','auto');
+				sticky2.css('left','auto');
+				//sticky2.css('top','0');
+				//sticky2.css('left','-200px');
+			}
+				
+		});
+		
+		
+		
    
 	});
 	</script>
