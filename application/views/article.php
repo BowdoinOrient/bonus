@@ -112,104 +112,118 @@
 			
 		</header>                
 		
+		<!-- catcher is used to trigger sticky sidebar, currently disabled (see below) -->
 		<div id="article-sidebar-catcher"></div>
+		<!-- sidebar contains photos, videos, and other attachments -->
 		<div id="article-sidebar">
-			<? if($photos): ?>
-				<? if(count($photos) == 1 || bonus()): ?>
-					<? foreach($photos as $key => $photo): ?>
-						<? $photo_view_data = array('article' => $article, 'photo' => $photo); ?>
-						<? $this->load->view('template/attachment-photo', $photo_view_data); ?>
-					<? endforeach; ?>
-				<? else: ?>
-					<figure class="articlemedia <?= ($article->bigphoto ? 'bigphoto' : '') ?>">
-						<div id="swipeview_wrapper"></div>
-						<div id="swipeview_relative_nav">
-							<span id="prev" onclick="carousel.prev();hasInteracted=true">&laquo;</span>
-							<span id="next" onclick="carousel.next();hasInteracted=true">&raquo;</span>
-						</div>
-						<ul id="swipeview_nav">
-							<? foreach($photos as $key => $photo): ?>
-							<li <? if($key==0): ?>class="selected"<? endif; ?> onclick="carousel.goToPage(<?=$key; ?>);hasInteracted=true"></li>
-							<? endforeach; ?>
-						</ul>
-					</figure>
+			<div id="article-attachments">
+				<? if($photos): ?>
+					<? if(count($photos) == 1 || bonus()): ?>
+						<? foreach($photos as $key => $photo): ?>
+							<? $photo_view_data = array('article' => $article, 'photo' => $photo); ?>
+							<? $this->load->view('template/attachment-photo', $photo_view_data); ?>
+						<? endforeach; ?>
+					<? else: ?>
+						<figure class="articlemedia <?= ($article->bigphoto ? 'bigphoto' : '') ?>">
+							<div id="swipeview_wrapper"></div>
+							<div id="swipeview_relative_nav">
+								<span id="prev" onclick="carousel.prev();hasInteracted=true">&laquo;</span>
+								<span id="next" onclick="carousel.next();hasInteracted=true">&raquo;</span>
+							</div>
+							<ul id="swipeview_nav">
+								<? foreach($photos as $key => $photo): ?>
+								<li <? if($key==0): ?>class="selected"<? endif; ?> onclick="carousel.goToPage(<?=$key; ?>);hasInteracted=true"></li>
+								<? endforeach; ?>
+							</ul>
+						</figure>
+					<? endif; ?>
 				<? endif; ?>
-			<? endif; ?>
-			<? if($attachments): ?>
-				<? 
-					$hasYoutube = false;
-					$youtubePlaylist = array();
+				<? if($attachments): //looks through the attachments and sees what's there ?>
+					<? 
+						$hasYoutube = false;
+						$youtubePlaylist = array();
 					
-					$hasVimeo = false;
-					$vimeos = array();
+						$hasVimeo = false;
+						$vimeos = array();
 					
-					$hasHTML = false;
-					$HTMLs = array();
-
-					foreach($attachments as $key => $attachment) {
+						$hasHTML = false;
+						$HTMLs = array();
+					
+						// looks through each attachment
+						foreach($attachments as $key => $attachment) {
 						
-						// handle youtubes
-						if($attachment->type == 'youtube') {
-							if(!$hasYoutube) {
-								// hold onto the attachment
-								$youtube = $attachment;
-								$hasYoutube = true;
-							} else {
-								// if it's not first youtube video, push to playlist
-								$youtubePlaylist[] = $attachment->content1;
+							// spots youtube. holds onto the first, sticks the rest in a playlist
+							if($attachment->type == 'youtube') {
+								if(!$hasYoutube) {
+									// hold onto the attachment
+									$youtube = $attachment;
+									$hasYoutube = true;
+								} else {
+									// if it's not first youtube video, push to playlist
+									$youtubePlaylist[] = $attachment->content1;
+								}
+							}
+						
+							// spots and handles vimeos
+							if($attachment->type == 'vimeo') {
+								$hasVimeo = true;
+								$vimeos[] = $attachment;
+							}
+						
+							// spots and handles raw html
+							// note that there's currently no way to create an html attachment in bonus
+							// but you can do it straight through the database if you want
+							if($attachment->type == 'html') {
+								$hasHTML = true;
+								$HTMLs[] = $attachment;
 							}
 						}
-						
-						// handle vimeos
-						if($attachment->type == 'vimeo') {
-							$hasVimeo = true;
-							$vimeos[] = $attachment;
-						}
-						
-						// handle raw html
-						if($attachment->type == 'html') {
-							$hasHTML = true;
-							$HTMLs[] = $attachment;
-						}
-					}
 					
-					if($hasYoutube) { 
-						$youtube->playlist = join($youtubePlaylist,',');
-						$this->load->view('template/attachment-video', $youtube); 
-					}
-					if($hasVimeo) { foreach($vimeos as $vimeo) { $this->load->view('template/attachment-video', $vimeo); } }
-					if($hasHTML) { foreach($HTMLs as $html) { $this->load->view('template/attachment-html', $html); } }
-				?>
-			<? endif; ?>
-			<? if(bonus()): ?>
+						// if there's at least one youtube video, load the first and put the rest in the playlist
+						if($hasYoutube) { 
+							// serializes the playlist (so you have comma-separated IDs: 124234,43t346,3i4ngiu...)
+							$youtube->playlist = join($youtubePlaylist,',');
+							// load the actual embedded player
+							$this->load->view('template/attachment-video', $youtube); 
+						}
+						if($hasVimeo) { foreach($vimeos as $vimeo) { $this->load->view('template/attachment-video', $vimeo); } }
+						if($hasHTML) { foreach($HTMLs as $html) { $this->load->view('template/attachment-html', $html); } }
+					?>
+				<? endif; ?>
+			</div>
+			<div id="bonus-attachments">
+				<? if(bonus()): ?>
 		
-				<!-- image upload -->
-				<figure class="articlemedia mini">
-					<div id="dnd-holder" class="bonus-attachment">
-						<input id="imageupload" class="imageupload" type=file accept="image/gif,image/jpeg,image/png">
-						<div id="dnd-instructions">
-							<img src="<?=base_url()?>img/icon-uploadphoto.png" type="image/svg+xml" height="50" width="50" title=""></object>
-							<br/>Click or drag
-							<br/>JPG, PNG or GIF
+					<!-- image upload -->
+					<figure class="articlemedia mini">
+						<div id="dnd-holder" class="bonus-attachment">
+							<!-- imageupload input has opacity set to zero, width and height set to 100%, so you can click anywhere to upload -->
+							<input id="imageupload" class="imageupload" type=file accept="image/gif,image/jpeg,image/png">
+							<div id="dnd-instructions">
+								<img src="<?=base_url()?>img/icon-uploadphoto.png" type="image/svg+xml" height="50" width="50" title=""></object>
+								<br/>Click or drag
+								<br/>JPG, PNG or GIF
+							</div>
 						</div>
-					</div>
-					<figcaption class="bonus">
-						<p id="photocreditbonus" class="photocredit" contenteditable="true" title="Photographer"></p>
-						<p id="photocaptionbonus" class="photocaption" contenteditable="true" title="Caption"></p>
-					</figcaption>
-				</figure>
+						<figcaption class="bonus">
+							<p id="photocreditbonus" class="photocredit" contenteditable="true" title="Photographer"></p>
+							<p id="photocaptionbonus" class="photocaption" contenteditable="true" title="Caption"></p>
+						</figcaption>
+					</figure>
 			
-				<!-- video attachment -->
-				<figure class="articlemedia mini">
-					<div id="video-attach" class="bonus-attachment">
-						<img src="<?=base_url()?>img/icon-video.png" width="45" title="Thomas Le Bas, from The Noun Project"></object>
-						<br/><input type="text" style="width:160px" name="video-url" placeholder="YouTube or Vimeo URL"></input>
-						<br/><button id="attach-video">Attach</button>
-					</div>
-				</figure>
+					<!-- video attachment -->
+					<figure class="articlemedia mini">
+						<div id="video-attach" class="bonus-attachment">
+							<img src="<?=base_url()?>img/icon-video.png" width="45" title="Thomas Le Bas, from The Noun Project"></object>
+							<form>
+							<br/><input type="text" style="width:160px" name="video-url" placeholder="YouTube or Vimeo URL"></input>
+							<br/><button type="submit" id="attach-video">Attach</button>
+							</form>
+						</div>
+					</figure>
 			
-			<? endif; ?>
-				
+				<? endif; ?>
+			</div>		
 		</div>
 		
 		<div id="articlebodycontainer">
@@ -308,6 +322,9 @@
 		window.published = <?= $article->published ? 'true' : 'false' ?>;
 	
 		// DETECT CHANGES AND SUCH
+		// surely there's a better way to handle this
+		// if only i really knew javascript
+		// #dry :(
 
 		$('#articletitle').keydown(function() {
 			titleedited=true;
@@ -366,9 +383,11 @@
 		});
 	
 		$("#publisharticle").click(function() {
-			window.publish = true;
-			window.published = true;
-			$("#savearticle").click();
+			if(confirm("Is this article ready for the world?")) {
+				window.publish = true;
+				window.published = true;
+				$("#savearticle").click();
+			}
 		});
 	
 		$("#unpublish").click(function() {
@@ -404,7 +423,8 @@
 					}
 				}));
 			}
-		
+			
+			// save photo credit/caption edits 
 			<? if(!empty($photos)): ?>
 				var photoEdits = {};
 				<? foreach($photos as $photo): ?>			
@@ -417,7 +437,25 @@
 			<? else: ?>
 				var photoEditsJSON = false;
 			<? endif; ?>
-		
+			
+			// save attachment credit/caption edits
+			var attachmentEdits = [];
+			$('.articlemedia.video-wrapper').each( function(index, attachment) {
+				var attachmentId = $("#"+attachment.id).data("attachment-id");
+				var thisAttachmentEdits = [];
+				thisAttachmentEdits["credit"]  = $("#attachmentcredit"+attachmentId).html();
+				thisAttachmentEdits["caption"] = $("#attachmentcaption"+attachmentId).html(); 
+				attachmentEdits[attachmentId] = thisPhotoEdits;				
+			});
+			if(attachmentEdits.length===0) {
+				// if array is empty, i.e. no attachments were found...
+				var attachmentEditsJSON = false;
+			}
+			else {
+				// else serialize array for ajaxing
+				var attachmentEditsJSON = JSON.stringify(attachmentEdits);
+			}
+			
 			var ajaxrequest = 
 					"title=" + urlencode($("#articletitle").html()) + 
 					"&subtitle=" + urlencode($("#articlesubtitle").html()) +
@@ -487,26 +525,6 @@
 				}
 			});
 								
-		} );
-	
-		$("#removephotos").click(function(event) {
-			event.preventDefault()
-			//note: "data:" is totally unused, but what'd happen if it weren't there??? (well, test!)
-			$.ajax({
-				type: "POST",
-				url: "<?=site_url()?>article/ajax_remove_photos/<?=$article->id?>",
-				data: "remove=true",
-				success: function(result){
-					if(result=="Photos removed.") {
-						//hide photos
-						$('.singlephoto').hide();
-					}
-					//show alert
-					$("#savenotify").html(result);
-					$("#savenotify").show();
-					$("#savenotify").fadeOut(4000);
-				}
-			});
 		} );
 	
 		$("#deletearticle").click(function(event) {
@@ -605,9 +623,6 @@
 		
 		});
 		
-		
-		
-		
 		$("#attach-video").click(function(event) {
 			event.preventDefault();
 			//note: "data:" is totally unused, but what'd happen if it weren't there??? (well, test!)
@@ -616,7 +631,8 @@
 				url: "<?=site_url()?>article/ajax_add_attachment/<?=$article->id?>",
 				data: "type=video&content1="+urlencode($('input[name=video-url]').val()),
 				success: function(result){
-					$("#article-sidebar").prepend(result);
+					$("#article-attachments").append(result);
+					$('input[name=video-url]').val('');
 				}
 			});
 		});
@@ -845,6 +861,7 @@
 	<!-- Table of Contents -->
 	<script>
 	$(document).ready(function(){
+	   // make the table of contents
 	   $('#articlebody').jqTOC({
 			tocWidth: 100,
 			tocTitle: 'Content',
@@ -857,19 +874,22 @@
 	   });
 	
 		// Set up localScroll smooth scroller to scroll the whole document
+		// when a table of contents link is clicked
 		$('#toc_container').localScroll({
 		   target:'body',
-		   duration: '1000' //uh, not sure this is working!
+		   duration: '1000' //not duration timing is working
 		});
 	
 		// not actually sure i want this to happen...
 		// should the url change as ppl navigate the article? i guess so, right?
+		// add section anchor to url
 		$("#toc_container a").click(function () {
 			location.hash = $(this).attr('href');
 		});
 
 		// thanks hartbro! 
 		// http://blog.hartleybrody.com/creating-sticky-sidebar-widgets-that-scrolls-with-you/
+		// function used to detect whether you've scrolled to an element
 		function isScrolledTo(elem) {
 			var docViewTop = $(window).scrollTop(); //num of pixels hidden above current screen
 			var docViewBottom = docViewTop + $(window).height();
@@ -877,6 +897,8 @@
 			var elemBottom = elemTop + $(elem).height();
 			return ((elemTop <= docViewTop));
 		}
+		
+		// set up the table of contents navigation stickiness
 		var catcher = $('#toc_container_catcher');
 		var sticky = $('#toc_container');
 		$(window).scroll(function() {
@@ -893,37 +915,37 @@
 				sticky.css('left','-200px');
 			}
 		
-			// highlight active TOC section
-		
+			// #todo: highlight active TOC section
+			// a la bootstrap scrollspy
 		});
 		
-		
-		
+		// make article attachments fixed and mini after you scroll past,
+		// settling them in the sidebar.
+		// not sure we want to do this, so it's disabled for now.
+		/*
 		var catcher2 = $('#article-sidebar-catcher');
 		var sticky2 = $('#article-sidebar');
 		$(window).scroll(function() {
 			if(isScrolledTo(sticky2)) {
 				$('#article-sidebar figure').addClass('mini');
+				$('#article-sidebar').css('opacity','.3');
 				sticky2.css('position','fixed');
-				sticky2.css('top','100px');
+				sticky2.css('top','60px');
 				var bodyLeftOffset = $("#articlebodycontainer").offset().left + $("#articlebodycontainer").width()-225;
 				sticky2.css('left',bodyLeftOffset+'px');
 			}
 			var stopHeight = catcher2.offset().top;
 			if (catcher2.offset().top > sticky.offset().top-200) {
 				$('#article-sidebar figure').removeClass('mini');
+				$('#article-sidebar').css('opacity','1');
 				sticky2.css('position','inherit');
 				sticky2.css('top','auto');
 				sticky2.css('left','auto');
 				//sticky2.css('top','0');
 				//sticky2.css('left','-200px');
 			}
-				
-		});
-		
-		
-		
-   
+		}); 
+		*/
 	});
 	</script>
 <? endif; ?>
