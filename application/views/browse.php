@@ -24,35 +24,8 @@
 		
 		<!-- tweets -->
 		<div id="twitter-widget" class="hidetablet">
-			<h2><a href="https://twitter.com/bowdoinorient">Twitter ↦</a></h2>
-			<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
-			<script>
-			new TWTR.Widget({
-			  version: 2,
-			  type: 'profile',
-			  rpp: 10,
-			  interval: 5000,
-			  width: 'auto',
-			  height: 390,
-			  theme: {
-				shell: {
-				  background: 'transparent',
-				  color: '#000000'
-				},
-				tweets: {
-				  background: 'transparent',
-				  color: '#555',
-				  links: '#00008B'
-				}
-			  },
-			  features: {
-				scrollbar: true,
-				loop: false,
-				live: true,
-				behavior: 'default'
-			  }
-			}).render().setUser('bowdoinorient').start();
-			</script>
+			<a class="twitter-timeline" href="https://twitter.com/bowdoinorient" data-widget-id="265861494951002113">Tweets by @bowdoinorient</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		</div>
 		
 		<!-- latest articles -->

@@ -849,9 +849,9 @@ img {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-	border-left: solid 1px lightgray;
+	border-left: 0;
 	width: 20%;
-	padding: 0 0 0 20px;
+	padding: 0;
 }
 
 /* strip header, footer, username from twitter widget */
@@ -1601,6 +1601,10 @@ article header, .authorheader {
 	font-variant: small-caps;
 	margin: 0.7em 0;
 	clear: left;
+}
+
+#article-sidebar:hover {
+	opacity:1 !important;
 }
 
 figure {
