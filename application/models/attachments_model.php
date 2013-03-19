@@ -257,6 +257,36 @@ class Attachments_model extends CI_Model {
 		$this->db->where('id', $attachment_id);
 		return $this->db->update('attachments');
     }
+    
+    // notice that this is identical to edit_photo
+    // bad form. #dry (that said, i'm not quite ready to combine photos and attachments)
+	function edit_attachment($attachment_id, $credit, $caption)
+    {
+		$this->load->model('author_model', '', TRUE);
+		
+    	$credit = trim(str_replace("&nbsp;", ' ', $credit));
+    	if(empty($credit) || !$credit || $credit == '&nbsp;')
+    	{
+    		$author_id = '';
+    	}
+    	else
+    	{
+			$author = $this->author_model->get_author_by_name($credit);
+			if(!$author)
+			{
+				$this->author_model->add_author($credit);
+				$author = $this->author_model->get_author_by_name($credit);
+			}
+			$author_id = $author->id;
+		}
+		
+		$data = array(
+			'author_id'	=> $author_id,
+			'content2'	=> $caption
+		);
+		$this->db->where('id', $attachment_id);
+		return $this->db->update('attachments', $data);
+    }
     	
 }
 ?>

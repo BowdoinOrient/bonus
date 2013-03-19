@@ -118,8 +118,8 @@ class Article extends CI_Controller {
 		$author 	= trim(preg_replace('/\&nbsp\;/', ' ',strip_tags(urldecode($this->input->post("author")))));
 		$authorjob 	= trim(preg_replace('/\&nbsp\;/', ' ',strip_tags(urldecode($this->input->post("authorjob")))));
 		$body 		= trim(urldecode($this->input->post("body")));
-		$photoEditsJSON = urldecode($this->input->post("photoEdits"));
-		
+		$photoEditsJSON 		= urldecode($this->input->post("photoEdits"));
+		$attachmentEditsJSON	= urldecode($this->input->post("attachmentEdits"));		
 		
 		$photoEditSuccess = true;
 		if($photoEditsJSON) 
@@ -134,6 +134,20 @@ class Article extends CI_Controller {
 			}
 		}
 		
+		// update attachment credit/caption
+		// notice that this is almost identical to the above, which is very bad form. #dry
+		$attachmentEditSuccess = true;
+		if($attachmentEditsJSON) 
+		{
+			$attachmentEdits = json_decode($attachmentEditsJSON);
+			foreach($attachmentEdits as $key => $attachmentEdit)
+			{
+				$attachment_id = $key;
+				$credit = substr(trim(preg_replace('/\&nbsp\;/', ' ',strip_tags(urldecode($attachmentEdit->credit), '<b><i><u><strong><em>'))),0,100); //limited to 100 due to db
+				$caption = trim(preg_replace('/\&nbsp\;/', ' ',strip_tags(urldecode($attachmentEdit->caption), '<b><i><u><strong><em><a>')));
+				$attachmentEditSuccess = ($attachmentEditSuccess && $this->attachments_model->edit_attachment($attachment_id, $credit, $caption));
+			}
+		}
 		
 		$published = ($this->input->post("published") == 'true' ? '1' : '0');
 		$featured = ($this->input->post("featured") == 'true' ? '1' : '0');
