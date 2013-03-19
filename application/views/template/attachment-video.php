@@ -20,18 +20,14 @@
 	</div>
 	
 	<figcaption>
-		<? if(!empty($author_id)): ?>
-			<?if(bonus()):?>
-				<p id="photocredit<?=$id?>" class="photocredit" contenteditable="true" title="Photographer"><?= $author_name; ?></p>
-			<?else:?>
-				<p id="photocredit<?=$id?>" class="photocredit">
-					<?= anchor('author/'.$author_id, $author_id) ?>
-				</p>
-			<?endif;?>
+		<? if(!empty($author_id) && !bonus()): ?>
+			<p id="attachmentcredit<?=$id?>" class="photocredit">
+				<?= anchor('author/'.$author_id, $author_id) ?>
+			</p>
 		<? elseif(bonus()): ?>
-			<p id="photocredit<?=$id?>" class="photocredit" contenteditable="true" title="Photographer"></p>
+			<p id="attachmentcredit<?=$id?>" class="photocredit" contenteditable="true" title="Author"></p>
 		<? endif; ?>
-		<p id="photocaption<?=$id?>" class="photocaption" <?if(bonus()):?>contenteditable="true" title="Caption"<?endif;?>><?=$content2?></p>
+		<p id="attachmentcaption<?=$id?>" class="photocaption" <?if(bonus()):?>contenteditable="true" title="Caption"<?endif;?>><?=$content2?></p>
 	</figcaption>
 	
 </figure>
