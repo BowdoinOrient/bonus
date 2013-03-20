@@ -464,23 +464,24 @@
 				var attachmentEditsJSON = JSON.stringify(attachmentEdits);
 			}
 			
-			var ajaxrequest = 
-					"title=" + urlencode($("#articletitle").html()) + 
-					"&subtitle=" + urlencode($("#articlesubtitle").html()) +
-					"&series=" + urlencode($("#series").html()) +
-					"&author=" + urlencode($("#addauthor").html()) +
-					"&authorjob=" + urlencode($("#addauthorjob").html()) +
-					"&volume=" + urlencode($('input[name=volume]').val()) +
-					"&issue_number=" + urlencode($('input[name=issue_number]').val()) +
-					"&section_id=" + urlencode($('input[name=section_id]').val()) +
-					"&priority=" + urlencode($('input[name=priority]').val()) +
-					"&published=" + window.published +
-					"&featured=" + $('input[name=featured]').prop('checked') +
-					"&opinion=" + $('input[name=opinion]').prop('checked');
-			if(photoEditsJSON)		{ ajaxrequest += "&photoEdits=" + urlencode(photoEditsJSON); }
-			if(attachmentEditsJSON)	{ ajaxrequest += "&attachmentEdits=" + urlencode(attachmentEditsJSON); }
-			if(bodyedited) 			{ ajaxrequest += "&body=" + urlencode($("#articlebody").html()); }
-		
+			var ajaxrequest = {
+				title: 			urlencode($("#articletitle").html()),
+				subtitle:		urlencode($("#articlesubtitle").html()),
+				series:			urlencode($("#series").html()),
+				author:			urlencode($("#addauthor").html()),
+				authorjob:		urlencode($("#addauthorjob").html()),
+				volume:			urlencode($('input[name=volume]').val()),
+				issue_number:	urlencode($('input[name=issue_number]').val()),
+				section_id:		urlencode($('input[name=section_id]').val()),
+				priority:		urlencode($('input[name=priority]').val()),
+				published:		window.published,
+				featured:		$('input[name=featured]').prop('checked'),
+				opinion:		$('input[name=opinion]').prop('checked')
+			};
+			if(photoEditsJSON)		{ ajaxrequest.photoEdits = 		urlencode(photoEditsJSON); }
+			if(attachmentEditsJSON)	{ ajaxrequest.attachmentEdits =	urlencode(attachmentEditsJSON); }
+			if(bodyedited) 			{ ajaxrequest.body = 			urlencode($("#articlebody").html()); }
+			
 			// write title, subtitle, author, authorjob, bonus-meta stuff
 			// (regardless of whether they've been edited. sloppy.)
 			// and body, only if it's been edited
