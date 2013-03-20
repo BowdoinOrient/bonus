@@ -311,7 +311,7 @@ button.bonusbutton#addarticlebutton {
 
 #bonusbar #savenotify {
 	margin-right: 10px;
-	display: none;
+	color: darkgray;
 }
 
 #bonusbar .delete {

@@ -399,7 +399,9 @@
 		});
 	
 		$("#savearticle").click(function() {
-		
+			
+			$("#savenotify").html("Saving...");
+			
 			var statusMessage = '';
 			var refresh = false;
 			var calls = [];
@@ -445,6 +447,8 @@
 			// save attachment credit/caption edits
 			var attachmentEdits = {};
 			$('.articlemedia.video-wrapper').each( function(index, attachment) {
+				// gets attachment id from data-attachment-id attribute of figure
+				// note that this.data-attachment-id doesn't work, so i do this roundabout jquery select thing
 				var attachmentId = $("#"+attachment.id).data("attachment-id");
 				var thisAttachmentEdits = {};
 				thisAttachmentEdits["credit"]  = $("#attachmentcredit"+attachmentId).html();
@@ -490,8 +494,6 @@
 					statusMessage += result;
 				
 					$("#savenotify").html(result);
-					$("#savenotify").show();
-					$("#savenotify").fadeOut(4000);
 				
 					if(window.published)
 					{
@@ -518,15 +520,11 @@
 		
 			$.when.apply($, calls).then(function() {
 				$("#savenotify").html(statusMessage);
-				$("#savenotify").show();
 				if(window.publish) {
 					window.location = "<?=site_url()?>"; 
 				}
 				if(refresh) { 
 					window.location.reload(); 
-				}
-				else {
-					$("#savenotify").fadeOut(4000);
 				}
 			});
 								
@@ -536,20 +534,17 @@
 			event.preventDefault()
 		
 			if(confirm("Are you sure you want to delete this article? (If this article has already been published, it's probs not kosher to delete it.)")) {
-				//note: "data:" is totally unused, but what'd happen if it weren't there??? (well, test!)
 				$.ajax({
 					type: "POST",
 					url: "<?=site_url()?>article/ajax_delete_article/<?=$article->id?>",
 					data: "remove=true",
 					success: function(result){
-						if(result=="1") {
+						if(result=="Article deleted.") {
 							//return home
 							window.location = "<?=site_url()?>";
 						}
 						//show alert
 						$("#savenotify").html(result);
-						$("#savenotify").show();
-						$("#savenotify").fadeOut(4000);
 					}
 				});
 			}
@@ -571,8 +566,6 @@
 					}
 					//show alert
 					$("#savenotify").html(result);
-					$("#savenotify").show();
-					$("#savenotify").fadeOut(4000);
 				}
 			});
 		
@@ -592,8 +585,6 @@
 					}
 					//show alert
 					$("#savenotify").html(result);
-					$("#savenotify").show();
-					$("#savenotify").fadeOut(4000);
 				}
 			});
 		
@@ -621,8 +612,6 @@
 					}
 					//show alert
 					$("#savenotify").html(result);
-					$("#savenotify").show();
-					$("#savenotify").fadeOut(4000);
 				}
 			});
 		
@@ -630,13 +619,23 @@
 		
 		$("#attach-video").click(function(event) {
 			event.preventDefault();
-			//note: "data:" is totally unused, but what'd happen if it weren't there??? (well, test!)
 			$.ajax({
 				type: "POST",
 				url: "<?=site_url()?>article/ajax_add_attachment/<?=$article->id?>",
-				data: "type=video&content1="+urlencode($('input[name=video-url]').val()),
+				data: {
+					type: 		"video",
+					content1: 	urlencode($('input[name=video-url]').val())
+				},
 				success: function(result){
-					$("#article-attachments").append(result);
+					//if there's an existing video attachment on the page...
+					if($('.articlemedia.video-wrapper').length>0) {
+						//just add this new video to the playlist
+						// #TODO TOPH
+					}
+					else {
+						$("#article-attachments").append(result);
+					}
+					// clear the video URL input from the attachment form
 					$('input[name=video-url]').val('');
 				}
 			});
@@ -656,8 +655,6 @@
 					}
 					//show alert
 					$("#savenotify").html(result);
-					$("#savenotify").show();
-					$("#savenotify").fadeOut(4000);
 				}
 			});
 		
@@ -685,8 +682,6 @@
 					}
 					//show alert
 					$("#savenotify").html(result);
-					$("#savenotify").show();
-					$("#savenotify").fadeOut(4000);
 				}
 			});
 		
