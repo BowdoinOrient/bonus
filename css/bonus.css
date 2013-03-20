@@ -213,7 +213,7 @@ nav ul li a:hover {
 // BONUS BAR
 */
 
-#bonusbar {
+.bonusbar {
 	position: fixed;
 	bottom: 0;
 	height: 25px;
@@ -224,7 +224,7 @@ nav ul li a:hover {
 	padding: 10px;
 }
 
-#bonusbarnav {
+.bonusbarnav {
 	font-size: 24px;
 	font-family:myriad-pro,helvetica,arial;
 	text-align: left;
@@ -233,6 +233,6 @@ nav ul li a:hover {
 	line-height: 24px;
 }
 
-#bonusbar a {
+.bonusbar a {
 	color: darkblue;
 }

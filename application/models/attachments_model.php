@@ -161,19 +161,7 @@ class Attachments_model extends CI_Model {
 		$this->db->where('id', $photo_id);
 		return $this->db->update('photo');
     }
-    
-    function remove_article_photos($article_id)
-    {
-    	$photo_count = $this->count_article_photos($article_id);
-    	if($photo_count == 0) return "No photos to remove.";
-    	
-    	$this->db->set('active','0');
-    	$this->db->where('article_id', $article_id);
-    	$this->db->update('photo');
-    	
-    	return "Photos removed.";
-    }
-        
+            
     function get_random_quote($filter = TRUE, $public = '1')
     {
     	$this->db->order_by('id', 'random');
@@ -256,6 +244,45 @@ class Attachments_model extends CI_Model {
     	$this->db->set('active', '0');
 		$this->db->where('id', $attachment_id);
 		return $this->db->update('attachments');
+    }
+    
+    // delete youtube 'playlist', aka every youtube attachment for an article
+    function delete_attachment_playlist($article_id)
+    {
+    	$this->db->set('active', '0');
+    	$this->db->where('type', 'youtube');
+		$this->db->where('article_id', $article_id);
+		return $this->db->update('attachments');
+    }    
+    
+    // notice that this is identical to edit_photo
+    // bad form. #dry (that said, i'm not quite ready to combine photos and attachments)
+	function edit_attachment($attachment_id, $credit, $caption)
+    {
+		$this->load->model('author_model', '', TRUE);
+		
+    	$credit = trim(str_replace("&nbsp;", ' ', $credit));
+    	if(empty($credit) || !$credit || $credit == '&nbsp;')
+    	{
+    		$author_id = '';
+    	}
+    	else
+    	{
+			$author = $this->author_model->get_author_by_name($credit);
+			if(!$author)
+			{
+				$this->author_model->add_author($credit);
+				$author = $this->author_model->get_author_by_name($credit);
+			}
+			$author_id = $author->id;
+		}
+		
+		$data = array(
+			'author_id'	=> $author_id,
+			'content2'	=> $caption
+		);
+		$this->db->where('id', $attachment_id);
+		return $this->db->update('attachments', $data);
     }
     	
 }

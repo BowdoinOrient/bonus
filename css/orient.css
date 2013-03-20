@@ -214,107 +214,133 @@ footer .bonusquoteattribution {
 // BONUS BAR
 */
 
-#bonushook {
+#bonus-hook-wrapper {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	position: fixed;
 	bottom: 0;
-	height: 25px;
-	padding: 10px;
-}
-
-#bonushook a {
+	height: 45px;
+	padding: 8px;
 	color: white;
+	line-height: 24px;
 }
 
-#bonushook a:hover {
+.bonus-hook {
+	font-size: 28px;
+}
+
+.bonus-hook:hover {
 	color: lightgray;
-	text-decoration: none;
+	cursor: pointer;
 }
 
-#bonusbar {
+#bonus-login-mini {
+	display:none;
+	border-right: 1px white solid;
+}
+#bonus-login-mini form {
+	display:inline;
+}
+
+.bonusbar {
 	position: fixed;
 	bottom: 0;
 	height: 45px;
 	width: 100%;
 	background: url(../img/starring.png);
 	color: white;
-	padding: 10px;
+	padding: 8px;
 	border-top: 1px solid white;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	font-family:myriad-pro,helvetica,arial;
-	line-height: 1;
+	line-height: 24px;
+	font-size: 16px;
 }
 
-#bonushook, #bonusbarnav {
-	font-size: 24px;
+.bonusbar * {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 }
 
-#bonustools {
+#bonus-left {
+	float: left;
+}
+
+#bonus-right {
 	float: right;
-	margin: 0 5px;
 }
 
-#bonustools input {
+.bonusbar #bonus-login-mini-form {
+	margin-left: 10px;
+}
+
+.bonusbar input {
 	background: #333;
 	color: white;
-	border: 1px white solid;
+	border: 1px gray solid;
+	height: 26px;
 	font-family:myriad-pro,helvetica,arial;
 	padding: 3px;
 	text-align: center;
+	font-size: 16px;
 }
 
-#bonusbar a {
+.bonusbar a {
 	color: lightblue;
 }
 
-button.bonusbutton {
+.bonusbar button, .bonusbutton {
 	font-family:myriad-pro,helvetica,arial;
 	font-size: 16px;
 	margin-left: 10px;
 	border: 1px solid white;
+	height: 26px;
+	background-color: rgb(192, 192, 192);
 }
 
-button.bonusbutton:hover {
+.bonusbar button:hover, .bonusbutton:hover {
 	-moz-box-shadow:    inset 0 0 10px #fff;
 	-webkit-box-shadow: inset 0 0 10px #fff;
 	box-shadow:         inset 0 0 10px #fff;
 }
 
-button.bonusbutton:active {
+.bonusbar button:active, .bonusbutton:active {
 	-moz-box-shadow:    inset 0 0 20px #000000;
 	-webkit-box-shadow: inset 0 0 20px #000000;
 	box-shadow:         inset 0 0 20px #000000;
 }
 
-button.bonusbutton#savearticle {
+.bonusbar button#savearticle {
 	float: right;
 	width: 70px;
 	background: #555;
 	color: white;
 }
 
-button.bonusbutton#publisharticle {
+.bonusbar button#publisharticle {
 	float: right;
 	width: 70px;
 	background: darkgreen;
 	color: white;
 }
 
-button.bonusbutton#addarticlebutton {
-	/*float: right;*/
+.bonusbutton#addarticlebutton {
 	width: 100px;
 	margin-top: -5px;
 	background: darkgreen;
 	color: white;
 }
 
-#bonusbar #savenotify {
+.bonusbar #savenotify, .bonusbar #loginnotify {
 	margin-right: 10px;
-	display: none;
+	color: darkgray;
 }
 
-#bonusbar .delete {
+.bonusbar .delete {
 	color: red;
 }
 
@@ -849,9 +875,9 @@ img {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-	border-left: solid 1px lightgray;
+	border-left: 0;
 	width: 20%;
-	padding: 0 0 0 20px;
+	padding: 0;
 }
 
 /* strip header, footer, username from twitter widget */
@@ -1601,6 +1627,10 @@ article header, .authorheader {
 	font-variant: small-caps;
 	margin: 0.7em 0;
 	clear: left;
+}
+
+#article-sidebar:hover {
+	opacity:1 !important;
 }
 
 figure {

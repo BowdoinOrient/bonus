@@ -135,14 +135,23 @@ class Bonus extends CI_Controller {
 	}
     }
 	
-    function logout()
-    {
-	$this->session->unset_userdata('logged_in');
-	$this->session->sess_destroy();
-	redirect($data->referrer, 'refresh');
-    }
-	
-	
+	function ajax_logout()
+	{
+		if($this->input->post('logout') == 'true') {		
+			$this->session->unset_userdata('logged_in');
+			$this->session->sess_destroy();
+			$response['success'] = true;
+			$response['status'] = "Logging out...";
+			exit(json_encode($response));
+		}
+		else
+		{
+			$response['success'] = false;
+			$response['status'] = "Logout failed";
+			exit(json_encode($response));
+		}
+	}
+
     /**
      * http://www.codefactorycr.com/login-with-codeigniter-php.html
      **/
@@ -161,7 +170,26 @@ class Bonus extends CI_Controller {
 	    //Field validation failed.  User redirected to login page
 	    $this->login();
 	}
-	else
+
+	function ajax_verifylogin()
+	{
+		if($this->check_database($this->input->post('password'))) {
+			$response['success'] = true;
+			$response['status'] = "Logging in...";
+			exit(json_encode($response));
+		}
+		else
+		{
+			$response['success'] = false;
+			$response['status'] = "Denied";
+			exit(json_encode($response));
+		}
+	}
+	
+	/**
+	 * http://www.codefactorycr.com/login-with-codeigniter-php.html
+	 **/
+	function check_database($password)
 	{
 	    //Go to private area			
 	    if($this->input->post('referrer'))
