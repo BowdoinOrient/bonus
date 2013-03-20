@@ -225,7 +225,13 @@ class Article extends CI_Controller {
 	public function ajax_delete_article($article_id)
 	{
 		if(!bonus()) exit("Permission denied. Try refreshing and logging in again.");
-		exit($this->article_model->delete_article($article_id));
+		if($this->input->post('remove')=='true') {
+			$this->article_model->delete_article($article_id);
+			exit("Article deleted.");
+		}
+		else {
+			exit("Delete request wasn't sent properly.");
+		}
 	}
 	
 	public function ajax_suggest($table, $field)
@@ -357,14 +363,13 @@ class Article extends CI_Controller {
 	public function ajax_delete_photo($photo_id)
 	{
 		if(!bonus()) exit("Permission denied. Try refreshing and logging in again.");
-		$this->attachments_model->delete_photo($photo_id);
-		exit("Photo deleted.");
-	}
-	
-	public function ajax_remove_photos($article_id)
-	{
-		if(!bonus()) exit("Permission denied. Try refreshing and logging in again.");
-		exit($this->attachments_model->remove_article_photos($article_id));
+		if($this->input->post('remove')=='true') {
+			$this->attachments_model->delete_photo($photo_id);
+			exit("Photo deleted.");
+		}
+		else {
+			exit("Delete request wasn't sent properly.");
+		}
 	}
 	
 	public function ajax_bigphoto($article_id)
@@ -428,6 +433,10 @@ class Article extends CI_Controller {
 			);
 		$attachment_id = $this->attachments_model->add_attachment($db_data);
 		$attachment = $this->attachments_model->get_attachment($attachment_id);
+		
+		// return json serialized object containing response (the html), status (errors etc), and attachment id????
+		// i gotta actually learn ajax protocol haha...
+		
 		exit($this->load->view('template/attachment-video', $attachment, true));
 	}
 	
