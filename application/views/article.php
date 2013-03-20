@@ -294,13 +294,6 @@
 	var photocreditedited=false;
 	var photocaptionedited=false;
 
-	// thanks Mark Seecof!
-	// http://www.php.net/manual/en/function.urlencode.php#85903
-	function urlencode(s) {
-		s = encodeURIComponent(s);
-		return s.replace(/~/g,'%7E').replace(/%20/g,'+');
-	}
-
 	$(document).ready(function()
 	{
 		// SET TOOLTIPS
