@@ -42,7 +42,7 @@ if(empty($page_image)) $page_image=base_url()."img/o-200.png";
 	<script type="text/javascript" src="<?=base_url()?>js/jquery.localscroll-1.2.7-min.js"></script>
 	
 	<!-- template js -->
-	<script type="text/javascript" src="<?=base_url()?>js/orient.js"></script>
+	<script type="text/javascript" src="<?=base_url()?>js/orient.js?v=2"></script>
 	
 	<!-- TypeKit -->
 	<script type="text/javascript" src="http://use.typekit.com/rmt0nbm.js"></script>
