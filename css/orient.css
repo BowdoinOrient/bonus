@@ -230,7 +230,7 @@ footer .bonusquoteattribution {
 	text-decoration: none;
 }
 
-#bonusbar {
+.bonusbar {
 	position: fixed;
 	bottom: 0;
 	height: 45px;
@@ -246,7 +246,7 @@ footer .bonusquoteattribution {
 	line-height: 1;
 }
 
-#bonushook, #bonusbarnav {
+#bonushook, .bonusbarnav {
 	font-size: 24px;
 }
 
@@ -264,7 +264,7 @@ footer .bonusquoteattribution {
 	text-align: center;
 }
 
-#bonusbar a {
+.bonusbar a {
 	color: lightblue;
 }
 
@@ -309,12 +309,12 @@ button.bonusbutton#addarticlebutton {
 	color: white;
 }
 
-#bonusbar #savenotify {
+.bonusbar #savenotify {
 	margin-right: 10px;
 	color: darkgray;
 }
 
-#bonusbar .delete {
+.bonusbar .delete {
 	color: red;
 }
 
