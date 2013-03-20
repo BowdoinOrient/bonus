@@ -299,6 +299,7 @@ footer .bonusquoteattribution {
 	margin-left: 10px;
 	border: 1px solid white;
 	height: 26px;
+	background-color: rgb(192, 192, 192);
 }
 
 .bonusbar button:hover, .bonusbutton:hover {
