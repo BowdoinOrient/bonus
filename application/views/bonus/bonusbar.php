@@ -9,7 +9,7 @@
 			<?else:?>
 			<a href="<?=site_url()?>bonus/dashboard">Dashboard</a> 
 			<?endif;?>
-			Hello <?=username()?>. <span id="login-notify"></span>
+			/ Hello <?=username()?>. <span id="login-notify"></span>
 		</span>
 
 		<?if(substr(uri_string(),0,8)=="article/"):?>
