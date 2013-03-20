@@ -394,8 +394,12 @@ class Article extends CI_Controller {
 	
 	public function ajax_add_attachment($article_id)
 	{
-		if(!bonus()) exit("Permission denied. Try refreshing and logging in again.");
-				
+		if(!bonus()) {
+			$response['status'] = "Permission denied. Log in (on any tab) and try again.";
+			$response['success'] = false;
+			exit(json_encode($response));
+		}
+		
 		$type = trim(urldecode($this->input->post("type")));
 		$content1 = trim(urldecode($this->input->post("content1")));
 		$content2 = trim(urldecode($this->input->post("content2")));
@@ -412,7 +416,9 @@ class Article extends CI_Controller {
 				$content1 = $vimeo_id;
 			}
 			else {
-				exit("Error: unsupported video URL");
+				$response['status'] = "Error: unsupported video URL";
+				$response['success'] = false;
+				exit(json_encode($response));
 			}
 			// #todo: youtube playlists
 			// #todo: twitter widgets
@@ -422,7 +428,9 @@ class Article extends CI_Controller {
 			// #todo: rich text sidebars
 		}
 		else {
-			exit("Error: unsupported attachment type, ".$type);
+			$response['status'] = "Error: unsupported attachment type, ".$type;
+			$response['success'] = false;
+			exit(json_encode($response));
 		}
 		
 		$db_data = array(
@@ -433,18 +441,52 @@ class Article extends CI_Controller {
 			);
 		$attachment_id = $this->attachments_model->add_attachment($db_data);
 		$attachment = $this->attachments_model->get_attachment($attachment_id);
-		
-		// return json serialized object containing response (the html), status (errors etc), and attachment id????
-		// i gotta actually learn ajax protocol haha...
-		
-		exit($this->load->view('template/attachment-video', $attachment, true));
+		if($attachment) {
+			// return json serialized object
+			$response = array(
+				'attachmentId' =>	$attachment_id,
+				'authorId' =>		$attachment->author_id,
+				'type' =>			$type,
+				'content1' =>		$attachment->content1,
+				'content2' =>		$attachment->content2,
+				'view' =>			$this->load->view('template/attachment-video', $attachment, true),
+				'success' =>		true,
+				'status' =>			"Attachment added."
+			);
+			exit(json_encode($response));
+		}
+		else {
+			$response['success'] = false;
+			$response['status'] = "Adding the attachment failed.";
+			exit(json_encode($response));		
+		}
 	}
 	
 	public function ajax_delete_attachment($attachment_id)
 	{
-		if(!bonus()) exit("Permission denied. Try refreshing and logging in again.");
-		$this->attachments_model->delete_attachment($attachment_id);
-		exit("Attachment deleted.");
+		if(!bonus()) {
+			$response['success'] = false;
+			$response['status'] = "Permission denied. Try refreshing and logging in again.";
+			exit(json_encode($response));
+		}
+		
+		if($this->input->post('remove')=='true') {
+			if($this->input->post('playlist')=='true') {
+				$this->attachments_model->delete_attachment_playlist($this->input->post('article_id'));
+				$response['success'] = true;
+				$response['status'] = "YouTube playlist deleted.";
+			}
+			else {
+				$this->attachments_model->delete_attachment($attachment_id);
+				$response['success'] = true;
+				$response['status'] = "Attachment deleted.";
+			}
+		}
+		else {
+			$response['success'] = false;
+			$response['status'] = "Delete request wasn't sent properly.";
+		}
+		exit(json_encode($response));		
 	}
 	
 	public function ajax_attachment_big($attachment_id)

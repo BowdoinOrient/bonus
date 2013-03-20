@@ -246,6 +246,15 @@ class Attachments_model extends CI_Model {
 		return $this->db->update('attachments');
     }
     
+    // delete youtube 'playlist', aka every youtube attachment for an article
+    function delete_attachment_playlist($article_id)
+    {
+    	$this->db->set('active', '0');
+    	$this->db->where('type', 'youtube');
+		$this->db->where('article_id', $article_id);
+		return $this->db->update('attachments');
+    }    
+    
     // notice that this is identical to edit_photo
     // bad form. #dry (that said, i'm not quite ready to combine photos and attachments)
 	function edit_attachment($attachment_id, $credit, $caption)

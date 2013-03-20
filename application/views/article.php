@@ -6,7 +6,7 @@
 
 <div id="content">
 	
-	<article id="mainstory">
+	<article id="mainstory" data-article-id="<?=$article->id?>">
 		
 		<header>
 			<hgroup class="articletitle-group">
@@ -422,6 +422,9 @@
 						}
 						statusMessage += result;
 						// set hasphoto to true; set photoadded to false? ugh.
+					},
+					error: function(XMLHttpRequest, textStatus, errorThrown){
+						$("#savenotify").html("There was an unknown error. The site could not be reached. "+errorThrown+" "+textStatus);
 					}
 				}));
 			}
@@ -516,6 +519,9 @@
 					photocaptionedited=false;
 					window.onbeforeunload = null; // remove message blocking navigation away from page
 					$('#articletitle, #articlesubtitle, #articlebody, #photocreditbonus, #photocaptionbonus').css("color", "inherit");
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown){
+					$("#savenotify").html("There was an unknown error. The site could not be reached. "+errorThrown+" "+textStatus);
 				}
 			}));
 		
@@ -546,6 +552,9 @@
 						}
 						//show alert
 						$("#savenotify").html(result);
+					},
+					error: function(XMLHttpRequest, textStatus, errorThrown){
+						$("#savenotify").html("There was an unknown error. The site could not be reached. "+errorThrown+" "+textStatus);
 					}
 				});
 			}
@@ -567,6 +576,9 @@
 					}
 					//show alert
 					$("#savenotify").html(result);
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown){
+					$("#savenotify").html("There was an unknown error. The site could not be reached. "+errorThrown+" "+textStatus);
 				}
 			});
 		
@@ -586,6 +598,9 @@
 					}
 					//show alert
 					$("#savenotify").html(result);
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown){
+					$("#savenotify").html("There was an unknown error. The site could not be reached. "+errorThrown+" "+textStatus);
 				}
 			});
 		
@@ -613,6 +628,9 @@
 					}
 					//show alert
 					$("#savenotify").html(result);
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown){
+					$("#savenotify").html("There was an unknown error. The site could not be reached. "+errorThrown+" "+textStatus);
 				}
 			});
 		
@@ -627,17 +645,33 @@
 					type: 		"video",
 					content1: 	urlencode($('input[name=video-url]').val())
 				},
+				dataType: 'json',
 				success: function(result){
-					//if there's an existing video attachment on the page...
-					if($('.articlemedia.video-wrapper').length>0) {
-						//just add this new video to the playlist
-						// #TODO TOPH
+					console.log(result);
+					if(result.success)
+					{
+						$("#savenotify").html(result.status);
+						
+						//if it's a youtube video and there's an existing youtube video on the page...
+						if(result.type == 'youtube' && $('.articlemedia.video-wrapper.youtube').length>0) {
+							console.log("Appending to YouTube playlist.");
+							//just add this new video to the playlist
+							$('.articlemedia.video-wrapper.youtube iframe').attr('src', $('.articlemedia.video-wrapper.youtube iframe').attr('src')+result.content1+',');
+							$('.articlemedia.video-wrapper.youtube iframe').addClass('playlist');
+						}
+						else {
+							$("#article-attachments").append(result.view);
+						}
+						// clear the video URL input from the attachment form
+						$('input[name=video-url]').val('');
 					}
-					else {
-						$("#article-attachments").append(result);
+					else
+					{
+						$("#savenotify").html(result.status);
 					}
-					// clear the video URL input from the attachment form
-					$('input[name=video-url]').val('');
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown){
+					$("#savenotify").html("There was an unknown error. The site could not be reached. "+errorThrown+" "+textStatus);
 				}
 			});
 		});
@@ -646,16 +680,26 @@
 		
 			var attachmentId = event.target.id.replace("deleteAttachment","");
 			
+			ajaxrequest = {
+				remove: true,
+				article_id: $("#mainstory").data('article-id')
+			};
+			if($("#attachment"+attachmentId).data('playlist').length > 0) ajaxrequest.playlist = true;
+			
 			$.ajax({
 				type: "POST",
 				url: "<?=site_url()?>article/ajax_delete_attachment/"+attachmentId,
-				data: "remove=true",
+				data: ajaxrequest,
+				dataType: 'json',
 				success: function(result){
-					if(result=="Attachment deleted.") {
+					//show alert
+					$("#savenotify").html(result.status);
+					if(result.success) {
 						$("#attachment"+attachmentId).hide("fast");
 					}
-					//show alert
-					$("#savenotify").html(result);
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown){
+					$("#savenotify").html("There was an unknown error. The site could not be reached. "+errorThrown+" "+textStatus);
 				}
 			});
 		
