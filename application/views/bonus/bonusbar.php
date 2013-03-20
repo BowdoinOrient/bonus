@@ -36,8 +36,8 @@
 	<div id="bonus-login-mini" class="bonusbar" style="width:auto !important;">
 		<span class="bonus-hook">&#x235f;</span>
 		<form id="bonus-login-mini-form">
-			<input type="text" size="10" id="username" name="username" placeholder="Username"/>
-			<input type="password" size="10" id="password" name="password" placeholder="Password"/>
+			<input type="text" size="10" id="username" name="username" placeholder="Username" autocapitalize="off" autocorrect="off"/>
+			<input type="password" size="10" id="password" name="password" placeholder="Password" autocapitalize="off" autocorrect="off"/>
 			<button type="submit" id="bonus-login-mini-submit">Go</button>
 		</form>
 		<span id="login-notify"></span>
