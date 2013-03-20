@@ -9,7 +9,7 @@
 			<?else:?>
 			<a href="<?=site_url()?>bonus/dashboard">Dashboard</a> 
 			<?endif;?>
-			/ Hello <?=username()?>. <span id="login-notify"></span>
+			<span class="hidemobile">/ Hello <?=username()?>.</span> <span id="login-notify"></span>
 		</span>
 
 		<?if(substr(uri_string(),0,8)=="article/"):?>
@@ -17,12 +17,12 @@
 			<button id="savearticle">Save</button>
 			<span id="bonus-right">
 				<span id="savenotify"></span>
-				Vol. <input type="text" name="volume" id="volume" size="2" value="<?=$article->volume?>" />
+				<span class="hidemobile">Vol. <input type="text" name="volume" id="volume" size="2" value="<?=$article->volume?>" />
 				/ No. <input type="text" name="issue_number" id="issue_number" size="2" value="<?=$article->issue_number?>" />
 				<input type="hidden" name="section_id" id="section_id" size="2" value="<?=$article->section_id?>" />
 				/ Priority <input type="text" name="priority" id="priority" size="2" value="<?=$article->priority?>" />
 				<? if($article->published): ?>/ <a href="#" class="delete" id="unpublish">Unpublish</a><?endif;?>
-				/ <a href="#" class="delete" id="deletearticle">Delete</a>
+				/ <a href="#" class="delete" id="deletearticle">Delete</a></span>
 			</span>
 		<?endif;?>
 	
