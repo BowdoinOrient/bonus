@@ -52,6 +52,7 @@ $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'orientdba';
 $db['default']['password'] = '0r1en!';
 $db['default']['database'] = 'orient';
+//$db['default']['database'] = 'DB02Orient';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
