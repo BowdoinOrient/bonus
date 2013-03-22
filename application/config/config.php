@@ -14,7 +14,8 @@
 | path to your installation.
 |
 */
-$config['base_url'] = 'http://localhost/~tophtucker/bonus/';
+$config['base_url'] = 'http://bowdoinorient.dev/';
+//$config['base_url'] = 'http://localhost/~tophtucker/bonus/';
 //$config['base_url'] = 'http://dhcp-215-166.wireless.bowdoin.edu/~tophtucker/orient/';
 //$config['base_url'] = 'http://tophs-macbook-air.local/~tophtucker/orient/';
 //$config['base_url'] = 'http://dhcp-211-151.wireless.bowdoin.edu/~tophtucker/orient/';
@@ -51,7 +52,7 @@ $config['index_page'] = '';
 | 'ORIG_PATH_INFO'	Uses the ORIG_PATH_INFO
 |
 */
-$config['uri_protocol']	= 'AUTO';
+$config['uri_protocol']	= 'REQUEST_URI';
 
 /*
 |--------------------------------------------------------------------------
