@@ -14,8 +14,8 @@
 | path to your installation.
 |
 */
-$config['base_url'] = 'http://bowdoinorient.dev/';
-//$config['base_url'] = 'http://localhost/~tophtucker/bonus/';
+//$config['base_url'] = 'http://bowdoinorient.dev/';
+$config['base_url'] = 'http://localhost/~tophtucker/bonus/';
 //$config['base_url'] = 'http://dhcp-215-166.wireless.bowdoin.edu/~tophtucker/orient/';
 //$config['base_url'] = 'http://tophs-macbook-air.local/~tophtucker/orient/';
 //$config['base_url'] = 'http://dhcp-211-151.wireless.bowdoin.edu/~tophtucker/orient/';
@@ -52,7 +52,8 @@ $config['index_page'] = '';
 | 'ORIG_PATH_INFO'	Uses the ORIG_PATH_INFO
 |
 */
-$config['uri_protocol']	= 'REQUEST_URI';
+$config['uri_protocol']	= 'AUTO';
+//$config['uri_protocol']	= 'REQUEST_URI';
 
 /*
 |--------------------------------------------------------------------------
@@ -99,7 +100,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = FALSE;
+$config['enable_hooks'] = TRUE;
 
 
 /*
@@ -323,7 +324,7 @@ $config['csrf_expire'] = 7200;
 | by the output class.  Do not 'echo' any values with compression enabled.
 |
 */
-$config['compress_output'] = FALSE;
+$config['compress_output'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
