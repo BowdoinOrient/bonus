@@ -94,11 +94,13 @@
 	<p class="articledate"><time pubdate datetime="<?=$article->date?>"><?=date("F j, Y",strtotime($article->date))?></time></p>
 	
 	<div class="toolbox">
-          <!-- load in the export subtoolbox with jquery/ajax -->
+          <!-- load in the export subtoolbox-->
           <div id="exportSTB">
           <? $this->load->view('export', TRUE); ?>
           </div>
-	  
+
+	  <br/>
+
 	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="<?= current_url() ?>" data-via="bowdoinorient" data-lang="en">Tweet</a>
 	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	  <br/>
