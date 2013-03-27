@@ -6,6 +6,8 @@
 
 <!-- Pocket -->
 <div class="pocketWrapper">
+<?echo current_url();?>
+<?echo $article->title;?>
 </div>
 
 <!-- Kindle -->
