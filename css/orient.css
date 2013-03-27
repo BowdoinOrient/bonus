@@ -1544,7 +1544,7 @@ article header, .authorheader {
 	margin-top: -110px;
 	padding: 10px;
 	border: 1px solid lightgray;
-	width: 200px;
+	width: 165px;
 	float: right;
 	font-family: myriad-pro, helvetica, arial;
 	font-size: 13px;
@@ -1571,9 +1571,20 @@ article header, .authorheader {
 	margin-bottom: 2px;
 }
 
-.toolbox .rdbWrapper {
-	height: 23px;
+.toolbox .readerEmbed {
+	height: 19px;
 	margin-bottom: 5px;
+}
+
+.toolbox .readericon{
+    height: 18px;
+    margin-left:4px;
+    cursor:pointer; /*five bucks says this doesn't work in IE*/
+}
+
+.toolbox #addtoreader{
+    display:inline-block;
+    margin-top:3px;
 }
 
 /* TABLE OF CONTENTS */
