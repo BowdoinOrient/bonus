@@ -104,20 +104,23 @@
           <!-- load in the export subtoolbox-->
           <div id="addtoreader">
             <span style="vertical-align:top;">Add to:</span>
-            <img class="readericon" id="readability" src="/img/readability.png"/><img class="readericon" id="instapaper" src="/img/instapaper.png"/><img class="readericon" id="pocket" src="/img/pocket1.png"/><img class="readericon" id="kindle" src="/img/kindle.png"/>
-            <script type="text/javascript">$(".readericon").click(function(){
-              <?
-              /*$data = array(
-                'readability' => FALSE,
-                'instapaper' => FALSE,
-                'kindle' => FALSE,
-                'pocket' => FALSE
-               );
-            $this->load->view('export', $data);*/
-           ?>
-alert("hey");
-          });</script>
-
+            <img class="readericon" id="readability" src="/img/readability.png" onclick=""/>
+            <img class="readericon" id="instapaper" src="/img/instapaper.png"/>
+            <img class="readericon" id="pocket" src="/img/pocket1.png"/>
+            <img class="readericon" id="kindle" src="/img/kindle.png"/>
+            <script type="text/javascript">
+            $('.readericon').click(function(){
+              $.ajax({
+                type: "POST",
+                url: "/application/controllers/readwidget.php",
+                data: "function=loadReadingWidget",
+                success: function(data){aalert("success");},
+                error: function(xhr, textStatus, error){
+                  alert(textStatus+" "+xhr+" "+error);
+                }
+              });
+            });
+            </script>
           </div>
 	  
 	  <? if(bonus()): // only show views to logged-in staff, mostly bc display is too ugly to be public ?>
@@ -1090,5 +1093,6 @@ alert("hey");
   </script>
 
 </body>
+
 
 </html>
