@@ -1573,7 +1573,8 @@ article header, .authorheader {
 
 .toolbox .readerEmbed {
 	height: 19px;
-	margin-bottom: 5px;
+	margin-bottom: 4px;
+	margin-top:3px;
 }
 
 .toolbox .readericon{

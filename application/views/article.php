@@ -94,41 +94,54 @@
 	<p class="articledate"><time pubdate datetime="<?=$article->date?>"><?=date("F j, Y",strtotime($article->date))?></time></p>
 	
 	<div class="toolbox">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="<?= current_url() ?>" data-via="bowdoinorient" data-lang="en">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-	  <br/>
-	  
-	  <div class="fb-like" data-href="<?= current_url() ?>" data-send="false" data-layout="button_count" data-width="115" data-show-faces="false" data-action="recommend"></div>
-	  <br/>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?= current_url() ?>" data-via="bowdoinorient" data-lang="en">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		<br/>
 
-          <!-- load in the export subtoolbox-->
-          <div id="addtoreader">
-            <span style="vertical-align:top;">Add to:</span>
-            <img class="readericon" id="readability" src="/img/readability.png"/>
-            <img class="readericon" id="instapaper" src="/img/instapaper.png"/>
-            <img class="readericon" id="pocket" src="/img/pocket1.png"/>
-            <img class="readericon" id="kindle" src="/img/kindle.png"/>
-            <script type="text/javascript">
-            $('.readericon').click(function(){
-              var clickedid = $(this).attr("id");
-              switch(clickedid){
-                case "readability":
-                     $('#addtoreader').replaceWith('<div id="readability" class="rdbWrapper readerEmbed" data-show-read-now="0" data-show-read-later="1" data-show-send-to-kindle="0" data-show-print="0" data-show-email="0" data-orientation="0" data-version="1" data-bg-color="#ffffff"></div><script type="text/javascript">(function() {var s = document.getElementsByTagName("script")[0],rdb = document.createElement("script"); rdb.type = "text/javascript"; rdb.async = true; rdb.src = document.location.protocol + "//www.readability.com/embed.js"; s.parentNode.insertBefore(rdb, s); })();</scr'+'ipt>'); //the hackiest hack that was ever hacked
-                     break;
-                 case "instapaper":
-                     $('#addtoreader').replaceWith('<div id="instapaper" class="readerEmbed"><iframe border="0" scrolling="no" width="78" height="17" allowtransparency="true" frameborder="0" style="margin-bottom: -3px; z-index: 1338; border: 0px; background-color: transparent; overflow: hidden;" src="http://www.instapaper.com/e2?url=<?echo current_url();?>&title=<?echo $article->title;?>&description=<?echo $body->body;?>"></iframe></div>');
-                     break;
-                case "pocket":
-                     $('#addtoreader').replaceWith('<div id="pocket" class="readerEmbed" style="display:inline-block;padding:3px;cursor:pointer;font-size:11px;font-family:Tahoma;white-space:nowrap;line-height:1;border-radius:3px;border:#ccc thin solid;color:black;background:transparent url(' + 'https://d1xnn692s7u6t6.cloudfront.net/button-gradient.png' + ') repeat-x;background-size:contain;"><img style="vertical-align:middle;margin:0;padding:0;border:none;" src="/img/pocket2.png"/><a style="text-decoration:none;color:black;" href="http://getpocket.com/button/click?via=bowdoinorient.com&url=<?echo current_url();?>&title=<?echo $article->title;?>&action=save&k=12685-e6eab987e68dbca19f50cf7a" title="Save to Pocket"><span style="vertical-align:middle;margin-left:3px;">Send to Pocket</span></a></div>');
-                     break;
-                case "kindle":
-                     $('#addtoreader').replaceWith('<div id="kindle" class="readerEmbed" style="display:inline-block;padding:3px;cursor:pointer;font-size:11px;font-family:Tahoma;white-space:nowrap;line-height:1;border-radius:3px;border:#ccc thin solid;color:black;background:transparent url(' +' https://d1xnn692s7u6t6.cloudfront.net/button-gradient.png' + ') repeat-x;background-size:contain;"><img style="vertical-align:middle;margin:0;padding:0;border:none;" src="https://d1xnn692s7u6t6.cloudfront.net/white-15.png" /><span style="vertical-align:middle;margin-left:3px;">Send to Kindle</span></div><script type="text/javascript" src="https://d1xnn692s7u6t6.cloudfront.net/widget.js"></scr' + 'ipt><script type="text/javascript">(function k(){window.$SendToKindle&&window.$SendToKindle.Widget?$SendToKindle.Widget.init({"content":"articlebody","title":"articletitle","author":"articleauthor","published":"articledate"}):setTimeout(k,500);})();</scr'+'ipt>');
-                     break;
-              }
-            });
-            </script>
-          </div>
-	  
+		<div class="fb-like" data-href="<?= current_url() ?>" data-send="false" data-layout="button_count" data-width="115" data-show-faces="false" data-action="recommend"></div>
+		<br/>
+
+		<!-- load in the export subtoolbox-->
+		<div id="addtoreader">
+			<span style="vertical-align:top;">Add to:</span>
+			<img class="readericon" id="readability" src="/img/readability.png"/>
+			<img class="readericon" id="instapaper" src="/img/instapaper.png"/>
+			<img class="readericon" id="pocket" src="/img/pocket1.png"/>
+			<img class="readericon" id="kindle" src="/img/kindle.png"/>
+			<script type="text/javascript">
+				$('.readericon').click(function(){
+					var clickedid = $(this).attr("id");
+					switch(clickedid){
+	          			case "readability": //READABILITY WORKS
+		          			$('#addtoreader').fadeOut("fast", function(){
+		          				$('#addtoreader').replaceWith('<div id="readability" class="rdbWrapper readerEmbed" data-show-read-now="0" data-show-read-later="1" data-show-send-to-kindle="0" data-show-print="0" data-show-email="0" data-orientation="0" data-version="1" data-bg-color="#ffffff"></div><script type="text/javascript">(function() {var s = document.getElementsByTagName("script")[0],rdb = document.createElement("script"); rdb.type = "text/javascript"; rdb.async = true; rdb.src = document.location.protocol + "//www.readability.com/embed.js"; s.parentNode.insertBefore(rdb, s); })();</scr'+'ipt>').hide();
+		          				$('#addtoreader').fadeIn("fast");
+		          			});
+	          				break;
+	          			case "instapaper": //INSTAPAPER KINDA WORKS
+		          			$('#addtoreader').fadeOut("fast", function(){
+		          				$('#addtoreader').replaceWith('<div id="instapaper" class="readerEmbed"> <div style="display:inline-block;padding:3px;cursor:pointer;font-size:11px;font-family:Tahoma;white-space:nowrap;line-height:1;border-radius:3px;border:#ccc thin solid;color:black;background:transparent url('+'https://d1xnn692s7u6t6.cloudfront.net/button-gradient.png'+') repeat-x;background-size:contain;"><img style="vertical-align:middle;margin:0;padding:0;border:none;height:15px;" src="/img/instapaper.png"/><a style="text-decoration:none;color:black;" href="http://www.instapaper.com/e2?url=<?echo rawurlencode(current_url());?>&title=<?echo htmlspecialchars($article->title, ENT_QUOTES);?>&description=<?echo htmlspecialchars($body->body);?>"><span style="vertical-align:middle;margin-left:3px;">Read with Instapaper</span></a></div></div>').hide();
+		          				$('#addtoreader').fadeIn("fast");
+		          			});
+		          			break;
+	          			case "pocket": //POCKET ISN'T EVEN CLOSE TO WORKING. WAITING ON AN EMAIL FROM THEM
+		          			$('#addtoreader').fadeOut("fast", function(){
+		          				$('#addtoreader').replaceWith('<div id="pocket" class="readerEmbed"> <div style="display:inline-block;padding:3px;cursor:pointer;font-size:11px;font-family:Tahoma;white-space:nowrap;line-height:1;border-radius:3px;border:#ccc thin solid;color:black;background:transparent url('+'https://d1xnn692s7u6t6.cloudfront.net/button-gradient.png'+') repeat-x;background-size:contain;"><img style="vertical-align:middle;margin:0;padding:0;border:none;" src="/img/pocket2.png"/><a style="text-decoration:none;color:black;" href="http://getpocket.com/button/click?via=bowdoinorient.com&url=<?echo rawurlencode(current_url());?>&title=<?echo htmlspecialchars($article->title, ENT_QUOTES);?>&action=save&k=12685-e6eab987e68dbca19f50cf7a" title="Save to Pocket"><span style="vertical-align:middle;margin-left:3px;">Send to Pocket</span></a></div></div>').hide();
+		          				$('#addtoreader').fadeIn("fast");
+		          			});
+		          			break;
+	          			case "kindle": //KINDLE IS WORKING (AFAICT)
+		          			$('#addtoreader').fadeOut("fast", function(){
+		          				$('#addtoreader').replaceWith('<div id="kindle" class="readerEmbed"><div class="kindleWidget" style="display:inline-block;padding:3px;cursor:pointer;font-size:11px;font-family:Tahoma;white-space:nowrap;line-height:1;border-radius:3px;border:#ccc thin solid;color:black;background:transparent url('+'https://d1xnn692s7u6t6.cloudfront.net/button-gradient.png'+') repeat-x;background-size:contain;"><img style="vertical-align:middle;margin:0;padding:0;border:none;" src="https://d1xnn692s7u6t6.cloudfront.net/white-15.png"/><span style="vertical-align:middle;margin-left:3px;">Send to Kindle</span></div></div><script type="text/javascript" src="https://d1xnn692s7u6t6.cloudfront.net/widget.js"></scr'+'ipt><script type="text/javascript">(function k(){window.$SendToKindle&&window.$SendToKindle.Widget?$SendToKindle.Widget.init({"content":"articlebody","title":"articletitle","author":"articleauthor","published":"articledate"}):setTimeout(k,500);})();</scr'+'ipt>').hide();
+		          				$('#addtoreader').fadeIn("fast");
+		          			});
+							break;
+						default: ;
+					}
+				});
+		</script>
+	</div>
+
 	  <? if(bonus()): // only show views to logged-in staff, mostly bc display is too ugly to be public ?>
 					Views: <?=$article->views?> (<?=$article->views_bowdoin?>)<br/>
 	  <? endif; ?>
