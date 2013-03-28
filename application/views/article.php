@@ -104,10 +104,10 @@
 		<!-- load in the export subtoolbox-->
 		<div id="addtoreader">
 			<span style="vertical-align:top;">Add to:</span>
-			<img class="readericon" id="readability" src="/img/readability.png"/>
-			<img class="readericon" id="instapaper" src="/img/instapaper.png"/>
-			<img class="readericon" id="pocket" src="/img/pocket1.png"/>
-			<img class="readericon" id="kindle" src="/img/kindle.png"/>
+			<img class="readericon" id="readability" src="<?=base_url()?>/img/readability.png"/>
+			<img class="readericon" id="instapaper" src="<?=base_url()?>/img/instapaper.png"/>
+			<img class="readericon" id="pocket" src="<?=base_url()?>/img/pocket1.png"/>
+			<img class="readericon" id="kindle" src="<?=base_url()?>/img/kindle.png"/>
 			<script type="text/javascript">
 				$('.readericon').click(function(){
 					var clickedid = $(this).attr("id");
