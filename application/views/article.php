@@ -126,7 +126,7 @@
 		          			break;
 	          			case "pocket": //POCKET ISN'T EVEN CLOSE TO WORKING. WAITING ON AN EMAIL FROM THEM
 		          			$('#addtoreader').fadeOut("fast", function(){
-		          				$('#addtoreader').replaceWith('<div id="pocket" class="readerEmbed"> <div style="display:inline-block;padding:3px;cursor:pointer;font-size:11px;font-family:Tahoma;white-space:nowrap;line-height:1;border-radius:3px;border:#ccc thin solid;color:black;background:transparent url('+'https://d1xnn692s7u6t6.cloudfront.net/button-gradient.png'+') repeat-x;background-size:contain;"><img style="vertical-align:middle;margin:0;padding:0;border:none;" src="/img/pocket2.png"/><a style="text-decoration:none;color:black;" href="http://getpocket.com/button/click?via=bowdoinorient.com&url=<?echo rawurlencode(current_url());?>&title=<?echo htmlspecialchars($article->title, ENT_QUOTES);?>&action=save&k=12685-e6eab987e68dbca19f50cf7a" title="Save to Pocket"><span style="vertical-align:middle;margin-left:3px;">Send to Pocket</span></a></div></div>').hide();
+		          				$('#addtoreader').replaceWith('<div id="pocket" class="readerEmbed"> <a data-pocket-label="pocket" data-pocket-count="none" class="pocket-btn" data-lang="en"></a></div><script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>').hide();
 		          				$('#addtoreader').fadeIn("fast");
 		          			});
 		          			break;
