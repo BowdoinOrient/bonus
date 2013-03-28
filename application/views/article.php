@@ -104,21 +104,36 @@
           <!-- load in the export subtoolbox-->
           <div id="addtoreader">
             <span style="vertical-align:top;">Add to:</span>
-            <img class="readericon" id="readability" src="/img/readability.png" onclick=""/>
+            <img class="readericon" id="readability" src="/img/readability.png"/>
             <img class="readericon" id="instapaper" src="/img/instapaper.png"/>
             <img class="readericon" id="pocket" src="/img/pocket1.png"/>
             <img class="readericon" id="kindle" src="/img/kindle.png"/>
             <script type="text/javascript">
             $('.readericon').click(function(){
-              $.ajax({
+              var clickedid = $(this).attr("id");
+              switch(clickedid){
+                case "readability":
+                     $('#addtoreader').replaceWith('');
+                     break;
+                 case "instapaper":
+                     $('#addtoreader').replaceWith('');
+                     break;
+                case "pocket":
+                     $('#addtoreader').replaceWith('');
+                     break;
+                case "kindle":
+                     $('#addtoreader').replaceWith('');
+                     break;
+              }
+              /*$.ajax({
                 type: "POST",
                 url: "/application/controllers/readwidget.php",
-                data: "function=loadReadingWidget",
-                success: function(data){aalert("success");},
+                data: {clickedid: clickedid},
+                success: function(data){alert(data);},
                 error: function(xhr, textStatus, error){
                   alert(textStatus+" "+xhr+" "+error);
                 }
-              });
+              });*/
             });
             </script>
           </div>
