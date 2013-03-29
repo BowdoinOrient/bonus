@@ -118,13 +118,13 @@
 		          				$('#addtoreader').fadeIn("fast");
 		          			});
 	          				break;
-	          			case "instapaper": //INSTAPAPER KINDA WORKS
+	          			case "instapaper": //INSTAPAPER WORKS
 		          			$('#addtoreader').fadeOut("fast", function(){
-		          				$('#addtoreader').replaceWith('<div id="instapaper" class="readerEmbed"> <div style="display:inline-block;padding:3px;cursor:pointer;font-size:11px;font-family:Tahoma;white-space:nowrap;line-height:1;border-radius:3px;border:#ccc thin solid;color:black;background:transparent url('+'https://d1xnn692s7u6t6.cloudfront.net/button-gradient.png'+') repeat-x;background-size:contain;"><img style="vertical-align:middle;margin:0;padding:0;border:none;height:15px;" src="/img/instapaper.png"/><a style="text-decoration:none;color:black;" href="http://www.instapaper.com/e2?url=<?echo rawurlencode(current_url());?>&title=<?echo htmlspecialchars($article->title, ENT_QUOTES);?>&description=<?echo htmlspecialchars($body->body);?>"><span style="vertical-align:middle;margin-left:3px;">Read with Instapaper</span></a></div></div>').hide();
+		          				$('#addtoreader').replaceWith('<div id="instapaper" class="readerEmbed"><div style="display:inline-block;padding:3px;cursor:pointer;font-size:11px;font-family:Tahoma;white-space:nowrap;line-height:1;border-radius:3px;border:#ccc thin solid;color:black;background:transparent url('+'https://d1xnn692s7u6t6.cloudfront.net/button-gradient.png'+') repeat-x;background-size:contain;"><img style="vertical-align:middle;margin:0;padding:0;border:none;height:15px;" src="/img/instapaper.png"/><a href="javascript:function iprl5(){var d=document,z=d.createElement('+'scr'+'ipt'+'),b=d.body,l=d.location;try{if(!b)throw(0);d.title='+'(Saving...)'+'+d.title;z.setAttribute('+'src'+',l.protocol+'+'//www.instapaper.com/j/3Kf0O6XBwYB0?u='+'+encodeURIComponent(l.href)+'+'&t='+'+(new Date().getTime()));b.appendChild(z);}catch(e){alert('+'Please wait until the page has loaded.'+');}}iprl5();void(0)" class="bookmarklet" onclick="return explain_bookmarklet();" title="Read Later" style="color:black;text-decoration:none;vertical-align:middle;margin-left:6px">Add to Instapaper</a></div></div>').hide();
 		          				$('#addtoreader').fadeIn("fast");
 		          			});
 		          			break;
-	          			case "pocket": //POCKET ISN'T EVEN CLOSE TO WORKING. WAITING ON AN EMAIL FROM THEM
+	          			case "pocket": //POCKET IS WORKING
 		          			$('#addtoreader').fadeOut("fast", function(){
 		          				$('#addtoreader').replaceWith('<div id="pocket" class="readerEmbed"> <a data-pocket-label="pocket" data-pocket-count="none" class="pocket-btn" data-lang="en"></a></div><script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</scr'+'ipt>').hide();
 		          				$('#addtoreader').fadeIn("fast");
