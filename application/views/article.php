@@ -103,7 +103,7 @@
 
 		<!-- load in the export subtoolbox-->
 		<div id="addtoreader">
-			<span style="vertical-align:top;">Add to:</span>
+			<span style="vertical-align:top;">Read Later:</span>
 			<img class="readericon" id="readability" src="<?=base_url()?>/img/readability.png"/>
 			<img class="readericon" id="instapaper" src="<?=base_url()?>/img/instapaper.png"/>
 			<img class="readericon" id="pocket" src="<?=base_url()?>/img/pocket1.png"/>
@@ -126,7 +126,7 @@
 		          			break;
 	          			case "pocket": //POCKET ISN'T EVEN CLOSE TO WORKING. WAITING ON AN EMAIL FROM THEM
 		          			$('#addtoreader').fadeOut("fast", function(){
-		          				$('#addtoreader').replaceWith('<div id="pocket" class="readerEmbed"> <a data-pocket-label="pocket" data-pocket-count="none" class="pocket-btn" data-lang="en"></a></div><script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>').hide();
+		          				$('#addtoreader').replaceWith('<div id="pocket" class="readerEmbed"> <a data-pocket-label="pocket" data-pocket-count="none" class="pocket-btn" data-lang="en"></a></div><script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</scr'+'ipt>').hide();
 		          				$('#addtoreader').fadeIn("fast");
 		          			});
 		          			break;
