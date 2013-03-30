@@ -50,6 +50,7 @@ $route['series/(:num)'] = "series/view/$1";
 $route['search'] = "pages/search";
 $route['advsearch'] = "pages/advsearch";
 $route['about'] = "pages/about";
+$route['browser'] = "pages/browser";
 $route['contact'] = "pages/contact";
 $route['archives'] = "pages/archives";
 $route['subscribe'] = "pages/subscribe";
