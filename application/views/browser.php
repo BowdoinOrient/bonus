@@ -25,11 +25,11 @@
   				var N= navigator.appName, ua= navigator.userAgent, tem;
   				var M= ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
   				if(M && (tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];
+  				if(M[1] == 'MSIE') M[1]='Internet Explorer';
   				M= M? [M[1], M[2]]: [N,navigator.appVersion,'-?'];
   				return M;
   			})();
-  			alert(sayswho);
-			$('#browsername').replaceWith(sayswho);
+			$('#browsername').text(sayswho[0] + ' ' + sayswho[1] + ',');
 		</script>
 		
 		<a href="http://whatbrowser.org"><img style="width:100%" src="<?=base_url()?>/img/whatbrowser.png"/></a>
