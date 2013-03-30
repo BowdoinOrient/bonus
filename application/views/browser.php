@@ -10,17 +10,30 @@
 		
 		<header>
 			<hgroup>
-				<h2 id="articletitle" class="articletitle">Something's wrong :(</h2>
-				<h3 id="articlesubtitle" class="articlesubtitle">It might be time to update your fucking browser</h3>
+				<h3 id="articlesubtitle" class="articlesubtitle">It might be time for an update.</h3>
 			</hgroup>			
 		</header>
 		
 		<div id="articlebody" class="articlebody">
 
-			<p>The Bowdoin Orient is a student-run weekly publication dedicated to providing news and information relevant to the College community. Editorially independent of the College and its administrators, the Orient pursues such content freely and thoroughly, following professional journalistic standards in writing and reporting. The Orient is committed to serving as an open forum for thoughtful and diverse discussion and debate on issues of interest to the College community.</p>
+		<p>In order to cater to a wide variety of sceens and devices, The Bowdoin Orient's website implements a number of modern web technologies. Unfortunately, we've detected that some of these technologies don't work in the browser you're using. </p>
+	
+		<p>You appear to be using <span id="browsername">a version of Internet Explorer</span> which is several years out of date. To learn more about browsers, and to download a browser that supports all the features of <a href="http://bowdoinorient.com">bowdoinorient.com</a>, please visit <a href="http://whatbrowser.org">WhatBrowser.org</a>.</p>
+		
+		<script type="text/javascript">
+			var sayswho = (function(){
+  				var N= navigator.appName, ua= navigator.userAgent, tem;
+  				var M= ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
+  				if(M && (tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];
+  				M= M? [M[1], M[2]]: [N,navigator.appVersion,'-?'];
+  				return M;
+  			})();
+  			alert(sayswho);
+			$('#browsername').replaceWith(sayswho);
+		</script>
+		
+		<a href="http://whatbrowser.org"><img style="width:100%" src="<?=base_url()?>/img/whatbrowser.png"/></a>
 
-			<p>The paper has an on-campus distribution of over 2,000, and is mailed off-campus to several hundred subscribers. It is distributed free-of-charge at various locations on campus, including the student union, several classroom buildings, the admissions office, the dining halls, and the libraries. Published on Fridays, 24 times a year, the Orient is read by students and their families, faculty, staff, alumni, off-campus subscribers, prospective students, and campus visitors.</p>
-			
 		</div>
 	  
 	</article>
