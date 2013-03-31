@@ -7,8 +7,19 @@ function bonus()
 }
 
 function ie_lte_8(){
-	$browser = get_browser(null, true);
-	if($browser[browser]=='MSIE' && $browser[version]<=8.0)
+	//get instance of codeigniter
+	$CI =& get_instance();
+
+	// Loads the class
+	require 'browscap/Browscap.php';
+
+	// Create a new Browscap object (loads or creates the cache)
+	$bc = new Browscap('application/cache/browscap');
+
+	// Get information about the current browser's user agent
+	$current_browser = $bc->getBrowser();
+
+	if($current_browser->Browser=='MSIE' && $current_browser->version<=8.0)
 		return true;
 	else return false;
 }
