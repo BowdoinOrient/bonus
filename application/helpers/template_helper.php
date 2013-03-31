@@ -6,6 +6,13 @@ function bonus()
 	return $CI->session->userdata('logged_in');
 }
 
+function ie_lte_8(){
+	$browser = get_browser(null, true);
+	if($browser[browser]=='MSIE' && $browser[version]<=8.0)
+		return true;
+	else return false;
+}
+
 function currentuser()
 {
 	$CI =& get_instance();
