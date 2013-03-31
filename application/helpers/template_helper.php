@@ -6,6 +6,21 @@ function bonus()
 	return $CI->session->userdata('logged_in');
 }
 
+function ie_lte_8(){
+	// Loads the class
+	require 'browscap/Browscap.php';
+
+	// Create a new Browscap object (loads or creates the cache)
+	$bc = new Browscap('application/cache/browscap');
+
+	// Get information about the current browser's user agent
+	$current_browser = $bc->getBrowser();
+
+	if($current_browser->Browser=='IE' && intval($current_browser->Version)<=8)
+		return true;
+	else return false;
+}
+
 function currentuser()
 {
 	$CI =& get_instance();
