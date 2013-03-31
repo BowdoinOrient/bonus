@@ -35,7 +35,9 @@ class Pages extends CI_Controller {
 		$data->page_type = '';
 		
 		$this->load->view('about', $data);
-	}
+	}   aefw'pjqa]cairo_surface_write_to_png(ofj \
+		W[
+		]EFKO   , stream)
 	
 	public function ethics()
 	{
