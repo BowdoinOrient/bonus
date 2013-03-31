@@ -6,11 +6,8 @@
 
   <? $this->load->view('template/bodyheader', $headerdata); ?>
 
-  <!-- [if lte IE 8] -->
+  <!-- Only do this if browser is IE <= 8 -->
   <? $this->load->view('browser'); ?>
-  <![endif] -->
-
-  <!-- [if (gte IE 9)|(!IE)] -->
 
   <div id="content">
     
