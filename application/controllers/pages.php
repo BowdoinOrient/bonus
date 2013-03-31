@@ -36,19 +36,6 @@ class Pages extends CI_Controller {
 		
 		$this->load->view('about', $data);
 	}
-
-	public function browser()
-	{
-		$data->footerdata->quote = $this->attachments_model->get_random_quote();
-		$data->headerdata->date = date("Y-m-d");
-		
-		// meta
-		$data->page_title = 'Browser Check — The Bowdoin Orient';
-		$data->page_description = '';
-		$data->page_type = '';
-		
-		$this->load->view('browser', $data);
-	}
 	
 	public function ethics()
 	{

@@ -1,9 +1,3 @@
-<? $this->load->view('template/head'); ?>
-
-<body>
-
-<? $this->load->view('template/bodyheader', $headerdata); ?>
-
 <div id="content">
 	
 	<article id="mainstory">
@@ -16,9 +10,10 @@
 		
 		<div id="articlebody" class="articlebody">
 
-		<p>In order to cater to a wide variety of sceens and devices, The Bowdoin Orient's website implements a number of modern web technologies. Unfortunately, we've detected that some of these technologies don't work in the browser you're using. </p>
+		<p>In order to cater to a wide variety of screens and devices, The Bowdoin Orient's website implements a number of modern web technologies. Unfortunately, we've detected that some of these technologies don't work in the browser you're using. </p>
 	
-		<p>You appear to be using <span id="browsername">a version of Internet Explorer</span> which is several years out of date. To learn more about browsers, and to download a browser that supports all the features of <a href="http://bowdoinorient.com">bowdoinorient.com</a>, please visit <a href="http://whatbrowser.org">WhatBrowser.org</a>.</p>
+		<!-- populate the span with a generic IE message in case their browser is so old jquery doesn't even work -->
+		<p>It looks like you're using <span id="browsername">a version of Internet Explorer</span> which is several years out of date. To learn more about browsers, and to download a browser that supports all the features of <a href="http://bowdoinorient.com">bowdoinorient.com</a>, please visit <a href="http://whatbrowser.org">WhatBrowser.org</a>.</p>
 		
 		<script type="text/javascript">
 			var sayswho = (function(){
@@ -39,11 +34,3 @@
 	</article>
 
 </div>
-
-<? $this->load->view('template/bodyfooter', $footerdata); ?>
-
-<? $this->load->view('bonus/bonusbar', TRUE); ?>
-
-</body>
-
-</html>
