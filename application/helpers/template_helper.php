@@ -7,9 +7,6 @@ function bonus()
 }
 
 function ie_lte_8(){
-	//get instance of codeigniter
-	$CI =& get_instance();
-
 	// Loads the class
 	require 'browscap/Browscap.php';
 
@@ -19,7 +16,7 @@ function ie_lte_8(){
 	// Get information about the current browser's user agent
 	$current_browser = $bc->getBrowser();
 
-	if($current_browser->Browser=='MSIE' && $current_browser->version<=8.0)
+	if($current_browser->Browser=='IE' && intval($current_browser->Version)<=8)
 		return true;
 	else return false;
 }
