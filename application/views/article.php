@@ -1,13 +1,8 @@
-
-
 <? $this->load->view('template/head'); ?>
 
 <body>
 
   <? $this->load->view('template/bodyheader', $headerdata); ?>
-
-  <!-- Only do this if browser is IE <= 8 -->
-  <? $this->load->view('browser'); ?>
 
   <div id="content">
     
@@ -320,7 +315,6 @@
     </article>
 
   </div>
-  <![endif] -->
 
   <? $this->load->view('template/bodyfooter', $footerdata); ?>
 
