@@ -31,7 +31,7 @@
 		</a></li>
 	      <? endforeach; ?>
 	    </ul>
-	    <script type="text/javascript">if($('.leftmargin').is(':offscreen'))$(".leftmargin").hide();</script>
+	    <script type="text/javascript">if(!isFullyVisible($('.leftmargin')))$(".leftmargin").hide();</script>
 	    <? endif;?> 
 	    <? if(!empty($series_next)): ?>
 	    <ul class="articleblock rightmargin">
@@ -46,7 +46,7 @@
 		</a></li>
 	      <? endforeach; ?>
 	    </ul>
-	    <script type="text/javascript">($('.rightmargin').is(':offscreen'))$(".rightmargin").hide();</script>
+	    <script type="text/javascript">if(!isFullyVisible($('.rightmargin')))$(".rightmargin").hide();</script>
 	    <? endif; ?>
 	  </div>
 	  

@@ -23,13 +23,9 @@ function urlencode(s) {
 }
 
 
-//Via stackoverflow: http://stackoverflow.com/a/8897628/2178152
+//Via stackoverflow: http://stackoverflow.com/a/13885228/2178152
 //Will reveal when an element is being placed off the screen
-//Implemented like : if($('div').is(':offscreen')){}
-jQuery.expr.filters.offscreen = function(el) {
-  return (
-              (el.offsetLeft + el.offsetWidth) < 0 
-              || (el.offsetTop + el.offsetHeight) < 0
-              || (el.offsetLeft > window.innerWidth || el.offsetTop > window.innerHeight)
-         );
-};
+function isFullyVisible (elem) {
+  var off = elem.offset(), et = off.top, el = off.left, eh = elem.height(), ew = elem.width(), wh = window.innerHeight, ww = window.innerWidth, wx = window.pageXOffset, wy = window.pageYOffset;
+  return (et >= wy && el >= wx && et + eh <= wh + wy && el + ew <= ww + wx);  
+}
