@@ -46,6 +46,7 @@
 		</a></li>
 	      <? endforeach; ?>
 	    </ul>
+	    <script type="text/javascript">if(Math.abs($(".rightmargin").css('right').replace("px","")) > $(".rightmargin").width())$(".rightmargin").hide();</script>
 	    <? endif; ?>
 	  </div>
 	  
