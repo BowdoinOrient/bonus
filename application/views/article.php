@@ -31,6 +31,7 @@
 		</a></li>
 	      <? endforeach; ?>
 	    </ul>
+	    <script type="text/javascript">if(Math.abs($(".leftmargin").css('left').replace("px","")) > $(".leftmargin").width())$(".leftmargin").hide();</script>
 	    <? endif;?> 
 	    <? if(!empty($series_next)): ?>
 	    <ul class="articleblock rightmargin">
