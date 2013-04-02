@@ -25,6 +25,10 @@ class API extends CI_Controller {
 		redirect('/article/'.$article_id, 'location');
 	}
 	
+	/***************
+	***** XML ******
+	***************/
+
 	public function xml_articlelist($issue_date, $section_id)
 	{		
 		/*
@@ -48,7 +52,7 @@ class API extends CI_Controller {
 		exit();
 		*/
 		
-		$data = $this->api_model->xml_articlelist($issue_date, $section_id);
+		$data = $this->api_model->articlelist($issue_date, $section_id);
 		header("Content-Type: application/xml; charset=UTF-8");
 		$this->load->view('api/xml_articlelist', $data);
 	}
@@ -82,6 +86,37 @@ class API extends CI_Controller {
 		header("Content-Type: application/xml; charset=UTF-8");
 		$this->load->view('api/xml_volumelist', $data);
 	}
+
+
+	/********************
+	******* JSON ********
+	********************/
+
+	public function json_articlelist ($issue_date, $section_id)
+	{
+		$data = $this->api_model->articlelist($issue_date, $section_id);
+		header('Content-type: application/json');
+		$this->load->view('api/json_articlelist', $data);
+	}
+
+	public function json_issuelist($volume)
+	{
+		$data->volume_arabic = $volume;
+		$issue_query = $this->db->query("
+			select
+				date_format(issue.issue_date, '%b %e, %Y') as date,
+				issue.issue_number,
+				volume.arabic
+			from issue
+			inner join volume on issue.volume = volume.arabic
+			where volume.roman = '".$data->volume_arabic."'
+		");
+		$data->issues = $issue_query->result();
+		
+		header('Content-type: application/json');
+		$this->load->view('api/json_issuelist', $data);
+	}
+
 	public function json_volumelist()
 	{
 		$volumes_query = $this->db->query("
@@ -91,8 +126,6 @@ class API extends CI_Controller {
 
 		header('Content-type: application/json');
 		$this->load->view('api/json_volumelist', $data);
-
-
 	}
 	
 }

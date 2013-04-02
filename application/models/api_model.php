@@ -7,7 +7,9 @@ class API_model extends CI_Model {
         parent::__construct();
     }
     
-	function xml_articlelist($issue_date, $section)
+    //does some heavy lifting for both the JSON and XML APIs
+    //I don't know or particularly care if this is good MVC or not
+	function articlelist($issue_date, $section)
 	{
 		$data->issue_date = $issue_date;
 		$data->section = $section;
