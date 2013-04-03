@@ -1,10 +1,8 @@
 <?
 // Encode data
 
-echo json_encode($issue_date);
-if(isset($issue) && isset($articles)) {
-	echo json_encode($issue);
-	echo json_encode($articles);
+if($issue_date && isset($issue) && isset($articles)) {
+	echo json_encode(array('issue_date' => $issue_date, 'issue_details' => $issue, 'articles' => $articles));
 }
 else
 	echo json_encode(array('error' => true));
