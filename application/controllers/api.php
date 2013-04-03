@@ -104,6 +104,7 @@ class API extends CI_Controller {
 		$data->volume_arabic = $volume;
 		$issue_query = $this->db->query("
 			select
+				issue.issue_date,
 				date_format(issue.issue_date, '%b %e, %Y') as date,
 				issue.issue_number,
 				volume.arabic
@@ -126,6 +127,13 @@ class API extends CI_Controller {
 
 		header('Content-type: application/json');
 		$this->load->view('api/json_volumelist', $data);
+	}
+
+	public function json_fulltext($issue_date, $section_id)
+	{
+		$data = $this->api_model->fulltext($issue_date, $section_id);	
+		header('Content-type: application/json');
+		$this->load->view('api/json_fulltext', $data);
 	}
 	
 }
