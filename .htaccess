@@ -1,3 +1,9 @@
 RewriteEngine on
 RewriteCond $1 !^(index\.php|js|css|images|img|files|phpinfo\.php|robots\.txt)
 RewriteRule ^(.*)$ /~tophtucker/bonus/index.php/$1 [L]
+
+<Files phpinfo.php>
+       Order Deny,Allow
+       Deny from all
+       Allow from 139.140.0.0/16
+</Files>
