@@ -24,6 +24,23 @@ class Pages extends CI_Controller {
 		$this->load->view('error');
 	}
 	
+	public function view($page)
+	{
+		// check if requested page exists, load if it does
+		if (@file_exists(APPPATH."views/pages/{$page}.php"))
+		{
+			$data->page = $page;
+			$data->footerdata->quote = $this->attachments_model->get_random_quote();
+			$data->headerdata->date = date("Y-m-d");
+			$data->page_title = 'The Bowdoin Orient';
+			$this->load->view('pages/'.$page, $data);
+		}
+		else 
+		{
+			$this->error();
+		}
+	}		
+	
 	public function about()
 	{
 		$data->footerdata->quote = $this->attachments_model->get_random_quote();
