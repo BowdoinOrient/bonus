@@ -54,10 +54,12 @@ $route['contact'] = "pages/contact";
 $route['archives'] = "pages/archives";
 $route['subscribe'] = "pages/subscribe";
 $route['advertise'] = "pages/advertise";
-
 $route['survey'] = "pages/survey";
+$route['bulletin'] = "pages/view/survey-bulletin";
 
 $route['election2012'] = "article/view/7677";
+
+$route['pages/(:any)'] = "pages/view/$1";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
