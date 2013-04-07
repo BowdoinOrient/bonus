@@ -18,6 +18,7 @@ if(empty($page_image)) $page_image=base_url()."img/o-200.png";
 	
 	<!-- metadata -->
 	<meta name="description" 		content="<?=$page_description?>" />	
+	
 	<!-- Facebook Open Graph tags -->
 	<meta property="og:title" 		content="<?=$page_title?>" />
 	<meta property="og:description"	content="<?=$page_description?>" />
@@ -26,6 +27,14 @@ if(empty($page_image)) $page_image=base_url()."img/o-200.png";
 	<meta property="og:site_name" 	content="The Bowdoin Orient" />
 	<meta property="fb:admins" 		content="1233600119" />
 	<meta property="fb:app_id" 		content="342498109177441" />
+
+	<!-- Twitter Cards -->
+	<meta property="twitter:card"			content="summary"/>
+	<meta property="twitter:site"			content="@bowdoinorient"/>
+	<meta property="twitter:site:id"		content="79088927"/>
+	<meta property="twitter:description"	content="<?=$page_description?>"/>
+	<meta property="twitter:title"			content="<?=$page_title?>"/>
+	<meta property="twitter:image" 			content="<?=$page_image?>" />
 	
 	<!-- CSS -->
 	<link rel="stylesheet" media="screen" href="<?=base_url()?>css/orient.css?v=6">
