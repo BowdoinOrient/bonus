@@ -91,6 +91,10 @@ $(function() {
 	<button id="tipsubmit">Submit</button> <button id="cancel">Cancel</button> <span id="tipnotice"></span>
 </div>
 
+<!--[if lt IE 9]>
+
+<![endif]--> 
+
 <? if(isset($alerts)): ?>
 	<div id="alertbar">
 		<? foreach($alerts as $alert): ?>

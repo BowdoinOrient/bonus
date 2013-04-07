@@ -4,11 +4,6 @@
 
   <? $this->load->view('template/bodyheader', $headerdata); ?>
 
-  	<!-- if IE && ver < 8, load a message to upgrade rather than the article -->
-  	<? if(ie_lte_8()): ?>
-  	<? $this->load->view('browser'); ?>
-	<? else: ?>
-
   <div id="content">
     
     <article id="mainstory" data-article-id="<?=$article->id?>">
@@ -328,8 +323,6 @@
   <? $this->load->view('template/bodyfooter', $footerdata); ?>
 
   <? $this->load->view('bonus/bonusbar', TRUE); ?>
-
-	<? endif; ?> <!-- END IF FOR IE <=8 BLOCKER -->
 
   <? if(bonus()): ?>
 

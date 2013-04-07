@@ -1,3 +1,9 @@
+<? $this->load->view('template/head'); ?>
+
+<body>
+
+<? $this->load->view('template/bodyheader', $headerdata); ?>
+
 <div id="content">
 	
 	<article id="mainstory">
@@ -34,3 +40,11 @@
 	</article>
 
 </div>
+
+<? $this->load->view('template/bodyfooter', $footerdata); ?>
+
+<? $this->load->view('bonus/bonusbar', TRUE); ?>
+
+</body>
+
+</html>
