@@ -91,10 +91,6 @@ $(function() {
 	<button id="tipsubmit">Submit</button> <button id="cancel">Cancel</button> <span id="tipnotice"></span>
 </div>
 
-<!--[if lt IE 9]>
-
-<![endif]--> 
-
 <? if(isset($alerts)): ?>
 	<div id="alertbar">
 		<? foreach($alerts as $alert): ?>
@@ -104,6 +100,10 @@ $(function() {
 		<? endforeach; ?>
 	</div>
 <? endif; ?>
+
+<!--[if IE lt 9]>
+<script type="text/javascript">//$("#alertbar").html("<div class='alert urgent'>Your browser version is lo longer supported by the Orient. Many elements of the site will not work unless you take action. For more information, please contine to <a href='http://bowdoinorient.com/browser'>bowdoinorient.com/browser</a></div>");</script>
+<![endif]--> 
 
 <script>
 
