@@ -105,5 +105,8 @@ if(empty($page_image)) $page_image=base_url()."img/o-200.png";
 	<!--[if lt IE 9]>
 	<script type="text/javascript" src="<?=base_url()?>js/html5shiv.js"></script>
 	<![endif]-->
+
+	<!-- enables Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
 </head>
