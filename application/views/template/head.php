@@ -30,7 +30,7 @@ if(empty($page_image)) $page_image=base_url()."img/o-200.png";
 
 	<!-- Twitter Cards -->
 	<meta property="twitter:card"			content="summary"/>
-	<meta property="twitter:site"			content="@BowdoinOrient"/>
+	<meta property="twitter:site"			content="@bowdoinorient"/>
 	<meta property="twitter:site:id"		content="79088927"/>
 	<meta property="twitter:description"	content="<?=$page_description?>"/>
 	<meta property="twitter:title"			content="<?=$page_title?>"/>
