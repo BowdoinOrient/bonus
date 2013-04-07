@@ -100,5 +100,10 @@ if(empty($page_image)) $page_image=base_url()."img/o-200.png";
 	
 	</script>
 	<!-- End Google Analytics -->
+
+	<!-- html5 IE shiv, from https://code.google.com/p/html5shim/ -->
+	<!--[if lt IE 9]>
+	<script src="dist/html5shiv.js"></script>
+	<![endif]-->
 	
 </head>
