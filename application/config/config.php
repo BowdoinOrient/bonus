@@ -16,12 +16,8 @@
 */
 //$config['base_url'] = 'http://bowdoinorient.dev/';
 $config['base_url'] = 'http://localhost/~tophtucker/bonus/';
-//$config['base_url'] = 'http://dhcp-215-166.wireless.bowdoin.edu/~tophtucker/orient/';
-//$config['base_url'] = 'http://tophs-macbook-air.local/~tophtucker/orient/';
-//$config['base_url'] = 'http://dhcp-211-151.wireless.bowdoin.edu/~tophtucker/orient/';
-//$config['base_url'] = 'http://192.168.1.104/~tophtucker/orient/';
+//$config['base_url'] = 'http://139.140.166.33/~tophtucker/bonus/';
 //$config['base_url'] = 'http://bowdoinorient.com/';
-//$config['base_url'] = 'http://24.91.36.234/~tophtucker/orient/'; //home
 
 /*
 |--------------------------------------------------------------------------
