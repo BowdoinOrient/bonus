@@ -101,6 +101,12 @@ $(function() {
 	</div>
 <? endif; ?>
 
+<!--[if lt IE 9]>
+	<div id="alertbar">
+		<div class='alert urgent'>Your browser is out-of-date, and parts of the Orient site may not work properly. <a href="http://whatbrowser.org/">Upgrade your browser</a>. If you can't install a new browser, <a href='http://www.google.com/chromeframe/?redirect=true'>try Chrome Frame</a>.</div>
+	</div>
+<![endif]--> 
+
 <script>
 
 if(Math.random() > 0.5) 

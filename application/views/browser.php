@@ -1,3 +1,9 @@
+<? $this->load->view('template/head'); ?>
+
+<body>
+
+<? $this->load->view('template/bodyheader', $headerdata); ?>
+
 <div id="content">
 	
 	<article id="mainstory">
@@ -26,6 +32,8 @@
   			})();
 			$('#browsername').text(sayswho[0] + ' ' + sayswho[1] + ',');
 		</script>
+
+		<p>If you want to get the full experience of <a href="http://bowdoinorient.com">bowdoinorient.com</a>, but the PC you're on does not allow the installation of new browsers, you may still be able to add the Internet Explorer <a href="http://www.google.com/chromeframe/?redirect=true">Chrome Frame</a> addition. 
 		
 		<a href="http://whatbrowser.org"><img style="width:100%" src="<?=base_url()?>/img/whatbrowser.png"/></a>
 
@@ -34,3 +42,11 @@
 	</article>
 
 </div>
+
+<? $this->load->view('template/bodyfooter', $footerdata); ?>
+
+<? $this->load->view('bonus/bonusbar', TRUE); ?>
+
+</body>
+
+</html>
