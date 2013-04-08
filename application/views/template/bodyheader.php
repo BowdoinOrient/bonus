@@ -101,8 +101,10 @@ $(function() {
 	</div>
 <? endif; ?>
 
-<!--[if IE lt 9]>
-<script type="text/javascript">//$("#alertbar").html("<div class='alert urgent'>Your browser version is lo longer supported by the Orient. Many elements of the site will not work unless you take action. For more information, please contine to <a href='http://bowdoinorient.com/browser'>bowdoinorient.com/browser</a></div>");</script>
+<!--[if lt IE 9]>
+	<div id="alertbar">
+		<div class='alert urgent'>Your browser is out-of-date, and parts of the Orient site may not work properly. <a href="http://whatbrowser.org/">Upgrade your browser</a>. If you can't install a new browser, <a href='http://www.google.com/chromeframe/?redirect=true'>try Chrome Frame</a>.</div>
+	</div>
 <![endif]--> 
 
 <script>
