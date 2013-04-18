@@ -29,108 +29,29 @@ class Pages extends CI_Controller {
 		// check if requested page exists, load if it does
 		if (@file_exists(APPPATH."views/pages/{$page}.php"))
 		{
+			$data->page_title = 'The Bowdoin Orient';			
+			$page_title = array(
+				'about'			=> 'About',
+				'advertise'		=> 'Advertise',
+				'browser'		=> 'Browser Warning',
+				'contact'		=> 'Contact',
+				'ethics' 		=> 'Ethics',
+				'nonremoval'	=> 'Web Non-Removal Policy',
+				'subscribe'		=> 'Subscribe',
+				'survey'		=> 'Survey'
+				);
+			if(isset($page_title[$page])) $data->page_title = $page_title[$page].' — The Bowdoin Orient';
+			
 			$data->page = $page;
 			$data->footerdata->quote = $this->attachments_model->get_random_quote();
 			$data->headerdata->date = date("Y-m-d");
-			$data->page_title = 'The Bowdoin Orient';
 			$this->load->view('pages/'.$page, $data);
 		}
 		else 
 		{
 			$this->error();
 		}
-	}		
-	
-	public function about()
-	{
-		$data->footerdata->quote = $this->attachments_model->get_random_quote();
-		$data->headerdata->date = date("Y-m-d");
-		
-		// meta
-		$data->page_title = 'About — The Bowdoin Orient';
-		$data->page_description = '';
-		$data->page_type = '';
-		
-		$this->load->view('about', $data);
-	}  
-
-	public function browser()
-	{
-		$data->footerdata->quote = $this->attachments_model->get_random_quote();
-		$data->headerdata->date = date("Y-m-d");
-		
-		// meta
-		$data->page_title = 'Browser Warning — The Bowdoin Orient';
-		$data->page_description = '';
-		$data->page_type = '';
-		
-		$this->load->view('browser', $data);
-	}   
-	
-	public function ethics()
-	{
-		$data->footerdata->quote = $this->attachments_model->get_random_quote();
-		$data->headerdata->date = date("Y-m-d");
-		
-		// meta
-		$data->page_title = 'Ethics — The Bowdoin Orient';
-		$data->page_description = '';
-		$data->page_type = '';
-		
-		$this->load->view('ethics', $data);
-	}
-	
-	public function nonremoval()
-	{
-		$data->footerdata->quote = $this->attachments_model->get_random_quote();
-		$data->headerdata->date = date("Y-m-d");
-		
-		// meta
-		$data->page_title = 'Web Non-Removal Policy — The Bowdoin Orient';
-		$data->page_description = '';
-		$data->page_type = '';
-		
-		$this->load->view('nonremoval', $data);
-	}
-	
-	public function contact()
-	{
-		$data->footerdata->quote = $this->attachments_model->get_random_quote();
-		$data->headerdata->date = date("Y-m-d");
-		
-		// meta
-		$data->page_title = 'Contact — The Bowdoin Orient';
-		$data->page_description = '';
-		$data->page_type = '';
-		
-		$this->load->view('contact', $data);
-	}
-	
-	public function subscribe()
-	{
-		$data->footerdata->quote = $this->attachments_model->get_random_quote();
-		$data->headerdata->date = date("Y-m-d");
-		
-		// meta
-		$data->page_title = 'Subscribe — The Bowdoin Orient';
-		$data->page_description = '';
-		$data->page_type = '';
-		
-		$this->load->view('subscribe', $data);
-	}
-	
-	public function advertise()
-	{
-		$data->footerdata->quote = $this->attachments_model->get_random_quote();
-		$data->headerdata->date = date("Y-m-d");
-		
-		// meta
-		$data->page_title = 'Advertise — The Bowdoin Orient';
-		$data->page_description = '';
-		$data->page_type = '';
-		
-		$this->load->view('advertise', $data);
-	}
+	}	
 	
 	public function search()
 	{
@@ -177,32 +98,6 @@ class Pages extends CI_Controller {
 		{
 			exit(phpinfo());
 		}
-	}
-	
-	public function survey()
-	{
-		$data->footerdata->quote = $this->attachments_model->get_random_quote();
-		$data->headerdata->date = date("Y-m-d");
-		
-		// meta
-		$data->page_title = 'Survey — The Bowdoin Orient';
-		$data->page_description = '';
-		$data->page_type = '';
-		
-		$this->load->view('survey', $data);
-	}
-	
-	public function archives()
-	{
-		$data->footerdata->quote = $this->attachments_model->get_random_quote();
-		$data->headerdata->date = date("Y-m-d");
-		
-		// meta
-		$data->page_title = 'Archives — The Bowdoin Orient';
-		$data->page_description = '';
-		$data->page_type = '';
-		
-		$this->load->view('archives', $data);
 	}
 	
 	public function isMobile()

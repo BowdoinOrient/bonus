@@ -49,14 +49,12 @@ $route['series/(:num)'] = "series/view/$1";
 
 $route['search'] = "pages/search";
 $route['advsearch'] = "pages/advsearch";
-$route['about'] = "pages/about";
-$route['browser'] = "pages/browser";
-$route['contact'] = "pages/contact";
-$route['archives'] = "pages/archives";
-$route['subscribe'] = "pages/subscribe";
-$route['advertise'] = "pages/advertise";
-$route['survey'] = "pages/survey";
-$route['bulletin'] = "pages/view/survey-bulletin";
+$route['about'] = "pages/view/about";
+$route['browser'] = "pages/view/browser";
+$route['contact'] = "pages/view/contact";
+$route['subscribe'] = "pages/view/subscribe";
+$route['advertise'] = "pages/view/advertise";
+$route['survey'] = "pages/view/survey";
 
 $route['election2012'] = "article/view/7677";
 
