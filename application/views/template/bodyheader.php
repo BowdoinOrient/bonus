@@ -22,7 +22,6 @@ $(function() {
 });
 </script>
 
-
 <?if($this->uri->segment(3)!='chromeless'):?>
 	<header id="mainhead">
 		<div id="head-content">
