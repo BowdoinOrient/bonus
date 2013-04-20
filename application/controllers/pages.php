@@ -105,6 +105,19 @@ class Pages extends CI_Controller {
 		echo (isMobile() ? "Yes, we think you're browsing on a mobile device." : "No, we don't think you're browsing on a mobile device.");
 		exit(" If this is incorrect, email tophtucker@gmail.com, including information on what browser and operating system you're using.");
 	}
+	
+	public function isitivies()
+	{
+		if(time() < strtotime("2013-04-22 00:00:00")) $message = "No";
+		else if(time() < strtotime("2013-04-25 00:00:00")) $message = "Basically";
+		else if(time() < strtotime("2013-04-28 00:00:00")) $message = "Yes";
+		else if(time() < strtotime("2013-04-29 00:00:00")) $message = "Not really";
+		else if(time() < strtotime("2013-04-30 00:00:00")) $message = "You wish";
+		else $message = "No";
+				
+		$data->message = $message;
+		$this->load->view('isitivies',$data);
+	}
 }
 
 /* End of file welcome.php */
