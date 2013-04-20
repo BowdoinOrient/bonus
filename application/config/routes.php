@@ -49,6 +49,7 @@ $route['series/(:num)'] = "series/view/$1";
 
 $route['search'] = "pages/search";
 $route['advsearch'] = "pages/advsearch";
+$route['isitivies'] = "pages/isitivies";
 $route['about'] = "pages/view/about";
 $route['browser'] = "pages/view/browser";
 $route['contact'] = "pages/view/contact";
