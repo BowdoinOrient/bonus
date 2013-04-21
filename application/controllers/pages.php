@@ -108,7 +108,7 @@ class Pages extends CI_Controller {
 	
 	public function isitivies()
 	{
-		if(time() < strtotime("2013-04-22 00:00:00")) $message = "No";
+		if(time() < strtotime("2013-04-21 00:00:00")) $message = "No";
 		else if(time() < strtotime("2013-04-25 00:00:00")) $message = "Basically";
 		else if(time() < strtotime("2013-04-28 00:00:00")) $message = "Yes";
 		else if(time() < strtotime("2013-04-29 00:00:00")) $message = "Not really";
