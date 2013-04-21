@@ -15,6 +15,10 @@ h1 {
 	text-align:center;
 	font-size: 150pt;
 }
+p {
+	font-family:Helvetica,Arial,sans-serif;
+	text-align:center;
+}
 .app-store-icon {
 	display: block;
 	width: 135px;
@@ -43,6 +47,9 @@ h1 {
 <body>
 
 <h1><?= $message; ?></h1>
+
+<p><a href="http://bowdoinorientexpress.com/post/21582257886/welcome-to-ivies-2012-5-rules-to-live-by">Five rules to live by (2012)</a></p>
+<p><a href="http://bowdoinorient.com/article/1821">Your guide to surviving Ivies (2006)</a></p>
 
 <a href="https://itunes.apple.com/us/app/iviescompanion/id634953896"><img src="<?=base_url()?>img/icon-app-store.svg" class="app-store-icon"></a>
 
