@@ -37,8 +37,8 @@
 	  
 	  	<? if(!empty($articles)): ?>
 		<section id="results" class="">
-			<h2>Results</h2>
-	
+			<h2>Results</h2>	
+			<?/*
 			<ul class="articleblock twotier">
 				<? foreach($articles as $article): ?>
 				<li class="<? if(!empty($article->filename_small)): ?> backgrounded<? endif; ?><? if(!$article->published): ?> draft<? endif; ?>"<? if(!empty($article->filename_small)): ?> style="background:url('<?=base_url().'images/'.$article->date.'/'.$article->filename_small?>')"<? endif; ?>>
@@ -50,8 +50,11 @@
 					<div class="excerpt"><?=$article->excerpt?></div>
 				</a></li>
 				<? endforeach; ?>
-			</ul>
-	
+			</ul> 
+			*/?>
+			<?$blocktype = array("type"=>1);?>
+			<?$this->load->view('template/articleblock', $blocktype);?>
+
 		</section>
 		<? elseif(!empty($searchdata)): ?>
 		<p>No results.</p>
