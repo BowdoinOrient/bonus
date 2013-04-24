@@ -14,34 +14,14 @@
 	  <!-- NEXT / PREV -->
 	  <div class="article_header_nav hidetablet hidemobile">
 	    <? if(!empty($series_previous)): ?>
-	    <ul class="articleblock leftmargin">
-	      <? foreach($series_previous as $s_prev): ?>
-	      <li class="<? if(!empty($s_prev->filename_small)): ?> backgrounded<? endif; ?><? if(!$s_prev->published): ?> draft<? endif; ?>"<? if(!empty($s_prev->filename_small)): ?> style="background:url('<?=base_url().'images/'.$s_prev->date.'/'.$s_prev->filename_small?>')"<? endif; ?>>
-		<a href="<?=site_url()?>article/<?=$s_prev->id?>">
-		  <!--<div class="dateified"><?=dateify($s_prev->date)?></div>-->
-		  <h3><? if($s_prev->series): ?><span class="series"><?=$s_prev->series?>:</span> <? endif; ?>
-		    <?=$s_prev->title?></h3>
-		  <? if($s_prev->subtitle): ?><h4><?= $s_prev->subtitle ?></h4><? endif; ?>
-		  <div class="excerpt"><?=$s_prev->excerpt?></div>
-		</a></li>
-	      <? endforeach; ?>
-	    </ul>
-	    <script type="text/javascript">if(!isFullyVisible($('.leftmargin')))$(".leftmargin").hide();</script>
+	    	<?$blocktype = array("type"=>"leftmargin");?>
+			<?$this->load->view('template/articleblock', $blocktype);?>
+	    	<script type="text/javascript">if(!isFullyVisible($('.leftmargin')))$(".leftmargin").hide();</script>
 	    <? endif;?> 
 	    <? if(!empty($series_next)): ?>
-	    <ul class="articleblock rightmargin">
-	      <? foreach($series_next as $s_next): ?>
-	      <li class="<? if(!empty($s_next->filename_small)): ?> backgrounded<? endif; ?><? if(!$s_next->published): ?> draft<? endif; ?>"<? if(!empty($s_next->filename_small)): ?> style="background:url('<?=base_url().'images/'.$s_next->date.'/'.$s_next->filename_small?>')"<? endif; ?>>
-		<a href="<?=site_url()?>article/<?=$s_next->id?>">
-		  <!--<div class="dateified"><?=dateify($s_next->date)?></div>-->
-		  <h3><? if($s_next->series): ?><span class="series"><?=$s_next->series?>:</span> <? endif; ?>
-		    <?=$s_next->title?></h3>
-		  <? if($s_next->subtitle): ?><h4><?= $s_next->subtitle ?></h4><? endif; ?>
-		  <div class="excerpt"><?=$s_next->excerpt?></div>
-		</a></li>
-	      <? endforeach; ?>
-	    </ul>
-	    <script type="text/javascript">if(!isFullyVisible($('.rightmargin')))$(".rightmargin").hide();</script>
+			<?$blocktype = array("type"=>"rightmargin");?>
+			<?$this->load->view('template/articleblock', $blocktype);?>
+	    	<script type="text/javascript">if(!isFullyVisible($('.rightmargin')))$(".rightmargin").hide();</script>
 	    <? endif; ?>
 	  </div>
 	  
