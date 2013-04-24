@@ -53,16 +53,8 @@
 		<? endif; ?>
 		
 		<h2>All articles</h2>
-		<ul class="articleblock twotier">
-			<? foreach($articles as $article): ?>
-			<li class="<? if(!empty($article->filename_small)): ?> backgrounded<? endif; ?><? if(!$article->published): ?> draft<? endif; ?>"<? if(!empty($article->filename_small)): ?> style="background:url('<?=base_url().'images/'.$article->date.'/'.$article->filename_small?>')"<? endif; ?>>
-				<a href="<?=site_url()?>article/<?=$article->id?>">
-				<h3><?=$article->title?></h3>
-				<? if($article->subtitle): ?><h4><?= $article->subtitle ?></h4><? endif; ?>
-				<div class="excerpt"><?=$article->excerpt?></div>
-			</a></li>
-			<? endforeach; ?>
-		</ul>
+		<?$blocktype = array("type"=>"seriespage");?>
+		<?$this->load->view('template/articleblock', $blocktype);?>	
 		
 	</section>
 	
