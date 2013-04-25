@@ -38,7 +38,11 @@
 	  	<? if(!empty($articles)): ?>
 		<section id="results" class="">
 			<h2>Results</h2>	
-			<?$blocktype = array("type"=>"searchresult");?>
+			<?$blocktype = array(
+				"type"=>"new",
+				"blocks"=>$articles,
+				"twotier"=>TRUE,
+				"dateified"=>TRUE);?>
 			<?$this->load->view('template/articleblock', $blocktype);?>
 		</section>
 		<? elseif(!empty($searchdata)): ?>
