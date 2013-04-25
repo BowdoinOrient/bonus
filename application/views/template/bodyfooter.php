@@ -4,7 +4,10 @@
 		<h2>★ Featured 
 			<? if(substr(uri_string(),0,8)=="article/" && bonus()): ?> <input type="checkbox" name="featured" value="featured" <? if($article->featured): ?>checked="checked"<? endif; ?> /><?endif;?>
 		</h2>
-		<?$blocktype = array("type"=>"bodyfooter");?>
+		<?$blocktype = array(
+			"type"=>"new",
+			"blocks"=>$featured,
+			"medtile"=>TRUE);?>
 		<?$this->load->view('template/articleblock', $blocktype);?>
 	</section>
 	<? endif; ?>
