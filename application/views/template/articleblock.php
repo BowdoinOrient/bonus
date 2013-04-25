@@ -137,12 +137,13 @@
 		</ul>
 		<?break;?>
 
-	<? case "new:":?>
-		<!-- here's my cool new supermethod -->
-		<?if(1==0){ //don't run this shit just yet?>
-			<ul class="articleblock" <?if($twotier):?>"twotier"<?endif;?> <?if($rightmargin):?>"rightmargin"<?endif;?> <?if($leftmargin):?>"leftmargin"<?endif;?>>
-			</ul>
-		<?}?>
+	<? case "new":?>
+		<ul class="articleblock" <?if(isset($twotier)):?>"twotier"<?endif;?> <?if(isset($rightmargin)):?>"rightmargin"<?endif;?> <?if(isset($leftmargin)):?>"leftmargin"<?endif;?>>
+			<?foreach($blocks as $block):?>
+				<? if($block->subtitle): ?>
+					<h4><?= $block->subtitle ?></h4><? endif; ?>
+			<?endforeach;?>
+		</ul>
 		<? break; ?>
 
 	<?default:?>

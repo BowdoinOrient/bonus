@@ -53,14 +53,13 @@
 		<? endif; ?>
 		
 		<h2>All articles</h2>
-		<?$blocktype = array("type"=>"seriespage");
-		$this->load->view('template/articleblock', $blocktype);?>	
-		<?/*$blockparams = array(
+		<?/*$blocktype = array("type"=>"seriespage");
+		$this->load->view('template/articleblock', $blocktype);*/?>	
+		<?$blockparams = array(
 			"type"=>"new",
-			"twotier"=>TRUE,
-			"rightmargin"=>FALSE,
-			"dateified"=>FALSE);
-		$this->load->view('template/articleblock', $blockparams);*/?>	
+			"blocks"=>$articles,
+			"twotier"=>TRUE);
+		$this->load->view('template/articleblock', $blockparams);?>	
 	</section>
 	
 </div>
