@@ -14,13 +14,21 @@
 	  <!-- NEXT / PREV -->
 	  <div class="article_header_nav hidetablet hidemobile">
 	    <? if(!empty($series_previous)): ?>
-	    	<?$blocktype = array("type"=>"leftmargin");?>
-			<?$this->load->view('template/articleblock', $blocktype);?>
+	    	<?$leftblock = array(
+	    		"type"=>"new",
+	    		"blocks"=>$series_previous,
+	    		"leftmargin"=>TRUE,
+	    		"rightmargin"=>FALSE);?>
+			<?$this->load->view('template/articleblock', $leftblock);?>
 	    	<script type="text/javascript">if(!isFullyVisible($('.leftmargin')))$(".leftmargin").hide();</script>
 	    <? endif;?> 
 	    <? if(!empty($series_next)): ?>
-			<?$blocktype = array("type"=>"rightmargin");?>
-			<?$this->load->view('template/articleblock', $blocktype);?>
+			<?$rightblock = array(
+				"type"=>"new",
+				"blocks"=>$series_next,
+				"rightmargin"=>TRUE,
+				"leftmargin"=>FALSE);?>
+			<?$this->load->view('template/articleblock', $rightblock);?>
 	    	<script type="text/javascript">if(!isFullyVisible($('.rightmargin')))$(".rightmargin").hide();</script>
 	    <? endif; ?>
 	  </div>

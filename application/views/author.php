@@ -111,7 +111,10 @@
 		
 		<? if(!empty($articles)): ?>
 		<h2>All articles</h2>
-			<?$blocktype = array("type"=>"authorpage");?>
+			<?$blocktype = array(
+				"type"=>"new",
+				"blocks"=>$articles,
+				"twotier"=>TRUE);?>
 			<?$this->load->view('template/articleblock', $blocktype);?>
 		<? endif; ?>
 		

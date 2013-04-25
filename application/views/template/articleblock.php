@@ -1,22 +1,5 @@
 <?switch($type) {
-	case "searchresult":?>
-		<?//from advsearch.php: ?>
-		<ul class="articleblock twotier">
-			<? foreach($articles as $article): ?>
-				<li class="<? if(!empty($article->filename_small)): ?> backgrounded<? endif; ?><? if(!$article->published): ?> draft<? endif; ?>"<? if(!empty($article->filename_small)): ?> style="background:url('<?=base_url().'images/'.$article->date.'/'.$article->filename_small?>')"<? endif; ?>>
-					<a href="<?=site_url()?>article/<?=$article->id?>">
-						<div class="dateified"><?=date("F j, Y",strtotime($article->date))?></div>
-						<h3><? if($article->series): ?><span class="series"><?=$article->series?>:</span> <? endif; ?><?=$article->title?></h3>
-						<? if($article->subtitle): ?>
-							<h4><?= $article->subtitle ?></h4><? endif; ?>
-						<div class="excerpt"><?=$article->excerpt?></div>
-					</a>
-				</li>
-			<? endforeach; ?>
-		</ul>
-		<?break;?>
-
-	<?case "rightmargin":?>
+	case "rightmargin":?>
 		<?//from article.php:?>
 		<ul class="articleblock rightmargin">
 			<? foreach($series_next as $s_next): ?>
@@ -50,23 +33,6 @@
 		</ul>
 	<?break;?>
 
-	<?case "authorpage":?>
-		<?//author.php:?>
-		<ul class="articleblock twotier">
-			<? foreach($articles as $article): ?>
-				<li class="<? if(!empty($article->filename_small)): ?> backgrounded<? endif; ?><? if(!$article->published): ?> draft<? endif; ?>"<? if(!empty($article->filename_small)): ?> style="background:url('<?=base_url().'images/'.$article->date.'/'.$article->filename_small?>')"<? endif; ?>>
-					<a href="<?=site_url()?>article/<?=$article->id?>">
-						<h3><? if($article->series): ?><span class="series"><?=$article->series?>:</span> <? endif; ?>
-						<?=$article->title?></h3>
-						<? if($article->subtitle): ?>
-							<h4><?= $article->subtitle ?></h4><? endif; ?>
-						<div class="excerpt"><?=$article->excerpt?></div>
-					</a>
-				</li>
-			<? endforeach; ?>
-		</ul>
-		<?break;?>
-
 	<?case "browsesection":?>
 		<?//from browse.php - the real deal homepage article blocks:?>			
 		<ul class="articleblock twotier">
@@ -85,44 +51,12 @@
 		</ul>
 		<?break;?>
 
-	<? case "seriespage":?>
-		<?//from series.php:?>				
-		<ul class="articleblock twotier">
-			<? foreach($articles as $article): ?>
-				<li class="<? if(!empty($article->filename_small)): ?> backgrounded<? endif; ?><? if(!$article->published): ?> draft<? endif; ?>"<? if(!empty($article->filename_small)): ?> style="background:url('<?=base_url().'images/'.$article->date.'/'.$article->filename_small?>')"<? endif; ?>>
-					<a href="<?=site_url()?>article/<?=$article->id?>">
-						<h3><?=$article->title?></h3>
-						<? if($article->subtitle): ?>
-							<h4><?= $article->subtitle ?></h4><? endif; ?>
-						<div class="excerpt"><?=$article->excerpt?></div>
-					</a>
-				</li>
-			<? endforeach; ?>
-		</ul>
-		<?break;?>
-
-
-	<? case "bodyfooter":?>
-		<?//from template/bodyfooter.php:	?>
-		<ul class="articleblock">
-			<? foreach($featured as $article): ?>
-				<li class="<? if(!empty($article->filename_small)): ?> backgrounded<? endif; ?><? if(!$article->published): ?> draft<? endif; ?> medtile"<? if(!empty($article->filename_small)): ?> style="background:url('<?=base_url().'images/'.$article->date.'/'.$article->filename_small?>')"<? endif; ?>>
-					<a href="<?=site_url()?>article/<?=$article->id?>">
-						<h3><? if($article->series): ?><span class="series"><?=$article->series?>:</span> <? endif; ?>
-						<?=$article->title?></h3>
-						<? if($article->subtitle): ?>
-							<h4><?= $article->subtitle ?></h4><? endif; ?>
-						<div class="excerpt"><?=$article->excerpt?></div>
-					</a>
-				</li>
-			<? endforeach; ?>
-		</ul>
-		<?break;?>
 
 	<!-- 
 	PARAMS:
 	twotier: is it big
 	blocks: list of articles to block out
+	sectionname: the homepage function needs this
 	rightmargin: for next series articles
 	leftmargin: for previous series articles
 	dateified: does it show a date
@@ -130,8 +64,8 @@
 	dateoverlay: the "1 day ago" red overlay text
 	 -->
 
-	<? case "new":?>
-		<ul class="articleblock" <?if(isset($twotier)):?>"twotier"<?endif;?> <?if(isset($rightmargin)):?>"rightmargin"<?endif;?> <?if(isset($leftmargin)):?>"leftmargin"<?endif;?>>
+	<?default:?>
+		<ul class="articleblock <?if(isset($twotier)):?>twotier<?endif;?> <?if(isset($leftmargin)&&$leftmargin):?>leftmargin<?endif;?> <?if(isset($rightmargin)&&$rightmargin):?>rightmargin<?endif;?>">
 			<?foreach($blocks as $block):?>
 				<li class="<? if(!empty($block->filename_small)): ?> backgrounded<? endif; ?><? if(!$block->published): ?> draft<? endif; ?><? if(strtotime($date)-strtotime($block->date) > (7*24*60*60)): ?> old<? endif; ?><?if(isset($medtile)):?>medtile<?endif;?>"<? if(!empty($block->filename_small)): ?> style="background:url('<?=base_url().'images/'.$block->date.'/'.$block->filename_small?>')"<? endif; ?>>
 					<a href="<?=site_url()?>article/<?=$block->id?>">
@@ -147,9 +81,6 @@
 			<?endforeach;?>
 		</ul>
 		<? break; ?>
-
-	<?default:?>
-		<?break;?>
 
 <?}?>
 
