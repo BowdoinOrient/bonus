@@ -31,8 +31,8 @@
 		<!-- latest articles -->
 		<div id="latest">
 			<h2>Latest</h2>
-			<?$blocktype = array("type"=>"browselatest");?>
-			<?$this->load->view('template/articleblock', $blocktype);?>
+			<?$blocktype = array("type"=>"browselatest");
+			$this->load->view('template/articleblock', $blocktype);?>
 		</div>
 		
 	</section>
@@ -80,19 +80,13 @@
 	
 	<!-- SECTIONS -->
 	<? foreach($sections as $section): ?>
-		
 		<? if(!empty($articles[$section->name])): ?>
-		
 		<section id="<?=$section->name?>" class="issuesection">
 			<h2><?=$section->name?><? if(bonus()): ?><a href="<?=site_url()?>article/add/<?=$issue->volume?>/<?=$issue->issue_number?>/<?=$section->id?>"><button class="bonusbutton" id="addarticlebutton">Add article</button></a><? endif; ?></h2>
-			
-			<?$blocktype = array("type"=>"browsesection");?>
+			<?$blocktype = array("type"=>"browsesection","sectionname"=>$section->name);?>
 			<?$this->load->view('template/articleblock', $blocktype);?>
-			
 		</section>
-		
 		<? endif; ?>
-	
 	<? endforeach; ?>
 		
 </div>

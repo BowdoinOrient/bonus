@@ -6,9 +6,9 @@
 				<li class="<? if(!empty($article->filename_small)): ?> backgrounded<? endif; ?><? if(!$article->published): ?> draft<? endif; ?>"<? if(!empty($article->filename_small)): ?> style="background:url('<?=base_url().'images/'.$article->date.'/'.$article->filename_small?>')"<? endif; ?>>
 					<a href="<?=site_url()?>article/<?=$article->id?>">
 						<div class="dateified"><?=date("F j, Y",strtotime($article->date))?></div>
-						<h3><? if($article->series): ?><span class="series"><?=$article->series?>:</span> <? endif; ?>
-						<?=$article->title?></h3>
-						<? if($article->subtitle): ?><h4><?= $article->subtitle ?></h4><? endif; ?>
+						<h3><? if($article->series): ?><span class="series"><?=$article->series?>:</span> <? endif; ?><?=$article->title?></h3>
+						<? if($article->subtitle): ?>
+							<h4><?= $article->subtitle ?></h4><? endif; ?>
 						<div class="excerpt"><?=$article->excerpt?></div>
 					</a>
 				</li>
@@ -24,7 +24,8 @@
 					<a href="<?=site_url()?>article/<?=$s_next->id?>">
 						<h3><? if($s_next->series): ?><span class="series"><?=$s_next->series?>:</span> <? endif; ?>
 						<?=$s_next->title?></h3>
-						<? if($s_next->subtitle): ?><h4><?= $s_next->subtitle ?></h4><? endif; ?>
+						<? if($s_next->subtitle): ?>
+							<h4><?= $s_next->subtitle ?></h4><? endif; ?>
 						<div class="excerpt"><?=$s_next->excerpt?></div>
 					</a>
 				</li>
@@ -40,7 +41,8 @@
 					<a href="<?=site_url()?>article/<?=$s_prev->id?>">
 						<h3><? if($s_prev->series): ?><span class="series"><?=$s_prev->series?>:</span> <? endif; ?>
 						<?=$s_prev->title?></h3>
-						<? if($s_prev->subtitle): ?><h4><?= $s_prev->subtitle ?></h4><? endif; ?>
+						<? if($s_prev->subtitle): ?>
+							<h4><?= $s_prev->subtitle ?></h4><? endif; ?>
 						<div class="excerpt"><?=$s_prev->excerpt?></div>
 					</a>
 				</li>
@@ -56,7 +58,8 @@
 					<a href="<?=site_url()?>article/<?=$article->id?>">
 						<h3><? if($article->series): ?><span class="series"><?=$article->series?>:</span> <? endif; ?>
 						<?=$article->title?></h3>
-						<? if($article->subtitle): ?><h4><?= $article->subtitle ?></h4><? endif; ?>
+						<? if($article->subtitle): ?>
+							<h4><?= $article->subtitle ?></h4><? endif; ?>
 						<div class="excerpt"><?=$article->excerpt?></div>
 					</a>
 				</li>
@@ -73,7 +76,8 @@
 						<div class="dateified"><?=dateify($article->date, $date)?></div>
 						<h3><? if($article->series): ?><span class="series"><?=$article->series?>:</span> <? endif; ?>
 						<?=$article->title?></h3>
-						<? if($article->subtitle): ?><h4><?= $article->subtitle ?></h4><? endif; ?>
+						<? if($article->subtitle): ?>
+							<h4><?= $article->subtitle ?></h4><? endif; ?>
 						<div class="excerpt"><?=$article->excerpt?></div>
 					</a>
 				</li>
@@ -84,13 +88,14 @@
 	<?case "browsesection":?>
 		<?//from browse.php - the real deal homepage article blocks:?>			
 		<ul class="articleblock twotier">
-			<? foreach($articles[$section->name] as $article): ?>
+			<? foreach($articles[$sectionname] as $article): ?>
 				<li class="<? if(!empty($article->filename_small)): ?> backgrounded<? endif; ?><? if(!$article->published): ?> draft<? endif; ?><? if(strtotime($date)-strtotime($article->date) > (7*24*60*60)): ?> old<? endif; ?>"<? if(!empty($article->filename_small)): ?> style="background:url('<?=base_url().'images/'.$article->date.'/'.$article->filename_small?>')"<? endif; ?>>
 					<a href="<?=site_url()?>article/<?=$article->id?>">
 						<div class="dateified"><?=dateify($article->date, $date)?></div>
 						<h3><? if($article->series): ?><span class="series"><?=$article->series?>:</span> <? endif; ?>
 						<?=$article->title?></h3>
-						<? if($article->subtitle): ?><h4><?= $article->subtitle ?></h4><? endif; ?>
+						<? if($article->subtitle): ?>
+							<h4><?= $article->subtitle ?></h4><? endif; ?>
 						<div class="excerpt"><?=$article->excerpt?></div>
 					</a>
 				</li>
@@ -105,7 +110,8 @@
 				<li class="<? if(!empty($article->filename_small)): ?> backgrounded<? endif; ?><? if(!$article->published): ?> draft<? endif; ?>"<? if(!empty($article->filename_small)): ?> style="background:url('<?=base_url().'images/'.$article->date.'/'.$article->filename_small?>')"<? endif; ?>>
 					<a href="<?=site_url()?>article/<?=$article->id?>">
 						<h3><?=$article->title?></h3>
-						<? if($article->subtitle): ?><h4><?= $article->subtitle ?></h4><? endif; ?>
+						<? if($article->subtitle): ?>
+							<h4><?= $article->subtitle ?></h4><? endif; ?>
 						<div class="excerpt"><?=$article->excerpt?></div>
 					</a>
 				</li>
@@ -122,7 +128,8 @@
 					<a href="<?=site_url()?>article/<?=$article->id?>">
 						<h3><? if($article->series): ?><span class="series"><?=$article->series?>:</span> <? endif; ?>
 						<?=$article->title?></h3>
-						<? if($article->subtitle): ?><h4><?= $article->subtitle ?></h4><? endif; ?>
+						<? if($article->subtitle): ?>
+							<h4><?= $article->subtitle ?></h4><? endif; ?>
 						<div class="excerpt"><?=$article->excerpt?></div>
 					</a>
 				</li>
@@ -130,7 +137,16 @@
 		</ul>
 		<?break;?>
 
+	<? case "new:":?>
+		<!-- here's my cool new supermethod -->
+		<?if(1==0){ //don't run this shit just yet?>
+			<ul class="articleblock" <?if($twotier):?>"twotier"<?endif;?> <?if($rightmargin):?>"rightmargin"<?endif;?> <?if($leftmargin):?>"leftmargin"<?endif;?>>
+			</ul>
+		<?}?>
+		<? break; ?>
+
 	<?default:?>
 		<?break;?>
 
 <?}?>
+
