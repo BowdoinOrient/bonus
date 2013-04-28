@@ -56,7 +56,6 @@
 		<?/*$blocktype = array("type"=>"seriespage");
 		$this->load->view('template/articleblock', $blocktype);*/?>	
 		<?$blockparams = array(
-			"type"=>"new",
 			"blocks"=>$articles,
 			"twotier"=>TRUE);
 		$this->load->view('template/articleblock', $blockparams);?>	
