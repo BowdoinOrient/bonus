@@ -1,3 +1,11 @@
+<!-- PARAMS:
+fullwidth: display wider than normal
+autoheight: add the "autoheight" css class
+people: are we listing people instead of articles?
+dateified: show the date overlay?
+subtitle: show the subtitle?
+excerpt: show the excerpt? -->
+
 <?/*	
 	<?//author.php:?>
 	<ul class="articleblock">
