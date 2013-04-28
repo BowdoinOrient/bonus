@@ -39,7 +39,6 @@
 		<section id="results" class="">
 			<h2>Results</h2>	
 			<?$blocktype = array(
-				"type"=>"new",
 				"blocks"=>$articles,
 				"twotier"=>TRUE,
 				"dateified"=>TRUE);?>

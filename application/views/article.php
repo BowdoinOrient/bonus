@@ -15,7 +15,6 @@
 	  <div class="article_header_nav hidetablet hidemobile">
 	    <? if(!empty($series_previous)): ?>
 	    	<?$leftblock = array(
-	    		"type"=>"new",
 	    		"blocks"=>$series_previous,
 	    		"leftmargin"=>TRUE,
 	    		"rightmargin"=>FALSE);?>
@@ -24,7 +23,6 @@
 	    <? endif;?> 
 	    <? if(!empty($series_next)): ?>
 			<?$rightblock = array(
-				"type"=>"new",
 				"blocks"=>$series_next,
 				"rightmargin"=>TRUE,
 				"leftmargin"=>FALSE);?>

@@ -5,8 +5,8 @@
 			<? if(substr(uri_string(),0,8)=="article/" && bonus()): ?> <input type="checkbox" name="featured" value="featured" <? if($article->featured): ?>checked="checked"<? endif; ?> /><?endif;?>
 		</h2>
 		<?$blocktype = array(
-			"type"=>"new",
 			"blocks"=>$featured,
+			"twotier"=>FALSE,
 			"medtile"=>TRUE);?>
 		<?$this->load->view('template/articleblock', $blocktype);?>
 	</section>
