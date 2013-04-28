@@ -96,8 +96,11 @@
 		<section id="<?=$section->name?>" class="issuesection">
 			<h2><?=$section->name?><? if(bonus()): ?><a href="<?=site_url()?>article/add/<?=$issue->volume?>/<?=$issue->issue_number?>/<?=$section->id?>"><button class="bonusbutton" id="addarticlebutton">Add article</button></a><? endif; ?></h2>
 			<?$blocktype = array(
-				"type"=>"browsesection",
-				"sectionname"=>$section->name);?>
+				"type"=>"new",
+				"blocks"=>$articles[$section->name],
+				"twotier"=>TRUE,
+				"dateified"=>TRUE,
+				"dateoverlay"=>TRUE);?>
 			<?$this->load->view('template/articleblock', $blocktype);?>
 		</section>
 		<? endif; ?>
