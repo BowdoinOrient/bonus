@@ -64,15 +64,4 @@ excerpt: show the excerpt? -->
 			</li>
 		<? endforeach; ?>
 	</ul>
-
-	<?//series.php:?>	DONE		
-	<ul class="articleblock">
-		<? foreach($contributors as $contributor): ?>
-			<li class="smalltile autoheight">
-				<a href="<?=base_url()?>author/<?=$contributor->author_id?>" title="<?=$contributor->contrib_count?> contribution<?= ($contributor->contrib_count > 1 ? 's' : '') ?>">
-					<h3><?=$contributor->name?></h3>
-				</a>
-			</li>
-		<? endforeach; ?>
-	</ul>
 */?>
