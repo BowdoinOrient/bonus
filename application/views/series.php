@@ -52,8 +52,6 @@
 		<? endif; ?>
 		
 		<h2>All articles</h2>
-		<?/*$blocktype = array("type"=>"seriespage");
-		$this->load->view('template/articleblock', $blocktype);*/?>	
 		<?$blockparams = array(
 			"blocks"=>$articles,
 			"twotier"=>TRUE);
