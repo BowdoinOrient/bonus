@@ -30,13 +30,13 @@
 		
 		<!-- latest articles -->
 		<div id="latest">
+			<h2>Latest</h2>
 			<?$blocktype = array(
 				"blocks"=>$latest,
 				"articles"=>TRUE,
 				"dateified"=>TRUE,
 				"excerpt"=>TRUE);?>
 			<?$this->load->view('template/smalltile', $blocktype);?>
-		</ul>
 		</div>
 		
 	</section>
