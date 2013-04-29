@@ -46,22 +46,3 @@ excerpt: show the excerpt? -->
 	</li>
 	<? endforeach; ?>
 </ul>
-
-<?/*
-	
-	<?//browse.php ("latest" articles)?>
-	<ul class="articleblock">
-		<? foreach($latest as $article): ?>
-			<li class="smalltile">
-				<a href="<?=site_url()?>article/<?=$article->id?>">
-					<div class="dateified"><?=dateify($article->date, $date)?></div>
-					<h3><? if($article->series): ?><span class="series"><?=$article->series?>:</span> <? endif; ?>
-					<?=$article->title?></h3>
-					<? if($article->subtitle): ?>
-						<h4><?= $article->subtitle ?></h4><? endif; ?>
-					<div class="excerpt"><?=$article->excerpt?></div>
-				</a>
-			</li>
-		<? endforeach; ?>
-	</ul>
-*/?>
