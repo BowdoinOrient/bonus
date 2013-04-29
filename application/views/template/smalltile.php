@@ -20,7 +20,7 @@ excerpt: show the excerpt? -->
 				<?endif;?>
 				<h3>
 					<?if(isset($block->series)):?>
-						<span class="series"><?=$block->series?>:</span>
+						<span class="series"><?=$block->series?></span>
 					<?endif; ?>
 					<?=$block->title?>
 				</h3>
