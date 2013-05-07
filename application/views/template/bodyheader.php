@@ -22,7 +22,7 @@ $(function() {
 });
 </script>
 
-<?if($this->uri->segment(3)!='chromeless'):?>
+<?if(!chromeless()):?>
 	<header id="mainhead">
 		<div id="head-content">
 			<h1 id="wordmark"><a href="<?=site_url()?>"><span class="super">The</span> Bowdoin Orient</a></h1>
