@@ -103,7 +103,7 @@ class Pages extends CI_Controller {
 	public function isMobile()
 	{
 		echo (isMobile() ? "Yes, we think you're browsing on a mobile device." : "No, we don't think you're browsing on a mobile device.");
-		exit(" If this is incorrect, email tophtucker@gmail.com, including information on what browser and operating system you're using.");
+		exit(" If this is incorrect, email bjacobel@gmail.com, including information on what browser and operating system you're using.");
 	}
 }
 
