@@ -29,13 +29,14 @@
 			
 			<p>Business or advertising inquiries: <a href="mailto:orientads@bowdoin.edu">orientads@bowdoin.edu</a>.</p>
 			
-			<p>Web inquiries: <a href="mailto:tophtucker@gmail.com">tophtucker@gmail.com</a>.</p>
+			<p>Web inquiries: <a href="mailto:bjacobel@gmail.com">bjacobel@gmail.com</a>.</p>
 			
 			<h3 id="ltte">Submit a letter to the editor</h3>
 			<ol>
 				<li>Letters should be recieved by 7 p.m. on the Wednesday of the week of publication.</li>
 				<li>Letters must be signed. We will not publish unsigned letters.</li>
 				<li>Letters should not exceed 200 words.</li>
+				<li>Op-eds run from 400 to 600 words, if you wish to submit a longer piece.</li>
 			</ol>
 			<p>Email <a href="mailto:orientopinion@bowdoin.edu">orientopinion@bowdoin.edu</a>.</p>
 					
