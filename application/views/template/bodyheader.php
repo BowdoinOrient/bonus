@@ -22,74 +22,77 @@ $(function() {
 });
 </script>
 
-<header id="mainhead">
-	<div id="head-content">
-		<h1 id="wordmark"><a href="<?=site_url()?>"><span class="super">The</span> Bowdoin Orient</a></h1>
-		
-		<a href="https://twitter.com/bowdoinorient" class="twitter-follow-button" data-show-count="false">Follow @bowdoinorient</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-		
-		<div class="fb-like" data-href="https://www.facebook.com/bowdoinorient" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
-				
-		<nav id="mainnav">
-			<ul>
-				<? if($this->uri->segment(1) == "" || $this->uri->segment(1) == "browse"): ?>
-					<li><a href="#News">News</a></li>
-					<li><a href="#Opinion">Opinion</a></li>
-					<li><a href="#Features">Features</a></li>
-					<li><a href="#Arts & Entertainment">A&E</a></li>
-					<li><a href="#Sports">Sports</a></li>
-					<li><a href="#Featured">★</a></li>
-				<? endif; ?>
-				<? if($this->uri->segment(1) == "article" && !empty($section_id)): ?>
-					<li class="<?= ($section_id == "1" ? "active" : "inactive"); ?>"><a href="<?=site_url()."browse/".$date?>#News">News</a></li>
-					<li class="<?= ($section_id == "2" ? "active" : "inactive"); ?>"><a href="<?=site_url()."browse/".$date?>#Opinion">Opinion</a></li>
-					<li class="<?= ($section_id == "3" ? "active" : "inactive"); ?>"><a href="<?=site_url()."browse/".$date?>#Features">Features</a></li>
-					<li class="<?= ($section_id == "4" ? "active" : "inactive"); ?>"><a href="<?=site_url()."browse/".$date?>#Arts & Entertainment">A&E</a></li>
-					<li class="<?= ($section_id == "5" ? "active" : "inactive"); ?>"><a href="<?=site_url()."browse/".$date?>#Sports">Sports</a></li>
-					<li class="inactive"><a href="#Featured">★</a></li>
-				<? endif; ?>
-				<li>
-					<form action="<?=site_url()?>search" id="cse-search-box" method="get">
-						<input class="filterinput" type="text" placeholder="Search" name="q">
-					</form>
-				</li>
-				<!--<li><a href="http://bowdoinorientexpress.com" style="font-family:helvetica;font-style:italic;" class="oebug"><img src="<?=base_url().'img/oe-compass-35.png'?>"></a></li>-->
-				<li style="border-left:1px solid lightgray" class="hidetablet"><a href="http://bowdoinorientexpress.com">Blog</a></li>
-			</ul>
-		</nav>
+<?if(!chromeless()):?>
+	<header id="mainhead">
+		<div id="head-content">
+			<h1 id="wordmark"><a href="<?=site_url()?>"><span class="super">The</span> Bowdoin Orient</a></h1>
+			
+			<a href="https://twitter.com/bowdoinorient" class="twitter-follow-button" data-show-count="false">Follow @bowdoinorient</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			
+			<div class="fb-like" data-href="https://www.facebook.com/bowdoinorient" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+					
+			<nav id="mainnav">
+				<ul>
+					<? if($this->uri->segment(1) == "" || $this->uri->segment(1) == "browse"): ?>
+						<li><a href="#News">News</a></li>
+						<li><a href="#Opinion">Opinion</a></li>
+						<li><a href="#Features">Features</a></li>
+						<li><a href="#Arts & Entertainment">A&E</a></li>
+						<li><a href="#Sports">Sports</a></li>
+						<li><a href="#Featured">★</a></li>
+					<? endif; ?>
+					<? if($this->uri->segment(1) == "article" && !empty($section_id)): ?>
+						<li class="<?= ($section_id == "1" ? "active" : "inactive"); ?>"><a href="<?=site_url()."browse/".$date?>#News">News</a></li>
+						<li class="<?= ($section_id == "2" ? "active" : "inactive"); ?>"><a href="<?=site_url()."browse/".$date?>#Opinion">Opinion</a></li>
+						<li class="<?= ($section_id == "3" ? "active" : "inactive"); ?>"><a href="<?=site_url()."browse/".$date?>#Features">Features</a></li>
+						<li class="<?= ($section_id == "4" ? "active" : "inactive"); ?>"><a href="<?=site_url()."browse/".$date?>#Arts & Entertainment">A&E</a></li>
+						<li class="<?= ($section_id == "5" ? "active" : "inactive"); ?>"><a href="<?=site_url()."browse/".$date?>#Sports">Sports</a></li>
+						<li class="inactive"><a href="#Featured">★</a></li>
+					<? endif; ?>
+					<li>
+						<form action="<?=site_url()?>search" id="cse-search-box" method="get">
+							<input class="filterinput" type="text" placeholder="Search" name="q">
+						</form>
+					</li>
+					<!--<li><a href="http://bowdoinorientexpress.com" style="font-family:helvetica;font-style:italic;" class="oebug"><img src="<?=base_url().'img/oe-compass-35.png'?>"></a></li>-->
+					<li style="border-left:1px solid lightgray" class="hidetablet"><a href="http://bowdoinorientexpress.com">Blog</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div id="subnavbar">
+		<?if(isset($date)):?>
+			<span id="lastupdated"><?=date("F j, Y",strtotime($date))?></span>
+			<div id="datepicker"></div> &middot; 
+		<?endif;?>
+		<span class="hidemobile">
+		<?if(isset($volume) && isset($issue_number)):?>
+			<? if(!empty($previssue)):?><a href="<?=site_url()?>browse/<?=$previssue->issue_date?>" class="issue-nav-arrow">&#x25C4;</a> <?endif;?>
+			<? if(isset($issue) && !empty($issue->scribd)): ?><a href="http://www.scribd.com/doc/<?=$issue->scribd?>" class="scribd-link" target="new"><? endif; ?>Vol. <?=$volume?>, No. <?=$issue_number?><? if(isset($issue) && !empty($issue->scribd)): ?></a><? endif; ?> 
+			<? if(!empty($nextissue)):?><a href="<?=site_url()?>browse/<?=$nextissue->issue_date?>" class="issue-nav-arrow">&#x25BA;</a> <?endif;?>&middot;
+		<?endif;?>
+		</span>
+		<a href="<?=base_url()?>random">Random <img src="<?=base_url()?>img/icon-shuffle.svg" type="image/svg+xml" class="" height="15" width="15" style="margin-bottom: -3px;" title="Dmitry Baranovskiy, from The Noun Project"></a>
+		<span class="onlymobile">&middot; <?=anchor('search', 'Search'); ?></span>
+		<span id="pages" class="hidemobile">
+			<?=anchor('about', 'About'); ?> &middot; 
+			<?=anchor('subscribe', 'Subscribe'); ?> &middot; 
+			<?=anchor('advertise', 'Advertise'); ?> &middot; 
+			<?=anchor('contact', 'Contact'); ?> &middot; 
+			<span id="submittip">Submit a tip</span>
+		</span>
 	</div>
-</header>
 
-<div id="subnavbar">
-	<?if(isset($date)):?>
-		<span id="lastupdated"><?=date("F j, Y",strtotime($date))?></span>
-		<div id="datepicker"></div> &middot; 
-	<?endif;?>
-	<span class="hidemobile">
-	<?if(isset($volume) && isset($issue_number)):?>
-		<? if(!empty($previssue)):?><a href="<?=site_url()?>browse/<?=$previssue->issue_date?>" class="issue-nav-arrow">&#x25C4;</a> <?endif;?>
-		<? if(isset($issue) && !empty($issue->scribd)): ?><a href="http://www.scribd.com/doc/<?=$issue->scribd?>" class="scribd-link" target="new"><? endif; ?>Vol. <?=$volume?>, No. <?=$issue_number?><? if(isset($issue) && !empty($issue->scribd)): ?></a><? endif; ?> 
-		<? if(!empty($nextissue)):?><a href="<?=site_url()?>browse/<?=$nextissue->issue_date?>" class="issue-nav-arrow">&#x25BA;</a> <?endif;?>&middot;
-	<?endif;?>
-	</span>
-	<a href="<?=base_url()?>random">Random <img src="<?=base_url()?>img/icon-shuffle.svg" type="image/svg+xml" class="" height="15" width="15" style="margin-bottom: -3px;" title="Dmitry Baranovskiy, from The Noun Project"></a>
-	<span class="onlymobile">&middot; <?=anchor('search', 'Search'); ?></span>
-	<span id="pages" class="hidemobile">
-		<?=anchor('about', 'About'); ?> &middot; 
-		<?=anchor('subscribe', 'Subscribe'); ?> &middot; 
-		<?=anchor('advertise', 'Advertise'); ?> &middot; 
-		<?=anchor('contact', 'Contact'); ?> &middot; 
-		<span id="submittip">Submit a tip</span>
-	</span>
-</div>
+	<div id="submittipform">
+		<span class="closebutton">&times;</span>
+		<!--<span id="tipprompt" style="font-weight: bold;">Submit an anonymous tip.</span>-->Submissions are anonymous. Leave contact information if willing, or email <a href="mailto:orient@bowdoin.edu">orient@bowdoin.edu</a>.<br/>
+		<textarea name="tip"></textarea>
+		<button id="tipsubmit">Submit</button> <button id="cancel">Cancel</button> <span id="tipnotice"></span>
+	</div>
 
-<div id="submittipform">
-	<span class="closebutton">&times;</span>
-	<!--<span id="tipprompt" style="font-weight: bold;">Submit an anonymous tip.</span>-->Submissions are anonymous. Leave contact information if willing, or email <a href="mailto:orient@bowdoin.edu">orient@bowdoin.edu</a>.<br/>
-	<textarea name="tip"></textarea>
-	<button id="tipsubmit">Submit</button> <button id="cancel">Cancel</button> <span id="tipnotice"></span>
-</div>
+<? endif; ?> 
 
 <? if(isset($alerts)): ?>
 	<div id="alertbar">
