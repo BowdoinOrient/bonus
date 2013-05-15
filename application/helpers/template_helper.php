@@ -14,6 +14,17 @@ function ie_lte_8(){
 	else return false;
 }
 
+function chromeless(){
+    $CI =& get_instance();
+    $i=1;
+    while($CI->uri->segment($i)!=false){
+        if($CI->uri->segment($i)=="chromeless")
+            return true;
+        $i++;
+    }
+    return false;
+}
+
 function currentuser()
 {
 	$CI =& get_instance();
