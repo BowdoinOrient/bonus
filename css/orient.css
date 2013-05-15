@@ -1072,7 +1072,7 @@ section h2, #sidebar h2 {
 }
 
 .old {
-	opacity: 0.3;
+	opacity: 1;
 }
 
 .old:hover {
