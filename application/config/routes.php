@@ -46,7 +46,7 @@ $route['browse/(:num)-(:num)-(:num)'] = "browse/date/$1-$2-$3";
 $route['author/(:num)'] = "author/view/$1";
 $route['series/(:num)'] = "series/view/$1";
 
-#for when you specify url parameters (for instance, "chromeless")
+# for when you specify url parameters (for instance, "chromeless")
 $route['article/(:num)/(:any)'] = "article/view/$1";
 $route['browse/(:num)-(:num)-(:num)/(:any)'] = "browse/date/$1-$2-$3";
 $route['author/(:num)/(:any)'] = "author/view/$1";
@@ -60,6 +60,16 @@ $route['contact'] = "pages/view/contact";
 $route['subscribe'] = "pages/view/subscribe";
 $route['advertise'] = "pages/view/advertise";
 $route['survey'] = "pages/view/survey";
+
+# more chromeless hacks
+$route['search/(:any)'] = "pages/search";
+$route['advsearch/(:any)'] = "pages/advsearch";
+$route['about/(:any)'] = "pages/view/about";
+$route['browser/(:any)'] = "pages/view/browser";
+$route['contact/(:any)'] = "pages/view/contact";
+$route['subscribe/(:any)'] = "pages/view/subscribe";
+$route['advertise/(:any)'] = "pages/view/advertise";
+$route['survey/(:any)'] = "pages/view/survey";
 
 $route['election2012'] = "article/view/7677";
 
