@@ -42,28 +42,20 @@
 		<? if(!empty($contributors)): ?>
 		<div class="statblock">
 			<h2>Contributors</h2>
-			<ul class="articleblock">
-			<? foreach($contributors as $contributor): ?>
-				<li class="smalltile autoheight"><a href="<?=base_url()?>author/<?=$contributor->author_id?>" title="<?=$contributor->contrib_count?> contribution<?= ($contributor->contrib_count > 1 ? 's' : '') ?>">
-					<h3><?=$contributor->name?></h3>
-				</a></li>
-			<? endforeach; ?>
-			</ul>
+			<?$blocktype = array(
+				"blocks"=>$contributors,
+				"articles"=>FALSE,
+				"autoheight"=>TRUE,
+				"contrib"=>TRUE);?>
+			<?$this->load->view('template/smalltile', $blocktype);?>
 		</div>
 		<? endif; ?>
 		
 		<h2>All articles</h2>
-		<ul class="articleblock twotier">
-			<? foreach($articles as $article): ?>
-			<li class="<? if(!empty($article->filename_small)): ?> backgrounded<? endif; ?><? if(!$article->published): ?> draft<? endif; ?>"<? if(!empty($article->filename_small)): ?> style="background:url('<?=base_url().'images/'.$article->date.'/'.$article->filename_small?>')"<? endif; ?>>
-				<a href="<?=site_url()?>article/<?=$article->id?>">
-				<h3><?=$article->title?></h3>
-				<? if($article->subtitle): ?><h4><?= $article->subtitle ?></h4><? endif; ?>
-				<div class="excerpt"><?=$article->excerpt?></div>
-			</a></li>
-			<? endforeach; ?>
-		</ul>
-		
+		<?$blockparams = array(
+			"blocks"=>$articles,
+			"twotier"=>TRUE);
+		$this->load->view('template/articleblock', $blockparams);?>	
 	</section>
 	
 </div>
