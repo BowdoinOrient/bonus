@@ -31,18 +31,12 @@
 		<!-- latest articles -->
 		<div id="latest">
 			<h2>Latest</h2>
-			<ul class="articleblock">
-				<? foreach($latest as $article): ?>
-				<li class="smalltile">
-					<a href="<?=site_url()?>article/<?=$article->id?>">
-					<div class="dateified"><?=dateify($article->date, $date)?></div>
-					<h3><? if($article->series): ?><span class="series"><?=$article->series?>:</span> <? endif; ?>
-					<?=$article->title?></h3>
-					<? if($article->subtitle): ?><h4><?= $article->subtitle ?></h4><? endif; ?>
-					<div class="excerpt"><?=$article->excerpt?></div>
-				</a></li>
-				<? endforeach; ?>
-			</ul>
+			<?$blocktype = array(
+				"blocks"=>$latest,
+				"articles"=>TRUE,
+				"dateified"=>TRUE,
+				"excerpt"=>TRUE);?>
+			<?$this->load->view('template/smalltile', $blocktype);?>
 		</div>
 		
 	</section>
@@ -90,29 +84,17 @@
 	
 	<!-- SECTIONS -->
 	<? foreach($sections as $section): ?>
-		
 		<? if(!empty($articles[$section->name])): ?>
-		
 		<section id="<?=$section->name?>" class="issuesection">
 			<h2><?=$section->name?><? if(bonus()): ?><a href="<?=site_url()?>article/add/<?=$issue->volume?>/<?=$issue->issue_number?>/<?=$section->id?>"><button class="bonusbutton" id="addarticlebutton">Add article</button></a><? endif; ?></h2>
-			
-			<ul class="articleblock twotier">
-				<? foreach($articles[$section->name] as $article): ?>
-				<li class="<? if(!empty($article->filename_small)): ?> backgrounded<? endif; ?><? if(!$article->published): ?> draft<? endif; ?><? if(strtotime($date)-strtotime($article->date) > (7*24*60*60)): ?> old<? endif; ?>"<? if(!empty($article->filename_small)): ?> style="background:url('<?=base_url().'images/'.$article->date.'/'.$article->filename_small?>')"<? endif; ?>>
-					<a href="<?=site_url()?>article/<?=$article->id?>">
-					<div class="dateified"><?=dateify($article->date, $date)?></div>
-					<h3><? if($article->series): ?><span class="series"><?=$article->series?>:</span> <? endif; ?>
-					<?=$article->title?></h3>
-					<? if($article->subtitle): ?><h4><?= $article->subtitle ?></h4><? endif; ?>
-					<div class="excerpt"><?=$article->excerpt?></div>
-				</a></li>
-				<? endforeach; ?>
-			</ul>
-			
+			<?$blocktype = array(
+				"blocks"=>$articles[$section->name],
+				"twotier"=>TRUE,
+				"dateified"=>TRUE,
+				"dateoverlay"=>TRUE);?>
+			<?$this->load->view('template/articleblock', $blocktype);?>
 		</section>
-		
 		<? endif; ?>
-	
 	<? endforeach; ?>
 		
 </div>
