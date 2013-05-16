@@ -15,9 +15,9 @@
 |
 */
 //$config['base_url'] = 'http://bowdoinorient.dev/';
-$config['base_url'] = 'http://localhost/~tophtucker/bonus/';
+//$config['base_url'] = 'http://localhost/~tophtucker/bonus/';
 //$config['base_url'] = 'http://139.140.166.33/~tophtucker/bonus/';
-//$config['base_url'] = 'http://bowdoinorient.com/';
+$config['base_url'] = 'http://bowdoinorient.com/';
 
 /*
 |--------------------------------------------------------------------------
@@ -48,8 +48,8 @@ $config['index_page'] = '';
 | 'ORIG_PATH_INFO'	Uses the ORIG_PATH_INFO
 |
 */
-$config['uri_protocol']	= 'AUTO';
-//$config['uri_protocol']	= 'REQUEST_URI';
+//$config['uri_protocol']	= 'AUTO';
+$config['uri_protocol']	= 'REQUEST_URI';
 
 /*
 |--------------------------------------------------------------------------
