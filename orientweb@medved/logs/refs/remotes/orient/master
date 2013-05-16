@@ -1,0 +1,18 @@
+0000000000000000000000000000000000000000 91a5041fc07ca5264324f51b2d03160e3b2a311f Brian Jacobel <bjacobel@bowdoin.edu> 1363635333 -0500	fetch --append orient: storing head
+91a5041fc07ca5264324f51b2d03160e3b2a311f 5f3a7e67022ac3c53d4e6f71bf977a3d149ae3c4 Brian Jacobel <bjacobel@bowdoin.edu> 1363643333 -0500	fetch --append orient: fast-forward
+5f3a7e67022ac3c53d4e6f71bf977a3d149ae3c4 bd09e039cdf3f691bf9f97aa805da785df2d028a Brian Jacobel <bjacobel@bowdoin.edu> 1363796027 -0500	fetch --append orient: fast-forward
+bd09e039cdf3f691bf9f97aa805da785df2d028a 6f10f66d93f9da7708d5535bcad1fe5498543adc Brian Jacobel <bjacobel@bowdoin.edu> 1364236422 -0400	fetch --append orient: fast-forward
+6f10f66d93f9da7708d5535bcad1fe5498543adc 1a06de3875efd38b1963840414c707895162ff4d Brian Jacobel <bjacobel@bowdoin.edu> 1364267553 -0400	fetch --append orient: fast-forward
+1a06de3875efd38b1963840414c707895162ff4d 6942b05465a604cf6a4df180e9a6c865b16588cd Brian Jacobel <bjacobel@bowdoin.edu> 1364567456 -0400	fetch --append orient: fast-forward
+6942b05465a604cf6a4df180e9a6c865b16588cd fc785e888723d98217b22a074603a5498254426a Brian Jacobel <bjacobel@bowdoin.edu> 1364841731 -0400	fetch --append orient: fast-forward
+fc785e888723d98217b22a074603a5498254426a 35eb454810bfb58154628adb6f9111b2161e68d7 Brian Jacobel <bjacobel@bowdoin.edu> 1364936868 -0400	fetch orient: fast-forward
+35eb454810bfb58154628adb6f9111b2161e68d7 a2e6bf8bd18aa428a6ffa0398df6420693c89fff Brian Jacobel <bjacobel@bowdoin.edu> 1365083835 -0400	fetch --append orient: fast-forward
+a2e6bf8bd18aa428a6ffa0398df6420693c89fff 73e9becd67764363918692503ce600becc49f3c9 Brian Jacobel <bjacobel@bowdoin.edu> 1365353726 -0400	fetch --append orient: fast-forward
+73e9becd67764363918692503ce600becc49f3c9 31e3bf5520d695829859f6d5baf445cacb4b3c15 Brian Jacobel <bjacobel@bowdoin.edu> 1365377026 -0400	fetch --append orient: fast-forward
+31e3bf5520d695829859f6d5baf445cacb4b3c15 e96be11c80ac66c9ff8673957128fd865cf2e8be Brian Jacobel <bjacobel@bowdoin.edu> 1365430761 -0400	fetch orient: fast-forward
+e96be11c80ac66c9ff8673957128fd865cf2e8be d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c Brian Jacobel <bjacobel@bowdoin.edu> 1366746562 -0400	fetch --append orient: fast-forward
+d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c 49a411fb3c50a2725e267c910fc2e58a4189b34e Brian Jacobel <bjacobel@bowdoin.edu> 1368642538 -0400	fetch --append orient: fast-forward
+49a411fb3c50a2725e267c910fc2e58a4189b34e 458b2b4c6dd61af26f3e29946f35d8dc9bfad95c Brian Jacobel <bjacobel@bowdoin.edu> 1368644341 -0400	fetch --append orient: fast-forward
+458b2b4c6dd61af26f3e29946f35d8dc9bfad95c 753558c9f9e10e549638150acfb82784ad1d8146 Brian Jacobel <bjacobel@bowdoin.edu> 1368648230 -0400	fetch --append orient: fast-forward
+753558c9f9e10e549638150acfb82784ad1d8146 b5abe0b5af86c6f73f44958d413ca4060ad1ba9b Brian Jacobel <bjacobel@bowdoin.edu> 1368717569 -0400	update by push
+b5abe0b5af86c6f73f44958d413ca4060ad1ba9b d3e980c96ad9e501f60bec2458cf073c782dd5d4 Brian Jacobel <bjacobel@bowdoin.edu> 1368718008 -0400	update by push

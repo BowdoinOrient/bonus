@@ -1,0 +1,11 @@
+0000000000000000000000000000000000000000 e96be11c80ac66c9ff8673957128fd865cf2e8be Brian Jacobel <bjacobel@bowdoin.edu> 1366155958 -0400	branch: Created from HEAD
+e96be11c80ac66c9ff8673957128fd865cf2e8be e0b028ff0964ed65ea9a82bca7c2c2fd49d9c9c5 Brian Jacobel <bjacobel@bowdoin.edu> 1366159571 -0400	commit: chromeless view is working with this->uri->segment
+e0b028ff0964ed65ea9a82bca7c2c2fd49d9c9c5 b285c466b09e915580d4af4f5745e8a3b3f62177 Brian Jacobel <bjacobel@bowdoin.edu> 1366311694 -0400	commit: using url segments it sort of works?
+b285c466b09e915580d4af4f5745e8a3b3f62177 26d33dd2b1298fd8134a6e87188a32b56dc6df5c Brian Jacobel <bjacobel@bowdoin.edu> 1367938065 -0400	commit: throw a /chromeless on the end of any (unrerouted) uri to get a chromeless view
+26d33dd2b1298fd8134a6e87188a32b56dc6df5c 8e597ba46a342f4c3268a5d28ec2e4adeaf6a540 Brian Jacobel <bjacobel@bowdoin.edu> 1367949486 -0400	commit: routing is fixed for all but the homepage
+8e597ba46a342f4c3268a5d28ec2e4adeaf6a540 eb92a0078c8f4e3ed506b98b67b0fa1011c76f31 Brian Jacobel <bjacobel@bowdoin.edu> 1367949686 -0400	commit: ooh I just got the homepage
+eb92a0078c8f4e3ed506b98b67b0fa1011c76f31 6a7617d7e88c485583bdffde1f2f78d1be8c95ca Brian Jacobel <bjacobel@bowdoin.edu> 1368034452 -0400	commit: making a copy branch
+6a7617d7e88c485583bdffde1f2f78d1be8c95ca 3509112c794c34888be76a118cafca74cb21f64b Brian Jacobel <bjacobel@bowdoin.edu> 1368641466 -0400	merge origin/master: Merge made by the 'recursive' strategy.
+3509112c794c34888be76a118cafca74cb21f64b b49e42a32f0f3e34c300fcbc8576870d65c12795 Brian Jacobel <bjacobel@bowdoin.edu> 1368642632 -0400	merge master: Merge made by the 'recursive' strategy.
+b49e42a32f0f3e34c300fcbc8576870d65c12795 07bea18fca9d63358d4f978d065d39a1d750b6a6 Brian Jacobel <bjacobel@bowdoin.edu> 1368643776 -0400	commit: added the less important pages to chromeless
+07bea18fca9d63358d4f978d065d39a1d750b6a6 d600484cdc36061aa82b3ba3d3e1aea6e01eab73 Brian Jacobel <bjacobel@bowdoin.edu> 1368644348 -0400	merge orient/master: Merge made by the 'recursive' strategy.

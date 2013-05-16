@@ -1,0 +1,13 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = false
+[remote "orient"]
+	url = git@github.com:BowdoinOrient/bonus.git
+	fetch = +refs/heads/*:refs/remotes/orient/*
+[remote "origin"]
+	url = git@github.com:bjacobel/bonus.git
+	fetch = +refs/heads/*:refs/remotes/origin/*

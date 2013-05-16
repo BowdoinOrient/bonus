@@ -1,0 +1,12 @@
+0000000000000000000000000000000000000000 10a743984104fc50eb70d8942d707e5a082c5877 Brian Jacobel <bjacobel@bowdoin.edu> 1364236908 -0400	WIP on youtube: cc983f8 Merge branch 'master' into youtube
+10a743984104fc50eb70d8942d707e5a082c5877 ed5d9a40330be915cec86a103901fb76ca836e0f Brian Jacobel <bjacobel@bowdoin.edu> 1364237090 -0400	WIP on youtube: cc983f8 Merge branch 'master' into youtube
+ed5d9a40330be915cec86a103901fb76ca836e0f a91455c24169f8aa5c4a3cacbd0e5321371d52d5 Brian Jacobel <bjacobel@bowdoin.edu> 1364567469 -0400	WIP on export: 3985205 just escaped a bajillion single quotes
+a91455c24169f8aa5c4a3cacbd0e5321371d52d5 01dceec9b985856cff1c217d0a946b124157007e Brian Jacobel <bjacobel@bowdoin.edu> 1364670790 -0400	WIP on export: 6942b05 Increment css version number to override caching (which was causing misdisplay of read later icons)
+01dceec9b985856cff1c217d0a946b124157007e 341334f5a21bebd36c08abad198e488e1b3f4889 Brian Jacobel <bjacobel@bowdoin.edu> 1364670975 -0400	WIP on nginx: 5f5fadf local changes to config.php and database.php to get them to run on brians mac
+341334f5a21bebd36c08abad198e488e1b3f4889 1e3f366c24bdcdefd5f3c14a38aa8141c2fe9408 Brian Jacobel <bjacobel@bowdoin.edu> 1365430844 -0400	On master: config/database
+1e3f366c24bdcdefd5f3c14a38aa8141c2fe9408 c5f9c7c9834e98cc0878acd8ed4f0a2a8eb4be67 Brian Jacobel <bjacobel@bowdoin.edu> 1365435446 -0400	WIP on master: e96be11 Merge pull request #63 from bjacobel/better_noie
+c5f9c7c9834e98cc0878acd8ed4f0a2a8eb4be67 c9e8ccdc8ee9ac5a559efa08612a70f0f4f039e2 Brian Jacobel <bjacobel@bowdoin.edu> 1366157065 -0400	WIP on webview: e96be11 Merge pull request #63 from bjacobel/better_noie
+c9e8ccdc8ee9ac5a559efa08612a70f0f4f039e2 c5edda06d7721b41f12426af6b15ffa80832b60a Brian Jacobel <bjacobel@bowdoin.edu> 1366746574 -0400	WIP on master: e96be11 Merge pull request #63 from bjacobel/better_noie
+c5edda06d7721b41f12426af6b15ffa80832b60a 25f3fa343902a0a62c2a577dbbd95a3c362ca3b8 Brian Jacobel <bjacobel@bowdoin.edu> 1367949821 -0400	WIP on webview: eb92a00 ooh I just got the homepage
+25f3fa343902a0a62c2a577dbbd95a3c362ca3b8 0286bfaaf8a92775ee48410d3d7013e396576125 Brian Jacobel <bjacobel@bowdoin.edu> 1368127455 -0400	WIP on webview: 6a7617d making a copy branch
+0286bfaaf8a92775ee48410d3d7013e396576125 706beb5846e361550cdf32b2200a2155db0d6012 Brian Jacobel <bjacobel@bowdoin.edu> 1368648384 -0400	WIP on master: 753558c Merge pull request #71 from bjacobel/tile_refactor
