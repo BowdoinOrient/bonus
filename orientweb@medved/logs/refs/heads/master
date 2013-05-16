@@ -1,0 +1,24 @@
+0000000000000000000000000000000000000000 13fcc0397cd499cc861423758a15d27a254c016b Brian Jacobel <bjacobel@bowdoin.edu> 1363634441 -0500	initial pull
+13fcc0397cd499cc861423758a15d27a254c016b 91a5041fc07ca5264324f51b2d03160e3b2a311f Brian Jacobel <bjacobel@bowdoin.edu> 1363635352 -0500	merge orient/master: Fast-forward
+91a5041fc07ca5264324f51b2d03160e3b2a311f 5f3a7e67022ac3c53d4e6f71bf977a3d149ae3c4 Brian Jacobel <bjacobel@bowdoin.edu> 1363643364 -0500	merge orient/master: Fast-forward
+5f3a7e67022ac3c53d4e6f71bf977a3d149ae3c4 0b677b205ff01ed1d9560c3e2d0b30676eb6eec8 Brian Jacobel <bjacobel@bowdoin.edu> 1363796208 -0500	commit: possibly returns logged-out bonus user to referrer?
+0b677b205ff01ed1d9560c3e2d0b30676eb6eec8 67cd3340f990f03aa3d622e9b93e0bd119bf7e71 Brian Jacobel <bjacobel@bowdoin.edu> 1363796360 -0500	commit (merge): nevermind, toph fixed it with AJAX
+67cd3340f990f03aa3d622e9b93e0bd119bf7e71 a5302322154c979b92ab17cf76ce6f830fa37a5c Brian Jacobel <bjacobel@bowdoin.edu> 1363902108 -0500	commit: schema files specify which database - orient or DB02Orient
+a5302322154c979b92ab17cf76ce6f830fa37a5c 26f0610c38d7cc30ec9bad516346646b4ebdfad9 Brian Jacobel <bjacobel@bowdoin.edu> 1363919037 -0500	commit: uhhhhhh what did I just do
+26f0610c38d7cc30ec9bad516346646b4ebdfad9 a5302322154c979b92ab17cf76ce6f830fa37a5c Brian Jacobel <bjacobel@bowdoin.edu> 1363919115 -0500	reset: moving to HEAD^
+a5302322154c979b92ab17cf76ce6f830fa37a5c 5a990922b2af96a6342d5227428c2a552926a790 Brian Jacobel <bjacobel@bowdoin.edu> 1363919248 -0500	commit: turns on output compression in CI
+5a990922b2af96a6342d5227428c2a552926a790 e3ba37625165c772d37d63d7521a18dcc70a82b5 Brian Jacobel <bjacobel@bowdoin.edu> 1363921195 -0500	commit: Strips whitespace from CI HTML output for compression, via http://maestric.com/doc/php/codeigniter_compress_html
+e3ba37625165c772d37d63d7521a18dcc70a82b5 a5302322154c979b92ab17cf76ce6f830fa37a5c Brian Jacobel <bjacobel@bowdoin.edu> 1363922693 -0500	reset: moving to a5302322154c979b92ab17cf76ce6f830fa37a5c
+a5302322154c979b92ab17cf76ce6f830fa37a5c 6f10f66d93f9da7708d5535bcad1fe5498543adc Brian Jacobel <bjacobel@bowdoin.edu> 1364236430 -0400	merge orient/master: Fast-forward
+6f10f66d93f9da7708d5535bcad1fe5498543adc 1a06de3875efd38b1963840414c707895162ff4d Brian Jacobel <bjacobel@bowdoin.edu> 1364267592 -0400	merge orient/master: Fast-forward
+1a06de3875efd38b1963840414c707895162ff4d 6942b05465a604cf6a4df180e9a6c865b16588cd Brian Jacobel <bjacobel@bowdoin.edu> 1364567478 -0400	merge orient/master: Fast-forward
+6942b05465a604cf6a4df180e9a6c865b16588cd a2e6bf8bd18aa428a6ffa0398df6420693c89fff Brian Jacobel <bjacobel@bowdoin.edu> 1365083844 -0400	merge orient/master: Fast-forward
+a2e6bf8bd18aa428a6ffa0398df6420693c89fff 73e9becd67764363918692503ce600becc49f3c9 Brian Jacobel <bjacobel@bowdoin.edu> 1365354082 -0400	merge orient/master: Fast-forward
+73e9becd67764363918692503ce600becc49f3c9 31e3bf5520d695829859f6d5baf445cacb4b3c15 Brian Jacobel <bjacobel@bowdoin.edu> 1365377034 -0400	merge orient/master: Fast-forward
+31e3bf5520d695829859f6d5baf445cacb4b3c15 e96be11c80ac66c9ff8673957128fd865cf2e8be Brian Jacobel <bjacobel@bowdoin.edu> 1365430850 -0400	merge e96be11c80ac66c9ff8673957128fd865cf2e8be: Fast-forward
+e96be11c80ac66c9ff8673957128fd865cf2e8be d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c Brian Jacobel <bjacobel@bowdoin.edu> 1366746583 -0400	merge orient/master: Fast-forward
+d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c 49a411fb3c50a2725e267c910fc2e58a4189b34e Brian Jacobel <bjacobel@bowdoin.edu> 1368642544 -0400	merge orient/master: Fast-forward
+49a411fb3c50a2725e267c910fc2e58a4189b34e 458b2b4c6dd61af26f3e29946f35d8dc9bfad95c Brian Jacobel <bjacobel@bowdoin.edu> 1368644386 -0400	merge orient/master: Fast-forward
+458b2b4c6dd61af26f3e29946f35d8dc9bfad95c 753558c9f9e10e549638150acfb82784ad1d8146 Brian Jacobel <bjacobel@bowdoin.edu> 1368648238 -0400	merge orient/master: Fast-forward
+753558c9f9e10e549638150acfb82784ad1d8146 b5abe0b5af86c6f73f44958d413ca4060ad1ba9b Brian Jacobel <bjacobel@bowdoin.edu> 1368717551 -0400	commit: fixed config files to be ready for deploy on master branch
+b5abe0b5af86c6f73f44958d413ca4060ad1ba9b d3e980c96ad9e501f60bec2458cf073c782dd5d4 Brian Jacobel <bjacobel@bowdoin.edu> 1368717963 -0400	merge isitivies: Merge made by the 'recursive' strategy.

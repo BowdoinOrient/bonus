@@ -1,0 +1,248 @@
+0000000000000000000000000000000000000000 13fcc0397cd499cc861423758a15d27a254c016b Brian Jacobel <bjacobel@bowdoin.edu> 1363634441 -0500	initial pull
+13fcc0397cd499cc861423758a15d27a254c016b 91a5041fc07ca5264324f51b2d03160e3b2a311f Brian Jacobel <bjacobel@bowdoin.edu> 1363635352 -0500	merge orient/master: Fast-forward
+91a5041fc07ca5264324f51b2d03160e3b2a311f 5f3a7e67022ac3c53d4e6f71bf977a3d149ae3c4 Brian Jacobel <bjacobel@bowdoin.edu> 1363643364 -0500	merge orient/master: Fast-forward
+5f3a7e67022ac3c53d4e6f71bf977a3d149ae3c4 0b677b205ff01ed1d9560c3e2d0b30676eb6eec8 Brian Jacobel <bjacobel@bowdoin.edu> 1363796208 -0500	commit: possibly returns logged-out bonus user to referrer?
+0b677b205ff01ed1d9560c3e2d0b30676eb6eec8 67cd3340f990f03aa3d622e9b93e0bd119bf7e71 Brian Jacobel <bjacobel@bowdoin.edu> 1363796360 -0500	commit (merge): nevermind, toph fixed it with AJAX
+67cd3340f990f03aa3d622e9b93e0bd119bf7e71 a5302322154c979b92ab17cf76ce6f830fa37a5c Brian Jacobel <bjacobel@bowdoin.edu> 1363902108 -0500	commit: schema files specify which database - orient or DB02Orient
+a5302322154c979b92ab17cf76ce6f830fa37a5c 26f0610c38d7cc30ec9bad516346646b4ebdfad9 Brian Jacobel <bjacobel@bowdoin.edu> 1363919037 -0500	commit: uhhhhhh what did I just do
+26f0610c38d7cc30ec9bad516346646b4ebdfad9 a5302322154c979b92ab17cf76ce6f830fa37a5c Brian Jacobel <bjacobel@bowdoin.edu> 1363919115 -0500	reset: moving to HEAD^
+a5302322154c979b92ab17cf76ce6f830fa37a5c 5a990922b2af96a6342d5227428c2a552926a790 Brian Jacobel <bjacobel@bowdoin.edu> 1363919248 -0500	commit: turns on output compression in CI
+5a990922b2af96a6342d5227428c2a552926a790 e3ba37625165c772d37d63d7521a18dcc70a82b5 Brian Jacobel <bjacobel@bowdoin.edu> 1363921195 -0500	commit: Strips whitespace from CI HTML output for compression, via http://maestric.com/doc/php/codeigniter_compress_html
+e3ba37625165c772d37d63d7521a18dcc70a82b5 e3ba37625165c772d37d63d7521a18dcc70a82b5 Brian Jacobel <bjacobel@bowdoin.edu> 1363921459 -0500	checkout: moving from master to compress
+e3ba37625165c772d37d63d7521a18dcc70a82b5 5a990922b2af96a6342d5227428c2a552926a790 Brian Jacobel <bjacobel@bowdoin.edu> 1363922473 -0500	reset: moving to 5a990922b2af96a6342d5227428c2a552926a790
+5a990922b2af96a6342d5227428c2a552926a790 a5302322154c979b92ab17cf76ce6f830fa37a5c Brian Jacobel <bjacobel@bowdoin.edu> 1363922638 -0500	reset: moving to a5302322154c979b92ab17cf76ce6f830fa37a5c
+a5302322154c979b92ab17cf76ce6f830fa37a5c e3ba37625165c772d37d63d7521a18dcc70a82b5 Brian Jacobel <bjacobel@bowdoin.edu> 1363922676 -0500	checkout: moving from compress to master
+e3ba37625165c772d37d63d7521a18dcc70a82b5 a5302322154c979b92ab17cf76ce6f830fa37a5c Brian Jacobel <bjacobel@bowdoin.edu> 1363922693 -0500	reset: moving to a5302322154c979b92ab17cf76ce6f830fa37a5c
+a5302322154c979b92ab17cf76ce6f830fa37a5c a5302322154c979b92ab17cf76ce6f830fa37a5c Brian Jacobel <bjacobel@bowdoin.edu> 1363923353 -0500	checkout: moving from master to nginx
+a5302322154c979b92ab17cf76ce6f830fa37a5c a5302322154c979b92ab17cf76ce6f830fa37a5c Brian Jacobel <bjacobel@bowdoin.edu> 1363923362 -0500	checkout: moving from nginx to master
+a5302322154c979b92ab17cf76ce6f830fa37a5c a5302322154c979b92ab17cf76ce6f830fa37a5c Brian Jacobel <bjacobel@bowdoin.edu> 1363923461 -0500	checkout: moving from master to nginx
+a5302322154c979b92ab17cf76ce6f830fa37a5c a5302322154c979b92ab17cf76ce6f830fa37a5c Brian Jacobel <bjacobel@bowdoin.edu> 1363923511 -0500	checkout: moving from nginx to master
+a5302322154c979b92ab17cf76ce6f830fa37a5c a5302322154c979b92ab17cf76ce6f830fa37a5c Brian Jacobel <bjacobel@bowdoin.edu> 1363923578 -0500	checkout: moving from master to nginx
+a5302322154c979b92ab17cf76ce6f830fa37a5c 5f5fadf622f8d8c9ec862a61568297be47b0cb64 Brian Jacobel <bjacobel@bowdoin.edu> 1363923800 -0500	commit: local changes to config.php and database.php to get them to run on brians mac
+5f5fadf622f8d8c9ec862a61568297be47b0cb64 5f5fadf622f8d8c9ec862a61568297be47b0cb64 Brian Jacobel <bjacobel@bowdoin.edu> 1363923811 -0500	checkout: moving from nginx to compress
+5f5fadf622f8d8c9ec862a61568297be47b0cb64 96075dfd7acb7d763b9fe2da0b7cfab780b4f380 Brian Jacobel <bjacobel@bowdoin.edu> 1363923968 -0500	commit: turns on gzip compression
+96075dfd7acb7d763b9fe2da0b7cfab780b4f380 a058fdec82c5703b99282f14371a711ffe3b1dc0 Brian Jacobel <bjacobel@bowdoin.edu> 1363924145 -0500	commit: enables removal of whitespace in CI-generated html for compression (documented at http://maestric.com/doc/php/codeigniter_compress_html)
+a058fdec82c5703b99282f14371a711ffe3b1dc0 e27122c1636b2b3e0f5bf4990136e32903ae5ada Brian Jacobel <bjacobel@bowdoin.edu> 1363924289 -0500	commit: puts config things back how I found them (default db, base_url, uri_protocol)
+e27122c1636b2b3e0f5bf4990136e32903ae5ada 5f5fadf622f8d8c9ec862a61568297be47b0cb64 Brian Jacobel <bjacobel@bowdoin.edu> 1363925573 -0500	checkout: moving from compress to nginx
+5f5fadf622f8d8c9ec862a61568297be47b0cb64 5f5fadf622f8d8c9ec862a61568297be47b0cb64 Brian Jacobel <bjacobel@bowdoin.edu> 1364236298 -0400	checkout: moving from nginx to youtube
+5f5fadf622f8d8c9ec862a61568297be47b0cb64 3c6a8bcfcf2af75b04ad080a2ea76a9f99600652 Brian Jacobel <bjacobel@bowdoin.edu> 1364236362 -0400	commit: change youtube video id recognition regex
+3c6a8bcfcf2af75b04ad080a2ea76a9f99600652 a5302322154c979b92ab17cf76ce6f830fa37a5c Brian Jacobel <bjacobel@bowdoin.edu> 1364236409 -0400	checkout: moving from youtube to master
+a5302322154c979b92ab17cf76ce6f830fa37a5c 6f10f66d93f9da7708d5535bcad1fe5498543adc Brian Jacobel <bjacobel@bowdoin.edu> 1364236430 -0400	merge orient/master: Fast-forward
+6f10f66d93f9da7708d5535bcad1fe5498543adc 3c6a8bcfcf2af75b04ad080a2ea76a9f99600652 Brian Jacobel <bjacobel@bowdoin.edu> 1364236474 -0400	checkout: moving from master to youtube
+3c6a8bcfcf2af75b04ad080a2ea76a9f99600652 cc983f80e04967093452535535ace030ade05c89 Brian Jacobel <bjacobel@bowdoin.edu> 1364236477 -0400	merge master: Merge made by the 'recursive' strategy.
+cc983f80e04967093452535535ace030ade05c89 5f5fadf622f8d8c9ec862a61568297be47b0cb64 Brian Jacobel <bjacobel@bowdoin.edu> 1364236915 -0400	checkout: moving from youtube to nginx
+5f5fadf622f8d8c9ec862a61568297be47b0cb64 cc983f80e04967093452535535ace030ade05c89 Brian Jacobel <bjacobel@bowdoin.edu> 1364237013 -0400	checkout: moving from nginx to youtube
+cc983f80e04967093452535535ace030ade05c89 5f5fadf622f8d8c9ec862a61568297be47b0cb64 Brian Jacobel <bjacobel@bowdoin.edu> 1364237094 -0400	checkout: moving from youtube to nginx
+5f5fadf622f8d8c9ec862a61568297be47b0cb64 cc983f80e04967093452535535ace030ade05c89 Brian Jacobel <bjacobel@bowdoin.edu> 1364237223 -0400	checkout: moving from nginx to youtube
+cc983f80e04967093452535535ace030ade05c89 70196be854dee810036c70c76cca145b697c62f7 Brian Jacobel <bjacobel@bowdoin.edu> 1364239193 -0400	commit: stopped the whitespace minimizer from devouring javascript
+70196be854dee810036c70c76cca145b697c62f7 1a06de3875efd38b1963840414c707895162ff4d Brian Jacobel <bjacobel@bowdoin.edu> 1364267582 -0400	merge orient/master: Fast-forward
+1a06de3875efd38b1963840414c707895162ff4d 6f10f66d93f9da7708d5535bcad1fe5498543adc Brian Jacobel <bjacobel@bowdoin.edu> 1364267590 -0400	checkout: moving from youtube to master
+6f10f66d93f9da7708d5535bcad1fe5498543adc 1a06de3875efd38b1963840414c707895162ff4d Brian Jacobel <bjacobel@bowdoin.edu> 1364267592 -0400	merge orient/master: Fast-forward
+1a06de3875efd38b1963840414c707895162ff4d 1a06de3875efd38b1963840414c707895162ff4d Brian Jacobel <bjacobel@bowdoin.edu> 1364398531 -0400	checkout: moving from master to export
+1a06de3875efd38b1963840414c707895162ff4d 265a573ccfda4a31617cbf8da654435d4ed09dc3 Brian Jacobel <bjacobel@bowdoin.edu> 1364399614 -0400	commit: readitlater moved to external view, will soon be joined by other services
+265a573ccfda4a31617cbf8da654435d4ed09dc3 e507f19a70c986c53bb575eff1c9848d077558a6 Brian Jacobel <bjacobel@bowdoin.edu> 1364400790 -0400	commit: kindle button is in place
+e507f19a70c986c53bb575eff1c9848d077558a6 123a479ebde6f49e91c6971f541cb9a42ed9d08f Brian Jacobel <bjacobel@bowdoin.edu> 1364402441 -0400	commit: the Instapaper button is ugly and unbranded, but it works
+123a479ebde6f49e91c6971f541cb9a42ed9d08f 1e1ef4e2ebdf4110a9bd4a30019642d6dcf9e88a Brian Jacobel <bjacobel@bowdoin.edu> 1364402964 -0400	commit: ugh the Pocket API is gross
+1e1ef4e2ebdf4110a9bd4a30019642d6dcf9e88a 9ee170f4ee198f607f5310a761e8dadaea26564d Brian Jacobel <bjacobel@bowdoin.edu> 1364411224 -0400	commit: pocket button is kind of working (using kindle button as foundation)
+9ee170f4ee198f607f5310a761e8dadaea26564d 8bc3e791d88e63793f07aa8ec4ba9942d61209b0 Brian Jacobel <bjacobel@bowdoin.edu> 1364411604 -0400	commit: Removing the readability 'read now' button, because our site is already perfectly reading-friendly
+8bc3e791d88e63793f07aa8ec4ba9942d61209b0 43950bb23e28be5c071c6c17742311a938e0d76a Brian Jacobel <bjacobel@bowdoin.edu> 1364417395 -0400	commit: apparently php in jquery is a big no-no
+43950bb23e28be5c071c6c17742311a938e0d76a 67b9a5d5192635133f9f833e0f81f307d412df38 Brian Jacobel <bjacobel@bowdoin.edu> 1364421798 -0400	commit: this is proving harder than I thought
+67b9a5d5192635133f9f833e0f81f307d412df38 dd0257ff1c04aff4d50dff5f80ddde6a374ff25e Brian Jacobel <bjacobel@bowdoin.edu> 1364483706 -0400	commit: screw ajax & ci, I'm going to do this all with jquery
+dd0257ff1c04aff4d50dff5f80ddde6a374ff25e c314391890ec9b335a539f6492d8781eca7cff8b Brian Jacobel <bjacobel@bowdoin.edu> 1364484263 -0400	commit: the buttons (functional as they are) are being loaded by javascript
+c314391890ec9b335a539f6492d8781eca7cff8b 0b2d7a306b9c1bc725a0348041368518f3521cb8 Brian Jacobel <bjacobel@bowdoin.edu> 1364512350 -0400	commit: showing toph how to pull request
+0b2d7a306b9c1bc725a0348041368518f3521cb8 0b2d7a306b9c1bc725a0348041368518f3521cb8 Brian Jacobel <bjacobel@bowdoin.edu> 1364513883 -0400	checkout: moving from export to toph-testing
+0b2d7a306b9c1bc725a0348041368518f3521cb8 c00947138ba911d2c6e0c87dd76b081ce345d6df Brian Jacobel <bjacobel@bowdoin.edu> 1364514709 -0400	commit: fixed img permission errors and the pocket widget
+c00947138ba911d2c6e0c87dd76b081ce345d6df 0b2d7a306b9c1bc725a0348041368518f3521cb8 Brian Jacobel <bjacobel@bowdoin.edu> 1364514787 -0400	checkout: moving from toph-testing to export
+0b2d7a306b9c1bc725a0348041368518f3521cb8 c00947138ba911d2c6e0c87dd76b081ce345d6df Brian Jacobel <bjacobel@bowdoin.edu> 1364514815 -0400	merge toph-testing: Fast-forward
+c00947138ba911d2c6e0c87dd76b081ce345d6df 49c472dc41ee3ef6c9e2cabee221750a4abde581 Brian Jacobel <bjacobel@bowdoin.edu> 1364515090 -0400	commit: using image absolute path
+49c472dc41ee3ef6c9e2cabee221750a4abde581 f2e558a97132cc672ceab3bc7bf2b51d4a25e01a Brian Jacobel <bjacobel@bowdoin.edu> 1364516085 -0400	commit: escaped pocket's /script tag
+f2e558a97132cc672ceab3bc7bf2b51d4a25e01a b2fd354d64519ff61ffb93f571629f3d61fb361b Brian Jacobel <bjacobel@bowdoin.edu> 1364520703 -0400	commit: all the widgets are working\!
+b2fd354d64519ff61ffb93f571629f3d61fb361b 3985205445ecc940c896f21cd93a618209ea69af Brian Jacobel <bjacobel@bowdoin.edu> 1364523565 -0400	commit: just escaped a bajillion single quotes
+3985205445ecc940c896f21cd93a618209ea69af 1a06de3875efd38b1963840414c707895162ff4d Brian Jacobel <bjacobel@bowdoin.edu> 1364567473 -0400	checkout: moving from export to master
+1a06de3875efd38b1963840414c707895162ff4d 6942b05465a604cf6a4df180e9a6c865b16588cd Brian Jacobel <bjacobel@bowdoin.edu> 1364567478 -0400	merge orient/master: Fast-forward
+6942b05465a604cf6a4df180e9a6c865b16588cd 3985205445ecc940c896f21cd93a618209ea69af Brian Jacobel <bjacobel@bowdoin.edu> 1364567501 -0400	checkout: moving from master to export
+3985205445ecc940c896f21cd93a618209ea69af 6942b05465a604cf6a4df180e9a6c865b16588cd Brian Jacobel <bjacobel@bowdoin.edu> 1364567505 -0400	merge master: Fast-forward
+6942b05465a604cf6a4df180e9a6c865b16588cd 6942b05465a604cf6a4df180e9a6c865b16588cd Brian Jacobel <bjacobel@bowdoin.edu> 1364670820 -0400	checkout: moving from export to master
+6942b05465a604cf6a4df180e9a6c865b16588cd 5f5fadf622f8d8c9ec862a61568297be47b0cb64 Brian Jacobel <bjacobel@bowdoin.edu> 1364670872 -0400	checkout: moving from master to nginx
+5f5fadf622f8d8c9ec862a61568297be47b0cb64 6942b05465a604cf6a4df180e9a6c865b16588cd Brian Jacobel <bjacobel@bowdoin.edu> 1364670980 -0400	checkout: moving from nginx to export
+6942b05465a604cf6a4df180e9a6c865b16588cd 6942b05465a604cf6a4df180e9a6c865b16588cd Brian Jacobel <bjacobel@bowdoin.edu> 1364671024 -0400	checkout: moving from export to master
+6942b05465a604cf6a4df180e9a6c865b16588cd 6942b05465a604cf6a4df180e9a6c865b16588cd Brian Jacobel <bjacobel@bowdoin.edu> 1364671110 -0400	checkout: moving from master to noie
+6942b05465a604cf6a4df180e9a6c865b16588cd 6942b05465a604cf6a4df180e9a6c865b16588cd Brian Jacobel <bjacobel@bowdoin.edu> 1364671118 -0400	checkout: moving from noie to master
+6942b05465a604cf6a4df180e9a6c865b16588cd 6942b05465a604cf6a4df180e9a6c865b16588cd Brian Jacobel <bjacobel@bowdoin.edu> 1364671167 -0400	checkout: moving from master to noie
+6942b05465a604cf6a4df180e9a6c865b16588cd b33bb1603f59f5ba37dd0575c73333f7dad450ec Brian Jacobel <bjacobel@bowdoin.edu> 1364671923 -0400	commit: created a 'browser' view that tells you you need to update, and set routes for it
+b33bb1603f59f5ba37dd0575c73333f7dad450ec 43d4678b941fbcb289d4512063c9068f45be2e2d Brian Jacobel <bjacobel@bowdoin.edu> 1364674059 -0400	commit: the browser check page has decent language and is almost good to go
+43d4678b941fbcb289d4512063c9068f45be2e2d 1f3212289f80595b8a21f4e709872a32023a1a49 Brian Jacobel <bjacobel@bowdoin.edu> 1364680202 -0400	commit: browser catch page is done, now for conditional redirects on other pages to it
+1f3212289f80595b8a21f4e709872a32023a1a49 45867dac02a7178c6f08d073bc57f0ab890bb84c Brian Jacobel <bjacobel@bowdoin.edu> 1364745317 -0400	commit: removed as a separate page, trying to insert it at page load into the article page via conditional comments but it's not quite working
+45867dac02a7178c6f08d073bc57f0ab890bb84c eb33d1327ccfd9c0408c8a02046e841535b33a55 Brian Jacobel <bjacobel@bowdoin.edu> 1364749735 -0400	commit: looks like conditional comments arent supported widely enough to be a viable option
+eb33d1327ccfd9c0408c8a02046e841535b33a55 fc92db137c1d50a75f90030236c15618ab38c06a Brian Jacobel <bjacobel@bowdoin.edu> 1364754204 -0400	commit: added phpbrowscap support (see https://github.com/GaretJax/phpbrowscap)
+fc92db137c1d50a75f90030236c15618ab38c06a 71cd80de7723bcfa0fe2391363c9301daf3d89e2 Brian Jacobel <bjacobel@bowdoin.edu> 1364756159 -0400	commit: had to modify phpbrowscap slightly. hope thats whithing the license, lol
+71cd80de7723bcfa0fe2391363c9301daf3d89e2 27007cb56830896659df2b5a7aa8124f39338d4b Brian Jacobel <bjacobel@bowdoin.edu> 1364756567 -0400	commit: is_lte_ie8 function is FINALLY working
+27007cb56830896659df2b5a7aa8124f39338d4b ccb8aa34aef48e65aa40555c180c35713d0a0fd6 Brian Jacobel <bjacobel@bowdoin.edu> 1364757155 -0400	commit: it works\!
+ccb8aa34aef48e65aa40555c180c35713d0a0fd6 ccb8aa34aef48e65aa40555c180c35713d0a0fd6 Brian Jacobel <bjacobel@bowdoin.edu> 1364833231 -0400	checkout: moving from noie to leftmargin
+ccb8aa34aef48e65aa40555c180c35713d0a0fd6 b4f043c0089e5c8e7d3c93d6a57932e778a3f9e9 Brian Jacobel <bjacobel@bowdoin.edu> 1364833344 -0400	commit: removes the leftmargin block if there's no room for it
+b4f043c0089e5c8e7d3c93d6a57932e778a3f9e9 64f837d6e7cfc7c41c434a150755c2d1a4a38f13 Brian Jacobel <bjacobel@bowdoin.edu> 1364833470 -0400	commit: gets that pesky right margin too
+64f837d6e7cfc7c41c434a150755c2d1a4a38f13 1997e1cbfee991188edc30417b7b582b3c4eb6e3 Brian Jacobel <bjacobel@bowdoin.edu> 1364834545 -0400	commit: what I was doing wasn't going to work. the left side is working again, though
+1997e1cbfee991188edc30417b7b582b3c4eb6e3 24115ae7e7732c7eec9d7080e456381e1a4344f9 Brian Jacobel <bjacobel@bowdoin.edu> 1364841690 -0400	commit: boom. six lines of javascript. both boxes are conditionally hidden if not enough space exists.
+24115ae7e7732c7eec9d7080e456381e1a4344f9 1f3e12342f53d244640e1646ad728c947eba93b7 Brian Jacobel <bjacobel@bowdoin.edu> 1364841741 -0400	merge orient/master: Merge made by the 'recursive' strategy.
+1f3e12342f53d244640e1646ad728c947eba93b7 ccb8aa34aef48e65aa40555c180c35713d0a0fd6 Brian Jacobel <bjacobel@bowdoin.edu> 1364842812 -0400	checkout: moving from leftmargin to noie
+ccb8aa34aef48e65aa40555c180c35713d0a0fd6 ccb8aa34aef48e65aa40555c180c35713d0a0fd6 Brian Jacobel <bjacobel@bowdoin.edu> 1364842825 -0400	checkout: moving from noie to ytthumbs
+ccb8aa34aef48e65aa40555c180c35713d0a0fd6 ccb8aa34aef48e65aa40555c180c35713d0a0fd6 Brian Jacobel <bjacobel@bowdoin.edu> 1364842966 -0400	checkout: moving from ytthumbs to phpinfo
+ccb8aa34aef48e65aa40555c180c35713d0a0fd6 ccb8aa34aef48e65aa40555c180c35713d0a0fd6 Brian Jacobel <bjacobel@bowdoin.edu> 1364843257 -0400	checkout: moving from phpinfo to ytthumbs
+ccb8aa34aef48e65aa40555c180c35713d0a0fd6 ccb8aa34aef48e65aa40555c180c35713d0a0fd6 Brian Jacobel <bjacobel@bowdoin.edu> 1364843428 -0400	checkout: moving from ytthumbs to phpinfo
+ccb8aa34aef48e65aa40555c180c35713d0a0fd6 61f34f14a81b3bb25fe2a5c43f874b09c49d0caf Brian Jacobel <bjacobel@bowdoin.edu> 1364843534 -0400	commit: blocked phpinfo except on bowdoin's network
+61f34f14a81b3bb25fe2a5c43f874b09c49d0caf 3e4f044c98f5ec6e9b326dd3ed98893381163827 Brian Jacobel <bjacobel@bowdoin.edu> 1364843589 -0400	commit: misspelled phpinfo
+3e4f044c98f5ec6e9b326dd3ed98893381163827 ccb8aa34aef48e65aa40555c180c35713d0a0fd6 Brian Jacobel <bjacobel@bowdoin.edu> 1364844668 -0400	checkout: moving from phpinfo to ytthumbs
+ccb8aa34aef48e65aa40555c180c35713d0a0fd6 1f3e12342f53d244640e1646ad728c947eba93b7 Brian Jacobel <bjacobel@bowdoin.edu> 1364844699 -0400	checkout: moving from ytthumbs to leftmargin
+1f3e12342f53d244640e1646ad728c947eba93b7 ccb8aa34aef48e65aa40555c180c35713d0a0fd6 Brian Jacobel <bjacobel@bowdoin.edu> 1364844713 -0400	checkout: moving from leftmargin to ytthumbs
+ccb8aa34aef48e65aa40555c180c35713d0a0fd6 1f3e12342f53d244640e1646ad728c947eba93b7 Brian Jacobel <bjacobel@bowdoin.edu> 1364849577 -0400	checkout: moving from ytthumbs to leftmargin
+1f3e12342f53d244640e1646ad728c947eba93b7 fb72ace8bf53ac55c34b029eafdd2d4aad2f02c4 Brian Jacobel <bjacobel@bowdoin.edu> 1364849910 -0400	commit: somehow I hellishly fouled up pages.php
+fb72ace8bf53ac55c34b029eafdd2d4aad2f02c4 6942b05465a604cf6a4df180e9a6c865b16588cd Brian Jacobel <bjacobel@bowdoin.edu> 1364927663 -0400	checkout: moving from leftmargin to master
+6942b05465a604cf6a4df180e9a6c865b16588cd 6942b05465a604cf6a4df180e9a6c865b16588cd Brian Jacobel <bjacobel@bowdoin.edu> 1364927675 -0400	checkout: moving from master to api
+6942b05465a604cf6a4df180e9a6c865b16588cd c5b48005064dbea2814c3143d4636fe9b4f56686 Brian Jacobel <bjacobel@bowdoin.edu> 1364928965 -0400	commit: the jsonification is underway
+c5b48005064dbea2814c3143d4636fe9b4f56686 d770b937e23c4286d1518d7db2c3f0e6be6ebecf Brian Jacobel <bjacobel@bowdoin.edu> 1364930978 -0400	commit: orient json api v1.0
+d770b937e23c4286d1518d7db2c3f0e6be6ebecf a12efd9d2d2ed1b0dc566b8c5ca896b10dba23c5 Brian Jacobel <bjacobel@bowdoin.edu> 1365011065 -0400	commit: json_fulltext method (for orientku bot) is starting to work
+a12efd9d2d2ed1b0dc566b8c5ca896b10dba23c5 7a9230b430c038cb86a503960a75249d7b19c2aa Brian Jacobel <bjacobel@bowdoin.edu> 1365017511 -0400	commit: fixed some issues with the json_endoder for articlelist.php
+7a9230b430c038cb86a503960a75249d7b19c2aa 6942b05465a604cf6a4df180e9a6c865b16588cd Brian Jacobel <bjacobel@bowdoin.edu> 1365083826 -0400	checkout: moving from api to master
+6942b05465a604cf6a4df180e9a6c865b16588cd a2e6bf8bd18aa428a6ffa0398df6420693c89fff Brian Jacobel <bjacobel@bowdoin.edu> 1365083844 -0400	merge orient/master: Fast-forward
+a2e6bf8bd18aa428a6ffa0398df6420693c89fff 73e9becd67764363918692503ce600becc49f3c9 Brian Jacobel <bjacobel@bowdoin.edu> 1365354082 -0400	merge orient/master: Fast-forward
+73e9becd67764363918692503ce600becc49f3c9 73e9becd67764363918692503ce600becc49f3c9 Brian Jacobel <bjacobel@bowdoin.edu> 1365354141 -0400	checkout: moving from master to better_noie
+73e9becd67764363918692503ce600becc49f3c9 3861cc0d512dbf7647b744c6bc8bdc3b7ea22d05 Brian Jacobel <bjacobel@bowdoin.edu> 1365354776 -0400	commit: replaced my epic browscap hack with CI user_agent library functions
+3861cc0d512dbf7647b744c6bc8bdc3b7ea22d05 c3ffb87026f9b0af31e77738bf32a8231d97ecf0 Brian Jacobel <bjacobel@bowdoin.edu> 1365355052 -0400	commit: html5 IE shiv
+c3ffb87026f9b0af31e77738bf32a8231d97ecf0 fcb4bb014343af790e654bc41f63de3b5cf5932d Brian Jacobel <bjacobel@bowdoin.edu> 1365355281 -0400	commit: minified js
+fcb4bb014343af790e654bc41f63de3b5cf5932d 6468c5c5895bd5f629e4222faab358ab28edf8d9 Brian Jacobel <bjacobel@bowdoin.edu> 1365355913 -0400	commit: you want to read our articles with your shitty browser, FINE
+6468c5c5895bd5f629e4222faab358ab28edf8d9 9dcdf0b8bac39cd9d20ce2cdefd296e9de86218d Brian Jacobel <bjacobel@bowdoin.edu> 1365356401 -0400	commit: added Chrome Frame suggestion on browser catch page
+9dcdf0b8bac39cd9d20ce2cdefd296e9de86218d 443a95bb6206ce859732c281613c56ce189c0a70 Brian Jacobel <bjacobel@bowdoin.edu> 1365356429 -0400	commit: somehow this file slipped through
+443a95bb6206ce859732c281613c56ce189c0a70 142e5df7c1fb50351e2343b15555c87a32313e3c Brian Jacobel <bjacobel@bowdoin.edu> 1365358031 -0400	commit: I think it's working but I can't test it without an actual IE install
+142e5df7c1fb50351e2343b15555c87a32313e3c 73e9becd67764363918692503ce600becc49f3c9 Brian Jacobel <bjacobel@bowdoin.edu> 1365375274 -0400	checkout: moving from better_noie to master
+73e9becd67764363918692503ce600becc49f3c9 73e9becd67764363918692503ce600becc49f3c9 Brian Jacobel <bjacobel@bowdoin.edu> 1365375282 -0400	checkout: moving from master to cards
+73e9becd67764363918692503ce600becc49f3c9 142e5df7c1fb50351e2343b15555c87a32313e3c Brian Jacobel <bjacobel@bowdoin.edu> 1365375387 -0400	checkout: moving from cards to better_noie
+142e5df7c1fb50351e2343b15555c87a32313e3c 2991efa309bbf76f6802d172528fff523060129f Brian Jacobel <bjacobel@bowdoin.edu> 1365375431 -0400	commit: forgot to remove browscap from the cache
+2991efa309bbf76f6802d172528fff523060129f 73e9becd67764363918692503ce600becc49f3c9 Brian Jacobel <bjacobel@bowdoin.edu> 1365375442 -0400	checkout: moving from better_noie to cards
+73e9becd67764363918692503ce600becc49f3c9 9566aed0ca8e38a8954f994c1ad3a387d59429de Brian Jacobel <bjacobel@bowdoin.edu> 1365376353 -0400	commit: twitter cards support. needs to go live in production before twitter will approve our domain
+9566aed0ca8e38a8954f994c1ad3a387d59429de 936b241d940153b271283ea6c3b7d337e2e11ebb Brian Jacobel <bjacobel@bowdoin.edu> 1365376470 -0400	commit: we stylize ourselves '@bowdoinorient', not '@BowdoinOrient'. Important shit.
+936b241d940153b271283ea6c3b7d337e2e11ebb 73e9becd67764363918692503ce600becc49f3c9 Brian Jacobel <bjacobel@bowdoin.edu> 1365377020 -0400	checkout: moving from cards to master
+73e9becd67764363918692503ce600becc49f3c9 31e3bf5520d695829859f6d5baf445cacb4b3c15 Brian Jacobel <bjacobel@bowdoin.edu> 1365377034 -0400	merge orient/master: Fast-forward
+31e3bf5520d695829859f6d5baf445cacb4b3c15 e96be11c80ac66c9ff8673957128fd865cf2e8be Brian Jacobel <bjacobel@bowdoin.edu> 1365430850 -0400	merge e96be11c80ac66c9ff8673957128fd865cf2e8be: Fast-forward
+e96be11c80ac66c9ff8673957128fd865cf2e8be e96be11c80ac66c9ff8673957128fd865cf2e8be Brian Jacobel <bjacobel@bowdoin.edu> 1365613518 -0400	checkout: moving from master to tumblr
+e96be11c80ac66c9ff8673957128fd865cf2e8be e96be11c80ac66c9ff8673957128fd865cf2e8be Brian Jacobel <bjacobel@bowdoin.edu> 1365719534 -0400	checkout: moving from tumblr to master
+e96be11c80ac66c9ff8673957128fd865cf2e8be e96be11c80ac66c9ff8673957128fd865cf2e8be Brian Jacobel <bjacobel@bowdoin.edu> 1365719629 -0400	checkout: moving from master to tumblr
+e96be11c80ac66c9ff8673957128fd865cf2e8be 9892c06e5b88b523de621beda872958af7f631c6 Brian Jacobel <bjacobel@bowdoin.edu> 1365719703 -0400	commit: first iteration of tumblr widget. lots of nulls and undefineds
+9892c06e5b88b523de621beda872958af7f631c6 e96be11c80ac66c9ff8673957128fd865cf2e8be Brian Jacobel <bjacobel@bowdoin.edu> 1365719711 -0400	checkout: moving from tumblr to master
+e96be11c80ac66c9ff8673957128fd865cf2e8be e96be11c80ac66c9ff8673957128fd865cf2e8be Brian Jacobel <bjacobel@bowdoin.edu> 1365719720 -0400	checkout: moving from master to ytthumbs
+e96be11c80ac66c9ff8673957128fd865cf2e8be 9892c06e5b88b523de621beda872958af7f631c6 Brian Jacobel <bjacobel@bowdoin.edu> 1365877725 -0400	checkout: moving from ytthumbs to tumblr
+9892c06e5b88b523de621beda872958af7f631c6 9892c06e5b88b523de621beda872958af7f631c6 Brian Jacobel <bjacobel@bowdoin.edu> 1365962584 -0400	checkout: moving from tumblr to webview
+9892c06e5b88b523de621beda872958af7f631c6 f280095f1961bdf17f213793df765ec001472fef Brian Jacobel <bjacobel@bowdoin.edu> 1365963497 -0400	commit: hid the top bar on user agent indicating WebView. still needs to be tested
+f280095f1961bdf17f213793df765ec001472fef e96be11c80ac66c9ff8673957128fd865cf2e8be Brian Jacobel <bjacobel@bowdoin.edu> 1365973552 -0400	checkout: moving from webview to master
+e96be11c80ac66c9ff8673957128fd865cf2e8be f280095f1961bdf17f213793df765ec001472fef Brian Jacobel <bjacobel@bowdoin.edu> 1365975747 -0400	checkout: moving from master to webview
+f280095f1961bdf17f213793df765ec001472fef e96be11c80ac66c9ff8673957128fd865cf2e8be Brian Jacobel <bjacobel@bowdoin.edu> 1365983414 -0400	checkout: moving from webview to ytthumbs
+e96be11c80ac66c9ff8673957128fd865cf2e8be f280095f1961bdf17f213793df765ec001472fef Brian Jacobel <bjacobel@bowdoin.edu> 1366125788 -0400	checkout: moving from ytthumbs to webview
+f280095f1961bdf17f213793df765ec001472fef e96be11c80ac66c9ff8673957128fd865cf2e8be Brian Jacobel <bjacobel@bowdoin.edu> 1366155938 -0400	checkout: moving from webview to master
+e96be11c80ac66c9ff8673957128fd865cf2e8be e96be11c80ac66c9ff8673957128fd865cf2e8be Brian Jacobel <bjacobel@bowdoin.edu> 1366155958 -0400	checkout: moving from master to webview
+e96be11c80ac66c9ff8673957128fd865cf2e8be e96be11c80ac66c9ff8673957128fd865cf2e8be Brian Jacobel <bjacobel@bowdoin.edu> 1366157072 -0400	checkout: moving from webview to master
+e96be11c80ac66c9ff8673957128fd865cf2e8be e96be11c80ac66c9ff8673957128fd865cf2e8be Brian Jacobel <bjacobel@bowdoin.edu> 1366157171 -0400	checkout: moving from master to webview
+e96be11c80ac66c9ff8673957128fd865cf2e8be e0b028ff0964ed65ea9a82bca7c2c2fd49d9c9c5 Brian Jacobel <bjacobel@bowdoin.edu> 1366159571 -0400	commit: chromeless view is working with this->uri->segment
+e0b028ff0964ed65ea9a82bca7c2c2fd49d9c9c5 b285c466b09e915580d4af4f5745e8a3b3f62177 Brian Jacobel <bjacobel@bowdoin.edu> 1366311694 -0400	commit: using url segments it sort of works?
+b285c466b09e915580d4af4f5745e8a3b3f62177 e96be11c80ac66c9ff8673957128fd865cf2e8be Brian Jacobel <bjacobel@bowdoin.edu> 1366311892 -0400	checkout: moving from webview to master
+e96be11c80ac66c9ff8673957128fd865cf2e8be e96be11c80ac66c9ff8673957128fd865cf2e8be Brian Jacobel <bjacobel@bowdoin.edu> 1366312015 -0400	checkout: moving from master to master
+e96be11c80ac66c9ff8673957128fd865cf2e8be e96be11c80ac66c9ff8673957128fd865cf2e8be Brian Jacobel <bjacobel@bowdoin.edu> 1366312028 -0400	checkout: moving from master to shame
+e96be11c80ac66c9ff8673957128fd865cf2e8be a095c7f87b476284e016f9b073f378ca728df0fe Brian Jacobel <bjacobel@bowdoin.edu> 1366314066 -0400	commit: added Sparks - a package manager for CodeIgniter addons
+a095c7f87b476284e016f9b073f378ca728df0fe b1486f21c7ccb64d3fcffc15a473ad01a2acb39a Brian Jacobel <bjacobel@bowdoin.edu> 1366746311 -0400	commit: this is getting pretty out there
+b1486f21c7ccb64d3fcffc15a473ad01a2acb39a e96be11c80ac66c9ff8673957128fd865cf2e8be Brian Jacobel <bjacobel@bowdoin.edu> 1366746321 -0400	checkout: moving from shame to master
+e96be11c80ac66c9ff8673957128fd865cf2e8be e96be11c80ac66c9ff8673957128fd865cf2e8be Brian Jacobel <bjacobel@bowdoin.edu> 1366746339 -0400	checkout: moving from master to mobile_img
+e96be11c80ac66c9ff8673957128fd865cf2e8be e96be11c80ac66c9ff8673957128fd865cf2e8be Brian Jacobel <bjacobel@bowdoin.edu> 1366746549 -0400	checkout: moving from mobile_img to master
+e96be11c80ac66c9ff8673957128fd865cf2e8be d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c Brian Jacobel <bjacobel@bowdoin.edu> 1366746583 -0400	merge orient/master: Fast-forward
+d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c Brian Jacobel <bjacobel@bowdoin.edu> 1366747033 -0400	checkout: moving from master to tile_refactor
+d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c ea1dae3f786552172a2b5d709bc50e223bbca4ef Brian Jacobel <bjacobel@bowdoin.edu> 1366748258 -0400	commit: collecting code from all the places where articleblocks are found
+ea1dae3f786552172a2b5d709bc50e223bbca4ef 72c7f6df255e71b48f5659cdd16b62ff8b08a36b Brian Jacobel <bjacobel@bowdoin.edu> 1366815047 -0400	commit: all the articleblock instances are collected
+72c7f6df255e71b48f5659cdd16b62ff8b08a36b 22a06ef9b05450ca6d34c0d24d6a26f1d8067b04 Brian Jacobel <bjacobel@bowdoin.edu> 1366821535 -0400	commit: advanced search works with switch statement
+22a06ef9b05450ca6d34c0d24d6a26f1d8067b04 ee98eb90716aad9ab666be3868c4786f6398d6b9 Brian Jacobel <bjacobel@bowdoin.edu> 1366830720 -0400	commit: big switch statement is coming along
+ee98eb90716aad9ab666be3868c4786f6398d6b9 2f922b96f216b551901b88df471b4afa800a125d Brian Jacobel <bjacobel@bowdoin.edu> 1366840825 -0400	commit: still repeating ourselves, but at least we're doing it all in the same place now
+2f922b96f216b551901b88df471b4afa800a125d ef8da46109fe31873ba1966066016f3d75216945 Brian Jacobel <bjacobel@bowdoin.edu> 1366899087 -0400	commit: relocated all of the 'smalltile' elements, too
+ef8da46109fe31873ba1966066016f3d75216945 a2274447a528c4fde8b66d7c900f87eb3942e4c7 Brian Jacobel <bjacobel@bowdoin.edu> 1366901095 -0400	commit: fixed issues with the clocks on the homepage (which are kind of important)
+a2274447a528c4fde8b66d7c900f87eb3942e4c7 315de1ed675e9e00f58ece88b9502867e47f209a Brian Jacobel <bjacobel@bowdoin.edu> 1366901829 -0400	commit: removed the 'latest' blocks on the homepage - theyre smalltiles, not articleblocks
+315de1ed675e9e00f58ece88b9502867e47f209a ee469bc3f68c7bd32a1ffc56ef151852d2680596 Brian Jacobel <bjacobel@bowdoin.edu> 1366912985 -0400	commit: starting to make blocks use the combined method and remove their specific cases permanently
+ee469bc3f68c7bd32a1ffc56ef151852d2680596 2469c49549714b9a9dea06be525d1fb8e8039181 Brian Jacobel <bjacobel@bowdoin.edu> 1366920782 -0400	commit: everything but the homepage blocks are working, they're a little harder
+2469c49549714b9a9dea06be525d1fb8e8039181 f0471c7252e34da4e1613546c3d747316afb7013 Brian Jacobel <bjacobel@bowdoin.edu> 1367174484 -0400	commit: the left and right blocks are OK but the featured articles are hella messed up
+f0471c7252e34da4e1613546c3d747316afb7013 29bca906df948120b0456da0c9b538ca69086d68 Brian Jacobel <bjacobel@bowdoin.edu> 1367177918 -0400	commit: block refactor done
+29bca906df948120b0456da0c9b538ca69086d68 b4e7ef3a4c66c05bb84fa69703fd09fc910bf4ba Brian Jacobel <bjacobel@bowdoin.edu> 1367191718 -0400	commit: started work on the smalltiles
+b4e7ef3a4c66c05bb84fa69703fd09fc910bf4ba d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c Brian Jacobel <bjacobel@bowdoin.edu> 1367191722 -0400	checkout: moving from tile_refactor to master
+d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c Brian Jacobel <bjacobel@bowdoin.edu> 1367192177 -0400	checkout: moving from master to cross_origin
+d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c Brian Jacobel <bjacobel@bowdoin.edu> 1367192303 -0400	checkout: moving from cross_origin to master
+d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c b4e7ef3a4c66c05bb84fa69703fd09fc910bf4ba Brian Jacobel <bjacobel@bowdoin.edu> 1367244504 -0400	checkout: moving from master to tile_refactor
+b4e7ef3a4c66c05bb84fa69703fd09fc910bf4ba 7ee393ca563d2de5622d5341a094b8740a33a300 Brian Jacobel <bjacobel@bowdoin.edu> 1367247399 -0400	commit: should have been using \!empty(), not isset()
+7ee393ca563d2de5622d5341a094b8740a33a300 4b5aeafb68891a619cc6ccfb0726427bfea49509 Brian Jacobel <bjacobel@bowdoin.edu> 1367249734 -0400	commit: progress on smalltile
+4b5aeafb68891a619cc6ccfb0726427bfea49509 d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c Brian Jacobel <bjacobel@bowdoin.edu> 1367249742 -0400	checkout: moving from tile_refactor to master
+d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c 4b5aeafb68891a619cc6ccfb0726427bfea49509 Brian Jacobel <bjacobel@bowdoin.edu> 1367249753 -0400	checkout: moving from master to tile_refactor
+4b5aeafb68891a619cc6ccfb0726427bfea49509 5b9a627e0d5261fa5c6fb6bbc3fcad2919598b85 Brian Jacobel <bjacobel@bowdoin.edu> 1367249826 -0400	commit: conquored an errant colon
+5b9a627e0d5261fa5c6fb6bbc3fcad2919598b85 ce753df78f33fa3d69c4b57be88a31d79466caea Brian Jacobel <bjacobel@bowdoin.edu> 1367249931 -0400	commit: only the homepage 'recent' blocks left to go
+ce753df78f33fa3d69c4b57be88a31d79466caea b2a3a69e9a779ea7cabd4070c998975456e946b3 Brian Jacobel <bjacobel@bowdoin.edu> 1367250075 -0400	commit: pretty sure everything is working
+b2a3a69e9a779ea7cabd4070c998975456e946b3 d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c Brian Jacobel <bjacobel@bowdoin.edu> 1367250084 -0400	checkout: moving from tile_refactor to master
+d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c b2a3a69e9a779ea7cabd4070c998975456e946b3 Brian Jacobel <bjacobel@bowdoin.edu> 1367250121 -0400	checkout: moving from master to tile_refactor
+b2a3a69e9a779ea7cabd4070c998975456e946b3 a2ed42f3e5c2f34efffe75b549e962a3c0d0a6fe Brian Jacobel <bjacobel@bowdoin.edu> 1367250183 -0400	commit: hellz yeah
+a2ed42f3e5c2f34efffe75b549e962a3c0d0a6fe a2ed42f3e5c2f34efffe75b549e962a3c0d0a6fe Brian Jacobel <bjacobel@bowdoin.edu> 1367268503 -0400	checkout: moving from tile_refactor to ythumbs
+a2ed42f3e5c2f34efffe75b549e962a3c0d0a6fe 643f783c7eeef8d12034972c234b34b5da8cd378 Brian Jacobel <bjacobel@bowdoin.edu> 1367935716 -0400	commit: first stab at youtube thumbnails. this might be hard because i'm kind of breaking MVC
+643f783c7eeef8d12034972c234b34b5da8cd378 b285c466b09e915580d4af4f5745e8a3b3f62177 Brian Jacobel <bjacobel@bowdoin.edu> 1367935722 -0400	checkout: moving from ythumbs to webview
+b285c466b09e915580d4af4f5745e8a3b3f62177 26d33dd2b1298fd8134a6e87188a32b56dc6df5c Brian Jacobel <bjacobel@bowdoin.edu> 1367938065 -0400	commit: throw a /chromeless on the end of any (unrerouted) uri to get a chromeless view
+26d33dd2b1298fd8134a6e87188a32b56dc6df5c 8e597ba46a342f4c3268a5d28ec2e4adeaf6a540 Brian Jacobel <bjacobel@bowdoin.edu> 1367949486 -0400	commit: routing is fixed for all but the homepage
+8e597ba46a342f4c3268a5d28ec2e4adeaf6a540 eb92a0078c8f4e3ed506b98b67b0fa1011c76f31 Brian Jacobel <bjacobel@bowdoin.edu> 1367949686 -0400	commit: ooh I just got the homepage
+eb92a0078c8f4e3ed506b98b67b0fa1011c76f31 d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c Brian Jacobel <bjacobel@bowdoin.edu> 1367949824 -0400	checkout: moving from webview to master
+d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c eb92a0078c8f4e3ed506b98b67b0fa1011c76f31 Brian Jacobel <bjacobel@bowdoin.edu> 1367949908 -0400	checkout: moving from master to webview
+eb92a0078c8f4e3ed506b98b67b0fa1011c76f31 d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c Brian Jacobel <bjacobel@bowdoin.edu> 1367949932 -0400	checkout: moving from webview to master
+d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c eb92a0078c8f4e3ed506b98b67b0fa1011c76f31 Brian Jacobel <bjacobel@bowdoin.edu> 1367950337 -0400	checkout: moving from master to webview
+eb92a0078c8f4e3ed506b98b67b0fa1011c76f31 6a7617d7e88c485583bdffde1f2f78d1be8c95ca Brian Jacobel <bjacobel@bowdoin.edu> 1368034452 -0400	commit: making a copy branch
+6a7617d7e88c485583bdffde1f2f78d1be8c95ca d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c Brian Jacobel <bjacobel@bowdoin.edu> 1368034479 -0400	checkout: moving from webview to master
+d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c Brian Jacobel <bjacobel@bowdoin.edu> 1368034483 -0400	checkout: moving from master to copy
+d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c 1dcb0c8dbc22bb299abd924e6395ffe4c38d8784 Brian Jacobel <bjacobel@bowdoin.edu> 1368040265 -0400	commit: everything but the masthead
+1dcb0c8dbc22bb299abd924e6395ffe4c38d8784 6a7617d7e88c485583bdffde1f2f78d1be8c95ca Brian Jacobel <bjacobel@bowdoin.edu> 1368040270 -0400	checkout: moving from copy to webview
+6a7617d7e88c485583bdffde1f2f78d1be8c95ca d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c Brian Jacobel <bjacobel@bowdoin.edu> 1368127462 -0400	checkout: moving from webview to master
+d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c Brian Jacobel <bjacobel@bowdoin.edu> 1368127475 -0400	checkout: moving from master to occident
+d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c Brian Jacobel <bjacobel@bowdoin.edu> 1368127485 -0400	checkout: moving from occident to master
+d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c 1dcb0c8dbc22bb299abd924e6395ffe4c38d8784 Brian Jacobel <bjacobel@bowdoin.edu> 1368127636 -0400	checkout: moving from master to copy
+1dcb0c8dbc22bb299abd924e6395ffe4c38d8784 d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c Brian Jacobel <bjacobel@bowdoin.edu> 1368127710 -0400	checkout: moving from copy to master
+d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c Brian Jacobel <bjacobel@bowdoin.edu> 1368127717 -0400	checkout: moving from master to occident
+d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c 568a430ef124b444b8d986d1ae196b748ccee2ff Brian Jacobel <bjacobel@bowdoin.edu> 1368384973 -0400	commit: april fools
+568a430ef124b444b8d986d1ae196b748ccee2ff 6a7617d7e88c485583bdffde1f2f78d1be8c95ca Brian Jacobel <bjacobel@bowdoin.edu> 1368384993 -0400	checkout: moving from occident to webview
+6a7617d7e88c485583bdffde1f2f78d1be8c95ca 1dcb0c8dbc22bb299abd924e6395ffe4c38d8784 Brian Jacobel <bjacobel@bowdoin.edu> 1368641238 -0400	checkout: moving from webview to copy
+1dcb0c8dbc22bb299abd924e6395ffe4c38d8784 6a7617d7e88c485583bdffde1f2f78d1be8c95ca Brian Jacobel <bjacobel@bowdoin.edu> 1368641349 -0400	checkout: moving from copy to webview
+6a7617d7e88c485583bdffde1f2f78d1be8c95ca d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c Brian Jacobel <bjacobel@bowdoin.edu> 1368641427 -0400	checkout: moving from webview to master
+d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c 6a7617d7e88c485583bdffde1f2f78d1be8c95ca Brian Jacobel <bjacobel@bowdoin.edu> 1368641457 -0400	checkout: moving from master to webview
+6a7617d7e88c485583bdffde1f2f78d1be8c95ca 3509112c794c34888be76a118cafca74cb21f64b Brian Jacobel <bjacobel@bowdoin.edu> 1368641466 -0400	merge origin/master: Merge made by the 'recursive' strategy.
+3509112c794c34888be76a118cafca74cb21f64b 1dcb0c8dbc22bb299abd924e6395ffe4c38d8784 Brian Jacobel <bjacobel@bowdoin.edu> 1368641519 -0400	checkout: moving from webview to copy
+1dcb0c8dbc22bb299abd924e6395ffe4c38d8784 3509112c794c34888be76a118cafca74cb21f64b Brian Jacobel <bjacobel@bowdoin.edu> 1368641536 -0400	checkout: moving from copy to webview
+3509112c794c34888be76a118cafca74cb21f64b 1dcb0c8dbc22bb299abd924e6395ffe4c38d8784 Brian Jacobel <bjacobel@bowdoin.edu> 1368642389 -0400	checkout: moving from webview to copy
+1dcb0c8dbc22bb299abd924e6395ffe4c38d8784 0eedcb8e0afd8efdbb8117318b955c9b08b50772 Brian Jacobel <bjacobel@bowdoin.edu> 1368642414 -0400	commit: 2013-2014 masthead
+0eedcb8e0afd8efdbb8117318b955c9b08b50772 d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c Brian Jacobel <bjacobel@bowdoin.edu> 1368642530 -0400	checkout: moving from copy to master
+d4db3b2fd1a6aeb132a27ca6c3e1cf22d86c2c3c 49a411fb3c50a2725e267c910fc2e58a4189b34e Brian Jacobel <bjacobel@bowdoin.edu> 1368642544 -0400	merge orient/master: Fast-forward
+49a411fb3c50a2725e267c910fc2e58a4189b34e 3509112c794c34888be76a118cafca74cb21f64b Brian Jacobel <bjacobel@bowdoin.edu> 1368642626 -0400	checkout: moving from master to webview
+3509112c794c34888be76a118cafca74cb21f64b b49e42a32f0f3e34c300fcbc8576870d65c12795 Brian Jacobel <bjacobel@bowdoin.edu> 1368642632 -0400	merge master: Merge made by the 'recursive' strategy.
+b49e42a32f0f3e34c300fcbc8576870d65c12795 07bea18fca9d63358d4f978d065d39a1d750b6a6 Brian Jacobel <bjacobel@bowdoin.edu> 1368643776 -0400	commit: added the less important pages to chromeless
+07bea18fca9d63358d4f978d065d39a1d750b6a6 49a411fb3c50a2725e267c910fc2e58a4189b34e Brian Jacobel <bjacobel@bowdoin.edu> 1368643929 -0400	checkout: moving from webview to master
+49a411fb3c50a2725e267c910fc2e58a4189b34e 49a411fb3c50a2725e267c910fc2e58a4189b34e Brian Jacobel <bjacobel@bowdoin.edu> 1368643934 -0400	checkout: moving from master to css
+49a411fb3c50a2725e267c910fc2e58a4189b34e ab4cac3e2d6d78edce2a0887df638d82398b9e28 Brian Jacobel <bjacobel@bowdoin.edu> 1368644243 -0400	commit: setting opacity back to 1 for .old blocks
+ab4cac3e2d6d78edce2a0887df638d82398b9e28 07bea18fca9d63358d4f978d065d39a1d750b6a6 Brian Jacobel <bjacobel@bowdoin.edu> 1368644331 -0400	checkout: moving from css to webview
+07bea18fca9d63358d4f978d065d39a1d750b6a6 d600484cdc36061aa82b3ba3d3e1aea6e01eab73 Brian Jacobel <bjacobel@bowdoin.edu> 1368644348 -0400	merge orient/master: Merge made by the 'recursive' strategy.
+d600484cdc36061aa82b3ba3d3e1aea6e01eab73 d600484cdc36061aa82b3ba3d3e1aea6e01eab73 Brian Jacobel <bjacobel@bowdoin.edu> 1368644377 -0400	checkout: moving from webview to webview
+d600484cdc36061aa82b3ba3d3e1aea6e01eab73 49a411fb3c50a2725e267c910fc2e58a4189b34e Brian Jacobel <bjacobel@bowdoin.edu> 1368644384 -0400	checkout: moving from webview to master
+49a411fb3c50a2725e267c910fc2e58a4189b34e 458b2b4c6dd61af26f3e29946f35d8dc9bfad95c Brian Jacobel <bjacobel@bowdoin.edu> 1368644386 -0400	merge orient/master: Fast-forward
+458b2b4c6dd61af26f3e29946f35d8dc9bfad95c d600484cdc36061aa82b3ba3d3e1aea6e01eab73 Brian Jacobel <bjacobel@bowdoin.edu> 1368644392 -0400	checkout: moving from master to webview
+d600484cdc36061aa82b3ba3d3e1aea6e01eab73 a2ed42f3e5c2f34efffe75b549e962a3c0d0a6fe Brian Jacobel <bjacobel@bowdoin.edu> 1368647962 -0400	checkout: moving from webview to tile_refactor
+a2ed42f3e5c2f34efffe75b549e962a3c0d0a6fe a2ed42f3e5c2f34efffe75b549e962a3c0d0a6fe Brian Jacobel <bjacobel@bowdoin.edu> 1368647972 -0400	checkout: moving from tile_refactor to megamerge
+a2ed42f3e5c2f34efffe75b549e962a3c0d0a6fe 458b2b4c6dd61af26f3e29946f35d8dc9bfad95c Brian Jacobel <bjacobel@bowdoin.edu> 1368647991 -0400	checkout: moving from megamerge to master
+458b2b4c6dd61af26f3e29946f35d8dc9bfad95c 458b2b4c6dd61af26f3e29946f35d8dc9bfad95c Brian Jacobel <bjacobel@bowdoin.edu> 1368648020 -0400	checkout: moving from master to testing
+458b2b4c6dd61af26f3e29946f35d8dc9bfad95c d600484cdc36061aa82b3ba3d3e1aea6e01eab73 Brian Jacobel <bjacobel@bowdoin.edu> 1368648027 -0400	merge origin/webview: Fast-forward
+d600484cdc36061aa82b3ba3d3e1aea6e01eab73 e97f6215f6d8964fd8e73b53ab4757d0a6554ba4 Brian Jacobel <bjacobel@bowdoin.edu> 1368648034 -0400	merge origin/tile_refactor: Merge made by the 'recursive' strategy.
+e97f6215f6d8964fd8e73b53ab4757d0a6554ba4 458b2b4c6dd61af26f3e29946f35d8dc9bfad95c Brian Jacobel <bjacobel@bowdoin.edu> 1368648213 -0400	checkout: moving from testing to master
+458b2b4c6dd61af26f3e29946f35d8dc9bfad95c 753558c9f9e10e549638150acfb82784ad1d8146 Brian Jacobel <bjacobel@bowdoin.edu> 1368648238 -0400	merge orient/master: Fast-forward
+753558c9f9e10e549638150acfb82784ad1d8146 458b2b4c6dd61af26f3e29946f35d8dc9bfad95c Brian Jacobel <bjacobel@bowdoin.edu> 1368648921 -0400	checkout: moving from master to 458b2b4c6dd61af26f3e29946f35d8dc9bfad95c
+458b2b4c6dd61af26f3e29946f35d8dc9bfad95c 753558c9f9e10e549638150acfb82784ad1d8146 Brian Jacobel <bjacobel@bowdoin.edu> 1368650016 -0400	checkout: moving from 458b2b4c6dd61af26f3e29946f35d8dc9bfad95c to master
+753558c9f9e10e549638150acfb82784ad1d8146 753558c9f9e10e549638150acfb82784ad1d8146 Brian Jacobel <bjacobel@bowdoin.edu> 1368650087 -0400	checkout: moving from master to deploy
+753558c9f9e10e549638150acfb82784ad1d8146 753558c9f9e10e549638150acfb82784ad1d8146 Brian Jacobel <bjacobel@bowdoin.edu> 1368650538 -0400	checkout: moving from deploy to master
+753558c9f9e10e549638150acfb82784ad1d8146 b5abe0b5af86c6f73f44958d413ca4060ad1ba9b Brian Jacobel <bjacobel@bowdoin.edu> 1368717551 -0400	commit: fixed config files to be ready for deploy on master branch
+b5abe0b5af86c6f73f44958d413ca4060ad1ba9b 4c47da893cab6c54204595d6dbe047d67df91b46 Brian Jacobel <bjacobel@bowdoin.edu> 1368717596 -0400	checkout: moving from master to orient/isitivies
+4c47da893cab6c54204595d6dbe047d67df91b46 b5abe0b5af86c6f73f44958d413ca4060ad1ba9b Brian Jacobel <bjacobel@bowdoin.edu> 1368717611 -0400	checkout: moving from 4c47da893cab6c54204595d6dbe047d67df91b46 to master
+b5abe0b5af86c6f73f44958d413ca4060ad1ba9b b5abe0b5af86c6f73f44958d413ca4060ad1ba9b Brian Jacobel <bjacobel@bowdoin.edu> 1368717630 -0400	checkout: moving from master to orient/isitivies
+b5abe0b5af86c6f73f44958d413ca4060ad1ba9b b5abe0b5af86c6f73f44958d413ca4060ad1ba9b Brian Jacobel <bjacobel@bowdoin.edu> 1368717640 -0400	checkout: moving from orient/isitivies to master
+b5abe0b5af86c6f73f44958d413ca4060ad1ba9b b5abe0b5af86c6f73f44958d413ca4060ad1ba9b Brian Jacobel <bjacobel@bowdoin.edu> 1368717875 -0400	checkout: moving from master to master
+b5abe0b5af86c6f73f44958d413ca4060ad1ba9b 4c47da893cab6c54204595d6dbe047d67df91b46 Brian Jacobel <bjacobel@bowdoin.edu> 1368717901 -0400	checkout: moving from master to isitivies
+4c47da893cab6c54204595d6dbe047d67df91b46 b5abe0b5af86c6f73f44958d413ca4060ad1ba9b Brian Jacobel <bjacobel@bowdoin.edu> 1368717957 -0400	checkout: moving from isitivies to master
+b5abe0b5af86c6f73f44958d413ca4060ad1ba9b d3e980c96ad9e501f60bec2458cf073c782dd5d4 Brian Jacobel <bjacobel@bowdoin.edu> 1368717963 -0400	merge isitivies: Merge made by the 'recursive' strategy.

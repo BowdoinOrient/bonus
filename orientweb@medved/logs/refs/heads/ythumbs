@@ -1,0 +1,2 @@
+0000000000000000000000000000000000000000 a2ed42f3e5c2f34efffe75b549e962a3c0d0a6fe Brian Jacobel <bjacobel@bowdoin.edu> 1367268503 -0400	branch: Created from HEAD
+a2ed42f3e5c2f34efffe75b549e962a3c0d0a6fe 643f783c7eeef8d12034972c234b34b5da8cd378 Brian Jacobel <bjacobel@bowdoin.edu> 1367935716 -0400	commit: first stab at youtube thumbnails. this might be hard because i'm kind of breaking MVC
