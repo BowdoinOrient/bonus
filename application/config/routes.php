@@ -61,6 +61,8 @@ $route['contact'] = "pages/view/contact";
 $route['subscribe'] = "pages/view/subscribe";
 $route['advertise'] = "pages/view/advertise";
 $route['survey'] = "pages/view/survey";
+$route['ethics'] = "pages/view/ethics";
+$route['nonremoval'] = "pages/view/nonremoval";
 
 # more chromeless hacks
 $route['search/(:any)'] = "pages/search";
@@ -71,6 +73,8 @@ $route['contact/(:any)'] = "pages/view/contact";
 $route['subscribe/(:any)'] = "pages/view/subscribe";
 $route['advertise/(:any)'] = "pages/view/advertise";
 $route['survey/(:any)'] = "pages/view/survey";
+$route['ethics/(:any)'] = "pages/view/ethics";
+$route['nonremoval/(:any)'] = "pages/view/nonremoval";
 
 $route['election2012'] = "article/view/7677";
 
