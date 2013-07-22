@@ -14,9 +14,6 @@
 | path to your installation.
 |
 */
-//$config['base_url'] = 'http://bowdoinorient.dev/';
-//$config['base_url'] = 'http://localhost/~tophtucker/bonus/';
-//$config['base_url'] = 'http://139.140.166.33/~tophtucker/bonus/';
 $config['base_url'] = 'http://bowdoinorient.com/';
 
 /*
