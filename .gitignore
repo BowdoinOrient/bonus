@@ -1,9 +1,3 @@
-# Files different between local and prod #
-##########################################
-.htaccess
-application/config/config.php
-application/config/database.php
-
 # Giant images directory #
 ##########################
 images/

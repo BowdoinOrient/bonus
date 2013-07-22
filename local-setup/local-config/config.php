@@ -14,14 +14,7 @@
 | path to your installation.
 |
 */
-
-//****************
-// LOCAL CONFIG NEEDED
-// Depending on how you have your /etc/hosts file set up, one of the following should work for you
-//******************
-//$config['base_url'] = 'http://bowdoinorient.dev/';
-//$config['base_url'] = 'http://localhost/RELATIVE-PATH-FROM-YOUR-WEB-ROOT/bonus/';
-//$config['base_url'] = 'http://YOUR-STATIC-IP/RELATIVE-PATH-FROM-YOUR-WEB-ROOT/bonus/';
+$config['base_url'] = 'http://bowdoinorient.dev/';
 
 /*
 |--------------------------------------------------------------------------
