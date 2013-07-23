@@ -193,6 +193,9 @@ class Bonus extends CI_Controller {
 	
 	function ajax_verifylogin()
 	{
+		header('Access-Control-Allow-Origin: http://bowdoinorient.com');
+		header('Access-Control-Allow-Origin: http://www.bowdoinorient.com');
+
 		if($this->check_database($this->input->post('password'))) {
 			$response['success'] = true;
 			$response['status'] = "Logging in...";
