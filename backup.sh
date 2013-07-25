@@ -6,7 +6,7 @@ ACCESS_KEY=AKIAJCJ7UQVOTIBRMJEQ
 SECRET_KEY=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
 
 # Use a local copy of virtualenv, because medved won't let us install it globally
-source virtualenv-1.9/myVE/bin/activate
+source python-env/bin/activate
 
 # Dump the database
 mysqldump -uorientdba -pbgtyhn768594 DB02Orient | gzip > DB02Orient-$DATE.sql.gz
