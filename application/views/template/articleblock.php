@@ -9,7 +9,7 @@ dateoverlay: the "1 day ago" red overlay text -->
 
 <ul class="articleblock<?if(!empty($twotier)):?> twotier<?endif;?><?if(!empty($leftmargin)):?> leftmargin<?endif;?><?if(!empty($rightmargin)):?> rightmargin<?endif;?>">
 	<?foreach($blocks as $block):?>
-	<li class="<? if(!empty($block->filename_small)): ?> backgrounded<? endif; ?><? if(!$block->published): ?> draft<? endif; ?><? if(strtotime($date)-strtotime($block->date) > (7*24*60*60)): ?> old<? endif; ?><?if(!empty($medtile)):?> medtile<?endif;?>"<? if(!empty($block->filename_small)): ?> style="background:url('<?=base_url().'images/'.$block->date.'/'.$block->filename_small?>')"<? endif; ?>>
+	<li class="<? if(!empty($block->filename_small)): ?> backgrounded<? endif; ?><? if(!$block->published): ?> draft<? endif; ?><? if(strtotime($date)-strtotime($block->date) > (7*24*60*60)): ?> old<? endif; ?><?if(!empty($medtile)):?> medtile<?endif;?>"<? if(!empty($block->filename_small) && !isMobile()): ?> style="background:url('<?=base_url().'images/'.$block->date.'/'.$block->filename_small?>')"<? endif; ?>>
 		<a href="<?=site_url()?>article/<?=$block->id?>">
 			<?if(!empty($dateified)):?>
 			<div class="dateified"><?=dateify($block->date, $date)?></div>
