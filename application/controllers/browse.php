@@ -61,9 +61,11 @@ class Browse extends CI_Controller {
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 				$scribd_thumb_response = curl_exec($ch);
 				curl_close($ch);
-				
-				$scribd_thumb = new SimpleXMLElement($scribd_thumb_response);
-				$scribd_thumb_url = $scribd_thumb->thumbnail_url;
+
+				if(!empty($scribd_thumb_response)){
+					$scribd_thumb = new SimpleXMLElement($scribd_thumb_response);
+					$scribd_thumb_url = $scribd_thumb->thumbnail_url;
+				}
 			}
 						
 			// latest articles
