@@ -1412,6 +1412,29 @@ article header, .authorheader {
 	margin-top:10px;
 }
 
+.charsremaining {
+	float:right;
+	position:relative;
+	top:-25px;
+	right:3px;
+	padding:0 5px;
+	background-color:#fff;
+	z-index:99;
+	color:green;
+}
+
+#subtitle.charsremaining {
+	top:-55px;
+}
+
+.lowchars {
+	color:#E3170D;
+}
+
+.toolongwarning {
+	border:2px solid red;
+}
+
 /* NEXT/PREV IN SERIES */
 .article_header_nav { position: relative; } 
 .article_header_nav ul { position: absolute; }

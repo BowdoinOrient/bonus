@@ -40,8 +40,10 @@
 	  <? endif; ?>
 	  
 	  <h2 id="articletitle" class="articletitle <?= ($article->published ? '' : 'draft'); ?>"<?if(bonus()):?> contenteditable="true" title="Title"<?endif;?>><?=$article->title?></h2>
+	  <? if(bonus()): ?><div id="title" class="charsremaining"></div><? endif; ?>
 	  <h3 id="articlesubtitle" class="articlesubtitle"<?if(bonus()):?> contenteditable="true" title="Subtitle"<?endif;?>><? if(isset($article->subtitle)): ?><?=$article->subtitle?><? endif; ?></h3>
-	  
+	  <? if(bonus()): ?><div id="subtitle" class="charsremaining"></div><? endif; ?>
+
 	</hgroup>
 
 	<div id="authorblock">
@@ -348,59 +350,81 @@
     // #dry :(
 
     $('#articletitle').keydown(function() {
-      titleedited=true;
-      $('#articletitle').css("color", "darkred");
+    	titleedited=true;
+    	$('#articletitle').css("color", "darkred");
+    	$('#title.charsremaining').html(200 - $('#articletitle').html().length);
+    	if ($('#articletitle').html().length>200) {
+    		$("button#savearticle").attr("disabled", "disabled");
+    		$("#articletitle").addClass("toolongwarning");
+    	} else if((200 - $('#articletitle').html().length) < 25) {
+    		$("#articletitle").removeClass("toolongwarning");
+    		$("button#savearticle").removeAttr("disabled");
+    		$('#title.charsremaining').addClass("lowchars");
+    	} else {
+    		$('#title.charsremaining').removeClass("lowchars");
+    	}
     });
     $('#articletitle').keyup(function() {
-      document.title = $('#articletitle').html() + " — The Bowdoin Orient";
+    	document.title = $('#articletitle').html() + " — The Bowdoin Orient";
     });
     $("#articletitle").bind('paste', function() {
-      titleedited=true;
-      $('#articletitle').css("color", "darkred");
+    	titleedited=true;
+    	$('#articletitle').css("color", "darkred");
     });
     
     $('#articlesubtitle').keydown(function() {
-      subtitleedited=true;
-      $('#articlesubtitle').css("color", "darkred");
+    	subtitleedited=true;
+    	$('#articlesubtitle').css("color", "darkred");
+    	$('#subtitle.charsremaining').html(200 - $('#articlesubtitle').html().length);
+    	if ($('#articlesubtitle').html().length>200) {
+    		$("button#savearticle").attr("disabled", "disabled");
+    		$("#articlesubtitle").addClass("toolongwarning");
+    	} else if((200 - $('#articlesubtitle').html().length) < 25) {
+    		$("#articlesubtitle").removeClass("toolongwarning");
+    		$("button#savearticle").removeAttr("disabled");
+    		$('#subtitle.charsremaining').addClass("lowchars");
+    	} else {
+    		$('#subtitle.charsremaining').removeClass("lowchars");
+    	}
     });
     $('#articlesubtitle').bind('paste', function() {
-      subtitleedited=true;
-      $('#articlesubtitle').css("color", "darkred");
+    	subtitleedited=true;
+    	$('#articlesubtitle').css("color", "darkred");
     });
     
     $('#articlebody').keydown(function() {
-      bodyedited=true;
-      window.onbeforeunload = "You have unsaved changes.";
-      window.onbeforeunload = function(e) {
-	return "You have unsaved changes.";
-      };
-      $('#articlebody').css("color", "darkred");
+    	bodyedited=true;
+    	window.onbeforeunload = "You have unsaved changes.";
+    	window.onbeforeunload = function(e) {
+			return "You have unsaved changes.";
+    	};
+    	$('#articlebody').css("color", "darkred");
     });
     $('#articlebody').bind('paste', function() {
-      bodyedited=true;
-      window.onbeforeunload = "You have unsaved changes.";
-      window.onbeforeunload = function(e) {
-	return "You have unsaved changes.";
-      };
-      $('#articlebody').css("color", "darkred");
+    	bodyedited=true;
+    	window.onbeforeunload = "You have unsaved changes.";
+    	window.onbeforeunload = function(e) {
+			return "You have unsaved changes.";
+    	};
+    	$('#articlebody').css("color", "darkred");
     });
     
     $('#photocreditbonus').keydown(function() {
-      photocreditedited=true;
-      $('#photocreditbonus').css("color", "darkred");
+    	photocreditedited=true;
+    	$('#photocreditbonus').css("color", "darkred");
     });
     $('#photocreditbonus').bind('paste', function() {
-      photocreditedited=true;
-      $('#photocreditbonus').css("color", "darkred");
+    	photocreditedited=true;
+    	$('#photocreditbonus').css("color", "darkred");
     });
     
     $('#photocaptionbonus').keydown(function() {
-      photocaptionedited=true;
-      $('#photocaptionbonus').css("color", "darkred");
+    	photocaptionedited=true;
+    	$('#photocaptionbonus').css("color", "darkred");
     });
     $('#photocaptionbonus').bind('paste', function() {
-      photocaptionedited=true;
-      $('#photocaptionbonus').css("color", "darkred");
+    	photocaptionedited=true;
+    	$('#photocaptionbonus').css("color", "darkred");
     });
     
     $("#publisharticle").click(function() {
