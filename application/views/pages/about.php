@@ -6,12 +6,12 @@
 
 <div id="content">
     
-    <article id="mainstory">
+    <article id="pagescontent">
         
         <header>
             <hgroup>
-                <h2 id="articletitle" class="articletitle">About</h2>
-                <h3 id="articlesubtitle" class="articlesubtitle">The nation&rsquo;s oldest continuously published college weekly</h3>
+                <h2 id="pagescontenttitle" class="pagescontenttitle">About</h2>
+                <h3 id="pagescontentsubtitle" class="pagescontentsubtitle">The nation&rsquo;s oldest continuously published college weekly</h3>
             </hgroup>           
         </header>
         
@@ -37,7 +37,7 @@
             </ul>
         </figure>
         
-        <div id="articlebody" class="articlebody">
+        <div id="pagescontentbody" class="pagescontentbody">
 
             <p>The Bowdoin Orient is a student-run weekly publication dedicated to providing news and information relevant to the College community. Editorially independent of the College and its administrators, the Orient pursues such content freely and thoroughly, following professional journalistic standards in writing and reporting. The Orient is committed to serving as an open forum for thoughtful and diverse discussion and debate on issues of interest to the College community.</p>
 

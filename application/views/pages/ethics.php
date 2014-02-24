@@ -6,12 +6,11 @@
 
 <div id="content">
     
-    <article id="mainstory">
+    <article id="pagescontent">
         
         <header>
             <hgroup>
-                <h2 id="articletitle" class="articletitle">Ethical Practices Policy</h2>
-                <!--<h3 id="articlesubtitle" class="articlesubtitle"></h3>-->
+                <h2 id="pagescontenttitle" class="pagescontenttitle">Ethical Practices Policy</h2>
             </hgroup>            
         </header>
         
@@ -23,7 +22,7 @@
             </ul>
         </figure>
         
-        <div id="articlebody" class="articlebody">
+        <div id="pagescontentbody" class="pagescontentbody">
 
             <p><strong>PURPOSE:</strong> The Orient adheres to professional journalistic standards. Our success as a newspaper is dependent upon the trust of our readers and sources. This document seeks to avoid any situations that may compromise this trust.</p>
             <p><strong>SCOPE:</strong> This document applies to all Orient staffers, staff writers, columnists, and contributors. It does not apply to readers who submit an op-ed or letter to the editors, though such writers are encouraged to follow these guidelines.</p>

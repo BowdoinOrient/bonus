@@ -6,12 +6,11 @@
 
 <div id="content">
     
-    <article id="mainstory">
+    <article id="pagescontent">
         
         <header>
             <hgroup>
-                <h2 id="articletitle" class="articletitle">Web Non-Removal Policy</h2>
-                <!--<h3 id="articlesubtitle" class="articlesubtitle"></h3>-->
+                <h2 id="pagescontenttitle" class="pagescontenttitle">Web Non-Removal Policy</h2>
             </hgroup>            
         </header>
         
@@ -23,7 +22,7 @@
             </ul>
         </figure>
         
-        <div id="articlebody" class="articlebody">
+        <div id="pagescontentbody" class="pagescontentbody">
 
             <p>In recent years, The Orient has received requests for material to be removed from the web-based version of the newspaper. Specifically, some alumni have objected to the archiving of material that was published in The Orient, since the material is readily accessible through the website's search engine and search engines like Google.</p>
             <p>The editors, after consulting more than a half-dozen professional journalists and journalism scholars, have determined that all requests for material alteration or removal will be declined.</p>

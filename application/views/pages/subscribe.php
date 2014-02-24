@@ -6,12 +6,11 @@
 
 <div id="content">
     
-    <article id="mainstory">
+    <article id="pagescontent">
         
         <header>
             <hgroup>
-                <h2 id="articletitle" class="articletitle">Subscribe</h2>
-                <!--<h3 id="articlesubtitle" class="articlesubtitle"></h3>-->
+                <h2 id="pagescontenttitle" class="pagescontenttitle">Subscribe</h2>
             </hgroup>            
         </header>
         
@@ -32,7 +31,7 @@
             <!--End mc_embed_signup-->
         </div>
         
-        <div id="articlebody" class="articlebody">
+        <div id="pagescontentbody" class="pagescontentbody">
         
                 <p>Find out what's really happening on the Bowdoin campus by subscribing to the student-run newspaper, <em>The Bowdoin Orient</em>. The <em>Orient</em> covers news, features, student opinion, arts &amp; entertainment, sports, and weekly events. We will be printing 25 issues throughout the 2012–2013 academic year.</p>
                 

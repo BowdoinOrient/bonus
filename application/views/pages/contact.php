@@ -6,17 +6,17 @@
 
 <div id="content">
     
-    <article id="mainstory">
+    <article id="pagescontent">
         
         <header>
             <hgroup>
-                <h2 id="articletitle" class="articletitle">Contact us</h2>
+                <h2 id="pagescontenttitle" class="pagescontenttitle">Contact us</h2>
             </hgroup>            
         </header>
         
         <img src="<?=base_url()?>img/connect-please.jpg" align="right" title="Katie Fitch, The Bowdoin Orient" id="connect-please" class="hidemobile">
         
-        <div id="articlebody" class="articlebody">
+        <div id="pagescontentbody" class="pagescontentbody">
             
             <p>The Bowdoin Orient<br/>
             6200 College Station<br/>

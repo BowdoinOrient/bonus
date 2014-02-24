@@ -1,3 +1,4 @@
+@charset "UTF-8";
 article header, .authorheader {
   margin: 30px 0 35px 0; }
 
@@ -374,4 +375,62 @@ button img {
   #articlebody, #articlefooter {
     /* width: 620px;
     margin-left: 80px; */
-    margin-right: 220px; } }
+    margin-right: 220px; }
+
+  /* some rejiggering required so that, when you follow an anchor link, the header isn't hidden behind the fixed header */
+  /* i.e. an anchor offset so you get a good scroll offset — in this case, 50px, cuz that's the header height(ish). */
+  .articlebody h3 {
+    display: block;
+    position: relative;
+    top: -50px;
+    padding-top: 50px;
+    margin-top: 18px;
+    margin-bottom: -32px; }
+
+  figure.mini {
+    width: 200px; }
+
+  aside {
+    width: 320px;
+    float: right;
+    margin: 25px -100px 25px 25px; } }
+/* FOR TABLETS */
+@media all and (max-width: 960px) {
+  #mainstory {
+    width: 100%;
+    margin: 0; }
+
+  #articlebody, #articlefooter {
+    width: 100%;
+    margin-left: 0; }
+
+  #toc_container {
+    display: none; }
+
+  figure.authorpic {
+    display: none; }
+
+  aside {
+    margin-right: 25px; } }
+/* FOR iPHONES */
+@media all and (max-width: 480px) {
+  #mainstory {
+    font-size: 12pt;
+    width: 100%;
+    margin: 0; }
+
+  article header {
+    margin: 20px 0 0 0; }
+
+  .articletitle {
+    font-size: 20pt; }
+
+  .articlesubtitle {
+    font-size: 16pt; }
+
+  .toolbox {
+    display: none; }
+
+  figure {
+    width: 100%;
+    margin: 10px 0; } }

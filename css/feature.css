@@ -1,3 +1,7 @@
+#mainhead .share-anchor {
+  position: absolute !important;
+  margin: 14px 0 0 290px; }
+
 #container {
   width: 100%;
   height: 100%; }
@@ -158,7 +162,7 @@
 
 /* FOR SMARTPHONES (read: iPhones) */
 @media all and (max-width: 480px) {
-  #container #mainstory #articlebodycontainer {
+  #container #mainstory {
     margin: 0 10px !important; }
   #container #titlepage #header-bg {
     margin: 0;

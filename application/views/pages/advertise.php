@@ -6,12 +6,11 @@
 
 <div id="content">
     
-    <article id="mainstory">
+    <article id="pagescontent">
         
         <header>
             <hgroup>
-                <h2 id="articletitle" class="articletitle">Advertise</h2>
-                <!--<h3 id="articlesubtitle" class="articlesubtitle"></h3>-->
+                <h2 id="pagescontenttitle" class="pagescontenttitle">Advertise</h2>
             </hgroup>            
         </header>
         
@@ -29,7 +28,7 @@
             </div>
         </div>
         
-        <div id="articlebody" class="articlebody">
+        <div id="pagescontentbody" class="pagescontentbody">
             
             <p><em>The Bowdoin Orient</em> is the student newspaper of Bowdoin College, located in Brunswick, Maine. <em>The Orient</em> has an average circulation of 2300 copies per issue and reaches people of all ages locally, nationally, and internationally. All of the readers are connected to Bowdoin College in one way or another and most will at some point be in the area to use the community's resources—hotels, restaurants, and stores. Your decision to advertise with <em>The Orient</em> will without a doubt help broaden your customer base and open doors for your business in the immediate and distant future.</p>
     

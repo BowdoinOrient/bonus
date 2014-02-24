@@ -5,10 +5,6 @@ body {
     color: #333;
 }
 
-* { 
-    /* reserved for future use */
-}
-
 #mainhead {
     position: fixed;
     top: 0;
@@ -51,10 +47,6 @@ body {
 .issuedatedate{
     font-size: 80%;
     font-variant: small-caps;
-}
-
-#issue-viewselect{
-    /* */
 }
 
 #content {
@@ -132,13 +124,7 @@ nav .oebug {
 
 #mainhead .fb-like {
     position: absolute !important;
-    margin: 12px 0 0 450px;
-}
-
-#mainhead .share-anchor {
-    position:absolute !important;
-    margin: 14px 0 0 290px;
-
+    margin: 14px 0 0 450px;
 }
 
 footer {
@@ -667,21 +653,8 @@ img {
     padding: 3px;
 }
 
-
 [contenteditable]:hover:not(:focus) {
     border: 1px solid darkred;
-}
-
-/*
-[contenteditable]:hover:not(:focus)::before { content: "Edit " attr(title) ": "; }
-#addauthor[contenteditable]:hover:not(:focus)::before { content: "Add author: "; }
-#addauthorjob[contenteditable]:hover:not(:focus)::before { content: "Add author job: "; }
-*/
-
-
-//Input fields don't have height with no text in Firefox - insert a space
-.tooltip:before{
-    content: "\00a0";
 }
 
 .tooltip:hover:before {
@@ -691,14 +664,6 @@ img {
 .cke_inner, .cke_toolgroup, .cke_combo_button {
     background: white !important;
 }
-
-/*
-//
-//
-// HOME PAGE
-//
-//
-*/
 
 /* above the fold */
 
@@ -892,11 +857,6 @@ img {
     padding: 0;
 }
 
-/* strip header, footer, username from twitter widget */
-.twtr-hd, .twtr-ft, .twtr-user {
-    display: none;
-}
-
 /* below the fold */
 
 section {
@@ -984,30 +944,6 @@ section h2, #sidebar h2 {
 .carouseltile .authortile .articleauthor {
     padding-bottom: 0;
     margin-bottom: 0;
-}
-
-
-.authortile.opinion .articleauthor {
-    font-size: 130%;
-}
-
-.authortile.opinion .articleauthorjob {
-    font-size: 110%;
-    padding-bottom: 0;
-}
-
-.articleauthor {
-    font-family:myriad-pro,helvetica,arial;
-    font-weight:bold;
-    text-transform:uppercase;
-    padding-bottom:0;
-}
-
-.articleauthorjob {
-    font-family:myriad-pro,helvetica,arial;
-    font-weight:normal;
-    text-transform:uppercase;
-    padding-bottom: 5px;
 }
 
 .carouseltile img {
@@ -1159,7 +1095,7 @@ section h2, #sidebar h2 {
 
 /* FEATURED (in footer) */
 .featured {
-    margin: 0 20px;    
+    margin: 0 20px; 
     width: 100%;  /* fallback */
     width: -webkit-calc(100% - 40px);
     width: -moz-calc(100% - 40px);
@@ -1189,12 +1125,263 @@ section h2, #sidebar h2 {
     font-size: 10pt;
 }
 
+/* //////////////// */
+/*  AUTHOR PROFILE  */
+/* //////////////// */
+
+figure.authorpic {
+    border: 1px solid lightgray;
+    margin: 0 20px 30px 0;
+    padding: 10px;
+    background: white;
+    width: 200px;
+    float: left;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+figure.authorpic img {
+    max-width:180px;
+}
+
+.authorstats {
+    float: left;
+    max-width: 500px;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.statblock {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 0 10px;
+}
+
+/* /////////////////////////////////////// */
+/* about, subscribe, contact, search pages */
+/* /////////////////////////////////////// */
+
+figure {
+    width: 500px;
+    float:right;
+    margin: 0 0 25px 25px;
+    clear:both;
+
+    ul, li {
+        list-style:none;
+        margin:0;
+        padding:0;
+    }
+}
+
+#pagescontent {
+    margin: 0 auto;
+    width: 890px;
+}
+
+article header, .authorheader {
+    margin: 30px 0 35px 0;
+}
+
+.pagescontenttitle {
+    font-family: schoolbook-web-condensed,Georgia;
+    font-size: 36pt;
+}
+
+.pagescontentsubtitle {
+    font-family:myriad-pro,helvetica,arial;
+    font-weight:normal;
+    font-size:22pt;
+    margin-top:10px;
+}
+
+/* /////////// */
+/* CONTACT BOX */
+/* /////////// */
+
+#contactbox, figure#contents {
+    float: right;
+    width: 250px;
+    padding: 20px;
+    margin: 0px 0 20px 20px;
+    border: 1px solid lightgray;
+    text-align: center;
+}
+
+#contactbox .organization-name {
+    font-family: minion-pro,Garamond;
+    font-variant: small-caps;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#contactbox .adr {
+    margin: 20px 0;
+}
+
+#contactbox .staff {
+    margin-bottom: 10px;
+}
+
+#contactbox .staff .position {
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+/* //////////////// */
+/*    STAFF TABLE   */
+/* //////////////// */
+
+#stafftable .bigshot, .stafftitle {
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+#stafftable .bigshot-title {
+    font-style: italic;
+}
+
+#stafftable .stafftitle {
+    padding-top: 10px;
+}
+
+#stafftable div {
+    background: white;
+    margin: 0;
+    padding: 0;
+}
+
+#stafftable .clear {
+    clear: both;
+}
+
+#stafftable {
+    width: 100%;
+    text-align: center;
+}
+
+#stafftable #eic, #topeditors {
+    clear: both;
+}
+
+#stafftable #eic div, #topeditors div {
+    width: 50%;
+    float: left;
+    margin: 0 0 10px 0;
+}
+
+#stafftable #topstaff {
+    width: 100%;
+}
+
+#stafftable #lowerstaff {
+    width: 100%;
+}
+
+#stafftable #lowerstaff .column {
+    float: left;
+    width: 33.3%;
+    margin: 0;
+}
+
+#stafftable p {
+    margin: 0;
+    padding: 0;
+}
+
+#stafftable hr {
+    background: #DDD;
+    color: #DDD;
+    clear: both;
+    float: none;
+    width: 100%;
+    border: none;
+    height: 1px;
+}
+
+/* ////// */
+/* SEARCH */
+/* ////// */
+
+#bigsearch {
+    font-size: 14pt;
+    margin: 10px 0;
+    float: right;
+    width: 50%;
+}
+
+#bigsearch input {
+    padding: 10px;
+    font-size: 14pt;
+    width: 100%;
+}
+
+.searchtitle {
+    float: left;
+}
+
+#adv-search {
+    font-size: 13pt;
+    font-family:myriad-pro,helvetica,arial;
+}
+
+#adv-search input {
+    font-size: 13pt;
+    font-family:myriad-pro,helvetica,arial;
+    padding: 3px;   
+}
+
+#adv-search input[type=text] {
+    width: 170px;
+}
+
+#adv-search input[name=title] {
+    width:354px;
+}
+
+#adv-search input[type=date] {
+    width: 163px;
+}
+
+#adv-search #submit {
+    font-size: 13pt;
+    font-family:myriad-pro,helvetica,arial;
+    padding: 3px;       
+    margin-top: 10px;
+}
+
+/* ///////// */
+/* SUBSCRIBE */
+/* ///////// */
+
+.subscription-list {
+    margin-top: 0;
+}
+
+.subscription-table {
+    width: 100%;
+    text-align: center;
+}
+
+.subscription-table td {
+    width: 33%;
+}
+
+/* ///////////// */
+/* MEDIA QUERIES */
+/* ///////////// */
+
 /* homepage social media button responses */
 @media all and (max-width: 1069px) {
     #mainhead .fb-like {
         display: none !important;
     }
 }
+
 @media all and (max-width: 972px) {
     .twitter-follow-button {
         display: none !important;
@@ -1216,15 +1403,6 @@ section h2, #sidebar h2 {
         background-size:cover !important;
         background-position:center !important;
     }
-    
-    /* one day... but i'd need to separate headline and container & i hate endless nesting containers
-    .articleblock li.backgrounded {
-        -webkit-filter: blur(2px);
-    }
-    .articleblock li.backgrounded:hover {
-        -webkit-filter: none;
-    }
-    */
 
     .articleblock li.backgrounded a, .articleblock.threetier li:nth-child(-n+5).backgrounded a {
         color: white;
@@ -1412,337 +1590,13 @@ section h2, #sidebar h2 {
         width: 100%;
     }
             
-    // Hide entire excerpt div
     .articleblock li .excerpt {
         display: none;
     }
     
-    /*
-    .articleblock li:nth-child(n+5) {
-        display: none;
-    }
-    */
-    
     footer {
         margin: 20px 10px;
     }
-
-}
-
-/* //////////////// */
-/*  AUTHOR PROFILE  */
-/* //////////////// */
-
-figure.authorpic {
-    border: 1px solid lightgray;
-    margin: 0 20px 30px 0;
-    padding: 10px;
-    background: white;
-    width: 200px;
-    float: left;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-}
-
-figure.authorpic img {
-    max-width:180px;
-}
-
-.authorstats {
-    float: left;
-    max-width: 500px;
-    margin-bottom: 50px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-}
-
-.statblock {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    padding: 0 10px;
-}
-
-/* FOR NON-TABLETS */
-@media all and (min-width: 961px) {
-    .statblock {
-        float: left;
-        width: 25%; /* width is now being preprocessed and generated by php inline, so this'll typically be overridden */
-        margin: 0 0 20px 0;
-    }
-}
-
-/* FOR SMARTPHONES (read: iPhones) */
-@media all and (max-width: 480px) {
-    .statblock {
-        padding: 0;
-    }
-}
-
-/* /////////// */
-/* CONTACT BOX */
-/* /////////// */
-
-#contactbox, figure#contents {
-    float: right;
-    width: 250px;
-    padding: 20px;
-    margin: 0px 0 20px 20px;
-    border: 1px solid lightgray;
-    text-align: center;
-}
-
-#contactbox .organization-name {
-    font-family: minion-pro,Garamond;
-    font-variant: small-caps;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-#contactbox .adr {
-    margin: 20px 0;
-}
-
-#contactbox .staff {
-    margin-bottom: 10px;
-}
-
-#contactbox .staff .position {
-    font-variant: small-caps;
-    font-weight: bold;
-}
-
-/* //////////////// */
-/*    STAFF TABLE   */
-/* //////////////// */
-
-#stafftable .bigshot, .stafftitle {
-    font-variant: small-caps;
-    font-weight: bold;
-}
-
-#stafftable .bigshot-title {
-    font-style: italic;
-}
-
-#stafftable .stafftitle {
-    padding-top: 10px;
-}
-
-#stafftable div {
-    background: white;
-    margin: 0;
-    padding: 0;
-}
-
-#stafftable .clear {
-    clear: both;
-}
-
-#stafftable {
-    width: 100%;
-    text-align: center;
-}
-
-#stafftable #eic, #topeditors {
-    clear: both;
-}
-
-#stafftable #eic div, #topeditors div {
-    width: 50%;
-    float: left;
-    margin: 0 0 10px 0;
-}
-
-#stafftable #topstaff {
-    width: 100%;
-}
-
-#stafftable #lowerstaff {
-    width: 100%;
-}
-
-#stafftable #lowerstaff .column {
-    float: left;
-    width: 33.3%;
-    margin: 0;
-}
-
-#stafftable p {
-    margin: 0;
-    padding: 0;
-}
-
-#stafftable hr {
-    background: #DDD;
-    color: #DDD;
-    clear: both;
-    float: none;
-    width: 100%;
-    border: none;
-    height: 1px;
-}
-
-/* ////// */
-/* SEARCH */
-/* ////// */
-
-#bigsearch {
-    font-size: 14pt;
-    margin: 10px 0;
-    float: right;
-    width: 50%;
-}
-
-#bigsearch input {
-    padding: 10px;
-    font-size: 14pt;
-    width: 100%;
-}
-
-.searchtitle {
-    float: left;
-}
-
-@media all and (max-width: 480px) {
-    #bigsearch {
-        float: none;
-        font-size: 12pt;
-    }
-    
-    #bigsearch input {
-        font-size: 10pt;
-    }
-}
-
-#adv-search {
-    font-size: 13pt;
-    font-family:myriad-pro,helvetica,arial;
-}
-
-#adv-search input {
-    font-size: 13pt;
-    font-family:myriad-pro,helvetica,arial;
-    padding: 3px;    
-}
-
-#adv-search input[type=text] {
-    width: 170px;
-}
-
-#adv-search input[name=title] {
-    width:354px;
-}
-
-#adv-search input[type=date] {
-    width: 163px;
-}
-
-#adv-search #submit {
-    font-size: 13pt;
-    font-family:myriad-pro,helvetica,arial;
-    padding: 3px;        
-    margin-top: 10px;
-}
-
-@media all and (max-width: 480px) {
-    #adv-search input[type=text], #adv-search input[type=date] {
-        width: 90%;
-    }
-}
-
-/* ///////// */
-/* SUBSCRIBE */
-/* ///////// */
-
-.subscription-list {
-    margin-top: 0;
-}
-
-.subscription-table {
-    width: 100%;
-    text-align: center;
-}
-
-.subscription-table td {
-    width: 33%;
-}
-
-/* FOR NON-TABLETS */
-@media all and (min-width: 961px) {
-    
-    /* reserved for future use */
-    
-}
-
-/* FOR NON-IPHONES */
-@media all and (min-width: 481px) {
-
-    // #mainstory {
-    //     margin: 0 auto;
-    //     width: 890px;
-    // }
-    
-    /* some rejiggering required so that, when you follow an anchor link, the header isn't hidden behind the fixed header */
-    /* i.e. an anchor offset so you get a good scroll offset — in this case, 50px, cuz that's the header height(ish). */
-    .articlebody h3 {
-        display: block;
-        position: relative; 
-        top: -50px;
-        padding-top: 50px;
-        margin-top: 18px;
-        margin-bottom: -32px;
-    }
-
-    figure {
-        width: 500px;
-        float:right;
-        margin: 0 0 25px 25px;
-    }
-    
-    figure.mini {
-        width: 200px;
-    }
-    
-    aside {
-        width: 320px;
-        float:right;
-        margin: 25px -100px 25px 25px;
-    }
-    
-}
-
-/* FOR TABLETS */
-@media all and (max-width: 960px) {
-    
-    #mainstory {
-        width: 100%;
-        margin: 0;
-    }
-    
-    #articlebody, #articlefooter {
-        width: 100%;
-        margin-left: 0;
-    }
-    
-    #toc_container {
-        display: none;
-    }
-    
-    figure.authorpic {
-        display: none;
-    }
-    
-    aside {
-        margin-right: 25px;
-    }
-    
-}
-
-/* FOR SMARTPHONES (read: iPhones) */
-@media all and (max-width: 480px) {
 
     #issuedate, #mainnav, #bonushook {
         display: none;
@@ -1773,31 +1627,10 @@ figure.authorpic img {
         margin-bottom: 20px;
     }
         
-    #mainstory {
+    #pagescontent {
         font-size: 12pt;
         width: 100%;
         margin: 0;
-    }
-    
-    article header {
-        margin: 20px 0 0 0;
-    }
-    
-    .articletitle {
-        font-size: 20pt;
-    }
-    
-    .articlesubtitle {
-        font-size: 16pt;
-    }
-    
-    .toolbox {
-        display: none;
-    }
-    
-    figure {
-        width: 100%;
-        margin: 10px 0;
     }
         
     aside {
@@ -1807,4 +1640,29 @@ figure.authorpic img {
         text-align: center;
     }
 
+    .statblock {
+        padding: 0;
+    }
+
+    #bigsearch {
+        float: none;
+        font-size: 12pt;
+    }
+    
+    #bigsearch input {
+        font-size: 10pt;
+    }
+
+    #adv-search input[type=text], #adv-search input[type=date] {
+        width: 90%;
+    }
+}
+
+/* FOR NON-TABLETS */
+@media all and (min-width: 961px) {
+    .statblock {
+        float: left;
+        width: 25%; /* width is now being preprocessed and generated by php inline, so this'll typically be overridden */
+        margin: 0 0 20px 0;
+    }
 }
