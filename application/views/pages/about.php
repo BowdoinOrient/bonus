@@ -51,74 +51,76 @@
                         <div style="width:100%"><p><span class="bigshot">Linda Kinstler,</span> <span class="bigshot-title">Editor in Chief</span></p></div>
                     </div> -->
                     <div id="topeditors">
-                        <div style="width:50%"><p><span class="bigshot">Erica Berry,</span><br/> <span class="bigshot-title">Editor in Chief</span></p></div>
-                        <div style="width:50%"><p><span class="bigshot">Nora Biette-Timmons,</span><br/> <span class="bigshot-title">Editor in Chief</span></p></div>
-                        <div style="width:50%"><p><span class="bigshot">Garrett Casey,</span><br/> <span class="bigshot-title">Managing Editor</span></p></div>
+                        <div style="width:50%"><p><span class="bigshot">Garett Casey,</span><br/> <span class="bigshot-title">Editor in Chief</span></p></div>
+                        <div style="width:50%"><p><span class="bigshot">Kate Witteman,</span><br/> <span class="bigshot-title">Editor in Chief</span></p></div>
                         <div style="width:50%"><p><span class="bigshot">Ron Cervantes,</span><br/> <span class="bigshot-title">Managing Editor</span></p></div>
-                        <div style="width:50%"><p><span class="bigshot">Marisa McGarry,</span><br/> <span class="bigshot-title">Managing Editor</span></p></div>
                         <div style="width:50%"><p><span class="bigshot">Sam Miller,</span><br/> <span class="bigshot-title">Managing Editor</span></p></div>
-                        <div style="width:50%; margin-left:25%"><p><span class="bigshot">Kate Witteman,</span><br/> <span class="bigshot-title">Managing Editor</span></p></div>
+                        <div style="width:50%"><p><span class="bigshot">Leo Shaw,</span><br/> <span class="bigshot-title">Managing Editor</span></p></div>
+                        <div style="width:50%"><p><span class="bigshot">Natalie Kass-Kaufman,</span><br/> <span class="bigshot-title">Managing Editor</span></p></div>
                     </div>
                 </div>
                 <hr style="width:50%; margin: 0 auto;">
                 <div id="lowerstaff">
                     <div class="column">
                         <p class="stafftitle">News Editor</p>
-                        <p>Nicole Wetsman</p>
+                        <p>Meg Robbins</p>
                         
                         <p class="stafftitle">Features Editor</p>
-                        <p>Elana Vlodaver</p>
+                        <p>Julian Andrews</p>
                         
                         <p class="stafftitle">A&amp;E Editor</p>
-                        <p>Emma Peters</p>
+                        <p>Emily Weyrauch</p>
                         
                         <p class="stafftitle">Sports Editor</p>
-                        <p>Sam Chase</p>
+                        <p>Jono Gruber</p>
                         
                         <p class="stafftitle">Opinion Editor</p>
-                        <p>Connor Evans</p>
+                        <p>Joe Seibert</p>
                         
-                        <p class="stafftitle">Calendar Editor</p>
-                        <p>Joe Siebert</p>
+                        <p class="stafftitle">Senior News Reporters</p>
+                        <p>Cameron de Wet</p>
+                        <p>Joe Sherlock</p>
                     </div>
                     <div class="column">
                         <p class="stafftitle">Associate Editors</p>
-                        <p>Claire Aasen</p>
-                        <p>Maggie Bryan</p>
-                        <p>Natalie Clark</p>
-                        <p>Eliza Novick-Smith</p>
-                        <p>Leo Shaw</p>
+                        <p>Connor Evans</p>
+                        <p>Elana Vlodaver</p>
 
                         <p class="stafftitle">Business Managers</p>
-                        <p>Maya Lloyd</p>
-                        <p>Hy Khong</p>
+                        <p>Ali Considine</p>
+                        <p>Rachel Zheng</p>
 
-                        <p class="stafftitle">Layout Editor</p>
-                        <p>Sam Weyrauch</p>
+                        <p class="stafftitle">Copy Editors</p>
+                        <p>Katie Miklus</p>
+                        <p>Caitlin Whalen</p>
 
                         <p class="stafftitle">Editors-at-Large</p>
-                        <p>Natalie Kass-Kaufman</p>
-                        <p>Kate Featherston</p>
+                        <p>Sam Chase</p>
+                        <p>Matthew Gutschenritter</p>
+                        <p>Hy Khong</p>
+                        <p>Emma Peters</p>
+                        <p>Nicole Wetsman</p>
                         
                     </div>
                     <div class="column">
-                        <p class="stafftitle">Photo Editor</p>
-                        <p>Hy Khong</p>
-
-                        <p class="stafftitle">Asst. Photo Editor</p>
+                        <p class="stafftitle">Photo Editors</p>
+                        <p>Kate Featherston</p>
                         <p>Eliza Graumlich</p>
 
                         <p class="stafftitle">Web Developer</p>
-                        <p>Brian Jacobel</p>
+                        <p>Andrew Daniels</p>
 
                         <p class="stafftitle">Web Editor</p>
-                        <p>Matthew Gutschenritter</p>
+                        <p>Grace Handler</p>
 
                         <p class="stafftitle">Page Two Editor</p>
-                        <p>Joe Sherlock</p>
+                        <p>Olivia Atwood</p>
 
                         <p class="stafftitle">Graphic Designer</p>
-                        <p>Alex Mayer</p>                       
+                        <p>Alex Mayer</p>   
+
+                        <p class="stafftitle">Illustrator</p>
+                        <p>Anna Hall</p>                    
                     </div>
                 </div>
                 
