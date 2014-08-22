@@ -137,8 +137,8 @@
             <h3>Website</h3>
             <p>The Orient website went online around 2000. It was redesigned in 2001, 2004 (becoming database-driven), 2009 (with a visual overhaul), and 2012 (rewritten from scratch). The most recent version is a responsive design intended to work across all devices, including phones and tablets.</p>
             <p>Built by Vic Kotecha &rsquo;05, James Baumberger &rsquo;06, Mark Hendrickson &rsquo;07, Seth Glickman &rsquo;10, and Toph Tucker &rsquo;12 in Brunswick, Rome, and Chestnut Hill. Written in PHP (on the CodeIgniter framework) and JavaScript (with jQuery) with a MySQL database running on Apache. To get involved, <a href="mailto:bjacobel@gmail.com">email Brian</a>.</p>
-            <p>In October 2009, the Orient began <a href="https://twitter.com/bowdoinorient">tweeting</a>. In September 2010, the <a href="http://bowdoinorientexpress.com/">Orient Express</a> companion Tumblr launched to provide content beyond the scope, reach, and technical capabilities of the printed Friday paper.</p>
-            <p>Bowdoinorient.com requires a modern browser. If things look wrong, <a href="http://www.whatbrowser.org/">please upgrade</a>. We recommended a WebKit-based browser like <a href="http://www.google.com/intl/en/chrome/">Chrome</a> or <a href="http://apple.com/safari">Safari</a>.</p>
+            <p>In October 2009, the Orient began <a href="https://twitter.com/bowdoinorient">tweeting</a>. In September 2010, the <a href="http://bowdoinorientexpress.com/">Orient Express</a> companion Tumblr launched to provide content beyond the scope, reach, and technical capabilities of the printed Friday paper. It was retired in the fall of 2013.</p>
+            <p>Bowdoinorient.com requires a modern browser. If things look wrong, <a href="http://www.whatbrowser.org/">please upgrade</a>. We recommend a WebKit-based browser like <a href="http://www.google.com/intl/en/chrome/">Chrome</a> or <a href="http://apple.com/safari">Safari</a>.</p>
             <!-- Other browser ballots include WordPress's http://browsehappy.com/ and Microsoft's http://browserchoice.eu/ -->
             
         </div>
