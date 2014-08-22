@@ -29,7 +29,7 @@
             
             <p>Business or advertising inquiries: <a href="mailto:orientads@bowdoin.edu">orientads@bowdoin.edu</a>.</p>
             
-            <p>Web inquiries: <a href="mailto:bjacobel@gmail.com">bjacobel@gmail.com</a>.</p>
+            <p>Web inquiries: <a href="mailto:andrew.daniels714@gmail.com">andrew.daniels714@gmail.com</a>.</p>
             
             <h3 id="ltte">Submit a letter to the editor</h3>
             <ol>
