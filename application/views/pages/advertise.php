@@ -24,7 +24,7 @@
                     <div class="street-address">6200 College Station</div>
                     <div class="locality">Brunswick</span>, <span class="region">Maine</span> <span class="postal-code">04011</div>
                 </div>
-                <div class="staff"><span class="position">Business Managers:</span> <br>Hy Khong &amp; Maya Lloyd</div>
+                <div class="staff"><span class="position">Business Managers:</span> <br>Rachel Zheng &amp; Alison Considine</div>
             </div>
         </div>
         
@@ -97,9 +97,9 @@
                 </tr></tbody>
             </table>
 
-            <p>For further information involving local ads, please contact our business manager. <br>
-                <strong>Hy Khong</strong> <br>
-                <em>Bowdoin Orient Business Manager</em> <br>
+            <p>For further information involving local ads, please contact our business managers. <br>
+                <strong>Rachel Zheng &amp; Alison Considine</strong> <br>
+                <em>Bowdoin Orient Business Managers</em> <br>
                 Phone: (207) 725-3053<br>
                 Email: <a href="mailto: orientads@gmail.com">orientads@gmail.com</a>
             </p>
