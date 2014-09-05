@@ -114,7 +114,7 @@
                 Email: <a href="mailto: abarnard@mymediamate.com">abarnard@mymediamate.com</a>
             </p>
             
-            <h3>Production Schedule <em>(2013–2014)</em></h3>
+            <h3>Production Schedule <em>(2014–2015)</em></h3>
                 <p>Dates in gray are non-publication dates.</p>
                 
                 <style>
@@ -145,76 +145,71 @@
                     <table>
                         <thead>
                             <tr>
-                                <td colspan="3">Fall 2013</td>
+                                <td colspan="3">Fall 2014</td>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>September 4</td>
-                                <td>Orientation Issue</td>
+                                <td>September 12</td>
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>September 13</td>
+                                <td>September 19</td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td>September 20</td>
+                                <td>September 26</td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td>September 27</td>
+                                <td>October 3</td>
                             </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>October 4</td>
-                                <td></td>
                             </tr>
                             <tr class="invalid">
                                 <td></td>
-                                <td>October 11</td>
+                                <td>October 10</td>
                                 <td>Fall Break</td>
                             </tr>
                             <tr>
+                                <td>5</td>
+                                <td>October 17</td>
+                                <td>Homecoming</td>
+                            <tr>
                                 <td>6</td>
-                                <td>October 18</td>
+                                <td>October 24</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>7</td>
-                                <td>October 25</td>
+                                <td>October 31</td>
                                 <td>Family Weekend</td>
                             </tr>
                             <tr>
                                 <td>8</td>
-                                <td>November 1</td>
+                                <td>November 7</td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>9</td>
-                                <td>November 8</td>
+                                <td>November 14</td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>10</td>
-                                <td>November 15</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>11</td>
-                                <td>November 22</td>
+                                <td>November 21</td>
                                 <td></td>
                             </tr>
                             <tr class="invalid">
                                 <td></td>
-                                <td>November 29</td>
+                                <td>November 28</td>
                                 <td>Thanksgiving Break</td>
                             </tr>
                             <tr>
                                 <td>12</td>
-                                <td>December 6</td>
+                                <td>December 5</td>
                                 <td></td>
                             </tr>
                         </tbody>
@@ -223,10 +218,10 @@
                     <table>
                         <thead>
                             <tr>
-                                <td colspan="3">Spring 2014</td>
+                                <td colspan="3">Spring 2015</td>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody style="display:none">
                             <tr>
                                 <td>13</td>
                                 <td>January 24</td>
