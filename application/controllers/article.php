@@ -33,7 +33,7 @@ class Article extends CI_Controller {
     public function view($id)
     {       
         // Include profiler output
-        $this->output->enable_profiler(TRUE);
+        // $this->output->enable_profiler(TRUE);
 
         $article = $this->article_model->get_article($id);
         
