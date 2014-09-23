@@ -67,10 +67,10 @@ if(empty($page_image)) $page_image=base_url()."img/o-200.png";
     <script type="text/javascript" src="<?=base_url()?>js/share.min.js"></script>
 
     <!-- Vex: fancy modals -->
-    <script type="text/javascript" src="<?base_url()?>js/vex.combined.min.js"></script>
+    <script type="text/javascript" src="<?=base_url()?>js/vex.combined.min.js"></script>
     <script type="text/javascript">vex.defaultOptions.className = 'vex-theme-top';</script>
-    <link rel="stylesheet" href="<?base_url()?>css/vex.css" />
-    <link rel="stylesheet" href="<?base_url()?>css/vex-theme-top.css" />
+    <link rel="stylesheet" href="<?=base_url()?>css/vex.css" />
+    <link rel="stylesheet" href="<?=base_url()?>css/vex-theme-top.css" />
 
     <!-- Swipe.js -->
     <script type="text/javascript" src="<?=base_url()?>js/swipe.min.js"></script>
