@@ -46,48 +46,31 @@ class Article extends CI_Controller {
             // add one to article views if not logged in
             if(!bonus()) $this->article_model->increment_article_views($id);
             
-            $this->benchmark->mark('get_article_data_start');
             $body = $this->article_model->get_body($id);
             $type = $this->article_model->get_article_type($article->type);
             $series = $this->article_model->get_article_series($article->series);
             $authors = $this->article_model->get_article_authors($id);
             $attachments = $this->attachments_model->get_attachments($id);
-            $this->benchmark->mark('get_article_data_end');
-            $this->benchmark->elapsed_time('get_article_data_start', 'get_article_data_end');
 
-            $this->benchmark->mark('photos_start');
             $drop_thumbnail_only_photos = 1;
             $photos = $this->attachments_model->get_photos($id, $drop_thumbnail_only_photos);
-            $this->benchmark->mark('photos_end');
-            $this->benchmark->elapsed_time('photos_start', 'photos_end');
             
             $data = new stdClass();
             $data->footerdata = new stdClass();
             $data->headerdata = new stdClass();
 
             // get random quote
-            $this->benchmark->mark('quote_start');
             $data->footerdata->quote = $this->attachments_model->get_random_quote();
-            $this->benchmark->mark('quote_end');
-            $this->benchmark->elapsed_time('quote_start', 'quote_end');
             
             // adjacent articles
-            $this->benchmark->mark('adjacent_articles_start');
             if($series->name) 
             {
                 $data->series_previous = $this->article_model->get_articles_by_date($article->date, false, false, '1', false, false, $series->id, $id);
                 $data->series_next = $this->article_model->get_articles_by_date(false, $article->date, false, '1', false, false, $series->id, $id, 'asc');
             }
-            $this->benchmark->mark('adjacent_articles_end');
-            $this->benchmark->elapsed_time('adjacent_articles_start', 'adjacent_articles_end');
             
             // featured articles for footer
-            $this->benchmark->mark('featured_articles_start');
             $data->featured = $this->article_model->get_articles_by_date($article->date, false, false, '5', true);
-            $this->benchmark->mark('featured_articles_end');
-            $this->benchmark->elapsed_time('featured_articles_start', 'featured_articles_end');
-            
-            $this->benchmark->mark('set_article_data_start');
             
             $data->headerdata->date = $article->date;
             $data->headerdata->volume = $article->volume;
@@ -102,9 +85,7 @@ class Article extends CI_Controller {
             $data->authors = $authors;
             $data->photos = $photos;
             $data->attachments = $attachments;
-            
-            $this->benchmark->mark('set_article_data_end');
-            $this->benchmark->elapsed_time('set_article_data_start', 'set_article_data_end');
+
 
             if ($article->longform) {
                 $data->coverphoto = $this->attachments_model->get_coverphoto($id);
@@ -116,10 +97,12 @@ class Article extends CI_Controller {
             $data->page_type = 'article';
             if($photos) $data->page_image = base_url().'images/'.$article->date.'/'.$photos[0]->filename_large;
             
-            if($article->longform)
+
+            if($article->longform){
                 $this->load->view('feature', $data);
-            else
+            } else {
                 $this->load->view('article', $data);
+            }
         }
     }
     
