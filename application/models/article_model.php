@@ -355,11 +355,11 @@ class Article_model extends CI_Model {
         // Not sure why this is doing !==, but I guess I trust it. "Is not identical to"?
         // Code comes directly from the old version of the site. I'm not on-campus
         // to test atm, lololol.
-        if (strpos(gethostbyaddr($_SERVER['REMOTE_ADDR']), "bowdoin") !== false) {
-            $this->db->where('id', $article_id);
-            $this->db->set('views_bowdoin', 'views_bowdoin+1', FALSE);
-            $this->db->update('article');
-        }
+        // if (strpos(gethostbyaddr($_SERVER['REMOTE_ADDR']), "bowdoin") !== false) {
+        //     $this->db->where('id', $article_id);
+        //     $this->db->set('views_bowdoin', 'views_bowdoin+1', FALSE);
+        //     $this->db->update('article');
+        // }
     }
     
     function add_article_series($article_id, $series_name)
