@@ -51,12 +51,12 @@
                         <div style="width:100%"><p><span class="bigshot">Linda Kinstler,</span> <span class="bigshot-title">Editor in Chief</span></p></div>
                     </div> -->
                     <div id="topeditors">
-                        <div style="width:50%"><p><span class="bigshot">Garett Casey,</span><br/> <span class="bigshot-title">Editor in Chief</span></p></div>
-                        <div style="width:50%"><p><span class="bigshot">Kate Witteman,</span><br/> <span class="bigshot-title">Editor in Chief</span></p></div>
-                        <div style="width:50%"><p><span class="bigshot">Ron Cervantes,</span><br/> <span class="bigshot-title">Managing Editor</span></p></div>
-                        <div style="width:50%"><p><span class="bigshot">Sam Miller,</span><br/> <span class="bigshot-title">Managing Editor</span></p></div>
-                        <div style="width:50%"><p><span class="bigshot">Leo Shaw,</span><br/> <span class="bigshot-title">Managing Editor</span></p></div>
-                        <div style="width:50%"><p><span class="bigshot">Natalie Kass-Kaufman,</span><br/> <span class="bigshot-title">Managing Editor</span></p></div>
+                        <div style="width:50%"><p><span class="bigshot">Garrett Casey</span><br/> <span class="bigshot-title">Editor in Chief</span></p></div>
+                        <div style="width:50%"><p><span class="bigshot">Kate Witteman</span><br/> <span class="bigshot-title">Editor in Chief</span></p></div>
+                        <div style="width:50%"><p><span class="bigshot">Ron Cervantes</span><br/> <span class="bigshot-title">Managing Editor</span></p></div>
+                        <div style="width:50%"><p><span class="bigshot">Sam Miller</span><br/> <span class="bigshot-title">Managing Editor</span></p></div>
+                        <div style="width:50%"><p><span class="bigshot">Leo Shaw</span><br/> <span class="bigshot-title">Managing Editor</span></p></div>
+                        <div style="width:50%"><p><span class="bigshot">Natalie Kass-Kaufman</span><br/> <span class="bigshot-title">Managing Editor</span></p></div>
                     </div>
                 </div>
                 <hr style="width:50%; margin: 0 auto;">
