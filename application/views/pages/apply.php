@@ -29,7 +29,7 @@ iframe {
         </hgroup>            
     </header>
     -->
-    <iframe src="https://docs.google.com/forms/d/1cuTLq15EI7i4rLuUOsBnMA99FZoB24mAfZqroX-9edI/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+    <iframe src="https://docs.google.com/forms/d/1cuTLq15EI7i4rLuUOsBnMA99FZoB24mAfZqroX-9edI/viewform?embedded=true" width="100%" height="3002px" frameborder="0" marginheight="0" marginwidth="0" scrolling="no">Loading...</iframe>
 </div>
 
 <? $this->load->view('template/bodyfooter', $footerdata); ?>
