@@ -5,8 +5,15 @@
     position: relative;
     width: 100%;
     height: 1957px;
-    overflow: scroll;
+    overflow: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling:touch;
+}
+
+iframe {
+    width: 1px;
+    min-width: 100%;
+    *width: 100%;
 }
 </style>
 
@@ -22,7 +29,7 @@
         </hgroup>            
     </header>
     -->
-    <iframe id="survey" src="https://docs.google.com/forms/d/1cuTLq15EI7i4rLuUOsBnMA99FZoB24mAfZqroX-9edI/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+    <iframe src="https://docs.google.com/forms/d/1cuTLq15EI7i4rLuUOsBnMA99FZoB24mAfZqroX-9edI/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 </div>
 
 <? $this->load->view('template/bodyfooter', $footerdata); ?>
