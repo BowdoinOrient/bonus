@@ -65,6 +65,7 @@ $route['ethics'] = "pages/view/ethics";
 $route['nonremoval'] = "pages/view/nonremoval";
 $route['comments'] = "pages/view/comments";
 $route['collegehousequiz'] = "pages/view/quiz";
+$route['apply'] = "pages/view/apply";
 $route['phpinfo'] = "pages/phpinfo";
 
 # more chromeless hacks

@@ -47,7 +47,8 @@ class Pages extends CI_Controller {
                 'subscribe'        => 'Subscribe',
                 'survey'        => 'Survey',
                 'comments'        => 'Comment Policy',
-                'quiz'        => 'College House Quiz'
+                'quiz'        => 'College House Quiz',
+                'apply'        => 'Bowdoin Orient Application'
                 );
             if(isset($page_title[$page])) $data->page_title = $page_title[$page].' — The Bowdoin Orient';
             
