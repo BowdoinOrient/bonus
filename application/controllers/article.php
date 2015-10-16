@@ -37,14 +37,16 @@ class Article extends CI_Controller {
 
         $article = $this->article_model->get_article($id);
         
-        if(!$article) 
-        {
+        if(!$article) {
             $this->error("No such article exists.");
-        }
-        else
-        {
+        } else if(!$article->published && !bonus()) {
+            // Article exists but not published, show only if logged in 
+            $this->error("No such article exists.");
+        } else {
             // add one to article views if not logged in
-            if(!bonus()) $this->article_model->increment_article_views($id);
+            if(!bonus()){
+                $this->article_model->increment_article_views($id);
+            }
             
             $body = $this->article_model->get_body($id);
             $type = $this->article_model->get_article_type($article->type);
