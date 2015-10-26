@@ -36,7 +36,7 @@
     
                 <ul>
                     <li><strong>Publication Frequency:</strong> Every Friday while classes are in session (see below for production schedule).</li>
-                    <li><strong>Average Circulation:</strong> 1800 copies, read by on-campus by students, faculty, staff, and local residents, and off-campus by parents, alumni, and friends of the College.</li>
+                    <li><strong>Average Circulation:</strong> 1500 copies, read by on-campus by students, faculty, staff, and local residents, and off-campus by parents, alumni, and friends of the College.</li>
                     <li><strong>Columns:</strong> Five columns, each 1.84 inches wide with a 0.25 inch margin between each column.</li>
                     <li><strong>Deadlines:</strong> All ads should be received by 5:00 p.m. on the Wednesday of the week they are to run.</li>
                     <li><strong>Submission:</strong> We prefer ads submitted digitally via email (as a .tif or .pdf file, for example), but we also accept ads at our above mailing address.</li>
