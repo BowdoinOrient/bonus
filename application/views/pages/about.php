@@ -19,8 +19,8 @@
             <div id="vcard" class="vcard">
                 <a class="fn org url" href="http://bowdoinorient.com" title="The Bowdoin Orient"><div class="organization-name">The Bowdoin Orient</div></a>
                 <div class="email"><a href="mailto:orient@bowdoin.edu">orient@bowdoin.edu</a></div>
-                <div class="tel"><span class="hidetablet">Telephone: </span><span class="value">(207) 725-3300</span></div>
-                <div class="tel"><span class="hidetablet">Business phone: </span><span class="value">(207) 725-3053</span></div>
+               <!-- <div class="tel"><span class="hidetablet">Telephone: </span><span class="value">(207) 725-3300</span></div>
+                <div class="tel"><span class="hidetablet">Business phone: </span><span class="value">(207) 725-3053</span></div>-->
                 <div class="adr">
                     <div class="street-address">6200 College Station</div>
                     <div class="locality">Brunswick</span>, <span class="region">Maine</span> <span class="postal-code">04011</div>
