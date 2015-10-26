@@ -50,9 +50,9 @@
                 <li>For examples, see <a href="http://bowdoinorient.com/series/114">Talk of the Quad</a>.</li>
             </ul>
             
-            <p>All submissions should include your full name, affiliation with Bowdoin and a phone number.</p>
-            <p>All submissions should be recieved by 7 p.m. on the Wednesday of the week of publication.</p>
-            <p>Email <a href="mailto:orientopinion@bowdoin.edu">orientopinion@bowdoin.edu</a>.</p>
+            <p>All submissions should include your full name, affiliation with Bowdoin and a phone number.<br/>
+            All submissions should be recieved by 7 p.m. on the Wednesday of the week of publication.<br/>
+            Email <a href="mailto:orientopinion@bowdoin.edu">orientopinion@bowdoin.edu</a>.</p>
                     
             <h3 id="ltte">Join the Orient</h3>        
             <ul>
