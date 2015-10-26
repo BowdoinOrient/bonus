@@ -17,30 +17,33 @@
         <img src="<?=base_url()?>img/connect-please.jpg" align="right" title="Katie Fitch, The Bowdoin Orient" id="connect-please" class="hidemobile">
         
         <div id="pagescontentbody" class="pagescontentbody">
-            
-           
-          
-            <h4>We welcome submissions of all types from the entire Bowdoin community and beyond</h4>
+    
+            <h4>We welcome submissions of all types from the entire Bowdoin community and beyond.</h4>
             
             <h3 id="ltte">Submit a letter to the editor</h3>
-            <ol>
-                <li>Letters should be recieved by 7 p.m. on the Wednesday of the week of publication.</li>
+            <ul>
                 <li>Letters must be signed. We will not publish unsigned letters.</li>
                 <li>Letters should not exceed 200 words.</li>
                 <!--<li>Op-eds run from 500 to 700 words, if you wish to submit a longer piece.</li>-->
-            </ol>
+            </ul>
             <h3 id="ltte">Submit an Op-Ed</h3>
-            <ol>
+            <ul>
                 <li>Op-eds express your or a group's opinion about an issue within the Bowdoin Bubble or beyond and run from 500 to 700 words.</li>
-                <li>Op-Eds should be recieved by 7 p.m. on the Wednesday of the week of publication.</li>
-            </ol>
+            </ul>
             <h3 id="ltte">Submit a Talk of the Quad</h3>
-            <ol>
-                <li>Talks of the Quad express a personal narrative and run from 600 to 800 words..</li>
-                <li>For examples, see <a href="http://bowdoinorient.com/series/114">Talk of the Quad</a></li>
-            </ol>
+            <ul>
+                <li> A Talk of the Quad express a personal narrative and run from 600 to 800 words.</li>
+                <li>For examples, see <a href="http://bowdoinorient.com/series/114">Talk of the Quad</a>.</li>
+            </ul>
+            <p>All submissions should be recieved by 7 p.m. on the Wednesday of the week of publication.</p>
             <p>Email <a href="mailto:orientopinion@bowdoin.edu">orientopinion@bowdoin.edu</a>.</p>
                     
+            <h3 id="ltte">Join the Orient</h3>        
+            <ul>
+                <li>The Orient open to all students and is actively seeking writers, photographers, programmers, illustrators.</li>
+                <li>To join, contact <a href="mailto:mgutsche@bowdoin.edu">Matthew Gutschenritter</a> or <a href="mailto:nwetsman@bowdoin.edu">Nicole Wetsman</a></li>
+            </ul>
+            <br>
              <p>The Bowdoin Orient<br/>
             6200 College Station<br/>
             Brunswick, ME 04011-8462</p>
