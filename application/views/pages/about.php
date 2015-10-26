@@ -42,7 +42,7 @@
 
             <p>The Bowdoin Orient is a student-run weekly publication dedicated to providing news and information relevant to the College community. Editorially independent of the College and its administrators, the Orient pursues such content freely and thoroughly, following professional journalistic standards in writing and reporting. The Orient is committed to serving as an open forum for thoughtful and diverse discussion and debate on issues of interest to the College community.</p>
 
-            <p>The paper has an on-campus distribution of over 1,800, and is mailed off-campus to several hundred subscribers. It is distributed free-of-charge at various locations on campus, including the student union, several classroom buildings, the admissions office, the dining halls, and the libraries. Published on Fridays, 24 times a year, the Orient is read by students and their families, faculty, staff, alumni, off-campus subscribers, prospective students, and campus visitors.</p>
+            <p>The paper has an on-campus distribution of over 1,500, and is mailed off-campus to several hundred subscribers. It is distributed free-of-charge at various locations on campus, including the student union, several classroom buildings, the admissions office, the dining halls, and the libraries. Published on Fridays, 24 times a year, the Orient is read by students and their families, faculty, staff, alumni, off-campus subscribers, prospective students, and campus visitors.</p>
                         
             <h3>Staff</h3>
             <?//Pulling in the masthead?>
