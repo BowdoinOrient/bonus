@@ -18,18 +18,7 @@
         
         <div id="pagescontentbody" class="pagescontentbody">
             
-            <p>The Bowdoin Orient<br/>
-            6200 College Station<br/>
-            Brunswick, ME 04011-8462</p>
-            
-            <!--<p>Phone: (207) 725-3300<br/>
-            Business Phone: (207) 725-3053</p>-->
-            
-            <p>General inquiries and subscriptions: <a href="mailto:orient@bowdoin.edu">orient@bowdoin.edu</a>.</p>
-            
-            <p>Business or advertising inquiries: <a href="mailto:orientads@bowdoin.edu">orientads@bowdoin.edu</a>.</p>
-            
-            <p>Website issues: <a href="mailto:andrew.daniels714@gmail.com">andrew.daniels714@gmail.com</a>.</p>
+           
           
             <h4>We welcome submissions of all types from the entire Bowdoin community and beyond</h4>
             
@@ -42,17 +31,29 @@
             </ol>
             <h3 id="ltte">Submit an Op-Ed</h3>
             <ol>
-                <li>Op-eds express your or a group's opinion about an issue within the Bowdoin Bubble or beyond.</li>
-                <li>Op-eds run from 500 to 700 words.</li>
+                <li>Op-eds express your or a group's opinion about an issue within the Bowdoin Bubble or beyond and run from 500 to 700 words.</li>
                 <li>Op-Eds should be recieved by 7 p.m. on the Wednesday of the week of publication.</li>
             </ol>
             <h3 id="ltte">Submit a Talk of the Quad</h3>
             <ol>
-                <li>Talks of the Quad express a personal narrative.</li>
-                <li>Talks of the Quad run from 600 to 800 words.</li>
-                <li>For examples, see: <a href="http://bowdoinorient.com/series/114">Talk of the Quad</a></li>
+                <li>Talks of the Quad express a personal narrative and run from 600 to 800 words..</li>
+                <li>For examples, see <a href="http://bowdoinorient.com/series/114">Talk of the Quad</a></li>
             </ol>
             <p>Email <a href="mailto:orientopinion@bowdoin.edu">orientopinion@bowdoin.edu</a>.</p>
+                    
+             <p>The Bowdoin Orient<br/>
+            6200 College Station<br/>
+            Brunswick, ME 04011-8462</p>
+            
+            <!--<p>Phone: (207) 725-3300<br/>
+            Business Phone: (207) 725-3053</p>-->
+            
+            <p>General inquiries and subscriptions: <a href="mailto:orient@bowdoin.edu">orient@bowdoin.edu</a>.</p>
+            
+            <p>Business or advertising inquiries: <a href="mailto:orientads@bowdoin.edu">orientads@bowdoin.edu</a>.</p>
+            
+            <p>Website issues: <a href="mailto:andrew.daniels714@gmail.com">andrew.daniels714@gmail.com</a>.</p>        
+                    
                     
         </div>
       
