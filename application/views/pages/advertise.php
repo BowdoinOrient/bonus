@@ -51,7 +51,7 @@
             
             <h3 style="clear:none;">Local Advertisers</h3>
 
-            <table style="font-family: Lucida Grande, sans-serif;">
+            <table>
                 <thead>
                     <tr>
                         <td>Description</td>
