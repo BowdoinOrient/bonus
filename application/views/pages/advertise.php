@@ -24,7 +24,7 @@
                     <div class="street-address">6200 College Station</div>
                     <div class="locality">Brunswick</span>, <span class="region">Maine</span> <span class="postal-code">04011</div>
                 </div>
-                <div class="staff"><span class="position">Business Managers:</span> <br>Rachel Zheng &amp; Evan Bulman</div>
+                <div class="staff"><span class="position">Business Managers:</span> <br>Evan Bulman &amp; Maggie Coster</div>
             </div>
         </div>
         
@@ -45,11 +45,13 @@
                     <li><strong>On-campus Discount:</strong> All campus organizations receive a 50% discount on every ad.</li>
                     <li><strong>Non-camera-ready Ads:</strong> Our staff can design and typeset an ad for you. We charge an additional 10% of the cost of the first ad for this service.</li>
                     <li><strong>Payment:</strong> Invoices and one tear sheet will be sent out after the publication of each issue (unless the advertiser requests additional sheets or a whole issue).</li>
+                    <li><strong>Conditions:</strong> The Orient reserves the right to alter an ad's size to fit a page's layout.</li>
+
                 </ul>
             
             <h3 style="clear:none;">Local Advertisers</h3>
 
-            <table>
+            <table style="font-family: Lucida Grande, sans-serif;">
                 <thead>
                     <tr>
                         <td>Description</td>
@@ -98,9 +100,9 @@
             </table>
 
             <p>For further information involving local ads, please contact our business managers. <br>
-                <strong>Rachel Zheng &amp; Evan Bulman</strong> <br>
+                <strong>Evan Bulman &amp; Maggie Coster</strong> <br>
                 <em>Bowdoin Orient Business Managers</em> <br>
-                Phone: (207) 725-3053<br>
+                <!--Phone: (207) 725-3053<br>-->
                 Email: <a href="mailto: orientads@gmail.com">orientads@gmail.com</a>
             </p>
 
