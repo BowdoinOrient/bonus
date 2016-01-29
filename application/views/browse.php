@@ -65,8 +65,6 @@
         </div>
         <!-- End Disqus -->
 
-        <!-- Plancast events -->
-        <script type="text/javascript" src="http://plancast.com/goodies/widgets/sidebar/1/43729"></script>
     </div>
 
     <section id="bignews">
