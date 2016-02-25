@@ -24,7 +24,7 @@
                     <div class="street-address">6200 College Station</div>
                     <div class="locality">Brunswick</span>, <span class="region">Maine</span> <span class="postal-code">04011</div>
                 </div>
-                <div class="staff"><span class="position">Business Managers:</span> <br>Evan Bulman &amp; Maggie Coster</div>
+                <div class="staff"><span class="position">Business Managers:</span> <br>Maggie Coster &amp; Vivien Lee</div>
             </div>
         </div>
         
