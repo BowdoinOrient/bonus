@@ -17,9 +17,7 @@
         <div id="contactbox">
             <div id="vcard" class="vcard">
                 <div class="organization-name">The Bowdoin Orient Business Team</div>
-                <div class="email"><a href="mailto:orientads@bowdoin.edu">orientads@bowdoin.edu</a></div>
-                <div class="tel">Business phone: <span class="value">(207) 725-3053</span></div>
-                <div class="fax">Fax: <span class="value">(207) 725-3975</span></div>
+                <div class="email"><a href="mailto:orientads@gmail.com">orientads@gmail.com</a></div>
                 <div class="adr">
                     <div class="street-address">6200 College Station</div>
                     <div class="locality">Brunswick</span>, <span class="region">Maine</span> <span class="postal-code">04011</div>
