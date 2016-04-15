@@ -79,6 +79,8 @@ $route['advertise/(:any)'] = "pages/view/advertise";
 $route['survey/(:any)'] = "pages/view/survey";
 $route['ethics/(:any)'] = "pages/view/ethics";
 $route['nonremoval/(:any)'] = "pages/view/nonremoval";
+$route['housingquiz/(:any)'] = "pages/view/housingquiz2016";
+
 
 $route['election2012'] = "article/view/7677";
 
