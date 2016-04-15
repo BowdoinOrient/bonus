@@ -36,7 +36,6 @@
     </header>
     -->
     
-    <div class="survey">
 
 <!-- --> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -172,11 +171,6 @@
             </div>
         </div>
 
-
-
-
-    </div>
-    
 </div>
 
 <? $this->load->view('template/bodyfooter', $footerdata); ?>
