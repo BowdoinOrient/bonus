@@ -5,33 +5,33 @@
 <? $this->load->view('template/bodyheader', $headerdata); ?>
 
 <div id="content">
-    
+
     <article id="pagescontent">
-        
+
         <header>
             <hgroup>
                 <h2 id="pagescontenttitle" class="pagescontenttitle">Contact us</h2>
-            </hgroup>            
+            </hgroup>
         </header>
-        
+
         <img src="<?=base_url()?>img/connect-please.jpg" align="right" title="Katie Fitch, The Bowdoin Orient" id="connect-please" class="hidemobile">
-        
+
         <div id="pagescontentbody" class="pagescontentbody">
               <p>The Bowdoin Orient<br/>
                     6200 College Station<br/>
                     Brunswick, ME 04011-8462</p>
-                    
+
                     <!--<p>Phone: (207) 725-3300<br/>
                     Business Phone: (207) 725-3053</p>-->
-                    
+
                     <p>General inquiries and subscriptions: <a href="mailto:orient@bowdoin.edu">orient@bowdoin.edu</a>.</p>
-                    
+
                     <p>Business or advertising inquiries: <a href="mailto:orientads@bowdoin.edu">orientads@bowdoin.edu</a>.</p>
-                    
-                    <p>Website issues: <a href="mailto:andrew.daniels714@gmail.com">andrew.daniels714@gmail.com</a>.</p>        
-                    
+
+                    <p>Website issues: <a href="mailto:jlittle@bowdoin.edu">jlittle@bowdoin.edu</a>.</p>
+
             <h4>We welcome submissions from the entire Bowdoin community and beyond.</h4>
-            
+
             <h3 id="ltte">Submit a letter to the editor</h3>
             <ul>
                 <li>Letters must be signed. We will not publish unsigned letters.</li>
@@ -49,21 +49,21 @@
                 <li>A Talk of the Quad should be between 600 and 800 words.</li>
                 <li>For examples, see <a href="http://bowdoinorient.com/series/114">Talk of the Quad</a>.</li>
             </ul>
-            
+
             <p>All submissions should:
             <ul>
                 <li>include your full name and a phone number.</li>
                 <li>be recieved by 7 p.m. on the Wednesday of the week of publication.</li>
                 <li>be sent to <a href="mailto:orientopinion@bowdoin.edu">orientopinion@bowdoin.edu</a>.</li>
-            </ul>        
+            </ul>
             </p>
-            <h3 id="ltte">Join the Orient</h3>        
+            <h3 id="ltte">Join the Orient</h3>
             <ul>
                 <li>The Orient open to all students and welcomes interested reporters, photographers, programmers and illustrators.</li>
-                <li>To join, contact <a href="mailto:mgutsche@bowdoin.edu">Matthew Gutschenritter</a> or <a href="mailto:nwetsman@bowdoin.edu">Nicole Wetsman</a></li>
+                <li>To join, contact <a href="mailto:mrobbins@bowdoin.edu">Meg Robbins</a> or <a href="mailto:jwandrew@bowdoin.edu">Julian Andrews</a></li>
             </ul>
         </div>
-      
+
     </article>
 
 </div>
